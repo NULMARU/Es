@@ -1,0 +1,1576 @@
+{
+  "generatedAt": "2026-06-14T06:43:11.114611+00:00",
+  "handwritingPolicy": "필기체/손글씨 OCR은 학습 데이터 후보에서 제외하고 원본 페이지 이미지로만 보존합니다.",
+  "expectedFilePattern": "스텝{n}_1.pdf + 스텝{n}_2.pdf",
+  "steps": [
+    {
+      "id": "step-1",
+      "stepNumber": 1,
+      "title": "Step 1 - 현재 시제",
+      "topic": "내가 자주 하는 일들 (루틴, 습관)",
+      "patternKind": "present-simple",
+      "patterns": [
+        {
+          "name": "현재 시제",
+          "formula": "I/You/We/They + 동사원형",
+          "focus": "평소 반복하는 습관과 사실",
+          "signals": [
+            "always",
+            "usually",
+            "often",
+            "sometimes",
+            "every day",
+            "on weekends"
+          ]
+        },
+        {
+          "name": "3인칭 단수",
+          "formula": "He/She/It + 동사-s/es",
+          "focus": "다른 사람의 반복 행동",
+          "signals": [
+            "plays",
+            "works",
+            "watches",
+            "goes"
+          ]
+        },
+        {
+          "name": "조건/시간 연결",
+          "formula": "주절 + when/before/after/as soon as + 절",
+          "focus": "상황이 생길 때 반복되는 행동",
+          "signals": [
+            "when",
+            "before",
+            "after",
+            "as soon as"
+          ]
+        }
+      ],
+      "sourceFiles": {
+        "oddPages": "스텝1_1.pdf",
+        "evenPages": "스텝1_2.pdf"
+      },
+      "spreads": [
+        {
+          "spreadNumber": 1,
+          "oddPageNumber": 1,
+          "evenPageNumber": 2,
+          "oddImage": "/materials/step-01/spread-01-odd.jpg",
+          "evenImage": "/materials/step-01/spread-01-even.jpg",
+          "oddText": ". AWS 1S]4t - 현 재 시제\n주제: 내가 자주 하는 일들 (루틴, 습관)\nSTEP 1. 이 해 하 기\n* 개념 설명\nᆞ 현 재 시 제 는 ' 지 금 ' 이 아니라 평 소 에 반 복 되 는 습관, 사 실 을 말할 때 써요.\nᆞ 주 어 가 1/ you / we / 016\\ 일 때 - 동 사 원형\nᆞ 주 어 가 he / she / ᅲ 일 때 + 동 사 원 형 + s/es\nᆞ 부 정 문 : 000【/ doesn't + 동 사 원형\nᆞ 의문문: Do / Does + 주어 + 동 사 원 형\n+ 예문\n* | drink coffee every morning.\n* She plays the guitar on weekends.\nᆞ We don't eat fast food often.\nᆞ Does he work out every day?\n+ 자주 쓰는 표현\n« always / usually / often / sometimes / rarely / never\ne in the morning / at night / on weekends / every day / after work\n1",
+          "evenText": "Fs 납 기\n4, - , 42\nre . + : 할 1 구한 gee a at Fy te ee - 0 TT | \"Ey\nSe es a ae a ae\nee ee ee ere oatats\n; I 오너 Stak H 4 동 느 도배 = ¥ he SEE. s tty\n가 건가 원 +i r Ps \"hy : - 그 de ete ~ war BTS. - 7"
+        },
+        {
+          "spreadNumber": 2,
+          "oddPageNumber": 3,
+          "evenPageNumber": 4,
+          "oddImage": "/materials/step-01/spread-02-odd.jpg",
+          "evenImage": "/materials/step-01/spread-02-even.jpg",
+          "oddText": "26. | order my cosmetics before they run out.\n27. | check reviews before | watch a movie.\n28. | like buying pajamas that are comfortable and cute.\n29. | change into comfy clothes when | get home.\n30. | fall asleep easily when | read a book before bed.\n31. | check my phone first when | wake up.\n32. | get grumpy when I'm hungry.\n33. | don't go outside when it rains.\n34. | get impatient when things don't go as planned.\n35. Sometimes | fall asleep while watching Reels or something.\n36. | always wear a mask when the fine dust is really bad.\n37. | always stand by the door before | get off the subway.\n38. | need a few minutes to clear my head after | wake up.\n39. | want some quiet time after a long day.\n40. | can't focus when my room 15 messy.\n41. | sing along when my favorite song comes on.\n42. | laugh a lot when I'm with my friends.\n43. | stretch when my body feels stiff.\n44. | open the window when my room feels stuffy.\n45. | try to reply to work emails as soon as | read them.\n46. | always send birthday messages to my friends.\n47. | go straight to the doctor when I'm sick.\n48. | prefer taking a walk instead of exercising.\n49. | listen to loud music when | exercise.\n50. | turn off notifications when | do important work.\n| 3",
+          "evenText": "41. 좋 아 하 는 노 래 가 나오면 / 따라 불러. (sing along, comes on)\n| sing along / when my favorite song comes on.\n42. 친 구 랑 있으면 / 많이 웃어. (laugh)\n| laugh a lot when I'm with my friends.\n43. 몸 이 찌 뿌 둥 하 면 / 스 트 레 칭 해. (stretch, body feels stiff)\n| stretch when my body feels stiff.\n44. 방이 답 답 하면 / AES 열어. (open the window, room feels stuffy)\n| open the window when my room feels stuffy.\n45. 확 인 하 자마자 / 업무 AAS / 답 장 하 려고 노력해. (try to reply, as soon as | read)\n| try to reply / to work emails / as soon as | read them.\n46. 친구들 한테는 / 생일 축하 메 시 지 를 4 보내. (6600, birthday messages)\n| always send birthday messages / to my friends.\n47. 아프면 / 바로 병원 가. (go to the doctor)\n| go straight / to the doctor when I'm sick.\n48. 운 동 보 다 / 산 책 을 선 호 해. (prefer, instead of exercising)\n| prefer taking a walk / instead of exercising.\n49. 252 때 / S43 크게 들어. (loud music)\n| listen to loud music / when | exercise.\n50. 중요한 업무 할 때는 / 알 림 을 7A F. (turn off notifications, do important work)\n| turn off notifications / when | do important work.\n10"
+        },
+        {
+          "spreadNumber": 3,
+          "oddPageNumber": 5,
+          "evenPageNumber": 6,
+          "oddImage": "/materials/step-01/spread-03-odd.jpg",
+          "evenImage": "/materials/step-01/spread-03-even.jpg",
+          "oddText": "26. 다 떨 어 지 기 전에 / 화 장 품 을 주 문 해. (order, run out)\n27. 영 화 를 보기 전에 / 리 뷰 를 확인해. (check reviews, watch a movie)\n28. 편 안 하 고 귀여운 / 잠옷 사는 A 좋아해. (buy pajamas, comfortable)\n29. 집 에 오면 / 편한 옷 으로 갈 아 입 어 . (change into comfy clothes, get home)\n30. 잘 때 / HS 읽으면 / 잠 이 잘 와. (fall asleep, read a book)\n31. 일어나면 / 휴 대 폰 부터 봐 . (check, wake up)\n32. 배 고 프 면 / 예 민 해져. (get grumpy, be hungry)\n33. 비 오면 / 밖에 안 나가. (go outside, It rains)\n34. 계 획 대로 Ot 되면 / 마 음 이 조 급 해 져 . (get impatient, go as planned)\n35. 릴 스 같은 거 보 다 가 / 잠들 때가 있어. (fall asleep, Reels or something)\n36. 미 세 먼 지 가 심하면 / 마 스 크 를 꼭 MM. (wear a mask, fine dust)\n37. 지하철 내리기 전엔 / 항상 BLS 가 있어. (stand by the door, get off)\n38. 깨고 나면 / 정신 차리는 데 / 시 간 이 좀 필요해. (clear my head, wake up)\n39. 긴 하 루 를 보내고 나면 / 조용히 있고 싶어. (some quiet time)\n40. 방이 지 저 분 하면 / 정 신 이 없어. (can't focus, be messy)\n41. 좋 아 하 는 노 래 가 나오면 / 따라 불러. (sing along, comes on)\n42. 친 구 랑 있으면 / 많이 웃어. (laugh)\n43. 몸 이 찌 뿌 둥 하면 / 스 트 레 칭 해. (stretch, body feels stiff)\n44. 방이 답 답 하 면 / 장 문 을 열어. (open the window, room feels stuffy)\n45. 확 인 하자마자 / 업무 AALS / 답 장 하려고 노력해. (try to reply, as soon as | read)\n46. 친구들 한테는 / 생일 죽 하 메 시 지 를 꼭 보내. (send, birthday messages)\n47. 아프면 / 바로 병원 가. (go to the doctor)\n48. 운 동 보다 / MAS 선 호 해. (prefer, instead of exercising)\n49. 운 동 할 때 / 음 악 을 크게 들어. (loud music)\n50. 중요한 업무 할 때는 / 알 림 을 A 뒤 . (0100 off notifications, do important work)\n5",
+          "evenText": "21. 배 터 리 가 적 어 지면 / 불안해. (feel nervous, battery is low)\n| feel nervous / when my battery is low.\n22. 매일 밤 / OFA AAS 하려고 해. (try, do a sheet mask)\n| try / to do a sheet mask / every night.\n23. 회식 SOE / HAS 타고 집 에 가. (take a taxi, a work dinner)\n| take a taxi home / after a work dinner.\n24. 사 람 이 많으면 / 쉽게 피 로 해 A. (get tired, it's crowded)\n| get tired easily / when it's crowded.\n25. 계 획 이 바뀌면 / 스 트 레 스 를 받아. get stressed, plans change)\n| get stressed / when my plans change.\n26. 다 떨 어 지 기 전에 / 화 장 품 을 주 문 해. (order, run out)\n| order my cosmetics / before they run out.\n27. 영 화 를 보기 전에 / 리 뷰 를 확인해. (check reviews, watch a movie)\n| check reviews / before | watch a movie.\n28. 편 안 하 고 귀여운 / 잠옷 사는 AZ 좋아해. (buy pajamas, comfortable)\n| like buying pajamas / that are comfortable and cute.\n29. 집 에 오면 / 편한 LOS 갈 아 입 어 . (change into comfy clothes, get home)\n| change into comfy clothes / when | get home.\n30. 잘 때 / HS 읽으면 / 잠 이 잘 와. (fall asleep, read a book)\n| fall asleep easily / when | read a book / before bed.\n8"
+        },
+        {
+          "spreadNumber": 4,
+          "oddPageNumber": 7,
+          "evenPageNumber": 8,
+          "oddImage": "/materials/step-01/spread-04-odd.jpg",
+          "evenImage": "/materials/step-01/spread-04-even.jpg",
+          "oddText": "11. 월급 받으면 / 사고 싶은 걸 AL. (what | want, get paid)\n| buy what | want / after | get paid.\n12. 사이즈 확 인 하 려고 / PS 항상 입 어 봐 . (try on clothes, check the size)\n| always try on clothes / to check the size.\n13. 화장 APA / 밖에 나가기 싫어. (go out, remove my makeup)\n| don't want to go out / after | remove my makeup.\n14. 좋은 카 페 를 찾으면 / 친 구 들 과 공유해. 100, share)\nWhen | find a nice café, / | share it with my friends.\n15. 여행 가면 / 사 진 을 많이 찍어. (take lots of photos, travel)\n| take a lot of photos / when I.travel.\n16. 요 리 하 기 싫을 때는 / 배달 SAS AH. (order delivery)\n| order delivery / when | don't want to cook.\n17. 커 피 를 마시면 / SS 못 잔 다 는 걸 / 알아. (can't sleep well)\n| know / | can't sleep well / if | drink coffee.\n18. 그러면 안 좋 은 데 도, / OAS 자주 걸러. (skip breakfast, even though | shouldn't)\n| often skip breakfast, / even though | shouldn't.\n19. HOSES 있지만 / VASE 게 무서워. (have a license, be scared of)\n| have a license, / but I'm scared of driving.\n20. HOA / 드라마 보면서 / 맥 주 를 마셔. (drink beer, watch TV shows)\n| drink beer / while watching TV shows / at home.\n7",
+          "evenText": "STEP 4. 소리 내어 말하기 - SS 생 각 하 며 읽은 F AAA 여러 H 말 해 보세요.\n01. 올 리 브 영 세일 때 / 몰아서 사 . (stock up, has a sale)\n| stock up / when Olive Young has a sale.\n02. 화장 안 하는 날도 / 선 크 림 은 4 발라. (put on sunscreen, wear makeup)\n| always put on sunscreen, / even when | don't wear makeup.\n03. 주 말 에 / 늦잠 잘 수 있는 Al / 좋아. (like that, sleep late)\n| like / that | can sleep late / on weekends.\n04. 점심 식사 SE / 4 단 Al GA. (crave something sweet)\n| always crave something sweet / after lunch.\n05. 점 심 으로 / 뭐 먹 을 지 / 매일 진 지 하 게 고민해. (seriously think, what to eat)\n| seriously think about / what to eat / for lunch.\n06. 사 람 들 이 맛있다고 하는 / 식당 가는 A 좋아해. (like going to, restaurants people say are good)\n| like going to restaurants / people say are good.\n07. 집 에 오자마자 / 손 을 WO}. (wash my hands, as soon as)\n| wash my hands / as soon as | get home.\n08. 잠들기 전에 / CHO 누워서 / 인 스 타 그 램 을 봐 . (check Instagram, in bed, fall asleep)\n| check Instagram / in bed / before | fall asleep.\n09. AMAA 같은 / 모르는 HSE Ot 받아. (answer, unknown numbers, seem like spam)\n| don't answer unknown numbers / that seem like spam.\n10. 너무 많이 HOW / 후 회 해. (regret it, eat too much)\n| regret it / when | eat too much.\n6"
+        },
+        {
+          "spreadNumber": 5,
+          "oddPageNumber": 9,
+          "evenPageNumber": 10,
+          "oddImage": "/materials/step-01/spread-05-odd.jpg",
+          "evenImage": "/materials/step-01/spread-05-even.jpg",
+          "oddText": "31. 일어나면 / 휴 대 폰 부터 봐 . (check, wake up)\n| check my phone first / when | wake up.\n32. 배 고 프 면 / 예 민 해져. (get grumpy, be hungry)\n| get grumpy / when I'm hungry.\n33. 비 오면 / 밖에 안 나가. (go outside, It rains)\n| don't go outside / when it rains.\n34, 계 획 대로 Ot 되면 / 마 음 이 조 급 해 져 . (get impatient, go as planned)\n| get impatient / when things don't go as planned.\n35. BA 227 보 다 가 / 잠들 때가 있어. (fall asleep, Reels or something)\nSometimes, | fall asleep / while watching Reels or something.\n36. 미 세 먼 지가 심하면 / 마 스 크 를 꼭 써 . (wear a mask, fine dust)\n| always wear a mask / when the fine dust is really bad.\n37. 지하철 내리기 전엔 / 항상 ZOE 가 있어. (stand by the door, get off)\n| always stand by the door / before | get off the subway.\n38. 깨고 나면 / 정신 차리는 데 / 시 간 이 F 필요해. (clear my head, wake up)\n| need a few minutes / to clear my head / after | wake up.\n39. 긴 OFFS 보내고 나면 / 조용히 있고 싶어. (Some quiet time)\n| want / some quiet time after a long day.\n40. 방이 지 저 분 하 면 / 정 신 이 없어. (can't focus, be messy)\n| can't focus when my room is messy.\n9",
+          "evenText": "STEP 3. 문장 만들기 - 힌 트 를 참고해 StS 말 해 보세요.\n01. 올 리 브 영 세일 때 / 몰아서 At. (stock up, has a sale)\n02. 화장 Ct 하는 날도 / 선 크 림 은 꼭 발라. (put on sunscreen, wear makeup) |\n03. 주 말 에 / 늦잠 잘 수 있는 게 / 좋아. (like that, sleep late) 2 whe do yes lilea Wy - <\nMn . Wee = Bas\n04. 점심 식사 Sle / 꼭 단 Al G7. (crave something sweet) te\n( What, Ao Pn 다이버\n개 0\nPor ~\n05. 점 심 으로 / 뭐 ASA / 매일 진 지 하게 고민해. (seriously think, what to eat) :\n06. 사 람 들 이 맛있다고 하는 / 식당 가는 A 좋아해. (like going to, restaurants people say are good)\nof pedal\" Wwre<,\n07. 집 에 오자마자 / 손 을 MO}. (wash my hands, as soon as) 、 What- do yur dlo as sore x? a -\n008. 잠들기 전에 / 침 대 에 누워서 / 인 스 타 그 램 을 Ht (check Instagram, in bed, fall asleep ;\n때 = _ = : c Sik dey in bed w hen\n09. 스 팸 일 것 같은 / 모르는 번 호 는 안 받아. (answer, unknown numbers, seem like spam)\n10. 너무 많이 먹으면 / 후 회 해. (regret it, eat too much) posh ace\newe iS eal TH,\n11. 월급 받으면 / 사고 싶은 걸 사 . (what | want, get paid)\n12. 사이즈 확 인 하려고 / 옷 은 항상 입 어 봐 . (00 clothes, check the size)\n13. 화장 지 우 면 / 밖에 나가기 싫어. (00 out, remove my makeup)\n14. 좋은 카 페 를 찾으면 / 친 구 들 과 공유해. (find, share)\n15. 여행 가면 / 사 진 을 많이 찍어. (take lots of photos, travel)\n16. 요 리 하 기 싫을 때는 / 배달 음 식 을 시켜. (order delivery)\n17. 커 피 를 마시면 / 잠 을 못 잔 다 는 걸 / 알아. (can't sleep well)\n18. 그러면 et SLES, / 아 침 을 자주 Bel. (skip breakfast, even though | shouldn't)\n19. HOSS 있지만 / 운 전 하 는 Al 무서워. (have a license, be scared of)\n20. 집 에서 / 드라마 보면서 / 맥 주 를 마셔. (drink beer, watch TV shows)\n21. 배 터 리 가 적 어 지 면 / 불안해. (feel nervous, battery is low)\n22. 매일 밤 / 마 스 크 팩 을 하려고 해. (try, do a sheet mask)\n23. 회식 후 에 는 / 택 시 를 타고 집 에 가. (take a taxi, a work dinner)\n24. 사 람 이 많으면 / 쉽게 피 로 해 A. (get tired, it's crowded)\n25. 계 획 이 바뀌면 / 스 트 레 스 를 받아. (get stressed, plans change)\n4"
+        },
+        {
+          "spreadNumber": 6,
+          "oddPageNumber": 11,
+          "evenPageNumber": 12,
+          "oddImage": "/materials/step-01/spread-06-odd.jpg",
+          "evenImage": "/materials/step-01/spread-06-even.jpg",
+          "oddText": "fy VE\n| te j\n. 5160 5. 내 말 하 기 - 배운 BAS 활 용 해 자 신 의 HES 써보고 말 해 보세요. AM |\n1. 일어나서 제일 먼저 뭐 해요? | ch on the bed foe a wile Cup)\nWhat do you do first after you get up? + mele 거나] a nol eat if 4 REP\nT wach om > dice, |\n2. 집 에 가면 제일 먼저 뭐 해요? 그 wach my hemes.\n. | 이 ADP\nWhat do you do first when you get home? 리 oper) dhe macic + Pi :\n> | \\\n3. 주말 OMS 보통 어떻게 보내요? L vide abike.s 6570 0 |\nT wok 싸 ac |\nWhat do you usually do on weekend mornings? a7\n}\n4. 점심 먹고 나서 주로 뭐 해요? T tbe 4 4001 near WY feo.\nWhat do you usually do after lunch?\nFA -pdm\na1 그 % |\n5. 쉬는 날엔 주로 어디 가요? [A de\nWhere do you go on your days off?\n6. 자기 전에는 어떤 걸 꼭 해요?\nWhat do you always do before bed?\n7. 무슨 운 동 해 요 ?\nWhat exercise do you do?\n8. 퇴 근 하 고 저녁 시 간 은 어떻게 보내요?\nWhat do you do after work?\n9. 집안일 중에 제일 자주 하는 건 뭐예요?\nWhat housework do you do most? _\n10. 여가 시 간 에 하는 쥐 미 가 있어요?\nDo you have any hobbies?\n11",
+          "evenText": "STEP 2. 패턴 익히기 - 눈 으로 보면서 소리 내어 읽 으 세요. 문장 덩 어 리 에 익 숙 해 지 세 요 .\n01. | stock up when Olive Young has a sale.\n02. | always put on sunscreen even when | don't wear makeup.\n03. | like that | can sleep late on weekends.\n04. | always crave something sweet after lunch.\n05. | seriously think about what to eat for lunch.\n06. | like going to restaurants people say are good.\n07. | wash my hands as soon as | get home.\n- Biz bh -\n08. | check Instagram in bed before | fall asleep.\n09. | don't answer unknown numbers that seem like spam.\n10. | regret it when | eat too much.\n04\n11. | buy what | want after | get paid.\n12. | always try on clothes to check the size.\n13. | don't want to go out after | remove my makeup.\n14. When | find a nice café, | share it with my friends. |\n15. | take a lot of photos when | travel.\n16. | order delivery when | don't want to cook.\n17. | know | can't sleep well if | drink coffee.\n18. | often skip breakfast even though | shouldn't.\n19. | have a license, but I'm scared of driving.\n20. | drink beer while watching TV shows at home.\n21. | feel nervous when my battery is low.\n22. | try to do a sheet mask every night.\n23. | take a taxi home after a work dinner.\n24. | get tired easily when it's crowded.\n25. | get stressed when my plans change.\n2"
+        }
+      ],
+      "sentences": [
+        {
+          "id": "step-1-s001",
+          "exerciseNumber": 1,
+          "text": "I stock up when Olive Young has a sale.",
+          "promptKo": "올 리 브 영 세일 때 / 몰아서 사 .",
+          "hints": [
+            "stock up",
+            "has a sale"
+          ],
+          "sourcePages": [
+            "even 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s002",
+          "exerciseNumber": 2,
+          "text": "I always put on sunscreen, even when I don't wear makeup.",
+          "promptKo": "화장 안 하는 날도 / 선 크 림 은 4 발라.",
+          "hints": [
+            "put on sunscreen",
+            "wear makeup"
+          ],
+          "sourcePages": [
+            "even 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s003",
+          "exerciseNumber": 3,
+          "text": "I like that I can sleep late on weekends.",
+          "promptKo": "주 말 에 / 늦잠 잘 수 있는 Al / 좋아.",
+          "hints": [
+            "like that",
+            "sleep late"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s004",
+          "exerciseNumber": 4,
+          "text": "I always crave something sweet after lunch.",
+          "promptKo": "점심 식사 SE / 4 단 Al GA.",
+          "hints": [
+            "crave something sweet"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s005",
+          "exerciseNumber": 5,
+          "text": "I seriously think about what to eat for lunch.",
+          "promptKo": "점 심 으로 / 뭐 먹 을 지 / 매일 진 지 하 게 고민해.",
+          "hints": [
+            "seriously think",
+            "what to eat"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s006",
+          "exerciseNumber": 6,
+          "text": "I like going to restaurants people say are good.",
+          "promptKo": "사 람 들 이 맛있다고 하는 / 식당 가는 A 좋아해.",
+          "hints": [
+            "like going to",
+            "restaurants people say are good"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s007",
+          "exerciseNumber": 7,
+          "text": "I wash my hands as soon as I get home.",
+          "promptKo": "집 에 오자마자 / 손 을 WO}.",
+          "hints": [
+            "wash my hands",
+            "as soon as"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s008",
+          "exerciseNumber": 8,
+          "text": "I check Instagram in bed before I fall asleep.",
+          "promptKo": "잠들기 전에 / CHO 누워서 / 인 스 타 그 램 을 봐 .",
+          "hints": [
+            "check Instagram",
+            "in bed",
+            "fall asleep"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s009",
+          "exerciseNumber": 9,
+          "text": "I don't answer unknown numbers that seem like spam.",
+          "promptKo": "AMAA 같은 / 모르는 HSE Ot 받아.",
+          "hints": [
+            "answer",
+            "unknown numbers",
+            "seem like spam"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s010",
+          "exerciseNumber": 10,
+          "text": "I regret it when I eat too much.",
+          "promptKo": "너무 많이 HOW / 후 회 해.",
+          "hints": [
+            "regret it",
+            "eat too much"
+          ],
+          "sourcePages": [
+            "even 4",
+            "even 5",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s011",
+          "exerciseNumber": 11,
+          "text": "I buy what I want after I get paid.",
+          "promptKo": "월급 받으면 / 사고 싶은 걸 AL.",
+          "hints": [
+            "what | want",
+            "get paid"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s012",
+          "exerciseNumber": 12,
+          "text": "I always try on clothes to check the size.",
+          "promptKo": "사이즈 확 인 하 려고 / PS 항상 입 어 봐 .",
+          "hints": [
+            "try on clothes",
+            "check the size"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s013",
+          "exerciseNumber": 13,
+          "text": "I don't want to go out after I remove my makeup.",
+          "promptKo": "화장 APA / 밖에 나가기 싫어.",
+          "hints": [
+            "go out",
+            "remove my makeup"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s014",
+          "exerciseNumber": 14,
+          "text": "When I find a nice café, I share it with my friends.",
+          "promptKo": "좋은 카 페 를 찾으면 / 친 구 들 과 공유해. 100, share)",
+          "hints": [],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s015",
+          "exerciseNumber": 15,
+          "text": "I take a lot of photos when I travel.",
+          "promptKo": "여행 가면 / 사 진 을 많이 찍어.",
+          "hints": [
+            "take lots of photos",
+            "travel"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s016",
+          "exerciseNumber": 16,
+          "text": "I order delivery when I don't want to cook.",
+          "promptKo": "요 리 하 기 싫을 때는 / 배달 SAS AH.",
+          "hints": [
+            "order delivery"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s017",
+          "exerciseNumber": 17,
+          "text": "I know I can't sleep well if I drink coffee.",
+          "promptKo": "커 피 를 마시면 / SS 못 잔 다 는 걸 / 알아.",
+          "hints": [
+            "can't sleep well"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s018",
+          "exerciseNumber": 18,
+          "text": "I often skip breakfast, even though I shouldn't.",
+          "promptKo": "그러면 안 좋 은 데 도, / OAS 자주 걸러.",
+          "hints": [
+            "skip breakfast",
+            "even though | shouldn't"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s019",
+          "exerciseNumber": 19,
+          "text": "I have a license, but I'm scared of driving.",
+          "promptKo": "HOSES 있지만 / VASE 게 무서워.",
+          "hints": [
+            "have a license",
+            "be scared of"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s020",
+          "exerciseNumber": 20,
+          "text": "I drink beer while watching TV shows at home.",
+          "promptKo": "HOA / 드라마 보면서 / 맥 주 를 마셔.",
+          "hints": [
+            "drink beer",
+            "watch TV shows"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s021",
+          "exerciseNumber": 21,
+          "text": "I feel nervous when my battery is low.",
+          "promptKo": "배 터 리 가 적 어 지면 / 불안해.",
+          "hints": [
+            "feel nervous",
+            "battery is low"
+          ],
+          "sourcePages": [
+            "even 3",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s022",
+          "exerciseNumber": 22,
+          "text": "I try to do a sheet mask every night.",
+          "promptKo": "매일 밤 / OFA AAS 하려고 해.",
+          "hints": [
+            "try",
+            "do a sheet mask"
+          ],
+          "sourcePages": [
+            "even 3",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s023",
+          "exerciseNumber": 23,
+          "text": "I take a taxi home after a work dinner.",
+          "promptKo": "회식 SOE / HAS 타고 집 에 가.",
+          "hints": [
+            "take a taxi",
+            "a work dinner"
+          ],
+          "sourcePages": [
+            "even 3",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s024",
+          "exerciseNumber": 24,
+          "text": "I get tired easily when it's crowded.",
+          "promptKo": "사 람 이 많으면 / 쉽게 피 로 해 A.",
+          "hints": [
+            "get tired",
+            "it's crowded"
+          ],
+          "sourcePages": [
+            "even 3",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s025",
+          "exerciseNumber": 25,
+          "text": "I get stressed when my plans change.",
+          "promptKo": "계 획 이 바뀌면 / 스 트 레 스 를 받아. get stressed, plans change)",
+          "hints": [],
+          "sourcePages": [
+            "even 3",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-1-s026",
+          "exerciseNumber": 26,
+          "text": "I order my cosmetics before they run out.",
+          "promptKo": "다 떨 어 지 기 전에 / 화 장 품 을 주 문 해.",
+          "hints": [
+            "order",
+            "run out"
+          ],
+          "sourcePages": [
+            "even 3",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s027",
+          "exerciseNumber": 27,
+          "text": "I check reviews before I watch a movie.",
+          "promptKo": "영 화 를 보기 전에 / 리 뷰 를 확인해.",
+          "hints": [
+            "check reviews",
+            "watch a movie"
+          ],
+          "sourcePages": [
+            "even 3",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s028",
+          "exerciseNumber": 28,
+          "text": "I like buying pajamas that are comfortable and cute.",
+          "promptKo": "편 안 하 고 귀여운 / 잠옷 사는 AZ 좋아해.",
+          "hints": [
+            "buy pajamas",
+            "comfortable"
+          ],
+          "sourcePages": [
+            "even 3",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s029",
+          "exerciseNumber": 29,
+          "text": "I change into comfy clothes when I get home.",
+          "promptKo": "집 에 오면 / 편한 LOS 갈 아 입 어 .",
+          "hints": [
+            "change into comfy clothes",
+            "get home"
+          ],
+          "sourcePages": [
+            "even 3",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s030",
+          "exerciseNumber": 30,
+          "text": "I fall asleep easily when I read a book before bed.",
+          "promptKo": "잘 때 / HS 읽으면 / 잠 이 잘 와.",
+          "hints": [
+            "fall asleep",
+            "read a book"
+          ],
+          "sourcePages": [
+            "even 3",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s031",
+          "exerciseNumber": 31,
+          "text": "I check my phone first when I wake up.",
+          "promptKo": "일어나면 / 휴 대 폰 부터 봐 .",
+          "hints": [
+            "check",
+            "wake up"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-1-s032",
+          "exerciseNumber": 32,
+          "text": "I get grumpy when I'm hungry.",
+          "promptKo": "배 고 프 면 / 예 민 해져.",
+          "hints": [
+            "get grumpy",
+            "be hungry"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-1-s033",
+          "exerciseNumber": 33,
+          "text": "I don't go outside when it rains.",
+          "promptKo": "비 오면 / 밖에 안 나가.",
+          "hints": [
+            "go outside",
+            "It rains"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-1-s034",
+          "exerciseNumber": 34,
+          "text": "I get impatient when things don't go as planned.",
+          "promptKo": "계 획 대로 Ot 되면 / 마 음 이 조 급 해 져 .",
+          "hints": [
+            "get impatient",
+            "go as planned"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-1-s035",
+          "exerciseNumber": 35,
+          "text": "Sometimes, I fall asleep while watching Reels or something.",
+          "promptKo": "BA 227 보 다 가 / 잠들 때가 있어.",
+          "hints": [
+            "fall asleep",
+            "Reels or something"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-1-s036",
+          "exerciseNumber": 36,
+          "text": "I always wear a mask when the fine dust is really bad.",
+          "promptKo": "미 세 먼 지가 심하면 / 마 스 크 를 꼭 써 .",
+          "hints": [
+            "wear a mask",
+            "fine dust"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-1-s037",
+          "exerciseNumber": 37,
+          "text": "I always stand by the door before I get off the subway.",
+          "promptKo": "지하철 내리기 전엔 / 항상 ZOE 가 있어.",
+          "hints": [
+            "stand by the door",
+            "get off"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-1-s038",
+          "exerciseNumber": 38,
+          "text": "I need a few minutes to clear my head after I wake up.",
+          "promptKo": "깨고 나면 / 정신 차리는 데 / 시 간 이 F 필요해.",
+          "hints": [
+            "clear my head",
+            "wake up"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-1-s039",
+          "exerciseNumber": 39,
+          "text": "I want some quiet time after a long day.",
+          "promptKo": "긴 OFFS 보내고 나면 / 조용히 있고 싶어.",
+          "hints": [
+            "Some quiet time"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-1-s040",
+          "exerciseNumber": 40,
+          "text": "I can't focus when my room is messy.",
+          "promptKo": "방이 지 저 분 하 면 / 정 신 이 없어.",
+          "hints": [
+            "can't focus",
+            "be messy"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-1-s041",
+          "exerciseNumber": 41,
+          "text": "I sing along when my favorite song comes on.",
+          "promptKo": "좋 아 하 는 노 래 가 나오면 / 따라 불러.",
+          "hints": [
+            "sing along",
+            "comes on"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s042",
+          "exerciseNumber": 42,
+          "text": "I laugh a lot when I'm with my friends.",
+          "promptKo": "친 구 랑 있으면 / 많이 웃어.",
+          "hints": [
+            "laugh"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s043",
+          "exerciseNumber": 43,
+          "text": "I stretch when my body feels stiff.",
+          "promptKo": "몸 이 찌 뿌 둥 하 면 / 스 트 레 칭 해.",
+          "hints": [
+            "stretch",
+            "body feels stiff"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s044",
+          "exerciseNumber": 44,
+          "text": "I open the window when my room feels stuffy.",
+          "promptKo": "방이 답 답 하면 / AES 열어.",
+          "hints": [
+            "open the window",
+            "room feels stuffy"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s045",
+          "exerciseNumber": 45,
+          "text": "I try to reply to work emails as soon as I read them.",
+          "promptKo": "확 인 하 자마자 / 업무 AAS / 답 장 하 려고 노력해.",
+          "hints": [
+            "try to reply",
+            "as soon as | read"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s046",
+          "exerciseNumber": 46,
+          "text": "I always send birthday messages to my friends.",
+          "promptKo": "친구들 한테는 / 생일 축하 메 시 지 를 4 보내.",
+          "hints": [
+            "6600",
+            "birthday messages"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s047",
+          "exerciseNumber": 47,
+          "text": "I go straight to the doctor when I'm sick.",
+          "promptKo": "아프면 / 바로 병원 가.",
+          "hints": [
+            "go to the doctor"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s048",
+          "exerciseNumber": 48,
+          "text": "I prefer taking a walk instead of exercising.",
+          "promptKo": "운 동 보 다 / 산 책 을 선 호 해.",
+          "hints": [
+            "prefer",
+            "instead of exercising"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s049",
+          "exerciseNumber": 49,
+          "text": "I listen to loud music when I exercise.",
+          "promptKo": "252 때 / S43 크게 들어.",
+          "hints": [
+            "loud music"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-1-s050",
+          "exerciseNumber": 50,
+          "text": "I turn off notifications when I do important work.",
+          "promptKo": "중요한 업무 할 때는 / 알 림 을 7A F.",
+          "hints": [
+            "turn off notifications",
+            "do important work"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-2",
+      "stepNumber": 2,
+      "title": "Step 2 - 진행형",
+      "topic": "지금 하고 있는 일 & 그때 하고 있던 일",
+      "patternKind": "progressive",
+      "patterns": [
+        {
+          "name": "현재 진행형",
+          "formula": "am/is/are + 동사-ing",
+          "focus": "지금 또는 요즘 진행 중인 행동",
+          "signals": [
+            "now",
+            "these days",
+            "still",
+            "lately"
+          ]
+        },
+        {
+          "name": "과거 진행형",
+          "formula": "was/were + 동사-ing",
+          "focus": "그때 진행 중이던 행동",
+          "signals": [
+            "when",
+            "earlier",
+            "all morning",
+            "at 10 p.m."
+          ]
+        },
+        {
+          "name": "완료 진행 느낌",
+          "formula": "have/has been + 동사-ing",
+          "focus": "전부터 계속 이어지는 행동",
+          "signals": [
+            "since",
+            "for",
+            "lately"
+          ]
+        }
+      ],
+      "sourceFiles": {
+        "oddPages": "스텝2_1.pdf",
+        "evenPages": "스텝2_2.pdf"
+      },
+      "spreads": [
+        {
+          "spreadNumber": 1,
+          "oddPageNumber": 1,
+          "evenPageNumber": 2,
+          "oddImage": "/materials/step-02/spread-01-odd.jpg",
+          "evenImage": "/materials/step-02/spread-01-even.jpg",
+          "oddText": "._ AB812- 진행형 (현재 / 과거)\n주제: 지금 하고 있는 일 & 그때 하고 있던 일\nSTEP 1. 이 해 하기\n진 행 형 은 HH 중인 랭 동 을 말할 때 쓴다.\n두 가 지 로 구분 |\n1) 현 재 진 행 형 - 지 금 / 요 즘 하는 중\n< 300 / 15 / are + SAting\n- 지금 하고 있어 / 요즘 이런 중 이 야\n- 일시적인 상 태 도 표현 가능\n예 )\n@ |'m eating dinner now. (지금 밥 먹는 중 이 야 )\ne She's studying these days. (23 공 부 하 고 있어)\ne We're staying here this week. (이번 주는 여기 있어)\n2) 과 거 진행형 - 그때 하고 있던 중\nwas / were + SAting\n- 그 시 점 에 진행 중 이 었어\n- 다른 사 건 이 WOSACE 느 낌 과 잘 어울림\n예 )\ne | was studying at 10 p.m. (10 시 에 공부 중 이 었어)\n@ They were eating when | called. ( 전 화 했 을 때 먹는 중 이 었 어 )\n@ She was walking home when it rained. ( 비 & 때 걷는 중 이 었어)\n1",
+          "evenText": "— . 4, 이\nfe ee a To ee, fe oe 2 ee ee D\ni ei ~ E 00\nPe ec << ae eae ee\nat ᆞ : : | 대 aia \"된\nSree ee a 개\n: Oy Ge ' ame . < ra oe : : : =\" a 내거 0\n1\" 주 은 en - ` 2 a Ft 00000 sz 2 ¥ ᆞ ~ 기 \"다\n0 DSS a Sansa"
+        },
+        {
+          "spreadNumber": 2,
+          "oddPageNumber": 3,
+          "evenPageNumber": 4,
+          "oddImage": "/materials/step-02/spread-02-odd.jpg",
+          "evenImage": "/materials/step-02/spread-02-even.jpg",
+          "oddText": "26. Who are you talking to these days?\n27. I'm just lying around doing nothing.\n28. I'm waiting for you to get here.\n29. I've been waiting for my package since yesterday.\n30. She's still leaving me on read.\n31. Why are you getting prettier these days?\n32. He's been avoiding me lately.\n33. I'm planning my day now.\n34. She was scrolling through social media even during exams.\n35. I'm replying to a friend.\n36. I'm waiting for the right moment.\n37. He's been deciding what to order for 15 minutes.\n38. I'm getting into a new show.\n39. I'm picking out an outfit because | don't want to wear just anything.\n40. I'm regretting it. | don't even know why | started this.\n41. | was iogking for a seat when you walked in earlier.\n42. Where are you going without telling anyone?\n43. I'm catching up on my KakaoTalk messages.\n44. I'm debating whether to give up.\n45. You're making excuses now.\n46. I'm thinking about impulse-buying it.\n47. | was hiding under the covers all morning.\n48. I'm on my way home. I'll be there soon.\n49. I'm trying to cheer myself up.\n50. She's rambling on when no one cares.\n3",
+          "evenText": "41. 아까 / 너 BOSS 때 / 나 자리 찾는 중 이 었 어 . (looking for a seat, walk in)\n| was looking for a seat / when you walked in / earlier.\n42. 아 무 한 테 도 말 안하고 / 어딜 가고 있는 거야? (without telling anyone)\nWhere are you going / without telling anyone?\n43. 카 톡 / 쌓인 거 읽는 중 이 야 . (catching up on)\nI'm catching up / on my KakaoTalk messages.\n44, 포 기 할 지 말 지 / 고민 중 이 야 . (debating, whether to give up)\nI'm debating / whether to give up.\n45. 너 지금 핑계 대고 있어. (making excuses)\nYou're making excuses now.\n46. 충동 구 매 할 까 / 고민 중 이 야 . (thinking about impulse-buying it)\nI'm thinking about / impulse-buying it.\n47. 아침 내내 / 이불 속에 있었어. (hiding under the covers)\n| was hiding under the covers / all morning.\n48. 집 가는 중 이 야 . / 곧 도착할 거야. (on my way home)\nI'm on my way home. / I'll be there soon.\n49. 기분 풀 려 고 / 노력 중 이 야 . (trying to cheer myself up)\nI'm trying / to cheer myself up.\n50. 개 혼자 떠드는 중 이 야 . / 아무도 신경 Ot 쓰는데. (rambling on, no one cares)\nShe's rambling on / when no one cares.\n10"
+        },
+        {
+          "spreadNumber": 3,
+          "oddPageNumber": 5,
+          "evenPageNumber": 6,
+          "oddImage": "/materials/step-02/spread-03-odd.jpg",
+          "evenImage": "/materials/step-02/spread-03-even.jpg",
+          "oddText": "26. 요즘 / 누 구 랑 연 락 하고 있어? (talking to)\n27. 아무것도 안 하 면 서 / 그냥 누 워 있 어 . (lying around, doing nothing)\n28. 너 오 기 만 / 기다리고 있어. (waiting for you)\n29. 어 제 부터 / 택배 기다리고 있어. (have been waiting)\n30. 개 지금도 AW 중 이 야 . (leaving me on read)\n31. 너 요새 왜 이렇게 점점 예 뻐 지 냐 ? (getting prettier)\n32. 개 최 근 에 나 피하고 있어. (avoiding me)\n33. 지금 하루 스케줄 짜는 중 이 야 . (planning my day)\n34. 시험 기 간 에도 / 개 는 545 만 보고 있었어. (scrolling through social media)\n35. 나 친 구 한테 답장 중 이 야 . (replying to a friend)\n36. 적당한 타이밍 / 기다리고 있어. (waiting for, the right moment)\n37. OH [ 뭐 시 킬 지 ] 고민 중 이 야 . / 15 분 째 . (deciding, what to order)\n38. 나 새로운 드 라 마 에 빠지고 있어. Getting into)\n39. 나 옷 고르는 중 이 야 . / 아무거나 입기 싫어서. (picking out an outfit)\n40. 후회 중 이 야 . / 이걸 왜 시 작 했는지도 모르겠어. (regretting, why | started this)\n41. 아까 / 너 SARS 때 / 나 자리 찾는 중 이 었어. (looking for a seat, walk in)\n42. 아 무 한 테 도 말 안하고 / 어딜 가고 있는 거야? (without telling anyone)\n43. 카 톡 / 쌓인 거 읽는 중 이 야 . (catching up on)\n44. 포 기 할 지 말지 / 고민 중 이 야 . (debating, whether to give up)\n45. 너 지금 핑계 대고 있어. (making excuses)\n46. 충동 구 매 할 까 / 고민 중 이 야 . (thinking about impulse-buying it)\n47. 아짐 내내 / 이불 속에 있었어. (hiding under the covers)\n48. 집 가는 중 이 야 . / 곧 도착할 거야. (on my way home)\n49. 기분 풀 려 고 / 노력 중 이 야 . (trying to cheer myself up)\n50. 개 혼자 떠드는 중 이 야 . / 아무도 신경 안 쓰는데. (rambling on, no one cares)\n5",
+          "evenText": "21. 중요한 얘 기 하고 있었을 때 / 휴대폰 배 터 리 가 LALO. (battery died , important conversation)\nMy phone battery died / when | was having an important conversation.\n22. 도 착 했을 때 / 우리 HE 회의 중 이 었 어 . (having a meeting)\nMy team was having a meeting / when | arrived.\n23. SM 7} 점점 추 워 지 고 있어. / 패딩 꺼 내 야 겠 다. (weather getting colder, need puffer jacket)\nThe weather is getting colder. / | should take out my puffer jacket.\n24. [중요한 7A] 설 명 하고 있었어 / 근데 아무도 듣고 있지 않았어. (something important, no one, listening)\n| was explaining [something important], / but no one was listening.\n25. 잠깐 / A 때리는 S| RO. (zoning out)\n| was zoning out / for a moment.\n26. 요즘 / 누 구 랑 연 락 하고 있어? (talking to)\nWho are you talking to / these days?\n27. 아무것도 안 하 면 서 / 그냥 누 워 있어. (lying around, doing nothing)\nI'm just lying around / doing nothing.\n28. 너 오 기 만 / 기다리고 있어. (waiting for you)\nI'm waiting for / you to get here.\n29. 어 제 부 터 / 택배 기다리고 있어. (have been waiting)\nI've been waiting for my package / since yesterday.\n30. 개 지금도 AA BOlOF. (leaving me on read)\nShe's still leaving me on read.\n8"
+        },
+        {
+          "spreadNumber": 4,
+          "oddPageNumber": 7,
+          "evenPageNumber": 8,
+          "oddImage": "/materials/step-02/spread-04-odd.jpg",
+          "evenImage": "/materials/step-02/spread-04-even.jpg",
+          "oddText": "11. 요즘 / 74a 말 안 하고 있어. (not talking)\nI'm not talking to him / these days.\n12. 개 밤새 시험 공부 중 이 었어. (studying, all night)\nHe was studying for a test / all night.\n13. 개 는 SA 때문에 / 기타 ASStD 0}, (practicing guitar, for performance)\nHe's practicing the guitar / for a performance.\n14. 네 B 듣고 나서 / 다시 생 각 해 보 는 중 이 야 . (rethinking, what you said)\nI'm rethinking it / after hearing what you said.\n15. 그땐 / DES [자기 할 일] 하고 있었어. (their own thing)\nEveryone was doing [their own thing] / at that time.\n16. 잠깐만. / 지금 생각 정리 중 이 야 . (gathering my thoughts)\nGive me a second. / I'm gathering my thoughts.\n17. 네가 무슨 생 각 하고 있는지 / 궁 금 했어. (wondered, thinking)\n| was wondering / what you were thinking.\n18.3 밖 좀 봐봐. / 해 지는 SO] OF. (the sun is setting)\nLook outside. / The sun is setting.\n19. A 할지 / 생각 중 이 야 . (what to do)\nI'm thinking about / what to do.\n20. 눈 이 너무 많이 오고 있어서 / 운 전 하 기 힘 들 었 어 . (snowing hard)\nIt was hard to drive / because it was snowing really hard.\n7",
+          "evenText": "STEP 4. 소리 내어 말하기 - FS 생 각 하 며 AS 뒤 외 워 서 여러 번 말 해 보 세요.\n01. 간단히 S| 좀 먹는 중 이 야 . Grab a bite)\nI'm grabbing a bite.\n02. 샤 워 하 고 있어서 / 전화 못 받았어. (couldn't answer, take a shower)\n| couldn't answer the phone / because | was taking a shower.\n03. 소 파 에 늘 어 져 있 어 . (crashing on the couch)\nI'm crashing on the couch.\n04. 아까 너 봤어. / 어디 가는 중 이 었 어 ? (heading)\n| saw you earlier. / Where were you heading?\n05. 개 네 또 게임 중 이 야 . / 늦게 잘 것 같아. gaming again)\nThey're gaming again, so they'll probably stay up late.\n06. 너 누 구 랑 통화 중 이 었어? 심각해 보 이 더 라 . (talking on the phone, look serious)\nYou looked serious. / Who were you talking to on the phone?\n07. 11 시 에 / 잠들 준 비 하 고 있었어. (getting ready for bed)\n| was getting ready for bed / at 11 PM.\n08. 지금 / 밖에 비 쏟아지는 중 이 야 . (pouring)\nIt's pouring outside / right now.\n09. 운전 중 이 어서 / 답장 못 했 어 . (couldn't reply, driving)\n| couldn't reply / because | was driving.\n10. 너 왜 웃고 있어? / 재밌는 71 봤어? (laughing, something funny)\nWhy are you laughing? / Did you see something funny?\n6"
+        },
+        {
+          "spreadNumber": 5,
+          "oddPageNumber": 9,
+          "evenPageNumber": 10,
+          "oddImage": "/materials/step-02/spread-05-odd.jpg",
+          "evenImage": "/materials/step-02/spread-05-even.jpg",
+          "oddText": "31. 너 요새 왜 이렇게 점점 예 뻐 지 냐 ? (getting prettier)\nWhy are you getting prettier these days?\n32. 개 최 근 에 나 피하고 있어. (avoiding me)\nHe's been avoiding me lately.\n33. 지금 하루 스케줄 짜는 중 이 야 . (planning my day)\nI'm planning my day now.\n34. 시험 기 간 에도 / 7HE 545 만 보고 있었어. (scrolling through social media)\nShe was scrolling through social media / even during exams.\n35. 나 친 구 한테 답장 중 이 야 . (replying to a friend)\nI'm replying to a friend.\n36. 적당한 타이밍 / 기다리고 있어. (waiting for, the right moment)\nI'm waiting for / the right moment.\n37. OH [ 뭐 시 킬 지 ] 고민 중 이 야 . / 152M. (deciding, what to order)\nHe's been deciding [what to order] / for 15 minutes.\n38. 나 새로운 드 라 마 에 빠지고 있어. (getting into)\nI'm getting into a new show.\n39. 나 옷 고르는 중 이 야 . / 아무거나 입기 싫어서. (picking out an outfit)\nI'm picking out an outfit / because | don't want to wear just anything.\n40. 후회 중 이 야 . / 이걸 왜 시 작 했는지도 QAO (regretting, why | started this)\nI'm regretting it. / | don't even know why | started this.\n9",
+          "evenText": "| STEP 3. 문장 만들기 - 힌 트 를 참고해 문 장 을 말 해 보세요.\n01. 간단히 S| 좀 먹는 중 이 야 . Grab a bite)\n02. 샤 워 하 고 있어서 / 전화 못 받았어. (couldn't answer, take a shower)\n03. 소 파 에 늘 어 져 있 어 . (crashing on the couch) .\n04. 아까 너 봤어. / 어디 가는 중 이 었 어 ? (heading) Z eort\n05. 개 네 또 게임 중 이 야 . / 늦게 잘 것 같아. (Gaming again) 384\n!\n06. 너 누 구 랑 통화 중 이 었어? 심각해 보 이 더 라 . (31409 on the phone, look serious)\n07. 11 시 에 / 잠들 준 비 하 고 있었어. (getting ready for bed)\n08. 지금 / 밖에 비 쏟아지는 중 이 야 . (pouring)\n09. 운전 중 이 어 서 / 답장 RRO. (couldn't reply, driving)\n10. 너 왜 웃고 있어? / 재밌는 거 봤어? (laughing, something funny)\n11. 요즘 / 개 랑 말 Ot 하고 있어. (0401 talking)\n12. 개 밤새 시험 공부 SOl RO. (studying, all night)\n13. AE 공연 때문에 / 기타 연 습 하고 있어. (practicing guitar, for performance)\n14. 네 말 듣고 나서 / 다시 생 각 해 보 는 중 이 야 . (rethinking, what you said)\n15. 그땐 / DSS [자기 할 일] 하고 있었어. (their own thing)\n16. 잠깐만. / 지금 생각 정리 중 이 야 . (gathering my thoughts)\n17. 네가 무슨 생 각 하 고 있는지 / 궁 금 했 어 . (wondered, thinking)\n18. A St 좀 봐봐. / 해 지는 중 이 야 . (the sun is setting)\n19. 뭐 할지 / 생각 중 이 야 . (what to do)\n20. 눈 이 너무 많이 오고 있어서 / 운 전 하기 힘 들 었 어 . (snowing hard)\n21. 중요한 얘 기 하 고 있었을 때 / 휴대폰 배 터 리 가 나 갔 어 . (battery died, important conversation)\n22. 도 착 했 을 때 / 우리 팀 은 회의 중 이 었 어 . (having a meeting)\n23. 날 씨 가 점점 추 워 지 고 있어. / 패딩 꺼 내 야 겠다. (weather getting colder, need puffer jacket)\n24. [중요한 A] 설 명 하고 있었어 / 근데 아무도 듣고 있지 않았어. (something important, no one, listening)\n25. 잠깐 / 멍 때리는 중 이 었어. (Zoning out)\n4"
+        },
+        {
+          "spreadNumber": 6,
+          "oddPageNumber": 11,
+          "evenPageNumber": 12,
+          "oddImage": "/materials/step-02/spread-06-odd.jpg",
+          "evenImage": "/materials/step-02/spread-06-even.jpg",
+          "oddText": "Fn,\na\nSTEP 5. 내 말 하 기 - 배운 BAS 활 용 해 자 신 의 대 답 을 써보고 말 해 보세요.\n1. 요즘 ASS 위해 먹고 있는 거 있어?\nAre you eating anything these days for your health?\n2. 요즘 즐겨 보고 있는 드 라 마 나 영 화 가 있어?\nAre you watching any dramas or movies these days?\n3. 요즘 자주 만나고 있는 사 람 이 있어?\nAre you meeting anyone often these days?\n4. 요즘 새로 시 도 하 고 있는 게 있어?\nAre you trying anything new these days?\n5. 요즘 꾸준히 운 동 하고 있어?\nAre you working out regularly these days?\n6. 요즘 가장 많이 듣고 있는 음 악 은 뭐야?\nWhat music are you listening to most these days?\n7. 요즘 준 비 하 고 있는 계 획 이나 일 이 있어?\nAre you preparing anything these days?\n8. 지금 기다리고 있는 거 있어?\nAre you waiting for something now?\n11",
+          "evenText": "STEP 2. 패턴 익히기 - 눈 으로 보면서 소리 내어 읽 으 세요. 문장 덩 어 리 에 익 숙 해 지 세 요 .\n01. I'm grabbing a, bite. 87181 2 |\n02. | couldn't answer the phone because | was taking a shower.\n03. I'm crashing on the couch.\nGrnraw 킹 64 Se.\n04. | saw you earlier. Where were you heading? (206 이 &,\n이거. 008\n05. They're gaming again, so they'll probably stay up late.\n06. You looked serious. Who were you talking to on the phone?\n07. | was getting ready for bed at 11 PM.\n08. It's pouring outside right now. alpr\n09. | couldn't reply because | was driving.\n10. Why are you laughing? Did you see something funny?\n11. I'm not talking to him these days. '\n12. He was studying for a test all night.\n13. He's practicing the guitar for a performance.\n14. I'm rethinking it after hearing what you said. 1410 to\nos 8\n15. Everyone was doing their own thing at that time.\nDEA . when\nwhere\n16. Give me a second. I'm gathering my thoughts. whet\n17. | was wondering what you were thinking., / re wonder whe ier Ha\n=e ~ = AUB > , | 4\n18. Look outside. The sun is setting. an te 00605 7\n19. I'm thinking about what to do. ?\nooo\n20. It was hard to drive because it was snowing really hard. ,\n21. My phone battery died when | was having an important conversation.\n22. My team was having a meeting when | arrived. ms\n23. The weather is getting colder. | should take out my puffer jacket. J ge happy\n24. | was explaining something important, but no one was listening. gor\n25. | was Speen gee a moment, o 아느\nete - 2"
+        }
+      ],
+      "sentences": [
+        {
+          "id": "step-2-s001",
+          "exerciseNumber": 1,
+          "text": "Are you eating anything these days for your health?",
+          "promptKo": "요즘 ASS 위해 먹고 있는 거 있어?",
+          "hints": [],
+          "sourcePages": [
+            "even 4",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-2-s002",
+          "exerciseNumber": 2,
+          "text": "I couldn't answer the phone because I was taking a shower.",
+          "promptKo": "샤 워 하 고 있어서 / 전화 못 받았어.",
+          "hints": [
+            "couldn't answer",
+            "take a shower"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 1",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s003",
+          "exerciseNumber": 3,
+          "text": "Are you meeting anyone often these days?",
+          "promptKo": "요즘 자주 만나고 있는 사 람 이 있어?",
+          "hints": [],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s004",
+          "exerciseNumber": 4,
+          "text": "I saw you earlier. Where were you heading?",
+          "promptKo": "아까 너 봤어. / 어디 가는 중 이 었 어 ?",
+          "hints": [
+            "heading"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-2-s005",
+          "exerciseNumber": 5,
+          "text": "They're gaming again, so they'll probably stay up late.",
+          "promptKo": "개 네 또 게임 중 이 야 . / 늦게 잘 것 같아. gaming again)",
+          "hints": [],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s006",
+          "exerciseNumber": 6,
+          "text": "You looked serious. Who were you talking to on the phone?",
+          "promptKo": "너 누 구 랑 통화 중 이 었어? 심각해 보 이 더 라 .",
+          "hints": [
+            "talking on the phone",
+            "look serious"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s007",
+          "exerciseNumber": 7,
+          "text": "Are you preparing anything these days?",
+          "promptKo": "요즘 준 비 하 고 있는 계 획 이나 일 이 있어?",
+          "hints": [],
+          "sourcePages": [
+            "even 4",
+            "odd 6",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s008",
+          "exerciseNumber": 8,
+          "text": "Are you waiting for something now?",
+          "promptKo": "지금 기다리고 있는 거 있어?",
+          "hints": [],
+          "sourcePages": [
+            "even 4",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-2-s009",
+          "exerciseNumber": 9,
+          "text": "I couldn't reply because I was driving.",
+          "promptKo": "운전 중 이 어서 / 답장 못 했 어 .",
+          "hints": [
+            "couldn't reply",
+            "driving"
+          ],
+          "sourcePages": [
+            "even 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s010",
+          "exerciseNumber": 10,
+          "text": "Why are you laughing? Did you see something funny?",
+          "promptKo": "너 왜 웃고 있어? / 재밌는 71 봤어?",
+          "hints": [
+            "laughing",
+            "something funny"
+          ],
+          "sourcePages": [
+            "even 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s011",
+          "exerciseNumber": 11,
+          "text": "I'm not talking to him these days.",
+          "promptKo": "요즘 / 74a 말 안 하고 있어.",
+          "hints": [
+            "not talking"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s012",
+          "exerciseNumber": 12,
+          "text": "He was studying for a test all night.",
+          "promptKo": "개 밤새 시험 공부 중 이 었어.",
+          "hints": [
+            "studying",
+            "all night"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s013",
+          "exerciseNumber": 13,
+          "text": "He's practicing the guitar for a performance.",
+          "promptKo": "개 는 SA 때문에 / 기타 ASStD 0},",
+          "hints": [
+            "practicing guitar",
+            "for performance"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s014",
+          "exerciseNumber": 14,
+          "text": "I'm rethinking it after hearing what you said.",
+          "promptKo": "네 B 듣고 나서 / 다시 생 각 해 보 는 중 이 야 .",
+          "hints": [
+            "rethinking",
+            "what you said"
+          ],
+          "sourcePages": [
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-2-s015",
+          "exerciseNumber": 15,
+          "text": "Everyone was doing [their own thing] at that time.",
+          "promptKo": "그땐 / DES [자기 할 일] 하고 있었어.",
+          "hints": [
+            "their own thing"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s016",
+          "exerciseNumber": 16,
+          "text": "Give me a second. I'm gathering my thoughts.",
+          "promptKo": "잠깐만. / 지금 생각 정리 중 이 야 .",
+          "hints": [
+            "gathering my thoughts"
+          ],
+          "sourcePages": [
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-2-s017",
+          "exerciseNumber": 17,
+          "text": "I was wondering what you were thinking.",
+          "promptKo": "네가 무슨 생 각 하고 있는지 / 궁 금 했어.",
+          "hints": [
+            "wondered",
+            "thinking"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s018",
+          "exerciseNumber": 18,
+          "text": "Look outside. The sun is setting.",
+          "promptKo": "3 밖 좀 봐봐. / 해 지는 SO] OF.",
+          "hints": [
+            "the sun is setting"
+          ],
+          "sourcePages": [
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-2-s019",
+          "exerciseNumber": 19,
+          "text": "I'm thinking about what to do.",
+          "promptKo": "A 할지 / 생각 중 이 야 .",
+          "hints": [
+            "what to do"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s020",
+          "exerciseNumber": 20,
+          "text": "It was hard to drive because it was snowing really hard.",
+          "promptKo": "눈 이 너무 많이 오고 있어서 / 운 전 하 기 힘 들 었 어 .",
+          "hints": [
+            "snowing hard"
+          ],
+          "sourcePages": [
+            "odd 4",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s021",
+          "exerciseNumber": 21,
+          "text": "My phone battery died when I was having an important conversation.",
+          "promptKo": "중요한 얘 기 하고 있었을 때 / 휴대폰 배 터 리 가 LALO.",
+          "hints": [
+            "battery died",
+            "important conversation"
+          ],
+          "sourcePages": [
+            "even 3",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s022",
+          "exerciseNumber": 22,
+          "text": "My team was having a meeting when I arrived.",
+          "promptKo": "도 착 했을 때 / 우리 HE 회의 중 이 었 어 .",
+          "hints": [
+            "having a meeting"
+          ],
+          "sourcePages": [
+            "even 3",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s023",
+          "exerciseNumber": 23,
+          "text": "The weather is getting colder. I should take out my puffer jacket.",
+          "promptKo": "SM 7} 점점 추 워 지 고 있어. / 패딩 꺼 내 야 겠 다.",
+          "hints": [
+            "weather getting colder",
+            "need puffer jacket"
+          ],
+          "sourcePages": [
+            "even 3",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s024",
+          "exerciseNumber": 24,
+          "text": "I was explaining [something important], but no one was listening.",
+          "promptKo": "[중요한 7A] 설 명 하고 있었어 / 근데 아무도 듣고 있지 않았어.",
+          "hints": [
+            "something important",
+            "no one",
+            "listening"
+          ],
+          "sourcePages": [
+            "even 3",
+            "even 6"
+          ]
+        },
+        {
+          "id": "step-2-s025",
+          "exerciseNumber": 25,
+          "text": "I was zoning out for a moment.",
+          "promptKo": "잠깐 / A 때리는 S| RO.",
+          "hints": [
+            "zoning out"
+          ],
+          "sourcePages": [
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-2-s026",
+          "exerciseNumber": 26,
+          "text": "Who are you talking to these days?",
+          "promptKo": "요즘 / 누 구 랑 연 락 하고 있어?",
+          "hints": [
+            "talking to"
+          ],
+          "sourcePages": [
+            "even 3",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s027",
+          "exerciseNumber": 27,
+          "text": "I'm just lying around doing nothing.",
+          "promptKo": "아무것도 안 하 면 서 / 그냥 누 워 있어.",
+          "hints": [
+            "lying around",
+            "doing nothing"
+          ],
+          "sourcePages": [
+            "even 3",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s028",
+          "exerciseNumber": 28,
+          "text": "I'm waiting for you to get here.",
+          "promptKo": "너 오 기 만 / 기다리고 있어.",
+          "hints": [
+            "waiting for you"
+          ],
+          "sourcePages": [
+            "even 3",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s029",
+          "exerciseNumber": 29,
+          "text": "I've been waiting for my package since yesterday.",
+          "promptKo": "어 제 부 터 / 택배 기다리고 있어.",
+          "hints": [
+            "have been waiting"
+          ],
+          "sourcePages": [
+            "even 3",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s030",
+          "exerciseNumber": 30,
+          "text": "She's still leaving me on read.",
+          "promptKo": "개 지금도 AA BOlOF.",
+          "hints": [
+            "leaving me on read"
+          ],
+          "sourcePages": [
+            "even 3",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s031",
+          "exerciseNumber": 31,
+          "text": "Why are you getting prettier these days?",
+          "promptKo": "너 요새 왜 이렇게 점점 예 뻐 지 냐 ?",
+          "hints": [
+            "getting prettier"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-2-s032",
+          "exerciseNumber": 32,
+          "text": "He's been avoiding me lately.",
+          "promptKo": "개 최 근 에 나 피하고 있어.",
+          "hints": [
+            "avoiding me"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-2-s033",
+          "exerciseNumber": 33,
+          "text": "I'm planning my day now.",
+          "promptKo": "지금 하루 스케줄 짜는 중 이 야 .",
+          "hints": [
+            "planning my day"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-2-s034",
+          "exerciseNumber": 34,
+          "text": "She was scrolling through social media even during exams.",
+          "promptKo": "시험 기 간 에도 / 7HE 545 만 보고 있었어.",
+          "hints": [
+            "scrolling through social media"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-2-s035",
+          "exerciseNumber": 35,
+          "text": "I'm replying to a friend.",
+          "promptKo": "나 친 구 한테 답장 중 이 야 .",
+          "hints": [
+            "replying to a friend"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-2-s036",
+          "exerciseNumber": 36,
+          "text": "I'm waiting for the right moment.",
+          "promptKo": "적당한 타이밍 / 기다리고 있어.",
+          "hints": [
+            "waiting for",
+            "the right moment"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-2-s037",
+          "exerciseNumber": 37,
+          "text": "He's been deciding [what to order] for 15 minutes.",
+          "promptKo": "OH [ 뭐 시 킬 지 ] 고민 중 이 야 . / 152M.",
+          "hints": [
+            "deciding",
+            "what to order"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-2-s038",
+          "exerciseNumber": 38,
+          "text": "I'm getting into a new show.",
+          "promptKo": "나 새로운 드 라 마 에 빠지고 있어.",
+          "hints": [
+            "getting into"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-2-s039",
+          "exerciseNumber": 39,
+          "text": "I'm picking out an outfit because I don't want to wear just anything.",
+          "promptKo": "나 옷 고르는 중 이 야 . / 아무거나 입기 싫어서.",
+          "hints": [
+            "picking out an outfit"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-2-s040",
+          "exerciseNumber": 40,
+          "text": "I'm regretting it. I don't even know why I started this.",
+          "promptKo": "후회 중 이 야 . / 이걸 왜 시 작 했는지도 QAO",
+          "hints": [
+            "regretting",
+            "why | started this"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-2-s041",
+          "exerciseNumber": 41,
+          "text": "I was looking for a seat when you walked in earlier.",
+          "promptKo": "아까 / 너 BOSS 때 / 나 자리 찾는 중 이 었 어 .",
+          "hints": [
+            "looking for a seat",
+            "walk in"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s042",
+          "exerciseNumber": 42,
+          "text": "Where are you going without telling anyone?",
+          "promptKo": "아 무 한 테 도 말 안하고 / 어딜 가고 있는 거야?",
+          "hints": [
+            "without telling anyone"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s043",
+          "exerciseNumber": 43,
+          "text": "I'm catching up on my KakaoTalk messages.",
+          "promptKo": "카 톡 / 쌓인 거 읽는 중 이 야 .",
+          "hints": [
+            "catching up on"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s044",
+          "exerciseNumber": 44,
+          "text": "I'm debating whether to give up.",
+          "promptKo": "포 기 할 지 말 지 / 고민 중 이 야 .",
+          "hints": [
+            "debating",
+            "whether to give up"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s045",
+          "exerciseNumber": 45,
+          "text": "You're making excuses now.",
+          "promptKo": "너 지금 핑계 대고 있어.",
+          "hints": [
+            "making excuses"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s046",
+          "exerciseNumber": 46,
+          "text": "I'm thinking about impulse-buying it.",
+          "promptKo": "충동 구 매 할 까 / 고민 중 이 야 .",
+          "hints": [
+            "thinking about impulse-buying it"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s047",
+          "exerciseNumber": 47,
+          "text": "I was hiding under the covers all morning.",
+          "promptKo": "아침 내내 / 이불 속에 있었어.",
+          "hints": [
+            "hiding under the covers"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s048",
+          "exerciseNumber": 48,
+          "text": "I'm on my way home. I'll be there soon.",
+          "promptKo": "집 가는 중 이 야 . / 곧 도착할 거야.",
+          "hints": [
+            "on my way home"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s049",
+          "exerciseNumber": 49,
+          "text": "I'm trying to cheer myself up.",
+          "promptKo": "기분 풀 려 고 / 노력 중 이 야 .",
+          "hints": [
+            "trying to cheer myself up"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-2-s050",
+          "exerciseNumber": 50,
+          "text": "She's rambling on when no one cares.",
+          "promptKo": "개 혼자 떠드는 중 이 야 . / 아무도 신경 Ot 쓰는데.",
+          "hints": [
+            "rambling on",
+            "no one cares"
+          ],
+          "sourcePages": [
+            "even 2",
+            "odd 2"
+          ]
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,28 @@
+{
+  "name": "beginner-english-pattern-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "materials": "python tools/build_materials.py",
+    "dev": "concurrently -k -n web,api -c cyan,magenta \"vite --host 127.0.0.1 --port 5173\" \"node server/index.js\"",
+    "build": "vite build",
+    "preview": "node server/index.js",
+    "smoke": "node tools/smoke_browser.mjs",
+    "validate": "node tools/validate_app.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "latest",
+    "express": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "latest",
+    "concurrently": "latest",
+    "playwright-core": "^1.60.0",
+    "playwright-core": "latest",
+    "vite": "latest"
+  }
+}
