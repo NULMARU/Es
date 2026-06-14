@@ -32,6 +32,18 @@ import { createGeminiLiveTranslator } from './lib/liveTranslate.js';
 
 const progressKey = 'beginner-english-pattern-progress-v1';
 
+function publicAsset(publicPath) {
+  const base = import.meta.env.BASE_URL || '/';
+  const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+  const normalizedPath = String(publicPath || '').replace(/^\/+/, '');
+  return `${normalizedBase}${normalizedPath}`;
+}
+
+function apiUrl(path) {
+  const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+  return `${apiBase}${path}`;
+}
+
 function loadProgress() {
   try {
     return JSON.parse(localStorage.getItem(progressKey) || '{}');
@@ -54,7 +66,7 @@ export default function App() {
   const [progress, setProgress] = useState(loadProgress);
 
   useEffect(() => {
-    fetch('/data/materials.json')
+    fetch(publicAsset('data/materials.json'))
       .then((response) => {
         if (!response.ok) throw new Error('materials.json not found');
         return response.json();
@@ -592,11 +604,11 @@ function SourceSpread({ step, spreadIndex, onSpreadIndex }) {
       </header>
       <div className="spread-pages" style={{ '--page-zoom': zoom }}>
         <figure>
-          <img src={spread.oddImage} alt={`${step.title} odd page ${spread.oddPageNumber}`} />
+          <img src={publicAsset(spread.oddImage)} alt={`${step.title} odd page ${spread.oddPageNumber}`} />
           <figcaption>홀수 {spread.oddPageNumber}p</figcaption>
         </figure>
         <figure>
-          <img src={spread.evenImage} alt={`${step.title} even page ${spread.evenPageNumber}`} />
+          <img src={publicAsset(spread.evenImage)} alt={`${step.title} even page ${spread.evenPageNumber}`} />
           <figcaption>짝수 {spread.evenPageNumber}p</figcaption>
         </figure>
       </div>
@@ -615,7 +627,7 @@ function LiveTranslateDock({ sentence }) {
   const translatorRef = useRef(null);
 
   useEffect(() => {
-    fetch('/api/gemini/status')
+    fetch(apiUrl('/api/gemini/status'))
       .then((response) => response.json())
       .then((payload) => {
         setConfigured(Boolean(payload.configured));

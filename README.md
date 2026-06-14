@@ -68,3 +68,11 @@ npm run validate
 npm run build
 npm run smoke
 ```
+
+## GitHub Pages 배포
+
+이 앱은 Vite 정적 빌드가 필요하므로 GitHub Pages 설정에서 `Deploy from a branch`의 `main / (root)`를 사용하지 않습니다. 저장소 설정의 Pages 화면에서 Source를 `GitHub Actions`로 선택합니다.
+
+배포 워크플로는 `.github/workflows/pages.yml`에 있으며, `main` 브랜치에 푸시되면 `npm run build:pages`로 `/Es/` 경로에 맞춘 정적 앱을 배포합니다.
+
+GitHub Pages는 Node/Express 서버를 실행하지 못합니다. 따라서 Pages 배포본에서는 학습 화면과 원본 자료 뷰어는 동작하지만, Gemini Live Translate 토큰 발급 API는 별도 백엔드가 있어야 활성화됩니다.

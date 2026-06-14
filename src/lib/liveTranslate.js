@@ -1,6 +1,11 @@
 const constrainedEndpoint =
   'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContentConstrained';
 
+function apiUrl(path) {
+  const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+  return `${apiBase}${path}`;
+}
+
 export async function createGeminiLiveTranslator({
   targetLanguage = 'ko',
   onStatus = () => {},
@@ -8,7 +13,7 @@ export async function createGeminiLiveTranslator({
   onAudioLevel = () => {}
 } = {}) {
   onStatus('토큰 요청 중');
-  const tokenResponse = await fetch(`/api/gemini/live-token?targetLanguage=${encodeURIComponent(targetLanguage)}`);
+  const tokenResponse = await fetch(apiUrl(`/api/gemini/live-token?targetLanguage=${encodeURIComponent(targetLanguage)}`));
   if (!tokenResponse.ok) {
     const error = await tokenResponse.json().catch(() => ({}));
     throw new Error(error.error || 'Gemini Live Translate token request failed.');
