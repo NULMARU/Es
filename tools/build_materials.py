@@ -23,8 +23,8 @@ PUBLIC_DIR = ROOT / "public"
 MATERIALS_DIR = PUBLIC_DIR / "materials"
 DATA_DIR = PUBLIC_DIR / "data"
 PDF_RE = re.compile(r"스텝\s*(\d+)_([12])\.pdf$", re.IGNORECASE)
-HANGUL_RE = re.compile(r"[가-힣]")
-NUMBERED_RE = re.compile(r"^\s*(\d{1,3})\s*[\.\),，]\s*(.+)$")
+HANGUL_RE = re.compile(r"[가-힣ᄀ-ᇿ]")
+NUMBERED_RE = re.compile(r"^\s*(\d{1,3})\s*[\.\),,，]\s*(.+)$")
 HINT_RE = re.compile(r"\(([^()]*)\)\s*$")
 
 
@@ -56,8 +56,23 @@ def clean_english(text: str) -> str:
     value = value.replace("I.travel", "I travel")
     value = re.sub(r"\b15\b(?=\s+(messy|stuffy|ready|bad|good|hard|easy)\b)", "is", value, flags=re.I)
     value = re.sub(r"\s+\|\s*$", "", value)
+    value = re.sub(r"\s+[\"'“”‘’]*[-–—]+\s*$", "", value)
+    value = re.sub(r"\s+(ee|인|다|>)\s*[-~.]*\s*$", "", value, flags=re.I)
+    value = re.sub(r"\s*;\s*[-–—]*\s*$", "", value)
+    value = re.sub(r",$", ".", value)
     value = re.sub(r"\s+([?.!,])", r"\1", value)
     value = re.sub(r"\s+", " ", value).strip()
+    if (
+        not re.search(r"[.?!]$", value)
+        and len(re.findall(r"[A-Za-z']+", value)) >= 4
+        and re.match(
+            r"^(I|I'm|I've|I'll|She|She's|He|He's|We|We're|They|They're|You|You're|"
+            r"It|It's|There|My|The|What|Who|When|Where|Why|How|Did|Do|Does)\b",
+            value,
+            re.IGNORECASE,
+        )
+    ):
+        value += "."
     return value
 
 
@@ -117,7 +132,11 @@ def preprocess_for_ocr(image: Image.Image) -> Image.Image:
 def ocr_image(image: Image.Image) -> list[str]:
     if pytesseract is None:
         return []
-    text = pytesseract.image_to_string(preprocess_for_ocr(image), lang="eng+kor", config="--psm 6")
+    prepared = preprocess_for_ocr(image)
+    try:
+        text = pytesseract.image_to_string(prepared, lang="eng+kor", config="--psm 6")
+    except Exception:
+        text = pytesseract.image_to_string(prepared, lang="eng", config="--psm 6")
     return [clean_line(line) for line in text.splitlines() if clean_line(line)]
 
 
@@ -140,7 +159,7 @@ def save_page_image(image: Image.Image, target: Path) -> None:
 def discover_pdfs() -> dict[int, dict[int, SourcePdf]]:
     found: dict[int, dict[int, SourcePdf]] = {}
     for path in ROOT.glob("*.pdf"):
-        match = PDF_RE.match(path.name)
+        match = PDF_RE.match(unicodedata.normalize("NFC", path.name))
         if not match:
             continue
         step = int(match.group(1))
@@ -161,6 +180,8 @@ def detect_pattern_kind(step: int, text: str) -> str:
     compact = re.sub(r"\s+", "", text)
     if "진행" in compact:
         return "progressive"
+    if "과거시제" in compact or "과거형" in compact or step == 3:
+        return "past-simple"
     if "현재" in compact or step == 1:
         return "present-simple"
     return "pattern"
@@ -209,6 +230,27 @@ def build_patterns(kind: str) -> list[dict[str, Any]]:
                 "signals": ["since", "for", "lately"],
             },
         ]
+    if kind == "past-simple":
+        return [
+            {
+                "name": "과거 시제",
+                "formula": "주어 + 동사 과거형",
+                "focus": "이미 끝난 일과 경험",
+                "signals": ["yesterday", "last night", "ago", "when I was young"],
+            },
+            {
+                "name": "과거 부정문",
+                "formula": "주어 + didn't + 동사원형",
+                "focus": "하지 않았던 일",
+                "signals": ["didn't answer", "didn't stick to", "couldn't"],
+            },
+            {
+                "name": "be동사 과거",
+                "formula": "was/were + 상태",
+                "focus": "그때의 감정과 상태",
+                "signals": ["was tired", "were ready", "was shocked", "was happy"],
+            },
+        ]
     return [
         {
             "name": "문장 패턴",
@@ -224,6 +266,8 @@ def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
         return "Step 1 - 현재 시제"
     if kind == "progressive":
         return "Step 2 - 진행형"
+    if kind == "past-simple":
+        return "Step 3 - 과거 시제"
     for line in first_lines[:5]:
         if "STEP" in line.upper() or "스텝" in line:
             return clean_line(line)
@@ -353,7 +397,11 @@ def extract_target_sentences(
             if numbered:
                 number = int(numbered.group(1))
                 body = clean_line(numbered.group(2))
-                if HANGUL_RE.search(body):
+                candidate = clean_english(body)
+                if looks_like_target_english(candidate):
+                    upsert(number, body, page_label)
+                    pending = None
+                else:
                     prompt, hints = parse_prompt(line)
                     pending = {
                         "number": number,
@@ -361,9 +409,6 @@ def extract_target_sentences(
                         "hints": hints,
                         "sourcePage": page_label,
                     }
-                    continue
-                upsert(number, body, page_label)
-                pending = None
                 continue
 
             if pending:

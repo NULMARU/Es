@@ -7,6 +7,8 @@ const dataPath = path.join(root, 'public', 'data', 'materials.json');
 const errors = [];
 const warnings = [];
 
+loadLocalEnv(root);
+
 function existsPublic(publicPath) {
   return fs.existsSync(path.join(root, 'public', publicPath.replace(/^\//, '')));
 }
@@ -66,3 +68,20 @@ if (errors.length > 0) {
 }
 
 console.log('Validation passed.');
+
+function loadLocalEnv(baseDir) {
+  for (const fileName of ['.env.local', '.env']) {
+    const envPath = path.join(baseDir, fileName);
+    if (!fs.existsSync(envPath)) continue;
+    const lines = fs.readFileSync(envPath, 'utf8').split(/\r?\n/);
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) continue;
+      const match = trimmed.match(/^([A-Za-z_][A-Za-z0-9_]*)=(.*)$/);
+      if (!match) continue;
+      const [, key, rawValue] = match;
+      if (process.env[key]) continue;
+      process.env[key] = rawValue.replace(/^["']|["']$/g, '');
+    }
+  }
+}

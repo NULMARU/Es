@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "materials": "python tools/build_materials.py",
+    "materials": "node tools/build_materials.mjs",
     "dev": "concurrently -k -n web,api -c cyan,magenta \"vite --host 127.0.0.1 --port 5173\" \"node server/index.js\"",
     "build": "vite build",
     "build:pages": "vite build --base /Es/",
