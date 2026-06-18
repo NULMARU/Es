@@ -19,6 +19,7 @@ const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '';
 const liveTranslateModel = 'gemini-3.5-live-translate-preview';
 const execFileAsync = promisify(execFile);
 const pdfNameRe = /^스텝\s*(\d+)_([12])\.pdf$/i;
+const singlePdfNameRe = /^스텝\s*(\d+)\.pdf$/i;
 let materialsBuildPromise = null;
 
 const app = express();
@@ -187,11 +188,20 @@ function findMaterialPdfs() {
     .map((name) => {
       const normalized = name.normalize('NFC');
       const match = normalized.match(pdfNameRe);
-      if (!match) return null;
+      if (match) {
+        return {
+          name,
+          step: Number(match[1]),
+          part: Number(match[2]),
+          path: path.join(rootDir, name)
+        };
+      }
+      const singleMatch = normalized.match(singlePdfNameRe);
+      if (!singleMatch) return null;
       return {
         name,
-        step: Number(match[1]),
-        part: Number(match[2]),
+        step: Number(singleMatch[1]),
+        part: 0,
         path: path.join(rootDir, name)
       };
     })
@@ -224,9 +234,9 @@ function formatBuildError(error) {
 
 function saveUploadedPdf(file) {
   const safeName = path.basename(String(file?.name || '')).normalize('NFC');
-  const match = safeName.match(pdfNameRe);
+  const match = safeName.match(pdfNameRe) || safeName.match(singlePdfNameRe);
   if (!match) {
-    throw new Error('파일 이름은 스텝3_1.pdf, 스텝3_2.pdf 형식이어야 합니다.');
+    throw new Error('파일 이름은 스텝4.pdf 또는 스텝4_1.pdf, 스텝4_2.pdf 형식이어야 합니다.');
   }
   const rawData = String(file?.data || '').replace(/^data:application\/pdf;base64,/, '');
   const buffer = Buffer.from(rawData, 'base64');

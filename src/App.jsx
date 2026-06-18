@@ -842,7 +842,57 @@ const koreanPromptByEnglish = new Map([
   ['I was embarrassed because everyone looked at me.', '모두가 나를 쳐다봐서 나는 창피했어.'],
   ['It was better than expected for the price.', '가격 대비 예상보다 더 좋았어.'],
   ['We were completely worn out because we had too much luggage.', '짐이 너무 많아서 우리는 완전히 지쳤어.'],
-  ['I was really happy when I was at the beach with my friends.', '친구들과 바닷가에 있었을 때 나는 정말 행복했어.']
+  ['I was really happy when I was at the beach with my friends.', '친구들과 바닷가에 있었을 때 나는 정말 행복했어.'],
+  ["I'll get the report done tonight so I can relax tomorrow.", '내일 편하게 쉴 수 있게 오늘 밤에 보고서를 끝낼래.'],
+  ["I'm hanging out at my friend's place to catch up.", '밀린 얘기를 나누려고 친구 집에서 놀기로 했어.'],
+  ["You'll be surprised when you hear the news.", '그 소식을 들으면 너는 깜짝 놀랄 거야.'],
+  ["I'm going to sign up for the gym to start working out.", '운동을 시작하려고 헬스장에 등록하려고 해.'],
+  ["I'll grab the check since you covered it last time.", '지난번에 네가 냈으니 이번에는 내가 계산할게.'],
+  ["I'm going to get a new car since my car keeps breaking down.", '차가 계속 고장 나서 나는 새 차를 살 생각이야.'],
+  ["He's going to show up late because the traffic is bad.", '차가 막혀서 그는 늦게 나타날 거야.'],
+  ["We're having a team dinner for the new employees.", '신입 직원들을 위해 팀 회식이 있어.'],
+  ["I'll hear you out no matter how long it is.", '아무리 길어도 네 얘기를 끝까지 들어줄게.'],
+  ["I'm traveling abroad during my long vacation.", '긴 휴가 동안 나는 해외여행을 가기로 했어.'],
+  ["The delivery's here. I'll get the door.", '배달 왔다. 내가 문을 열어줄게.'],
+  ["I'm going to clean up the house. I haven't done it in a while.", '집을 청소하려고 해. 오랫동안 안 했거든.'],
+  ["It's going to warm up soon so we can finally go hiking.", '곧 날씨가 따뜻해질 거야. 그러면 드디어 하이킹을 갈 수 있어.'],
+  ["I'm going to go back to the academy I used to go to.", '예전에 다니던 학원에 다시 가려고 해.'],
+  ["You must be having a hard time. I'll help you out.", '힘들겠다. 내가 도와줄게.'],
+  ["I'm seeing my parents for my mom's birthday.", '엄마 생신이라 부모님을 만나기로 했어.'],
+  ['The presentation is going to go well since we prepared well.', '우리가 준비를 잘했으니까 발표도 잘될 거야.'],
+  ["I'm going to look for a new job that pays better.", '연봉이 더 좋은 새 직장을 찾아보려고 해.'],
+  ["You must be tired. I'll grab some coffee for you.", '피곤하겠다. 내가 커피를 가져다줄게.'],
+  ["You're going to hear good news soon. I have a good feeling.", '곧 좋은 소식을 들을 거야. 느낌이 좋아.'],
+  ["I'm going to hit the gym right after work.", '퇴근하자마자 헬스장에 갈 거야.'],
+  ["I'm going to study English to build my resume.", '이력서를 강화하려고 영어 공부를 할 거야.'],
+  ["I'm going to stay up late to finish this show.", '이 드라마를 끝내려고 늦게까지 깨어 있을 거야.'],
+  ["I'm going to get my hair done because it looks too messy now.", '머리를 하러 갈 거야. 지금 너무 지저분해 보여.'],
+  ["I'll go with a salad because I'm trying to eat healthier.", '샐러드로 할래. 건강하게 먹으려고 노력 중이거든.'],
+  ["I'm going to lounge around at home over this vacation.", '이번 휴가 내내 집에서 빈둥거릴 거야.'],
+  ['People will be here soon, so we need to hurry up.', '곧 사람들이 올 테니 우리는 서둘러야 해.'],
+  ["I'm going to sort my papers so I can find them easily later.", '나중에 쉽게 찾으려고 서류를 분류할 거야.'],
+  ["I'll get back to you later.", '나중에 다시 연락할게.'],
+  ["I'm going to start saving money because there's something I want to buy.", '사고 싶은 것이 있어서 돈을 모으기 시작할 거야.'],
+  ["I'll keep it a secret. I won't tell anyone.", '비밀로 할게. 아무에게도 말하지 않을게.'],
+  ["I'm going to head to Jeju to see the ocean.", '바다를 보러 제주도에 갈 거야.'],
+  ["You'll feel better soon if you get some rest.", '푹 쉬면 곧 기분이 나아질 거야.'],
+  ["I'm going to move because my place is too far from work.", '직장이랑 집이 너무 멀어서 이사 가려고 해.'],
+  ["I'm going to cook dinner tonight. You just relax.", '오늘 저녁은 내가 만들 테니까 너는 그냥 쉬어.'],
+  ["I'm moving to a bigger house next year.", '내년에 더 큰 집으로 이사 가.'],
+  ["She's going to give you a call soon because her meeting just ended.", '회의가 방금 끝나서 그녀가 곧 너에게 전화할 거야.'],
+  ["I'm going to a get-together this weekend.", '이번 주말에 모임에 가.'],
+  ["I'll note it down before I forget.", '까먹기 전에 메모해둘게.'],
+  ["I'm going to read more books to get new ideas.", '아이디어를 얻으려고 책을 더 읽으려고 해.'],
+  ["I'm going to crash early because I'm completely drained.", '너무 지쳐서 일찍 잘래.'],
+  ["I'm going to join a new team to take on a new role.", '새로운 역할을 맡으려고 새 팀으로 옮길 거야.'],
+  ['That movie is going to be really fun. I saw great reviews.', '그 영화는 정말 재미있을 거야. 좋은 후기를 봤어.'],
+  ["I'm going to attend a dinner gathering right after work.", '퇴근하고 바로 저녁 모임에 참석할 거야.'],
+  ["I'll take care of it. I can handle it.", '내가 처리할게. 내가 감당할 수 있어.'],
+  ["I was late today, so I'm going to go to work early tomorrow.", '오늘 늦었으니 내일은 일찍 출근하려고 해.'],
+  ["I'm going to work late tonight because the deadline is approaching.", '마감이 다가와서 오늘 밤에는 야근할 거야.'],
+  ["I'm going to work there on a two-year contract.", '2년 계약으로 거기서 일할 예정이야.'],
+  ["I'll check the details and let you know in a bit.", '세부 사항을 확인하고 조금 후에 알려줄게.'],
+  ["I'm going to open my own shop someday after I save enough money.", '돈을 충분히 모으면 언젠가 내 가게를 열 거야.']
 ]);
 
 function getKoreanPrompt(sentence) {
@@ -1267,6 +1317,16 @@ function scoreFreeAnswer(answer, step) {
     return {
       score,
       message: score >= 0.7 ? '과거 시제 패턴이 보인다.' : '과거 동사나 과거 시간 신호를 더 분명히 넣는다.'
+    };
+  }
+  if (step?.patternKind === 'future') {
+    const hasFutureForm = /\b(will|won't|going to|gonna|am going|is going|are going)\b/.test(normalized)
+      || /\b(am|is|are)\s+[a-z]+ing\b/.test(normalized);
+    const hasFutureSignal = /\b(tonight|tomorrow|later|soon|next|probably|right after|this weekend)\b/.test(normalized);
+    const score = Number(hasSubject) * 0.3 + Number(hasFutureForm) * 0.45 + Number(hasFutureSignal) * 0.25;
+    return {
+      score,
+      message: score >= 0.7 ? '미래 표현 패턴이 보인다.' : 'will, be going to, be -ing 또는 미래 시간 신호를 넣는다.'
     };
   }
   const hasVerb = normalized.split(' ').length >= 3;

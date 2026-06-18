@@ -133,7 +133,27 @@ const vocabularyCatalog = [
   ['emotional', '감정이 북받친', 'I got emotional during the movie.'],
   ['nostalgic', '추억에 잠긴', 'I got nostalgic when I heard the song.'],
   ['embarrassed', '창피한, 당황스러운', 'I was embarrassed in front of everyone.'],
-  ['worn out', '완전히 지친', 'We were worn out after the trip.']
+  ['worn out', '완전히 지친', 'We were worn out after the trip.'],
+  ['get done', '끝내다, 처리하다', 'I will get the report done tonight.'],
+  ['hang out', '시간을 보내다, 어울리다', 'I am hanging out with friends.'],
+  ['catch up', '밀린 이야기를 나누다, 따라잡다', 'We need to catch up soon.'],
+  ['sign up for', '등록하다', 'I am going to sign up for the gym.'],
+  ['grab the check', '계산서를 집어 계산하다', 'I will grab the check.'],
+  ['break down', '고장 나다', 'My car keeps breaking down.'],
+  ['show up', '나타나다, 도착하다', 'He will show up late.'],
+  ['hear out', '끝까지 들어주다', 'I will hear you out.'],
+  ['traveling abroad', '해외여행을 가는 중/예정', 'I am traveling abroad next month.'],
+  ['clean up', '청소하다, 정리하다', 'I am going to clean up the house.'],
+  ['warm up', '따뜻해지다', 'It is going to warm up soon.'],
+  ['go hiking', '등산/하이킹을 가다', 'We will go hiking this weekend.'],
+  ['hard time', '힘든 시간', 'You must be having a hard time.'],
+  ['help out', '도와주다', 'I will help you out.'],
+  ['look for', '찾다', 'I am going to look for a new job.'],
+  ['pay better', '보수가 더 좋다', 'This job pays better.'],
+  ['good feeling', '좋은 예감', 'I have a good feeling.'],
+  ['hit the gym', '헬스장에 가다', 'I am going to hit the gym.'],
+  ['stay up late', '늦게까지 깨어 있다', 'I am going to stay up late.'],
+  ['get my hair done', '머리를 하다', 'I am going to get my hair done.']
 ].map(([term, meaning, example]) => ({
   term,
   meaning,
@@ -192,6 +212,16 @@ export function analyzeSentence(sentence, step) {
     structures.push({ label: '과거 동작', value: pastVerb });
     const time = lower.match(/\b(yesterday|last [a-z]+|ago|when i was young|before|after)\b/)?.[0];
     if (time) structures.push({ label: '과거 신호', value: time });
+  } else if (step?.patternKind === 'future') {
+    structures.push({ label: '주어', value: extractSubject(text) });
+    const futureForm = lower.includes('going to')
+      ? 'be going to'
+      : lower.includes("'ll") || lower.includes(' will ')
+        ? 'will'
+        : text.match(/\b(am|is|are|'m|'re|'s)\s+[A-Za-z]+ing\b/i)?.[0] || '미래 표현';
+    structures.push({ label: '미래 표현', value: futureForm });
+    const time = lower.match(/\b(tonight|tomorrow|later|soon|next [a-z]+|right after work)\b/)?.[0];
+    if (time) structures.push({ label: '미래 신호', value: time });
   } else {
     structures.push({ label: '주어', value: extractSubject(text) });
     structures.push({ label: '동사', value: extractVerb(text) });
@@ -285,6 +315,21 @@ export function makeAnswerQuestions(step) {
       'What old thing did you come across recently?',
       'When were you really nervous or shocked?',
       'What experience was worth it even though it was tough?'
+    ];
+  }
+
+  if (step?.patternKind === 'future') {
+    return [
+      'What will you probably do later?',
+      'What are you going to do tonight?',
+      'Who are you meeting tomorrow?',
+      'What are you going to sign up for?',
+      'What will you help someone with?',
+      'What are you going to clean up soon?',
+      'Where are you traveling during your next vacation?',
+      'What are you going to study or practice?',
+      'What are you going to do right after work?',
+      'What do you think is going to go well?'
     ];
   }
 

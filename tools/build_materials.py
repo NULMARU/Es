@@ -23,9 +23,65 @@ PUBLIC_DIR = ROOT / "public"
 MATERIALS_DIR = PUBLIC_DIR / "materials"
 DATA_DIR = PUBLIC_DIR / "data"
 PDF_RE = re.compile(r"스텝\s*(\d+)_([12])\.pdf$", re.IGNORECASE)
+SINGLE_PDF_RE = re.compile(r"스텝\s*(\d+)\.pdf$", re.IGNORECASE)
 HANGUL_RE = re.compile(r"[가-힣ᄀ-ᇿ]")
 NUMBERED_RE = re.compile(r"^\s*(\d{1,3})\s*[\.\),,，]\s*(.+)$")
 HINT_RE = re.compile(r"\(([^()]*)\)\s*$")
+
+CANONICAL_SENTENCES: dict[int, dict[int, str]] = {
+    4: {
+        1: "I'll get the report done tonight so I can relax tomorrow.",
+        2: "I'm hanging out at my friend's place to catch up.",
+        3: "You'll be surprised when you hear the news.",
+        4: "I'm going to sign up for the gym to start working out.",
+        5: "I'll grab the check since you covered it last time.",
+        6: "I'm going to get a new car since my car keeps breaking down.",
+        7: "He's going to show up late because the traffic is bad.",
+        8: "We're having a team dinner for the new employees.",
+        9: "I'll hear you out no matter how long it is.",
+        10: "I'm traveling abroad during my long vacation.",
+        11: "The delivery's here. I'll get the door.",
+        12: "I'm going to clean up the house. I haven't done it in a while.",
+        13: "It's going to warm up soon so we can finally go hiking.",
+        14: "I'm going to go back to the academy I used to go to.",
+        15: "You must be having a hard time. I'll help you out.",
+        16: "I'm seeing my parents for my mom's birthday.",
+        17: "The presentation is going to go well since we prepared well.",
+        18: "I'm going to look for a new job that pays better.",
+        19: "You must be tired. I'll grab some coffee for you.",
+        20: "You're going to hear good news soon. I have a good feeling.",
+        21: "I'm going to hit the gym right after work.",
+        22: "I'm going to study English to build my resume.",
+        23: "I'm going to stay up late to finish this show.",
+        24: "I'm going to get my hair done because it looks too messy now.",
+        25: "I'll go with a salad because I'm trying to eat healthier.",
+        26: "I'm going to lounge around at home over this vacation.",
+        27: "People will be here soon, so we need to hurry up.",
+        28: "I'm going to sort my papers so I can find them easily later.",
+        29: "I'll get back to you later.",
+        30: "I'm going to start saving money because there's something I want to buy.",
+        31: "I'll keep it a secret. I won't tell anyone.",
+        32: "I'm going to head to Jeju to see the ocean.",
+        33: "You'll feel better soon if you get some rest.",
+        34: "I'm going to move because my place is too far from work.",
+        35: "I'm going to cook dinner tonight. You just relax.",
+        36: "I'm moving to a bigger house next year.",
+        37: "She's going to give you a call soon because her meeting just ended.",
+        38: "I'm going to a get-together this weekend.",
+        39: "I'll note it down before I forget.",
+        40: "I'm going to read more books to get new ideas.",
+        41: "I'm going to crash early because I'm completely drained.",
+        42: "I'm going to join a new team to take on a new role.",
+        43: "That movie is going to be really fun. I saw great reviews.",
+        44: "I'm going to attend a dinner gathering right after work.",
+        45: "I'll take care of it. I can handle it.",
+        46: "I was late today, so I'm going to go to work early tomorrow.",
+        47: "I'm going to work late tonight because the deadline is approaching.",
+        48: "I'm going to work there on a two-year contract.",
+        49: "I'll check the details and let you know in a bit.",
+        50: "I'm going to open my own shop someday after I save enough money.",
+    }
+}
 
 
 @dataclass
@@ -33,6 +89,7 @@ class SourcePdf:
     step: int
     part: int
     path: Path
+    page_indexes: list[int] | None = None
 
 
 def clean_line(text: str) -> str:
@@ -46,6 +103,10 @@ def clean_line(text: str) -> str:
 def clean_english(text: str) -> str:
     value = clean_line(text)
     value = re.sub(r"^\s*[ᆞㆍ•·\-–—*+«»]+\s*", "", value)
+    value = re.sub(r"^\s*111\b", "I'll", value)
+    value = re.sub(r"^\s*110\b(?=\s+going\b)", "I'm", value, flags=re.I)
+    value = re.sub(r"\b111\b(?=\s+(get|grab|go|hear|help|note|take|check)\b)", "I'll", value, flags=re.I)
+    value = re.sub(r"\b110\b(?=\s+going\b)", "I'm", value, flags=re.I)
     value = re.sub(r"^\s*\|\s+", "I ", value)
     value = re.sub(r"(?<=\s)\|(?=\s|[A-Za-z])", "I", value)
     value = re.sub(r"\s*/\s*", " ", value)
@@ -54,6 +115,8 @@ def clean_english(text: str) -> str:
     value = value.replace(" Iogking ", " looking ")
     value = value.replace("iogking", "looking")
     value = value.replace("I.travel", "I travel")
+    value = value.replace("hurryup", "hurry up")
+    value = value.replace("because.the. deadline. is approaching", "because the deadline is approaching")
     value = re.sub(r"\b15\b(?=\s+(messy|stuffy|ready|bad|good|hard|easy)\b)", "is", value, flags=re.I)
     value = re.sub(r"\s+\|\s*$", "", value)
     value = re.sub(r"\s+[\"'“”‘’]*[-–—]+\s*$", "", value)
@@ -158,13 +221,32 @@ def save_page_image(image: Image.Image, target: Path) -> None:
 
 def discover_pdfs() -> dict[int, dict[int, SourcePdf]]:
     found: dict[int, dict[int, SourcePdf]] = {}
+    singles: dict[int, Path] = {}
     for path in ROOT.glob("*.pdf"):
-        match = PDF_RE.match(unicodedata.normalize("NFC", path.name))
-        if not match:
+        normalized = unicodedata.normalize("NFC", path.name)
+        match = PDF_RE.match(normalized)
+        if match:
+            step = int(match.group(1))
+            part = int(match.group(2))
+            found.setdefault(step, {})[part] = SourcePdf(step=step, part=part, path=path)
             continue
-        step = int(match.group(1))
-        part = int(match.group(2))
-        found.setdefault(step, {})[part] = SourcePdf(step=step, part=part, path=path)
+
+        single_match = SINGLE_PDF_RE.match(normalized)
+        if single_match:
+            singles[int(single_match.group(1))] = path
+
+    for step, path in singles.items():
+        parts = found.setdefault(step, {})
+        if 1 in parts and 2 in parts:
+            continue
+        reader = PdfReader(str(path))
+        odd_pages = list(range(0, len(reader.pages), 2))
+        even_pages = list(range(1, len(reader.pages), 2))
+        if odd_pages and even_pages:
+            found[step] = {
+                1: SourcePdf(step=step, part=1, path=path, page_indexes=odd_pages),
+                2: SourcePdf(step=step, part=2, path=path, page_indexes=even_pages),
+            }
     return found
 
 
@@ -178,6 +260,8 @@ def extract_topic(lines: list[str]) -> str:
 
 def detect_pattern_kind(step: int, text: str) -> str:
     compact = re.sub(r"\s+", "", text)
+    if "미래" in compact or "begoingto" in compact.lower() or step == 4:
+        return "future"
     if "진행" in compact:
         return "progressive"
     if "과거시제" in compact or "과거형" in compact or step == 3:
@@ -251,6 +335,27 @@ def build_patterns(kind: str) -> list[dict[str, Any]]:
                 "signals": ["was tired", "were ready", "was shocked", "was happy"],
             },
         ]
+    if kind == "future":
+        return [
+            {
+                "name": "will",
+                "formula": "will + 동사원형",
+                "focus": "순간의 결심, 약속, 추측",
+                "signals": ["probably", "later", "tonight", "soon"],
+            },
+            {
+                "name": "be going to",
+                "formula": "am/is/are going to + 동사원형",
+                "focus": "계획, 예정, 의도",
+                "signals": ["going to", "next week", "because", "plan"],
+            },
+            {
+                "name": "be -ing 미래",
+                "formula": "am/is/are + 동사-ing",
+                "focus": "이미 정해진 일정과 약속",
+                "signals": ["tomorrow", "at 10", "meeting", "traveling"],
+            },
+        ]
     return [
         {
             "name": "문장 패턴",
@@ -268,6 +373,8 @@ def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
         return "Step 2 - 진행형"
     if kind == "past-simple":
         return "Step 3 - 과거 시제"
+    if kind == "future":
+        return f"Step {step} - 미래 표현"
     for line in first_lines[:5]:
         if "STEP" in line.upper() or "스텝" in line:
             return clean_line(line)
@@ -393,6 +500,7 @@ def extract_target_sentences(
         pending = None
         for raw_line in record["lines"]:
             line = clean_line(raw_line)
+            line = re.sub(r"^\s*[Aa](\d)\s*([.)])", r"4\1\2", line)
             numbered = NUMBERED_RE.match(line)
             if numbered:
                 number = int(numbered.group(1))
@@ -420,6 +528,9 @@ def extract_target_sentences(
     targets = [by_number[number] for number in sorted(by_number)]
     for item in targets:
         item.pop("_quality", None)
+        canonical = CANONICAL_SENTENCES.get(step, {}).get(item.get("exerciseNumber"))
+        if canonical:
+            item["text"] = canonical
     if len(targets) >= 45:
         return targets
 
@@ -427,10 +538,22 @@ def extract_target_sentences(
     return extract_sentences(ocr_records, step)
 
 
+def part_pages(source: SourcePdf) -> tuple[PdfReader, list[int]]:
+    reader = PdfReader(str(source.path))
+    page_indexes = source.page_indexes if source.page_indexes is not None else list(range(len(reader.pages)))
+    return reader, page_indexes
+
+
+def source_file_label(source: SourcePdf, fallback: str) -> str:
+    if source.page_indexes is None:
+        return source.path.name
+    return f"{source.path.name} ({fallback})"
+
+
 def build_step(step: int, parts: dict[int, SourcePdf]) -> dict[str, Any]:
-    odd_reader = PdfReader(str(parts[1].path))
-    even_reader = PdfReader(str(parts[2].path))
-    spread_count = min(len(odd_reader.pages), len(even_reader.pages))
+    odd_reader, odd_page_indexes = part_pages(parts[1])
+    even_reader, even_page_indexes = part_pages(parts[2])
+    spread_count = min(len(odd_page_indexes), len(even_page_indexes))
     spreads: list[dict[str, Any]] = []
     ocr_records: list[dict[str, Any]] = []
 
@@ -439,8 +562,8 @@ def build_step(step: int, parts: dict[int, SourcePdf]) -> dict[str, Any]:
         odd_target = step_dir / f"spread-{index + 1:02d}-odd.jpg"
         even_target = step_dir / f"spread-{index + 1:02d}-even.jpg"
 
-        odd_image = get_page_image(odd_reader.pages[index])
-        even_image = get_page_image(even_reader.pages[index])
+        odd_image = get_page_image(odd_reader.pages[odd_page_indexes[index]])
+        even_image = get_page_image(even_reader.pages[even_page_indexes[index]])
         odd_lines: list[str] = []
         even_lines: list[str] = []
 
@@ -478,8 +601,8 @@ def build_step(step: int, parts: dict[int, SourcePdf]) -> dict[str, Any]:
         "patternKind": kind,
         "patterns": build_patterns(kind),
         "sourceFiles": {
-            "oddPages": parts[1].path.name,
-            "evenPages": parts[2].path.name,
+            "oddPages": source_file_label(parts[1], "홀수 페이지"),
+            "evenPages": source_file_label(parts[2], "짝수 페이지"),
         },
         "spreads": spreads,
         "sentences": sentences,
@@ -502,7 +625,7 @@ def main() -> None:
     manifest = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "handwritingPolicy": "필기체/손글씨 OCR은 학습 데이터 후보에서 제외하고 원본 페이지 이미지로만 보존합니다.",
-        "expectedFilePattern": "스텝{n}_1.pdf + 스텝{n}_2.pdf",
+        "expectedFilePattern": "스텝{n}.pdf 또는 스텝{n}_1.pdf + 스텝{n}_2.pdf",
         "steps": steps,
         "warnings": warnings,
     }

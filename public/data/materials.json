@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-16T15:23:33.298006+00:00",
+  "generatedAt": "2026-06-18T22:35:36.265299+00:00",
   "handwritingPolicy": "필기체/손글씨 OCR은 학습 데이터 후보에서 제외하고 원본 페이지 이미지로만 보존합니다.",
-  "expectedFilePattern": "스텝{n}_1.pdf + 스텝{n}_2.pdf",
+  "expectedFilePattern": "스텝{n}.pdf 또는 스텝{n}_1.pdf + 스텝{n}_2.pdf",
   "steps": [
     {
       "id": "step-1",
@@ -2327,6 +2327,755 @@
           "hints": [
             "be happy",
             "at the beach"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-4",
+      "stepNumber": 4,
+      "title": "Step 4 - 미래 표현",
+      "topic": "나는 그렇게 할 거야",
+      "patternKind": "future",
+      "patterns": [
+        {
+          "name": "will",
+          "formula": "will + 동사원형",
+          "focus": "순간의 결심, 약속, 추측",
+          "signals": [
+            "probably",
+            "later",
+            "tonight",
+            "soon"
+          ]
+        },
+        {
+          "name": "be going to",
+          "formula": "am/is/are going to + 동사원형",
+          "focus": "계획, 예정, 의도",
+          "signals": [
+            "going to",
+            "next week",
+            "because",
+            "plan"
+          ]
+        },
+        {
+          "name": "be -ing 미래",
+          "formula": "am/is/are + 동사-ing",
+          "focus": "이미 정해진 일정과 약속",
+          "signals": [
+            "tomorrow",
+            "at 10",
+            "meeting",
+            "traveling"
+          ]
+        }
+      ],
+      "sourceFiles": {
+        "oddPages": "스텝4.pdf (홀수 페이지)",
+        "evenPages": "스텝4.pdf (짝수 페이지)"
+      },
+      "spreads": [
+        {
+          "spreadNumber": 1,
+          "oddPageNumber": 1,
+          "evenPageNumber": 2,
+          "oddImage": "/materials/step-04/spread-01-odd.jpg",
+          "evenImage": "/materials/step-04/spread-01-even.jpg",
+          "oddText": ".... AG1_4 - 미래 (will / be going to / be ~ing)\n주제: 나는 그렇게 할 거야\nSTEP 1. 이 해 하 기\n* 개념 설명 - 미 래 를 표 현 하 는 방 법 은 크게 세 가 지 예요.\nwill >= 순 간 의 결심 / 약속 / 추측\n- 할래 / 할게 / 할 거야\n- 예 : 111 help you with that. (내가 도 와 줄게.)\nbe going to > 예정 / 계획 / 생각\n- ~ 할 예 정 이야 / 계 획 이 야 / 생 각 이야\n- 예 : I'm going to study abroad next year. (LH AO] 유학 갈 예 정 이 야 )\nbe + ^~109 ( 현 재 진행형) - 이미 정 해 놓은 일정, 약 속 된 미래 .\n- 공식적 / 확 정 된 계획\n- 예 : 110 meeting my friend tomorrow. (LH2! 친구 만나기로 했어.)\n- 예 : We're having a meeting at 10. (10 시 에 회 의 가 있어)\n+ 정리 |\nwill > 지금 마 음 먹은 / 단순 추측\nbe going to > 개인적인 계획, 의도\nbe + -ing > 이미 정해진 일정, 외부 Voges. AAS 등)\n+ #92 / 의문문\n¢ will not (won't) / am not going to / am not ~ing\n¢ Will you...? / Are you going to...? / Are you ~ing...?\n+ 예문\nᆞ I'll probably call her 1206 (아마 전 화 할 거야.)\nᆞ I'm going to start working out next week. (다음 주 부 터 운동 시작할 거야.)\nᆞ We're meeting the new teacher tomorrow. (우린 내일 새 선 생 님 을 만나기로 돼 있어.)\n1",
+          "evenText": "STEP 2. 패턴 익히기 - 눈 으로 보면서 소리 내어 읽 으 세요. 문장 덩 어 리 에 익 숙 해 지 세 요 .\n01. I'll get the report done tonight so | can relax tomorrow. |\n02. I'm hanging out at my friend's place to catch up.\n03. You'll be surprised when you hear the news.\n04. I'm going to sign up for the gym to start working out.\n05. I'll grab the check since you covered it last time.\n06. I'm going to get a new car since my car keeps breaking down. : 은 :\n07. He's going to show up late because the traffic is bad. eee :\n08. We're having a team dinner for the new employees. - : : Z :\n09. I'll hear you out no matter how long it is. : : , - , . a : , |\n10. I'm traveling abroad during ni 빼 vadation © | ; | = é\n11. The delivery's here. 111 get the door. a ei — cer\n12. I'm going to clean up the house. | haven't done it in a while er\n13. It's going to warm up soon so ue can finally go hiking, : 2 |\n14. I'm going to go back to the academy | eed to | to. . | 이. ‘ : :\n15. You must be having a hard time. I'l help you out. ———— :\n16. I'm seeing my parents for a mein' birthday. | ,\n17. The presentation is going to go well since we prepared well. |\n18. I'm going to look for a new Job that pays better.\n19. You must be tired. I'll grab some coffee for you.\n20. You're going to hear good news soon. | have a good feeling.\n21. I'm going to hit the gym right after work.\n22. 110 going to study English to build my resume.\n23. I'm going to stay up late to finish this show.\n24. I'm going to get my hair done because it looks too messy now.\n25. 111 go with a salad because I'm trying to eat healthier.\n2"
+        },
+        {
+          "spreadNumber": 2,
+          "oddPageNumber": 3,
+          "evenPageNumber": 4,
+          "oddImage": "/materials/step-04/spread-02-odd.jpg",
+          "evenImage": "/materials/step-04/spread-02-even.jpg",
+          "oddText": "26. I'm going to lounge around at home over this vacation.\n27. People will be here soon, so we need to hurry up.\n28. I'm going to sort my papers so | can find them easily later.\n29. I'll get back to you later.\n30. I'm going to start saving money because there's something | want to buy.\n31. I'll keep it a secret. | won't tell anyone.\n32. I'm going to head to Jeju to see the ocean.\n33. You'll feel better soon if you get some rest.\n34. I'm going to move because my place is too far from ware\n35. I'm going to cook dinner tonight. You just relax.\n36. I'm moving to a bigger house next year.\n37. She's going to give you a call soon because her meeting just ended.\n38. I'm going to a get-together this weekend.\n39. I'll note it down before | forget.\n40. I'm going to read more books to get new ideas.\n41. I'm going to crash early because I'm completely drained.\nA2. I'm going to join a new team to take on a new role.\n43. That movie is going to be really fun. | saw great reviews.\n44. I'm going to attend a dinner gathering right after work.\n45. I'll take care of it. | can handle it.\n46. | was late today, so I'm going to go to work early tomorrow.\n47. I'm going to work late tonight because the deadline is approaching.\n48. I'm going to work there on a two-year contract.\n49. I'll check the details and let you know in a bit.\n50. I'm going to open my own shop someday after | save enough money.\n3",
+          "evenText": "STEP 3. 문장 만들기 - 힌 트 를 참고해 SAS 말 해 보세요. |\n01. 내일 편하게 A 있게 / 오늘 밤 에 보고서 끝 낼 래 . (get it done, relax tomorrow) |\n02. 밀린 얘기 좀 나 누 려고 / 진구 집 에서 놀 기 로 했어. (hang out, friend's place, catch up)\n03.4 그 소식 들으면 / 깜짝 놀랄 걸 . (66 surprised, hear the news)\n04. 운동 시 작 하 려고 / 헬스장 등 록 하 려고 해. (sign up, gym, start working out)\n05. 너가 지 난 번 에 ALOL| Ey 내가 낼 게 . (grab the check, covered it last time)\n06. 차 바꿀 생 각 이야, / 지금 차가 자꾸 고장 나니까. (get a new car, breaking down)\n07. 차가 막혀서 / 개 는 늦게 나타날 거야. (show up late, traffic is bad} a ' 1\n08. 신 입 들 이 와서 / 회 식 이 있어요. (have a team dinner new employees) 2\n09. 네 얘기 다 들 어 줄게, 7 아무리 ols 상관 없 여 : (hear you out, no matter how long)\n10. 긴 휴가 동안 / 해 외 여 행 을 가 기 로 했어. (travel ~\" 1009 vacation : 3\n11. 배달 왔다. / 내가 B 열 어 줄게. (delivery, get the door) int we\n12. 집 4 치 우 려고. / 오랫동안 oF 했 거 든 (clean ubein a while) oo a\n13. 곧 날 씨 가 따 뜻 해 질 거야, / 그러면 드디 of 하 이 킹 을 갈 수 있어. (warm up, finally go hiking)\n14. 전에 CHAE / 학원 다시 가려고. (00 back, academy, 등 를\n15. 힘 들 겠다, / 내가 다 도 와 줄게. (베러 be having a ee time, help out) |\n16. 엄마 생 신 이라 / 부모님 B7]= 했어. (63.801 최 개. 래 개 의 5 절 \"\n17. 우 리 가 잘 준 비 했 으 니 까 / 발 표 도 잘 될 거 아 . (presentation, go well, prepared well)\n18. 연 봉 이 더 좋은 / 새 직장 찾 아 보려고. (new job, pays better)\n19. 피 곤 하겠다. / 커피 가져다 줄게. (grab some coffee)\n20. 곧 좋은 소식 SS 거야. / 느 낌 이 좋아. (good news, good feeling)\n21. 퇴 근 하 자마자 / 운동 갈 거야. chit the gym, right after work)\n22. 스펙 쌓 으 려고 / 영어 공부할 거야. (build my resume)\n23. 이 드라마 다 보려고 / 늦 게 까 지 깨어 있을 거야. (stay up late, finish show)\n24. 머리 할 거야, / 지 금 은 너무 지 저 분 해. (get my hair done, too messy)\n25. 샐 러 드 로 할래, / 건 강 하게 먹 으 려 고 노력 중 이 거든. (go with salad, eat healthier)\n4"
+        },
+        {
+          "spreadNumber": 3,
+          "oddPageNumber": 5,
+          "evenPageNumber": 6,
+          "oddImage": "/materials/step-04/spread-03-odd.jpg",
+          "evenImage": "/materials/step-04/spread-03-even.jpg",
+          "oddText": "26. 이번 휴가 내내 / 집 에서 ABA 거야. (lounge around)\n27. 곧 사람들 도착할 걸 , / 우리 서둘러야 SH. (hurry up)\n28. 나중에 쉽게 찾으려고 / 서류 분 류 할 거야. (sort papers, find them later)\n29. 나중에 다시 연 락 할게. (get back to you)\n30. 사고 싶은 게 있어서 / 돈 모으기 시작할 거야. (start saving money, something | want to buy)\n31. 비 밀 로 할 게 . / 아 무 한 테 도 말 Ot 할게. (keep secret, won't tell anyone)\n32. 바다 보러 / 제주도 갈 거야. (head to Jeju, see the ocean)\n33.5 쉬면 / 곧 기분 나아질 걸 . (feel better, get some rest)\n34. 직 장 이 랑 집 이 너무 멀어서 / 이사 가 려 구 . (my place is too far)\n35. 오늘 저 녁 은 내가 만들 거니까, / 넌 그냥 쉬어. Cook dinner, you relax)\n36. 내 년 에 / 더 큰 집 으로 이 사 가 . (move, bigger house)\n37. 회의 방금 끝나서 / 개가 곧 전 화 할 거야. Give a call, her meeting just ended)\n38. 이번 주 말 에 / 모임 가. (get-together)\n39. 까 먹 기 전에 / 메 모 해 둘 게 . (note down, before | forget)\n40. 아이디어 얻게 / 책 더 읽 으 려고. (read more books, get new ideas)\n41. 너무 진 빠져서 / 일찍 잘 래 . (crash, drained)\n42. 새로운 역할 맡 으 려고 / 새 팀 으로 옮길 거야. (join new team, new role)\n43. 그 영화 진짜 재밌을 거야. / 좋은 후 기 들 봤어. (great reviews)\n44. 퇴 근 하고 바로 / 저녁 모 임 에 참석할 거야. (attend gathering, right after work)\n45. 내가 정 리 할 게 . / 내가 처 리 할 수 있어. (take care, handle it)\n46. 오늘 늦 었 어 / 그래서 내일은 일찍 출 근 하 려고. (late, go to work early)\n47. 마 감 이 다가와서 / 오늘 밤엔 야 근 할 거야. (working late, deadline is approaching)\n48. 2 년 계 약 으로 / 거기서 일할 예 정 이야. (work, on a two-year contract)\n49. 세 부 사항 확 인 할 게 / 그리고 조금 후에 알 려 줄 게 . (check the details, let you know)\n50. 돈 좀 더 모으면 / 언젠가 내 가게 열 거야. (open my own shop, save money)\n5",
+          "evenText": "STEP 4. 소리 내어 말하기 - SS 생 각 하며 읽은 뒤 외 워 서 여러 H 말 해 보세요.\n01. 내일 편하게 2 수 있게 / 오늘 밤 에 보고서 끝 낼 래 . get it done, relax tomorrow)\nI'll get the report done tonight / so | can relax tomorrow.\n02. 밀린 얘기 좀 나 누 려고 / 진구 집 에서 놀 기 로 했어. (hang out, friend's place, catch up)\nI'm hanging out at my friend's place / to catch up.\n03. 너 그 소식 들으면 / 깜짝 놀랄 4. (be surprised, hear the news) ae\nYou'll be surprised / when you hear the news. _\n04. 운동 시 작 하 려고 / 헬스장 등 록 하려고 해. (sign up, gym, start working out)\nI'm going to sign up for the gym /to start working out. : a ᅵ.\n05. 너가 ALP MOLT /. 내 가 낼 게 . (grab the check, covered it last'time)\n111 grab the check / since you covered it last time. ' ee. ne -\n06. 차 바꿀 생 각 이야, / 지금 차가 자꾸 고장 나니까. (Get a new car, breaking down)\nI'm going to get a new car / since my car keeps breaking down.\n07. 차가 막혀서 개 는 늦게 나 타 날 거야. (show up late, traffic is bad)\nHe's going to show up late / because the traffic is bad.\n08. 신 입 들이 와서 / 회 식 이 있어요. (have a team dinner, new employees)\nWe're having a team dinner / for the new employees.\n09. 네 얘기 다 들 어 줄게, / 아무리 길 어 도 상관 없어. (hear you out, no matter how long)\n111 hear you out / no matter how long it is.\n10. 2! 휴가 동안 / 해 외 여 행 을 가 기 로 했어. (travel abroad, long vacation)\nI'm traveling abroad / during my long vacation.\n6"
+        },
+        {
+          "spreadNumber": 4,
+          "oddPageNumber": 7,
+          "evenPageNumber": 8,
+          "oddImage": "/materials/step-04/spread-04-odd.jpg",
+          "evenImage": "/materials/step-04/spread-04-even.jpg",
+          "oddText": "21. 퇴 근 하자마자 운동 Z 거야. hit the gym, right after work) |\nI'm going to hit the gym / right after work. |\n22. 스펙 쌓 으 려고 / 영어 공 부 할 거야. (build my resume)\nI'm going to study English / to build my resume.\n23. 이 드라마 다 보려고 / 늦 게 까지 깨어 있을 거야. (stay up late, finish show)\nI'm going to stay up late / to finish this show. ( 2 1\n24. 머리 할거야, / 지 금 은 너무 지 저 분 해 . (get my hair done, too messy) ,\n110 going to get my hair done / because it looks too messy now. - /\n25. 샐 러 드 로 할래, / 건 강 하게 Yor a 노 력 중 이 거든. (go with salad, eat healthier) a\n111 go with a salad / because. I'm-trying to eat healthier. ae ae\n26. 이번 휴 가 내내 / 집 에서 IB! 거야. (lounge around) os\nI'm going to lounge around at home / over this vacation. _ : 적으\naE 사람들 도착할 걸 , / 우리 서둘러야 돼 . 00 40 ᆞ 4,\nPeople will be here soon, / so we need to hurryup. : , : , :\n28. 나중에 쉽게 찾으려고 / 서류 분 류 할 거야. (sort papers, find them later)\nI'm going to sort my Papers / so | can find them easily later.\n29. 나중에 다시 연 락 할게. get back to you)\n111 get back to you later.\n30. 사고 싶은 게 있어서 / = 모으기 시 작 할 거야. (start saving money, something | want to buy)\nI'm going to start saving money / because there's something | want to buy.\n8",
+          "evenText": "11. 배달 왔다. / 내가 문 열 어 줄게. (delivery , get the door)\nThe delivery's here. / I'll get the door.\n12.8 4 치 우 려 고. / 오랫동안 안 했 거든. (0630 up, in a while)\nI'm going to clean up the house / | haven't done it in a while.\n13. 곧 날 씨 가 따 뜻 해 질 거야, / 그러면 드디어 하 이 킹 을 갈 + 있어. (warm up, finally go hiking)\nIt's going to warm up soon / so we can finally go hiking.\n14. 전에 Cha / 학원 다시 가려고. (go back, academy, used to go to)\nI'm going to go back to the academy / | used to go to\n15. 힘 들 겠다, / 내가 다 도 와 줄 게 . (must be having a hard time, help out)\nYou must be having a hard time. / I'll help you out.\n16. 엄마 생 신 이라 / 부모님 B7|= 했어. (see parents, birthday)\nI'm seeing my parents / for my mom's birthday.\n17. 우 리 가 잘 준 비 했 으니까 / HHS 잘 될 OF (presentation, go well, prepared well)\nThe presentation is gonna go well / since we prepared well.\n18. 연 봉 이 더 좋은 / 새 직장 찾 아 보 려고. (new job, pays better)\nI'm going to look for a new job / that pays better.\n19. 피 곤 하겠다. / 커피 가져다 줄게. (grab some coffee)\nYou must be tired. / 111 grab some coffee for you.\n20. 곧 좋은 소식 들을 거야. / 느 낌 이 좋아. (good news, good feeling)\nYou're going to hear good news soon. / | have a good feeling.\n7"
+        },
+        {
+          "spreadNumber": 5,
+          "oddPageNumber": 9,
+          "evenPageNumber": 10,
+          "oddImage": "/materials/step-04/spread-05-odd.jpg",
+          "evenImage": "/materials/step-04/spread-05-even.jpg",
+          "oddText": "31. 비 밀 로 할 게 . / 아 무 한 테 도 말 안할 게 . (keep secret, won't tell anyone)\nI'll keep it a secret. / | won't tell anyone.\n32. 바다 보러 / 제주도 Z 거야, (head to Jeju, see the ocean)\nI'm going to head to Jeju / to see the ocean.\n33.5 T14/ 곧 기분 나아질 &Z. (feel better, get some rest)\nYou'll feel better soon / if you get some rest.\n34. 직 장 이랑 집 이 너무 멀어서 / 이사 가 려 구 . (my place is too far)\nI'm going to move / because my place is too far from work.\n35. 오늘 저 녁 은 내가 만 들 거니까, / A 그냥 쉬어. (cook dinner, you relax)\nI'm going to cook dinner tonight, / you just relax.\n36. 내 년 에 / 더 2 집 으로 이 사 가. (move, bigger house)\nI'm moving to a bigger house / next year.\n37. 회의 방금 끝나서 / 개가 곧 전화 할 거 야 .. (give a call, her meeting just ended)\nShe's going to give you a call soon / because her meeting just ended.\n38. 이번 주 말 에 / 모임 가. (get-together)\nI'm going to a get-together / this weekend.\n39. 까 먹 기 전에 / 메 모 해 둘 게 . (note down, before | forget)\nI'll note it down / before | forget.\n40. 아이디어 얻게 / 책 더 읽 으 려고. (read more books, get new ideas)\nI'm going to read more books / to get new ideas.\n9",
+          "evenText": "41. 너무 진 빠져서 / 일찍 잘 래 . (crash, drained) |\nI'm going to crash early / because I'm completely drained.\n42. 새로운 역할 맡 으 려 고 / 새 팀 으로 옮길 거야. (join new team, new role)\n110 going to join a new team / to take on a new role.\n43. 그 영화 진짜 재밌을 거야. / 좋은 후 기 들 봤어. (great reviews)\nThat movie is going to be really fun. / | saw great reviews. Ue\n44. 퇴 근 하고 바로 / 저녁 모 임 에 참석할 거야. (attend gathering, right after work) :\nI'm going to attend a dinner gathering / right after work. oe , :\n45. 내가 정리 할게. / 내가 처리 할 수 있어. (take care, handle it) =\n111 take care of it. / | can handle it. |\n46. 오늘 늦 었 어 / 그래서 내일은 일찍 출 근 하려고. (late, go to work early) >\n| was late today / so I'm going to go to work early tomorrow, — Le 6\n47. 마 감 이 다가와서 / 오 늘 밤엔 야근 할거야. (working late, deadline is approaching)\nI'm going to work late tonight / because.the. deadline. is approaching. '\n48. 2 년 계 약 으로 / 거기서 일할 예 정 이 야 . (work, on a two-year contract)\nI'm going to work there / on a two-year contract.\n49. 세 부 사 항 확인할 Al / 그리고 AS 후에 알 려 줄 게 . (check the details, let you know)\nI'll check the details / and let you know in a bit.\n50. 돈 좀 더 모으면 / 언젠가 내 가게 S 거야. (open my own shop, save money)\nI'm going to open my own shop someday / after | save enough money.\n10"
+        }
+      ],
+      "sentences": [
+        {
+          "id": "step-4-s001",
+          "exerciseNumber": 1,
+          "text": "I'll get the report done tonight so I can relax tomorrow.",
+          "promptKo": "내일 편하게 2 수 있게 / 오늘 밤 에 보고서 끝 낼 래 . get it done, relax tomorrow)",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-4-s002",
+          "exerciseNumber": 2,
+          "text": "I'm hanging out at my friend's place to catch up.",
+          "promptKo": "밀린 얘기 좀 나 누 려고 / 진구 집 에서 놀 기 로 했어.",
+          "hints": [
+            "hang out",
+            "friend's place",
+            "catch up"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-4-s003",
+          "exerciseNumber": 3,
+          "text": "You'll be surprised when you hear the news.",
+          "promptKo": "너 그 소식 들으면 / 깜짝 놀랄 4. (be surprised, hear the news) ae",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-4-s004",
+          "exerciseNumber": 4,
+          "text": "I'm going to sign up for the gym to start working out.",
+          "promptKo": "",
+          "hints": [],
+          "sourcePages": [
+            "even 1"
+          ]
+        },
+        {
+          "id": "step-4-s005",
+          "exerciseNumber": 5,
+          "text": "I'll grab the check since you covered it last time.",
+          "promptKo": "너가 ALP MOLT /. 내 가 낼 게 .",
+          "hints": [
+            "grab the check",
+            "covered it last'time"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-4-s006",
+          "exerciseNumber": 6,
+          "text": "I'm going to get a new car since my car keeps breaking down.",
+          "promptKo": "차 바꿀 생 각 이야, / 지금 차가 자꾸 고장 나니까.",
+          "hints": [
+            "Get a new car",
+            "breaking down"
+          ],
+          "sourcePages": [
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-4-s007",
+          "exerciseNumber": 7,
+          "text": "He's going to show up late because the traffic is bad.",
+          "promptKo": "차가 막혀서 개 는 늦게 나 타 날 거야.",
+          "hints": [
+            "show up late",
+            "traffic is bad"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-4-s008",
+          "exerciseNumber": 8,
+          "text": "We're having a team dinner for the new employees.",
+          "promptKo": "신 입 들이 와서 / 회 식 이 있어요.",
+          "hints": [
+            "have a team dinner",
+            "new employees"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-4-s009",
+          "exerciseNumber": 9,
+          "text": "I'll hear you out no matter how long it is.",
+          "promptKo": "네 얘기 다 들 어 줄게, / 아무리 길 어 도 상관 없어.",
+          "hints": [
+            "hear you out",
+            "no matter how long"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-4-s010",
+          "exerciseNumber": 10,
+          "text": "I'm traveling abroad during my long vacation.",
+          "promptKo": "2! 휴가 동안 / 해 외 여 행 을 가 기 로 했어.",
+          "hints": [
+            "travel abroad",
+            "long vacation"
+          ],
+          "sourcePages": [
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-4-s011",
+          "exerciseNumber": 11,
+          "text": "The delivery's here. I'll get the door.",
+          "promptKo": "배달 왔다. / 내가 문 열 어 줄게.",
+          "hints": [
+            "delivery",
+            "get the door"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-4-s012",
+          "exerciseNumber": 12,
+          "text": "I'm going to clean up the house. I haven't done it in a while.",
+          "promptKo": "8 4 치 우 려 고. / 오랫동안 안 했 거든.",
+          "hints": [
+            "0630 up",
+            "in a while"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-4-s013",
+          "exerciseNumber": 13,
+          "text": "It's going to warm up soon so we can finally go hiking.",
+          "promptKo": "곧 날 씨 가 따 뜻 해 질 거야, / 그러면 드디어 하 이 킹 을 갈 + 있어.",
+          "hints": [
+            "warm up",
+            "finally go hiking"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-4-s014",
+          "exerciseNumber": 14,
+          "text": "I'm going to go back to the academy I used to go to.",
+          "promptKo": "전에 Cha / 학원 다시 가려고.",
+          "hints": [
+            "go back",
+            "academy",
+            "used to go to"
+          ],
+          "sourcePages": [
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-4-s015",
+          "exerciseNumber": 15,
+          "text": "You must be having a hard time. I'll help you out.",
+          "promptKo": "힘 들 겠다, / 내가 다 도 와 줄 게 .",
+          "hints": [
+            "must be having a hard time",
+            "help out"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-4-s016",
+          "exerciseNumber": 16,
+          "text": "I'm seeing my parents for my mom's birthday.",
+          "promptKo": "엄마 생 신 이라 / 부모님 B7|= 했어.",
+          "hints": [
+            "see parents",
+            "birthday"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-4-s017",
+          "exerciseNumber": 17,
+          "text": "The presentation is going to go well since we prepared well.",
+          "promptKo": "우 리 가 잘 준 비 했 으니까 / HHS 잘 될 OF",
+          "hints": [
+            "presentation",
+            "go well",
+            "prepared well"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-4-s018",
+          "exerciseNumber": 18,
+          "text": "I'm going to look for a new job that pays better.",
+          "promptKo": "연 봉 이 더 좋은 / 새 직장 찾 아 보 려고.",
+          "hints": [
+            "new job",
+            "pays better"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-4-s019",
+          "exerciseNumber": 19,
+          "text": "You must be tired. I'll grab some coffee for you.",
+          "promptKo": "피 곤 하겠다. / 커피 가져다 줄게.",
+          "hints": [
+            "grab some coffee"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-4-s020",
+          "exerciseNumber": 20,
+          "text": "You're going to hear good news soon. I have a good feeling.",
+          "promptKo": "곧 좋은 소식 들을 거야. / 느 낌 이 좋아.",
+          "hints": [
+            "good news",
+            "good feeling"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-4-s021",
+          "exerciseNumber": 21,
+          "text": "I'm going to hit the gym right after work.",
+          "promptKo": "퇴 근 하자마자 운동 Z 거야. hit the gym, right after work) |",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-4-s022",
+          "exerciseNumber": 22,
+          "text": "I'm going to study English to build my resume.",
+          "promptKo": "스펙 쌓 으 려고 / 영어 공 부 할 거야.",
+          "hints": [
+            "build my resume"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-4-s023",
+          "exerciseNumber": 23,
+          "text": "I'm going to stay up late to finish this show.",
+          "promptKo": "이 드라마 다 보려고 / 늦 게 까지 깨어 있을 거야.",
+          "hints": [
+            "stay up late",
+            "finish show"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-4-s024",
+          "exerciseNumber": 24,
+          "text": "I'm going to get my hair done because it looks too messy now.",
+          "promptKo": "머리 할거야, / 지 금 은 너무 지 저 분 해 . (get my hair done, too messy) ,",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-4-s025",
+          "exerciseNumber": 25,
+          "text": "I'll go with a salad because I'm trying to eat healthier.",
+          "promptKo": "샐 러 드 로 할래, / 건 강 하게 Yor a 노 력 중 이 거든. (go with salad, eat healthier) a",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-4-s026",
+          "exerciseNumber": 26,
+          "text": "I'm going to lounge around at home over this vacation.",
+          "promptKo": "이번 휴 가 내내 / 집 에서 IB! 거야. (lounge around) os",
+          "hints": [],
+          "sourcePages": [
+            "odd 2",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-4-s027",
+          "exerciseNumber": 27,
+          "text": "People will be here soon, so we need to hurry up.",
+          "promptKo": "",
+          "hints": [],
+          "sourcePages": [
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-4-s028",
+          "exerciseNumber": 28,
+          "text": "I'm going to sort my papers so I can find them easily later.",
+          "promptKo": "나중에 쉽게 찾으려고 / 서류 분 류 할 거야.",
+          "hints": [
+            "sort papers",
+            "find them later"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-4-s029",
+          "exerciseNumber": 29,
+          "text": "I'll get back to you later.",
+          "promptKo": "나중에 다시 연 락 할게. get back to you)",
+          "hints": [],
+          "sourcePages": [
+            "odd 2",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-4-s030",
+          "exerciseNumber": 30,
+          "text": "I'm going to start saving money because there's something I want to buy.",
+          "promptKo": "사고 싶은 게 있어서 / = 모으기 시 작 할 거야.",
+          "hints": [
+            "start saving money",
+            "something | want to buy"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-4-s031",
+          "exerciseNumber": 31,
+          "text": "I'll keep it a secret. I won't tell anyone.",
+          "promptKo": "비 밀 로 할 게 . / 아 무 한 테 도 말 안할 게 .",
+          "hints": [
+            "keep secret",
+            "won't tell anyone"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-4-s032",
+          "exerciseNumber": 32,
+          "text": "I'm going to head to Jeju to see the ocean.",
+          "promptKo": "바다 보러 / 제주도 Z 거야,",
+          "hints": [
+            "head to Jeju",
+            "see the ocean"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-4-s033",
+          "exerciseNumber": 33,
+          "text": "You'll feel better soon if you get some rest.",
+          "promptKo": "5 T14/ 곧 기분 나아질 &Z.",
+          "hints": [
+            "feel better",
+            "get some rest"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-4-s034",
+          "exerciseNumber": 34,
+          "text": "I'm going to move because my place is too far from work.",
+          "promptKo": "직 장 이랑 집 이 너무 멀어서 / 이사 가 려 구 .",
+          "hints": [
+            "my place is too far"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-4-s035",
+          "exerciseNumber": 35,
+          "text": "I'm going to cook dinner tonight. You just relax.",
+          "promptKo": "오늘 저 녁 은 내가 만 들 거니까, / A 그냥 쉬어.",
+          "hints": [
+            "cook dinner",
+            "you relax"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-4-s036",
+          "exerciseNumber": 36,
+          "text": "I'm moving to a bigger house next year.",
+          "promptKo": "내 년 에 / 더 2 집 으로 이 사 가.",
+          "hints": [
+            "move",
+            "bigger house"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-4-s037",
+          "exerciseNumber": 37,
+          "text": "She's going to give you a call soon because her meeting just ended.",
+          "promptKo": "회의 방금 끝나서 / 개가 곧 전화 할 거 야 ..",
+          "hints": [
+            "give a call",
+            "her meeting just ended"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-4-s038",
+          "exerciseNumber": 38,
+          "text": "I'm going to a get-together this weekend.",
+          "promptKo": "이번 주 말 에 / 모임 가.",
+          "hints": [
+            "get-together"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-4-s039",
+          "exerciseNumber": 39,
+          "text": "I'll note it down before I forget.",
+          "promptKo": "까 먹 기 전에 / 메 모 해 둘 게 .",
+          "hints": [
+            "note down",
+            "before | forget"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-4-s040",
+          "exerciseNumber": 40,
+          "text": "I'm going to read more books to get new ideas.",
+          "promptKo": "아이디어 얻게 / 책 더 읽 으 려고.",
+          "hints": [
+            "read more books",
+            "get new ideas"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-4-s041",
+          "exerciseNumber": 41,
+          "text": "I'm going to crash early because I'm completely drained.",
+          "promptKo": "너무 진 빠져서 / 일찍 잘 래 . (crash, drained) |",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-4-s042",
+          "exerciseNumber": 42,
+          "text": "I'm going to join a new team to take on a new role.",
+          "promptKo": "새로운 역할 맡 으 려 고 / 새 팀 으로 옮길 거야.",
+          "hints": [
+            "join new team",
+            "new role"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-4-s043",
+          "exerciseNumber": 43,
+          "text": "That movie is going to be really fun. I saw great reviews.",
+          "promptKo": "그 영화 진짜 재밌을 거야. / 좋은 후 기 들 봤어.",
+          "hints": [
+            "great reviews"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-4-s044",
+          "exerciseNumber": 44,
+          "text": "I'm going to attend a dinner gathering right after work.",
+          "promptKo": "퇴 근 하고 바로 / 저녁 모 임 에 참석할 거야. (attend gathering, right after work) :",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-4-s045",
+          "exerciseNumber": 45,
+          "text": "I'll take care of it. I can handle it.",
+          "promptKo": "내가 정리 할게. / 내가 처리 할 수 있어. (take care, handle it) =",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-4-s046",
+          "exerciseNumber": 46,
+          "text": "I was late today, so I'm going to go to work early tomorrow.",
+          "promptKo": "오늘 늦 었 어 / 그래서 내일은 일찍 출 근 하려고. (late, go to work early) >",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-4-s047",
+          "exerciseNumber": 47,
+          "text": "I'm going to work late tonight because the deadline is approaching.",
+          "promptKo": "마 감 이 다가와서 / 오 늘 밤엔 야근 할거야.",
+          "hints": [
+            "working late",
+            "deadline is approaching"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-4-s048",
+          "exerciseNumber": 48,
+          "text": "I'm going to work there on a two-year contract.",
+          "promptKo": "2 년 계 약 으로 / 거기서 일할 예 정 이 야 .",
+          "hints": [
+            "work",
+            "on a two-year contract"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-4-s049",
+          "exerciseNumber": 49,
+          "text": "I'll check the details and let you know in a bit.",
+          "promptKo": "세 부 사 항 확인할 Al / 그리고 AS 후에 알 려 줄 게 .",
+          "hints": [
+            "check the details",
+            "let you know"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-4-s050",
+          "exerciseNumber": 50,
+          "text": "I'm going to open my own shop someday after I save enough money.",
+          "promptKo": "돈 좀 더 모으면 / 언젠가 내 가게 S 거야.",
+          "hints": [
+            "open my own shop",
+            "save money"
           ],
           "sourcePages": [
             "even 5",
