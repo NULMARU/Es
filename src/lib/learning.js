@@ -161,6 +161,159 @@ const vocabularyCatalog = [
   type: term.includes(' ') || term.includes('-') ? '표현' : '단어'
 }));
 
+const fallbackVocabularyMeanings = new Map([
+  ['has a sale', '세일하다'],
+  ['like that', '~라는 점을 좋아하다'],
+  ['something sweet', '단것'],
+  ['what to eat', '무엇을 먹을지'],
+  ['like going to', '~에 가는 것을 좋아하다'],
+  ['restaurants people say are good', '사람들이 좋다고 하는 식당'],
+  ['wash my hands', '손을 씻다'],
+  ['go out', '밖에 나가다'],
+  ['take lots of photos', '사진을 많이 찍다'],
+  ['travel', '여행하다'],
+  ["can't sleep well", '잠을 잘 못 자다'],
+  ['drink beer', '맥주를 마시다'],
+  ['watch tv shows', '드라마나 TV 프로그램을 보다'],
+  ['take a taxi', '택시를 타다'],
+  ['get tired', '피곤해지다'],
+  ['plans change', '계획이 바뀌다'],
+  ['get home', '집에 오다'],
+  ['go outside', '밖에 나가다'],
+  ['it rains', '비가 오다'],
+  ['wear a mask', '마스크를 쓰다'],
+  ['get off', '내리다'],
+  ['stretch', '스트레칭하다'],
+  ['body feels stiff', '몸이 뻐근하다'],
+  ['open the window', '창문을 열다'],
+  ['room feels stuffy', '방이 답답하다'],
+  ['do important work', '중요한 일을 하다'],
+  ["couldn't answer", '받을 수 없었다'],
+  ['talking on the phone', '전화로 이야기하는 중'],
+  ['look serious', '심각해 보이다'],
+  ['getting ready for bed', '잘 준비를 하는 중'],
+  ['laughing', '웃고 있는 중'],
+  ['something funny', '재미있는 것'],
+  ['not talking', '말하지 않는 중'],
+  ['studying', '공부하는 중'],
+  ['practicing guitar', '기타를 연습하는 중'],
+  ['for performance', '공연을 위해'],
+  ['what you said', '네가 한 말'],
+  ['gathering my thoughts', '생각을 정리하는 중'],
+  ['what to do', '무엇을 할지'],
+  ['battery died', '배터리가 꺼졌다'],
+  ['important conversation', '중요한 대화'],
+  ['having a meeting', '회의 중'],
+  ['weather getting colder', '날씨가 추워지는 중'],
+  ['need puffer jacket', '패딩 점퍼가 필요하다'],
+  ['something important', '중요한 것'],
+  ['no one', '아무도'],
+  ['listening', '듣는 중'],
+  ['waiting for you', '너를 기다리는 중'],
+  ['getting prettier', '점점 예뻐지는 중'],
+  ['walk in', '걸어 들어오다'],
+  ['making excuses', '핑계를 대는 중'],
+  ['laugh', '웃다'],
+  ['birthday messages', '생일 메시지'],
+  ['loud music', '큰 음악 소리'],
+  ['friends', '친구들'],
+  ['messages', '메시지들'],
+  ['movie', '영화'],
+  ['phone', '전화, 휴대폰'],
+  ['meeting', '회의'],
+  ['weather', '날씨'],
+  ['problem', '문제'],
+  ['report', '보고서'],
+  ['details', '세부 사항']
+]);
+
+const fallbackStopwords = new Set([
+  'a',
+  'about',
+  'after',
+  'again',
+  'all',
+  'always',
+  'am',
+  'an',
+  'and',
+  'any',
+  'are',
+  'as',
+  'at',
+  'be',
+  'because',
+  'been',
+  'before',
+  'but',
+  'by',
+  'can',
+  "can't",
+  'could',
+  "couldn't",
+  'did',
+  "didn't",
+  'do',
+  "don't",
+  'for',
+  'from',
+  'get',
+  'go',
+  'had',
+  'has',
+  'have',
+  'he',
+  "he's",
+  'her',
+  'him',
+  'i',
+  "i'll",
+  "i'm",
+  'if',
+  'in',
+  'is',
+  'it',
+  "it's",
+  'me',
+  'my',
+  'no',
+  'not',
+  'now',
+  'of',
+  'on',
+  'or',
+  'out',
+  'she',
+  "she's",
+  'so',
+  'some',
+  'that',
+  'the',
+  'them',
+  'there',
+  'they',
+  "they're",
+  'this',
+  'to',
+  'too',
+  'up',
+  'was',
+  'we',
+  "we're",
+  'were',
+  'what',
+  'when',
+  'where',
+  'while',
+  'who',
+  'why',
+  'will',
+  'with',
+  'you',
+  "you'll",
+  "you're"
+]);
+
 export function normalizeAnswer(value) {
   return String(value || '')
     .toLowerCase()
@@ -191,12 +344,25 @@ export function scoreAnswer(expected, actual) {
 export function analyzeSentence(sentence, step) {
   const text = sentence?.text || '';
   const lower = text.toLowerCase();
-  const glossary = vocabularyCatalog
-    .filter((item) => matchesVocabulary(text, item.term))
-    .slice(0, 3);
+  const glossary = selectSentenceVocabulary(sentence, text);
 
   const structures = [];
-  if (step?.patternKind === 'progressive') {
+  if (step?.patternKind === 'mixed') {
+    const tense = detectMixedTense(text);
+    structures.push({ label: '시제 선택', value: tense.label });
+    structures.push({ label: '주어', value: extractSubject(text) });
+    structures.push({ label: tense.actionLabel, value: tense.action });
+    if (tense.signal) structures.push({ label: '시간 신호', value: tense.signal });
+  } else if (step?.patternKind === 'infinitive-gerund') {
+    const toInfinitive = text.match(/\b(?:want|hope|plan|decide|need|try|learn|agree|offer|manage|like|would like)\s+(?:not\s+)?to\s+[A-Za-z]+\b/i)?.[0]
+      || text.match(/\bhow\s+to\s+[A-Za-z]+\b/i)?.[0];
+    const gerund = text.match(/\b(?:like|enjoy|love|hate|avoid|finish|miss|practice|deny|thinking about|thinking of)\s+[A-Za-z]+ing\b/i)?.[0];
+    const relative = lower.match(/\b(who|that|where|what)\b/)?.[0];
+    structures.push({ label: '주어', value: extractSubject(text) });
+    structures.push({ label: '목적어 형태', value: toInfinitive ? 'to 부정사' : gerund ? '동명사' : 'to 부정사 / 동명사' });
+    structures.push({ label: '핵심 덩어리', value: toInfinitive || gerund || extractVerb(text) });
+    if (relative) structures.push({ label: '설명 연결', value: relative });
+  } else if (step?.patternKind === 'progressive') {
     const aux = lower.match(/\b(am|is|are|was|were|been)\b/)?.[0] || 'be';
     const ing = text.match(/\b[A-Za-z]+ing\b/)?.[0] || '동사-ing';
     structures.push({ label: '주어', value: extractSubject(text) });
@@ -238,6 +404,122 @@ export function analyzeSentence(sentence, step) {
   };
 }
 
+function selectSentenceVocabulary(sentence, text) {
+  const selected = [];
+  const seen = new Set();
+  const addItem = (item) => {
+    if (!item?.term || selected.length >= 3) return;
+    const key = item.term.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    selected.push(item);
+  };
+
+  vocabularyCatalog
+    .filter((item) => matchesVocabulary(text, item.term))
+    .forEach(addItem);
+
+  const hints = Array.isArray(sentence?.hints) ? sentence.hints : [];
+  const hintText = hints.join(' ');
+  if (selected.length < 3 && hintText) {
+    vocabularyCatalog
+      .filter((item) => matchesVocabulary(hintText, item.term) || hintMatchesTerm(hintText, item.term))
+      .forEach(addItem);
+  }
+
+  for (const hint of hints) {
+    if (selected.length >= 3) break;
+    addItem(makeFallbackVocabularyItem(hint, text));
+  }
+
+  for (const term of extractFallbackTerms(text)) {
+    if (selected.length >= 2) break;
+    addItem(makeFallbackVocabularyItem(term, text));
+  }
+
+  return selected.slice(0, 3);
+}
+
+function hintMatchesTerm(hintText, term) {
+  const normalizedHint = normalizeFallbackTerm(hintText);
+  const normalizedTerm = normalizeFallbackTerm(term);
+  return normalizedHint.includes(normalizedTerm) || normalizedTerm.includes(normalizedHint);
+}
+
+function makeFallbackVocabularyItem(rawTerm, example) {
+  const term = cleanupVocabularyTerm(rawTerm);
+  if (!term) return null;
+  const lower = term.toLowerCase();
+  return {
+    term,
+    meaning: fallbackVocabularyMeanings.get(lower) || describeFallbackTerm(lower),
+    example,
+    type: term.includes(' ') || term.includes('-') ? '표현' : '단어'
+  };
+}
+
+function cleanupVocabularyTerm(value) {
+  const term = normalizeFallbackTerm(value)
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!term || fallbackStopwords.has(term)) return '';
+  if (term.length < 3) return '';
+  return term;
+}
+
+function normalizeFallbackTerm(value) {
+  return String(value || '')
+    .replace(/\|/g, 'I')
+    .replace(/[()[\]{}]/g, ' ')
+    .replace(/[^A-Za-z0-9' -]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+}
+
+function describeFallbackTerm(term) {
+  if (term.endsWith('ing')) return '~하는 중이라는 뜻의 표현';
+  if (term.includes('whether')) return '~할지 말지를 나타내는 표현';
+  if (term.includes('because')) return '이유를 연결하는 표현';
+  if (term.includes('before')) return '~하기 전을 나타내는 표현';
+  if (term.includes('after')) return '~한 뒤를 나타내는 표현';
+  if (term.includes('when')) return '~할 때를 나타내는 표현';
+  if (term.includes('to ')) return '목적이나 방향을 나타내는 표현';
+  return '문장에서 뜻을 만드는 핵심 표현';
+}
+
+function extractFallbackTerms(text) {
+  const cleanText = String(text || '')
+    .replace(/[()[\]{}.,?!]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const lowerText = cleanText.toLowerCase();
+  const phrasePatterns = [
+    /\b(send birthday messages)\b/i,
+    /\b(loud music)\b/i,
+    /\b(go outside)\b/i,
+    /\b(take a taxi)\b/i,
+    /\b(watch tv shows)\b/i,
+    /\b(drink beer)\b/i,
+    /\b(having a meeting)\b/i,
+    /\b(important conversation)\b/i,
+    /\b(getting ready for bed)\b/i,
+    /\b(gathering my thoughts)\b/i,
+    /\b(what to do)\b/i,
+    /\b(birthday messages)\b/i
+  ];
+  const phrases = phrasePatterns
+    .map((pattern) => lowerText.match(pattern)?.[1])
+    .filter(Boolean);
+  const tokens = cleanText
+    .split(/\s+/)
+    .map((token) => token.replace(/^['"]|['"]$/g, '').toLowerCase())
+    .filter((token) => /^[a-z][a-z'-]*$/.test(token))
+    .filter((token) => !fallbackStopwords.has(token))
+    .filter((token) => token.length > 3);
+  return [...phrases, ...tokens];
+}
+
 function matchesVocabulary(text, term) {
   const lowerText = String(text || '').toLowerCase();
   const lowerTerm = term.toLowerCase();
@@ -250,6 +532,49 @@ function matchesVocabulary(text, term) {
 
 function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function detectMixedTense(text) {
+  const lower = String(text || '').toLowerCase();
+  if (/\b(will|'ll|won't)\b/.test(lower)) {
+    return {
+      label: '미래 - will',
+      actionLabel: '미래 동작',
+      action: lower.includes("'ll") ? "will/'ll + 동사" : 'will + 동사',
+      signal: lower.match(/\b(tonight|tomorrow|soon|later)\b/)?.[0] || ''
+    };
+  }
+  if (/\bgoing to\b/.test(lower)) {
+    return {
+      label: '미래 - be going to',
+      actionLabel: '계획',
+      action: 'be going to + 동사',
+      signal: lower.match(/\b(next [a-z]+|this weekend|tomorrow)\b/)?.[0] || ''
+    };
+  }
+  if (/\b(am|is|are|was|were|'m|'re|'s)\s+[a-z]+ing\b/.test(lower)) {
+    const isPast = /\b(was|were)\b/.test(lower);
+    return {
+      label: isPast ? '과거 진행형' : '진행형',
+      actionLabel: '진행 동작',
+      action: text.match(/\b[A-Za-z]+ing\b/)?.[0] || '동사-ing',
+      signal: lower.match(/\b(right now|now|this week|last night|at [0-9]+)\b/)?.[0] || ''
+    };
+  }
+  if (/\b(yesterday|last|ago|back then|gave|went|took|fell|lost|changed|chatted|believed|didn't)\b/.test(lower) || /\b[a-z]+ed\b/.test(lower)) {
+    return {
+      label: '과거 시제',
+      actionLabel: '과거 동작',
+      action: text.match(/\b[A-Za-z]+ed\b/)?.[0] || lower.match(/\b(gave|went|took|fell|lost|changed|believed|didn't)\b/)?.[0] || '과거 동사',
+      signal: lower.match(/\b(yesterday|last [a-z]+|back then|last night)\b/)?.[0] || ''
+    };
+  }
+  return {
+    label: '현재 시제',
+    actionLabel: '현재 동작',
+    action: extractVerb(text),
+    signal: lower.match(/\b(always|usually|often|sometimes|every [a-z]+|when)\b/)?.[0] || ''
+  };
 }
 
 export function chunkSentence(text) {
@@ -265,6 +590,15 @@ export function chunkSentence(text) {
 
 export function makeQuestion(sentence, step, index = 0) {
   const text = sentence?.text || '';
+  if (step?.patternKind === 'infinitive-gerund') {
+    const templates = [
+      'What do you want to try these days?',
+      'What do you like doing in your free time?',
+      'What are you trying to improve?',
+      'What did you decide to do recently?'
+    ];
+    return templates[index % templates.length];
+  }
   if (step?.patternKind === 'progressive') {
     const templates = [
       'What are you doing these days?',
@@ -288,6 +622,36 @@ export function makeQuestion(sentence, step, index = 0) {
 }
 
 export function makeAnswerQuestions(step) {
+  if (step?.patternKind === 'infinitive-gerund') {
+    return [
+      'What do you want to try these days?',
+      'What do you need to fix or finish soon?',
+      'What are you learning how to do?',
+      'What do you like doing when you want to relax?',
+      'What do you avoid doing when you are tired?',
+      'What did you decide to do recently?',
+      'What are you thinking about changing?',
+      'What kind of place do you want to visit?',
+      'Who do you like spending time with?',
+      'What information are you trying to find?'
+    ];
+  }
+
+  if (step?.patternKind === 'mixed') {
+    return [
+      'What do you usually do when you are stressed?',
+      'What did you do last week?',
+      'What are you doing right now?',
+      'What will you do tonight?',
+      'What are you going to do next month?',
+      'What were you doing last night?',
+      'What do you do every weekend?',
+      'What did you give up on recently?',
+      'What are you going to start next year?',
+      'What good news do you think you will hear soon?'
+    ];
+  }
+
   if (step?.patternKind === 'progressive') {
     return [
       'What are you doing these days for your health?',

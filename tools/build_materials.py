@@ -80,6 +80,110 @@ CANONICAL_SENTENCES: dict[int, dict[int, str]] = {
         48: "I'm going to work there on a two-year contract.",
         49: "I'll check the details and let you know in a bit.",
         50: "I'm going to open my own shop someday after I save enough money.",
+    },
+    5: {
+        1: "I'll get the report done tonight.",
+        2: "I clean my room when I'm stressed.",
+        3: "I gave up on my diet last week.",
+        4: "I'm reading a book at a café right now.",
+        5: "You'll be surprised by the news tomorrow.",
+        6: "I always put my plans in the calendar.",
+        7: "I chatted with my friend all night yesterday.",
+        8: "I'll be working late tonight.",
+        9: "I visit my parents every weekend.",
+        10: "I went through my old emails last week.",
+        11: "I'll grab the check tonight.",
+        12: "I fix my hair every time I look in the mirror.",
+        13: "I just believed you back then.",
+        14: "I'm redecorating my house this week.",
+        15: "You'll hear good news soon.",
+        16: "I usually run on the treadmill in the evening.",
+        17: "I fell asleep while watching TV last night.",
+        18: "I'm waiting for the bus right now.",
+        19: "I'm going to get a new car next year.",
+        20: "I enjoy reading books at a café.",
+        21: "I took the wrong bus last week and ended up somewhere else.",
+        22: "I'm watching a movie with my friend tonight.",
+        23: "I'm going to spend my vacation with my family.",
+        24: "I can't live without coffee in the morning.",
+        25: "I kept avoiding an important call yesterday.",
+        26: "I'm getting ready for the meeting now.",
+        27: "I sometimes meet my friend at the bus stop.",
+        28: "I lost an important document last week.",
+        29: "I'm going to take a cooking class next month.",
+        30: "I'm relaxing while listening to music.",
+        31: "I just take a nap when I'm tired.",
+        32: "I didn't answer any calls yesterday because I wasn't in the mood.",
+        33: "I'll be staying up late tonight.",
+        34: "I change into comfy clothes when I get home.",
+        35: "I did a deep clean of my room last month.",
+        36: "I'm doing my homework right now.",
+        37: "I'm going to hang out at my friend's place this weekend.",
+        38: "I often go to the beach with my friends.",
+        39: "I completely changed my plans last week.",
+        40: "I'm going to sign up for the gym next month.",
+        41: "I rarely check KakaoTalk while I'm working.",
+        42: "I left my phone at home last night.",
+        43: "I'm getting ready for breakfast now.",
+        44: "I usually take a walk at lunchtime.",
+        45: "I'm going to start studying for an English test next year.",
+        46: "I visit my parents every weekend.",
+        47: "I went to a concert alone for the first time last month.",
+        48: "I'm listening to music on the bus right now.",
+        49: "I stretch in the park every morning.",
+        50: "I hid my feelings back then.",
+    },
+    6: {
+        1: "I want to check out the café you talked about.",
+        2: "I'm learning how to answer without getting nervous.",
+        3: "I agreed to follow the plan he suggested.",
+        4: "I want to find an environment I can focus in.",
+        5: "I like going to places where photos come out nice.",
+        6: "I need to return that item that doesn't fit me.",
+        7: "I'm thinking about quitting the job that drains me.",
+        8: "I really like reading stories that change my perspective.",
+        9: "I'm trying to find out what she wants.",
+        10: "I want to meet the person who made this product.",
+        11: "I want to resolve the issue that keeps bothering me.",
+        12: "I decided to get back to the things I've been putting off.",
+        13: "I organized the documents that had piled up.",
+        14: "I hope to get a reply to the question I asked.",
+        15: "I'm planning to move to a place with better lighting.",
+        16: "I'm trying not to buy things I don't really need.",
+        17: "I want to try that dessert that's trending on social media.",
+        18: "He offered to buy my ticket as well.",
+        19: "I like listening to music that matches my mood.",
+        20: "I'm practicing making choices that match my goal.",
+        21: "I want to visit a place where I can just relax.",
+        22: "I need to fix the mistake I made earlier.",
+        23: "I'm trying to solve the problem that keeps coming up.",
+        24: "I miss spending time with the people who really understand me.",
+        25: "I hope to hear from the company I applied to.",
+        26: "I like watching videos that explain things clearly.",
+        27: "I decided to let go of the things that were dragging me down.",
+        28: "I want to buy the planner everyone is using these days.",
+        29: "It's time to wrap up the project I started last month.",
+        30: "I finally finished the book everyone recommended.",
+        31: "I want to take the class that my friend told me about.",
+        32: "I tend to avoid areas where parking is really difficult.",
+        33: "My friend recommended a movie he really enjoyed.",
+        34: "I learned how to stress less, and here's the thing.",
+        35: "I'd like to hear the rest of the story you didn't finish yesterday.",
+        36: "I decided to try the thing I've wanted to do for a long time.",
+        37: "I want to go back to the place where we first met.",
+        38: "I need to delete some files that are taking up a lot of space.",
+        39: "I want to meet someone who has the same goals as I do.",
+        40: "I'm thinking of going to see a friend who lives abroad.",
+        41: "We decided to meet again at the café where we studied last time.",
+        42: "I like being with people who make me feel relaxed.",
+        43: "I want to learn how to cook the dish I always order.",
+        44: "I'm practicing how to do my makeup nicely.",
+        45: "I'm trying to make a study routine that works for me.",
+        46: "I don't want to do things that don't really matter in the end.",
+        47: "I like spending time in cafés where I can stay for a long time.",
+        48: "I finally finished doing the work I'd been putting off.",
+        49: "I finally managed to find the information I'd been looking for.",
+        50: "He denied saying the comment that made everyone uncomfortable.",
     }
 }
 
@@ -219,6 +323,11 @@ def save_page_image(image: Image.Image, target: Path) -> None:
     image.save(target, format="JPEG", quality=86, optimize=True)
 
 
+def blank_page_like(reference: Image.Image | None) -> Image.Image:
+    size = reference.size if reference is not None else (1420, 2007)
+    return Image.new("RGB", size, (248, 250, 251))
+
+
 def discover_pdfs() -> dict[int, dict[int, SourcePdf]]:
     found: dict[int, dict[int, SourcePdf]] = {}
     singles: dict[int, Path] = {}
@@ -260,6 +369,10 @@ def extract_topic(lines: list[str]) -> str:
 
 def detect_pattern_kind(step: int, text: str) -> str:
     compact = re.sub(r"\s+", "", text)
+    if "부정사" in compact or "동명사" in compact or step == 6:
+        return "infinitive-gerund"
+    if "시제섞" in compact or step == 5:
+        return "mixed"
     if "미래" in compact or "begoingto" in compact.lower() or step == 4:
         return "future"
     if "진행" in compact:
@@ -272,6 +385,48 @@ def detect_pattern_kind(step: int, text: str) -> str:
 
 
 def build_patterns(kind: str) -> list[dict[str, Any]]:
+    if kind == "infinitive-gerund":
+        return [
+            {
+                "name": "to 부정사 목적어",
+                "formula": "want/hope/plan/decide/need + to + 동사원형",
+                "focus": "하고 싶은 일, 계획, 결정, 필요를 말할 때",
+                "signals": ["want to", "hope to", "plan to", "decide to", "need to"],
+            },
+            {
+                "name": "동명사 목적어",
+                "formula": "like/enjoy/avoid/finish/miss/practice + 동사-ing",
+                "focus": "좋아하는 활동, 피하는 일, 끝낸 일을 말할 때",
+                "signals": ["like going", "avoid areas", "finished doing", "miss spending"],
+            },
+            {
+                "name": "관계절 확장",
+                "formula": "명사 + who/that/where + 설명",
+                "focus": "사람, 장소, 물건을 뒤에서 구체적으로 설명하기",
+                "signals": ["who", "that", "where", "what"],
+            },
+        ]
+    if kind == "mixed":
+        return [
+            {
+                "name": "현재 시제",
+                "formula": "주어 + 현재동사",
+                "focus": "습관, 사실, 지금의 상태",
+                "signals": ["always", "usually", "every weekend", "when"],
+            },
+            {
+                "name": "과거 시제",
+                "formula": "주어 + 과거동사",
+                "focus": "이미 끝난 일과 지난 경험",
+                "signals": ["yesterday", "last week", "back then", "last night"],
+            },
+            {
+                "name": "미래/진행",
+                "formula": "will / be going to / be + -ing",
+                "focus": "예정, 계획, 지금 하는 일",
+                "signals": ["tonight", "tomorrow", "next month", "right now"],
+            },
+        ]
     if kind == "present-simple":
         return [
             {
@@ -367,6 +522,10 @@ def build_patterns(kind: str) -> list[dict[str, Any]]:
 
 
 def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
+    if kind == "infinitive-gerund":
+        return f"Step {step} - to 부정사와 동명사"
+    if kind == "mixed":
+        return f"Step {step} - 시제 섞기"
     if kind == "present-simple":
         return "Step 1 - 현재 시제"
     if kind == "progressive":
@@ -379,6 +538,13 @@ def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
         if "STEP" in line.upper() or "스텝" in line:
             return clean_line(line)
     return f"Step {step}"
+
+
+def topic_for_step(step: int, kind: str, first_lines: list[str]) -> str:
+    topic = extract_topic(first_lines)
+    if kind == "infinitive-gerund" and step == 6:
+        return "내가 하고 싶은 일 / 좋아하는 일"
+    return topic
 
 
 def parse_prompt(line: str) -> tuple[str, list[str]]:
@@ -553,17 +719,28 @@ def source_file_label(source: SourcePdf, fallback: str) -> str:
 def build_step(step: int, parts: dict[int, SourcePdf]) -> dict[str, Any]:
     odd_reader, odd_page_indexes = part_pages(parts[1])
     even_reader, even_page_indexes = part_pages(parts[2])
-    spread_count = min(len(odd_page_indexes), len(even_page_indexes))
+    spread_count = max(len(odd_page_indexes), len(even_page_indexes))
     spreads: list[dict[str, Any]] = []
     ocr_records: list[dict[str, Any]] = []
+    step_dir = MATERIALS_DIR / f"step-{step:02d}"
+    if step_dir.exists():
+        for stale_image in step_dir.glob("spread-*.jpg"):
+            stale_image.unlink()
 
     for index in range(spread_count):
-        step_dir = MATERIALS_DIR / f"step-{step:02d}"
         odd_target = step_dir / f"spread-{index + 1:02d}-odd.jpg"
         even_target = step_dir / f"spread-{index + 1:02d}-even.jpg"
 
-        odd_image = get_page_image(odd_reader.pages[odd_page_indexes[index]])
-        even_image = get_page_image(even_reader.pages[even_page_indexes[index]])
+        odd_image = (
+            get_page_image(odd_reader.pages[odd_page_indexes[index]])
+            if index < len(odd_page_indexes)
+            else None
+        )
+        even_image = (
+            get_page_image(even_reader.pages[even_page_indexes[index]])
+            if index < len(even_page_indexes)
+            else None
+        )
         odd_lines: list[str] = []
         even_lines: list[str] = []
 
@@ -571,16 +748,20 @@ def build_step(step: int, parts: dict[int, SourcePdf]) -> dict[str, Any]:
             save_page_image(odd_image, odd_target)
             odd_lines = ocr_image(odd_image)
             ocr_records.append({"partLabel": "odd", "pageIndex": index + 1, "lines": odd_lines})
+        else:
+            save_page_image(blank_page_like(even_image), odd_target)
         if even_image is not None:
             save_page_image(even_image, even_target)
             even_lines = ocr_image(even_image)
             ocr_records.append({"partLabel": "even", "pageIndex": index + 1, "lines": even_lines})
+        else:
+            save_page_image(blank_page_like(odd_image), even_target)
 
         spreads.append(
             {
                 "spreadNumber": index + 1,
-                "oddPageNumber": index * 2 + 1,
-                "evenPageNumber": index * 2 + 2,
+                "oddPageNumber": index * 2 + 1 if index < len(odd_page_indexes) else None,
+                "evenPageNumber": index * 2 + 2 if index < len(even_page_indexes) else None,
                 "oddImage": f"/materials/step-{step:02d}/{odd_target.name}",
                 "evenImage": f"/materials/step-{step:02d}/{even_target.name}",
                 "oddText": "\n".join(odd_lines),
@@ -597,7 +778,7 @@ def build_step(step: int, parts: dict[int, SourcePdf]) -> dict[str, Any]:
         "id": f"step-{step}",
         "stepNumber": step,
         "title": title_for_step(step, kind, first_lines),
-        "topic": extract_topic(first_lines),
+        "topic": topic_for_step(step, kind, first_lines),
         "patternKind": kind,
         "patterns": build_patterns(kind),
         "sourceFiles": {

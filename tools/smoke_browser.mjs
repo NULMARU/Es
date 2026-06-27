@@ -66,7 +66,7 @@ await page.locator('.sentence-nav-top span', { hasText: '1/50' }).waitFor({ time
 await page.locator('.sentence-nav p', { hasText: 'I stock up when Olive Young has a sale.' }).waitFor({ timeout: 5000 });
 
 await page.getByRole('button', { name: '문장 만들기' }).click();
-await page.getByText('올리브영이 세일하면 나는 몰아서 사.').waitFor({ timeout: 5000 });
+await page.locator('.prompt-box strong', { hasText: '올리브영이 세일하면 나는 몰아서 사.' }).waitFor({ timeout: 5000 });
 await page.getByRole('button', { name: '정답 보기' }).click();
 await page.getByRole('button', { name: '확인' }).click();
 await page.getByText('100%').waitFor({ timeout: 5000 });
@@ -83,8 +83,12 @@ if (answerSentenceCards !== 0) {
 }
 await page.locator('.question-box', { hasText: 'What do you usually do when you get home?' }).waitFor({ timeout: 5000 });
 await page.getByPlaceholder('Answer in English').fill('I usually wash my hands when I get home.');
-await page.getByRole('button', { name: '답변 확인' }).click();
-await page.getByText('현재 시제 반복 패턴이 보인다.').waitFor({ timeout: 5000 });
+await page.getByRole('button', { name: '답변하기' }).click();
+await page.getByText('맥락과 문법이 자연스럽다.').waitFor({ timeout: 5000 });
+await page.getByPlaceholder('Answer in English').fill('I went to school yesterday.');
+await page.getByRole('button', { name: '답변하기' }).click();
+await page.getByText('추천 정답').waitFor({ timeout: 5000 });
+await page.getByText('I usually wash my hands when I get home.').waitFor({ timeout: 5000 });
 
 await page.setViewportSize({ width: 390, height: 900 });
 await page.screenshot({ path: path.join(artifactDir, 'mobile-workflow.png'), fullPage: true });

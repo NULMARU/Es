@@ -322,6 +322,8 @@ function WorkflowPane({
   return (
     <AnswerPane
       step={step}
+      sentence={sentence}
+      analysis={analysis}
       onProgress={onProgress}
     />
   );
@@ -331,6 +333,10 @@ function UnderstandPane({ step, sentence, analysis }) {
   return (
     <div className="flow-stack">
       <Panel icon={<Search size={20} />} title="패턴 뼈대">
+        <div className="pattern-current-sentence">
+          <span>영어 문장</span>
+          <strong>{sentence.text}</strong>
+        </div>
         <div className="pattern-grid">
           {step.patterns.map((pattern) => (
             <article className="pattern-card" key={pattern.name}>
@@ -345,7 +351,7 @@ function UnderstandPane({ step, sentence, analysis }) {
         </div>
       </Panel>
 
-      <SentenceFocus sentence={sentence} analysis={analysis} marker="오늘의 기준 문장" sentenceVocabularyOnly />
+      <SentenceFocus sentence={sentence} analysis={analysis} marker="중급 단어" compact vocabularyOnly />
     </div>
   );
 }
@@ -535,7 +541,7 @@ function SpeakPane({ sentence, sentenceIndex, sentenceCount, analysis, onSelectS
   );
 }
 
-function AnswerPane({ step, onProgress }) {
+function AnswerPane({ step, sentence, analysis, onProgress }) {
   const questions = useMemo(() => makeAnswerQuestions(step), [step]);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answer, setAnswer] = useState('');
@@ -552,7 +558,7 @@ function AnswerPane({ step, onProgress }) {
   }, [step.id, questionIndex]);
 
   function check() {
-    const next = scoreFreeAnswer(answer, step);
+    const next = scoreFreeAnswer(answer, step, question, questionIndex);
     setResult(next);
     onProgress(`${step.id}-answer-${questionIndex + 1}`, (before) => ({
       ...before,
@@ -593,7 +599,7 @@ function AnswerPane({ step, onProgress }) {
         <div className="button-row">
           <button className="primary-button" onClick={check}>
             <CheckCircle2 size={18} />
-            답변 확인
+            답변하기
           </button>
           <button className="secondary-button" onClick={() => speakText(question)}>
             <Volume2 size={18} />
@@ -605,12 +611,28 @@ function AnswerPane({ step, onProgress }) {
           </button>
         </div>
         {result && (
-          <div className={`result-box ${result.score >= 0.7 ? 'good' : 'needs-work'}`}>
-            {result.score >= 0.7 ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
-            <span>{Math.round(result.score * 100)}% · {result.message}</span>
+          <div className={`answer-feedback ${result.isCorrect ? 'good' : 'needs-work'}`}>
+            <div className="feedback-heading">
+              {result.isCorrect ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
+              <strong>{result.isCorrect ? '정답' : '수정 필요'}</strong>
+              <span>{Math.round(result.score * 100)}%</span>
+            </div>
+            <p>{result.message}</p>
+            {result.issues.length > 0 && (
+              <ul>
+                {result.issues.map((issue) => <li key={issue}>{issue}</li>)}
+              </ul>
+            )}
+            {!result.isCorrect && (
+              <div className="correction-box">
+                <span>추천 정답</span>
+                <strong>{result.correction}</strong>
+              </div>
+            )}
           </div>
         )}
       </Panel>
+      <SentenceFocus sentence={sentence} analysis={analysis} marker="중급 단어" compact vocabularyOnly />
     </div>
   );
 }
@@ -646,11 +668,11 @@ function SentenceFocus({ sentence, analysis, marker, compact = false, vocabulary
     <Panel icon={<BookOpen size={20} />} title={marker}>
       <div className={`sentence-focus ${compact ? 'compact' : ''}`}>
         {vocabularyOnly ? (
-          <Glossary glossary={analysis.glossary} inline empty />
+          <IntermediateVocabulary sentence={sentence} glossary={analysis.glossary} />
         ) : sentenceVocabularyOnly ? (
           <>
             <p>{sentence.text}</p>
-            <Glossary glossary={analysis.glossary} inline empty />
+            <IntermediateVocabulary sentence={sentence} glossary={analysis.glossary} />
           </>
         ) : (
           <>
@@ -666,7 +688,7 @@ function SentenceFocus({ sentence, analysis, marker, compact = false, vocabulary
                 </div>
               ))}
             </div>
-            <Glossary glossary={analysis.glossary} />
+            <IntermediateVocabulary sentence={sentence} glossary={analysis.glossary} />
           </>
         )}
       </div>
@@ -674,9 +696,18 @@ function SentenceFocus({ sentence, analysis, marker, compact = false, vocabulary
   );
 }
 
+function IntermediateVocabulary({ sentence, glossary }) {
+  return (
+    <div className="intermediate-vocabulary">
+      <p className="translation-line">{getKoreanPrompt(sentence)}</p>
+      <Glossary glossary={glossary} inline empty />
+    </div>
+  );
+}
+
 function Glossary({ glossary, inline = false, empty = false }) {
   if (!glossary.length) {
-    return empty ? <div className={`glossary ${inline ? 'inline' : ''}`} aria-label="중급 단어 없음" /> : null;
+    return empty ? <div className={`glossary empty ${inline ? 'inline' : ''}`} aria-label="중급 단어 없음" /> : null;
   }
   return (
     <div className={`glossary ${inline ? 'inline' : ''}`}>
@@ -892,7 +923,56 @@ const koreanPromptByEnglish = new Map([
   ["I'm going to work late tonight because the deadline is approaching.", '마감이 다가와서 오늘 밤에는 야근할 거야.'],
   ["I'm going to work there on a two-year contract.", '2년 계약으로 거기서 일할 예정이야.'],
   ["I'll check the details and let you know in a bit.", '세부 사항을 확인하고 조금 후에 알려줄게.'],
-  ["I'm going to open my own shop someday after I save enough money.", '돈을 충분히 모으면 언젠가 내 가게를 열 거야.']
+  ["I'm going to open my own shop someday after I save enough money.", '돈을 충분히 모으면 언젠가 내 가게를 열 거야.'],
+  ["I'll get the report done tonight.", '오늘 밤에 보고서를 끝낼게.'],
+  ["I clean my room when I'm stressed.", '나는 스트레스를 받으면 방 청소를 해.'],
+  ['I gave up on my diet last week.', '지난주에 다이어트를 포기했어.'],
+  ["I'm reading a book at a café right now.", '지금 카페에서 책을 읽고 있어.'],
+  ["You'll be surprised by the news tomorrow.", '내일 그 소식을 들으면 너는 놀랄 거야.'],
+  ['I always put my plans in the calendar.', '나는 항상 계획을 캘린더에 기록해.'],
+  ['I chatted with my friend all night yesterday.', '어제 친구와 밤새 수다를 떨었어.'],
+  ["I'll be working late tonight.", '오늘 밤 늦게까지 일하고 있을 거야.'],
+  ['I visit my parents every weekend.', '나는 주말마다 부모님을 찾아가.'],
+  ['I went through my old emails last week.', '지난주에 오래된 이메일을 정리했어.'],
+  ["I'll grab the check tonight.", '오늘 밤엔 내가 계산할게.'],
+  ['I fix my hair every time I look in the mirror.', '나는 거울을 볼 때마다 머리를 정리해.'],
+  ['I just believed you back then.', '그때 나는 그냥 너를 믿었어.'],
+  ["I'm redecorating my house this week.", '이번 주에 집을 새로 꾸미고 있어.'],
+  ["You'll hear good news soon.", '곧 좋은 소식을 들을 거야.'],
+  ['I usually run on the treadmill in the evening.', '나는 보통 저녁에 러닝머신을 뛰어.'],
+  ['I fell asleep while watching TV last night.', '어젯밤 TV를 보다가 잠들었어.'],
+  ["I'm waiting for the bus right now.", '지금 버스를 기다리고 있어.'],
+  ["I'm going to get a new car next year.", '내년에 새 차를 살 계획이야.'],
+  ['I enjoy reading books at a café.', '나는 카페에서 책 읽는 것을 즐겨.'],
+  ['I took the wrong bus last week and ended up somewhere else.', '지난주에 버스를 잘못 타서 엉뚱한 곳에 갔어.'],
+  ["I'm watching a movie with my friend tonight.", '오늘 밤 친구와 영화를 보고 있어.'],
+  ["I'm going to spend my vacation with my family.", '이번 휴가는 가족과 보낼 계획이야.'],
+  ["I can't live without coffee in the morning.", '나는 아침에 커피 없이는 못 살아.'],
+  ['I kept avoiding an important call yesterday.', '어제 중요한 전화를 계속 피했어.'],
+  ["I'm getting ready for the meeting now.", '지금 회의 준비를 하고 있어.'],
+  ['I sometimes meet my friend at the bus stop.', '나는 가끔 버스 정류장에서 친구를 만나.'],
+  ['I lost an important document last week.', '지난주에 중요한 문서를 잃어버렸어.'],
+  ["I'm going to take a cooking class next month.", '다음 달에 요리 수업을 들을 거야.'],
+  ["I'm relaxing while listening to music.", '음악을 들으면서 쉬고 있어.'],
+  ["I just take a nap when I'm tired.", '나는 피곤하면 그냥 낮잠을 자.'],
+  ["I didn't answer any calls yesterday because I wasn't in the mood.", '어제는 그럴 기분이 아니어서 어떤 전화도 받지 않았어.'],
+  ["I'll be staying up late tonight.", '오늘 밤 늦게까지 깨어 있을 거야.'],
+  ['I change into comfy clothes when I get home.', '집에 오면 편한 옷으로 갈아입어.'],
+  ['I did a deep clean of my room last month.', '지난달에 방을 대청소했어.'],
+  ["I'm doing my homework right now.", '지금 숙제를 하고 있어.'],
+  ["I'm going to hang out at my friend's place this weekend.", '이번 주말에 친구 집에서 놀 거야.'],
+  ['I often go to the beach with my friends.', '나는 친구들과 해변에 자주 가.'],
+  ['I completely changed my plans last week.', '지난주에 계획을 완전히 바꿨어.'],
+  ["I'm going to sign up for the gym next month.", '다음 달에 헬스장에 등록할 거야.'],
+  ["I rarely check KakaoTalk while I'm working.", '나는 일하는 동안 카카오톡을 거의 확인하지 않아.'],
+  ['I left my phone at home last night.', '어젯밤 휴대폰을 집에 두고 왔어.'],
+  ["I'm getting ready for breakfast now.", '지금 아침 먹을 준비를 하고 있어.'],
+  ['I usually take a walk at lunchtime.', '나는 보통 점심시간에 산책해.'],
+  ["I'm going to start studying for an English test next year.", '내년에 영어 시험 공부를 시작할 거야.'],
+  ['I went to a concert alone for the first time last month.', '지난달에 처음으로 혼자 콘서트에 갔어.'],
+  ["I'm listening to music on the bus right now.", '지금 버스에서 음악을 듣고 있어.'],
+  ['I stretch in the park every morning.', '나는 매일 아침 공원에서 스트레칭해.'],
+  ['I hid my feelings back then.', '그때 나는 감정을 숨겼어.']
 ]);
 
 function getKoreanPrompt(sentence) {
@@ -1296,44 +1376,437 @@ function stopRecognition(ref) {
   }
 }
 
-function scoreFreeAnswer(answer, step) {
-  const normalized = normalizeAnswer(answer);
-  if (!normalized) return { score: 0, message: '답변을 입력한다.' };
-  const hasSubject = /\b(i|you|we|they|he|she|it)\b/.test(normalized);
-  if (step?.patternKind === 'progressive') {
-    const hasBe = /\b(am|is|are|was|were|been)\b/.test(normalized);
-    const hasIng = /\b[a-z]+ing\b/.test(normalized);
-    const score = Number(hasSubject) * 0.25 + Number(hasBe) * 0.35 + Number(hasIng) * 0.4;
-    return {
-      score,
-      message: score >= 0.7 ? '진행형 뼈대가 잡혔다.' : 'be 동사와 -ing 동사를 같이 넣는다.'
-    };
+const answerProfiles = {
+  'present-simple': [
+    {
+      context: /\b(get|go|come|arrive|home|house|room|door|shower|wash|change|rest)\b/,
+      correction: 'I usually wash my hands when I get home.',
+      contextHint: '집에 왔을 때 하는 행동을 답변에 넣는다.'
+    },
+    {
+      context: /\b(before|bed|sleep|asleep|night|instagram|phone|read|book|check)\b/,
+      correction: 'I usually check my phone before I fall asleep.',
+      contextHint: '자기 전 행동을 답변에 넣는다.'
+    },
+    {
+      context: /\b(after|lunch|eat|meal|walk|coffee|rest|study|work)\b/,
+      correction: 'I usually take a walk after lunch.',
+      contextHint: '점심 후 행동을 답변에 넣는다.'
+    },
+    {
+      context: /\b(tired|stressed|stress|rest|music|walk|sleep|relax|friends|coffee)\b/,
+      correction: 'I listen to music when I feel tired or stressed.',
+      contextHint: '피곤하거나 스트레스를 받을 때 하는 행동을 넣는다.'
+    },
+    {
+      context: /\b(weekend|weekends|saturday|sunday|morning|sleep|late|meet|rest|clean)\b/,
+      correction: 'I usually sleep late on weekends.',
+      contextHint: '주말에 하는 일을 답변에 넣는다.'
+    },
+    {
+      context: /\b(weather|rain|rains|rainy|bad|outside|home|umbrella|stay)\b/,
+      correction: "I stay home when the weather is bad.",
+      contextHint: '날씨가 나쁠 때 하는 행동을 넣는다.'
+    },
+    {
+      context: /\b(buy|shopping|reviews|review|price|size|try|check|something|clothes)\b/,
+      correction: 'I check reviews before I buy something.',
+      contextHint: '무언가를 사기 전에 하는 일을 넣는다.'
+    },
+    {
+      context: /\b(after|work|school|class|home|walk|rest|exercise|gym|dinner)\b/,
+      correction: 'I prefer taking a walk after work.',
+      contextHint: '일이나 학교가 끝난 뒤 선호하는 행동을 넣는다.'
+    },
+    {
+      context: /\b(important|work|study|focus|notifications|phone|turn|off|quiet)\b/,
+      correction: 'I turn off notifications when I have important work.',
+      contextHint: '중요한 일을 할 때 하는 행동을 넣는다.'
+    },
+    {
+      context: /\b(travel|trip|photos|pictures|hotel|food|walk|visit|place)\b/,
+      correction: 'I take a lot of photos when I travel.',
+      contextHint: '여행할 때 하는 행동을 넣는다.'
+    }
+  ],
+  progressive: [
+    {
+      context: /\b(health|healthy|vegetables|salad|vitamins|exercise|workout|sleep|water|diet)\b/,
+      correction: 'I am eating more vegetables these days for my health.',
+      contextHint: '건강을 위해 요즘 하고 있는 일을 넣는다.'
+    },
+    {
+      context: /\b(friend|friends|mom|dad|parents|teacher|coworker|classmate|him|her|them|someone)\b/,
+      correction: 'I am talking to my friend often these days.',
+      contextHint: '요즘 자주 이야기하는 사람을 넣는다.'
+    },
+    {
+      context: /\b(wait|waiting|package|reply|call|bus|train|friend|news|result|now)\b/,
+      correction: 'I am waiting for my package now.',
+      contextHint: '지금 기다리는 대상을 넣는다.'
+    },
+    {
+      context: /\b(thinking|about|plan|plans|future|work|trip|weekend|what|idea)\b/,
+      correction: 'I am thinking about my weekend plans these days.',
+      contextHint: '요즘 생각하고 있는 내용을 넣는다.'
+    },
+    {
+      context: /\b(11|pm|yesterday|night|watching|studying|sleeping|working|reading)\b/,
+      correction: 'I was watching Netflix around 11 PM yesterday.',
+      contextHint: '어제 밤 11시쯤 하고 있던 일을 넣는다.'
+    },
+    {
+      context: /\b(called|call|phone|recently|shower|driving|working|sleeping|watching)\b/,
+      correction: 'I was taking a shower when someone called me recently.',
+      contextHint: '최근 전화가 왔을 때 하고 있던 일을 넣는다.'
+    },
+    {
+      context: /\b(planning|plan|schedule|day|today|week|now)\b/,
+      correction: 'I am planning my day now.',
+      contextHint: '지금 계획하고 있는 일을 넣는다.'
+    },
+    {
+      context: /\b(getting into|show|drama|music|game|book|hobby|these days)\b/,
+      correction: 'I am getting into a new show these days.',
+      contextHint: '요즘 빠져드는 대상을 넣는다.'
+    },
+    {
+      context: /\b(cheer|myself|up|better|videos|music|walk|show|trying)\b/,
+      correction: 'I am watching funny videos to cheer myself up.',
+      contextHint: '기분을 풀기 위해 하고 있는 일을 넣는다.'
+    },
+    {
+      context: /\b(deciding|debating|whether|what|order|eat|buy|go|right now|now)\b/,
+      correction: 'I am deciding what to eat right now.',
+      contextHint: '지금 결정하거나 고민하는 내용을 넣는다.'
+    }
+  ],
+  'past-simple': [
+    {
+      context: /\b(believed|thought|trusted|recently|said|news|story)\b/,
+      correction: 'I believed what my friend said recently.',
+      contextHint: '최근에 믿었던 내용을 과거로 말한다.'
+    },
+    {
+      context: /\b(changed|plan|plans|because|rain|weather|cold|hot)\b/,
+      correction: 'I changed my plans because of the rain.',
+      contextHint: '날씨 때문에 바꾼 일을 과거로 말한다.'
+    },
+    {
+      context: /\b(stick|plan|plans|workout|diet|study|schedule|made)\b/,
+      correction: "I didn't stick to my workout plan.",
+      contextHint: '지키지 못한 계획을 과거로 말한다.'
+    },
+    {
+      context: /\b(gave|give|up|diet|exercise|plan|stress|because)\b/,
+      correction: 'I gave up on my diet because of stress.',
+      contextHint: '스트레스 때문에 포기한 일을 과거로 말한다.'
+    },
+    {
+      context: /\b(solved|problem|issue|work|school|recently)\b/,
+      correction: 'I solved a problem at work recently.',
+      contextHint: '최근 해결한 문제를 과거로 말한다.'
+    },
+    {
+      context: /\b(used|go|there|often|school|cafe|academy|gym)\b/,
+      correction: 'I used to go to that cafe often.',
+      contextHint: '예전에 자주 갔던 곳을 말한다.'
+    },
+    {
+      context: /\b(tried|recipe|online|youtube|saw|after|new)\b/,
+      correction: 'I tried a new recipe after seeing it online.',
+      contextHint: '온라인에서 보고 시도한 일을 과거로 말한다.'
+    },
+    {
+      context: /\b(came|across|old|thing|photos|messages|recently|found)\b/,
+      correction: 'I came across old photos recently.',
+      contextHint: '최근 우연히 발견한 오래된 것을 말한다.'
+    },
+    {
+      context: /\b(nervous|shocked|presentation|test|exam|interview|when|before)\b/,
+      correction: 'I was really nervous before my presentation.',
+      contextHint: '긴장하거나 놀랐던 경험을 과거로 말한다.'
+    },
+    {
+      context: /\b(worth|tough|trip|experience|hard|difficult|even though)\b/,
+      correction: 'The trip was worth it even though it was tough.',
+      contextHint: '힘들었지만 가치 있었던 경험을 말한다.'
+    }
+  ],
+  future: [
+    {
+      context: /\b(will|'ll|probably|later|soon|get back|call|text|rest|watch)\b/,
+      correction: "I'll probably get back to you later.",
+      contextHint: '나중에 아마 할 일을 미래 표현으로 말한다.'
+    },
+    {
+      context: /\b(going to|gonna|tonight|clean|study|watch|cook|work|room)\b/,
+      correction: "I'm going to clean up my room tonight.",
+      contextHint: '오늘 밤 할 일을 미래 표현으로 말한다.'
+    },
+    {
+      context: /\b(meeting|meet|seeing|tomorrow|friend|parents|mom|dad|coworker)\b/,
+      correction: "I'm meeting my friend tomorrow.",
+      contextHint: '내일 만날 사람을 말한다.'
+    },
+    {
+      context: /\b(sign|up|gym|class|course|lesson|club|going to)\b/,
+      correction: "I'm going to sign up for the gym.",
+      contextHint: '등록하려는 것을 말한다.'
+    },
+    {
+      context: /\b(will|'ll|help|friend|mom|dad|someone|with|homework|work)\b/,
+      correction: "I'll help my friend with homework.",
+      contextHint: '누군가를 무엇으로 도울지 말한다.'
+    },
+    {
+      context: /\b(going to|soon|clean|sort|room|house|desk|papers|emails)\b/,
+      correction: "I'm going to clean up my house soon.",
+      contextHint: '곧 정리하거나 청소할 것을 말한다.'
+    },
+    {
+      context: /\b(traveling|travel|trip|vacation|next|abroad|jeju|busan|during)\b/,
+      correction: "I'm traveling abroad during my next vacation.",
+      contextHint: '다음 휴가 동안 여행할 곳을 말한다.'
+    },
+    {
+      context: /\b(going to|study|practice|english|workout|skill|piano|exercise)\b/,
+      correction: "I'm going to study English.",
+      contextHint: '공부하거나 연습할 것을 말한다.'
+    },
+    {
+      context: /\b(going to|right after|after work|gym|home|dinner|meet|study)\b/,
+      correction: "I'm going to hit the gym right after work.",
+      contextHint: '퇴근 직후 할 일을 말한다.'
+    },
+    {
+      context: /\b(think|going to|will|go well|presentation|test|meeting|project)\b/,
+      correction: 'I think the presentation is going to go well.',
+      contextHint: '잘될 것 같은 일을 말한다.'
+    }
+  ],
+  'infinitive-gerund': [
+    {
+      context: /\b(want|try|trying|taste|visit|check out|learn|new|these days)\b/,
+      correction: 'I want to try a new dessert these days.',
+      contextHint: '요즘 해보고 싶은 일을 want to 또는 try to로 말한다.'
+    },
+    {
+      context: /\b(need|fix|finish|work|problem|mistake|soon|files|room)\b/,
+      correction: 'I need to fix a small mistake soon.',
+      contextHint: '곧 고치거나 끝내야 하는 일을 need to로 말한다.'
+    },
+    {
+      context: /\b(learn|learning|how to|cook|makeup|answer|use|speak)\b/,
+      correction: 'I am learning how to cook simple meals.',
+      contextHint: '배우고 있는 방법을 how to로 말한다.'
+    },
+    {
+      context: /\b(like|enjoy|relax|reading|listening|watching|spending|free time)\b/,
+      correction: 'I like listening to music when I want to relax.',
+      contextHint: '좋아하는 활동을 like 또는 enjoy + -ing로 말한다.'
+    },
+    {
+      context: /\b(avoid|tired|late|buying|talking|doing|areas|stress)\b/,
+      correction: 'I avoid making big decisions when I am tired.',
+      contextHint: '피하는 행동을 avoid + -ing로 말한다.'
+    },
+    {
+      context: /\b(decided|decide|recently|start|try|change|meet|go)\b/,
+      correction: 'I decided to start a new routine recently.',
+      contextHint: '최근 결정한 일을 decided to로 말한다.'
+    },
+    {
+      context: /\b(thinking|about|of|change|changing|quit|move|buy|go)\b/,
+      correction: 'I am thinking about changing my routine.',
+      contextHint: '고민 중인 변화를 thinking about + -ing로 말한다.'
+    },
+    {
+      context: /\b(place|visit|cafe|café|relax|where|photos|travel)\b/,
+      correction: 'I want to visit a place where I can relax.',
+      contextHint: '가보고 싶은 장소를 want to와 where 설명으로 말한다.'
+    },
+    {
+      context: /\b(people|person|friend|friends|spending|time|with|relaxed)\b/,
+      correction: 'I like spending time with people who make me feel relaxed.',
+      contextHint: '함께 있고 싶은 사람을 like + -ing와 who 설명으로 말한다.'
+    },
+    {
+      context: /\b(information|find|trying|looking|search|answer|question)\b/,
+      correction: 'I am trying to find the information I need.',
+      contextHint: '찾으려는 정보를 trying to로 말한다.'
+    }
+  ],
+  mixed: [
+    {
+      context: /\b(stressed|stress|clean|room|walk|music|sleep|relax)\b/,
+      correction: "I clean my room when I'm stressed.",
+      contextHint: '스트레스를 받을 때 보통 하는 행동을 현재 시제로 말한다.',
+      grammarKind: 'present-simple'
+    },
+    {
+      context: /\b(last week|gave|went|took|lost|changed|chatted|diet|emails|concert)\b/,
+      correction: 'I gave up on my diet last week.',
+      contextHint: '지난주에 한 일을 과거 시제로 말한다.',
+      grammarKind: 'past-simple'
+    },
+    {
+      context: /\b(right now|now|reading|waiting|doing|getting|watching|working)\b/,
+      correction: "I'm reading a book right now.",
+      contextHint: '지금 하고 있는 일을 진행형으로 말한다.',
+      grammarKind: 'progressive'
+    },
+    {
+      context: /\b(tonight|will|'ll|working|report|movie|late|check)\b/,
+      correction: "I'll get the report done tonight.",
+      contextHint: '오늘 밤 할 일을 will이나 미래 표현으로 말한다.',
+      grammarKind: 'future'
+    },
+    {
+      context: /\b(next month|going to|class|gym|sign|take|cooking)\b/,
+      correction: "I'm going to take a cooking class next month.",
+      contextHint: '다음 달 계획을 be going to로 말한다.',
+      grammarKind: 'future'
+    },
+    {
+      context: /\b(last night|was|were|watching|working|reading|sleeping|waiting)\b/,
+      correction: 'I was watching TV last night.',
+      contextHint: '어젯밤 하고 있던 일을 과거 진행형으로 말한다.',
+      grammarKind: 'progressive'
+    },
+    {
+      context: /\b(every weekend|weekends|visit|parents|beach|friend|usually|often)\b/,
+      correction: 'I visit my parents every weekend.',
+      contextHint: '주말마다 하는 일을 현재 시제로 말한다.',
+      grammarKind: 'present-simple'
+    },
+    {
+      context: /\b(gave|give|up|diet|plan|recently|last|stopped|quit)\b/,
+      correction: 'I gave up on my diet recently.',
+      contextHint: '최근 포기한 일을 과거 시제로 말한다.',
+      grammarKind: 'past-simple'
+    },
+    {
+      context: /\b(next year|going to|start|study|studying|english|test)\b/,
+      correction: "I'm going to start studying for an English test next year.",
+      contextHint: '내년에 시작할 일을 미래 표현으로 말한다.',
+      grammarKind: 'future'
+    },
+    {
+      context: /\b(good news|hear|will|'ll|soon|think)\b/,
+      correction: "I think I'll hear good news soon.",
+      contextHint: '곧 들을 좋은 소식을 미래 표현으로 말한다.',
+      grammarKind: 'future'
+    }
+  ]
+};
+
+function scoreFreeAnswer(answer, step, question, questionIndex = 0) {
+  const raw = String(answer || '').trim();
+  const normalized = normalizeAnswer(raw);
+  const profile = getAnswerProfile(step, questionIndex);
+  const issues = [];
+
+  if (!normalized) {
+    return buildAnswerFeedback({
+      score: 0,
+      issues: ['답변을 입력한다.'],
+      correction: profile.correction,
+      message: '답변을 입력한 뒤 확인할 수 있다.'
+    });
   }
-  if (step?.patternKind === 'past-simple') {
-    const hasPastSignal = /\b(yesterday|last|ago|when|before|after|used to)\b/.test(normalized);
-    const hasPastVerb = /\b(was|were|did|didn't|couldn't|went|came|got|felt|made|took|gave|hung|forgot|misunderstood|changed|believed|tried|solved|missed|rejected|traveled|watched|opened)\b/.test(normalized)
+
+  if (/[가-힣]/.test(raw) && !/[A-Za-z]{2,}/.test(raw)) {
+    issues.push('영어 문장으로 답변한다.');
+  }
+
+  const grammarIssues = getGrammarIssues(normalized, profile.grammarKind || step?.patternKind);
+  const contextOk = profile.context.test(normalized);
+  if (!contextOk) issues.push(profile.contextHint || '질문의 핵심 상황을 답변에 포함한다.');
+  issues.push(...grammarIssues);
+
+  const grammarScore = Math.max(0, 1 - grammarIssues.length * 0.25);
+  const contextScore = contextOk ? 1 : 0.55;
+  const score = Math.min(1, Math.max(0, grammarScore * 0.68 + contextScore * 0.32));
+  const isCorrect = score >= 0.82 && issues.length === 0;
+
+  return buildAnswerFeedback({
+    score,
+    issues,
+    correction: isCorrect ? polishSentence(raw) : buildCorrection(raw, profile, grammarIssues, contextOk),
+    message: isCorrect
+      ? '맥락과 문법이 자연스럽다.'
+      : `맥락 또는 문법을 조금 고치면 더 정확하다. 질문: ${question}`,
+    isCorrect
+  });
+}
+
+function getAnswerProfile(step, questionIndex) {
+  const kind = step?.patternKind || 'present-simple';
+  const profiles = answerProfiles[kind] || answerProfiles['present-simple'];
+  return profiles[questionIndex % profiles.length];
+}
+
+function getGrammarIssues(normalized, patternKind) {
+  const issues = [];
+  if (!/\b(i|you|we|they|he|she|it|there|this|that|my|the|a|an|yes|no)\b/.test(normalized)) {
+    issues.push('주어가 보이도록 완전한 문장으로 쓴다.');
+  }
+  if (!hasFiniteVerb(normalized)) {
+    issues.push('동사가 들어간 완전한 문장으로 쓴다.');
+  }
+
+  if (patternKind === 'progressive') {
+    const hasProgressive = /\b(am|is|are|was|were|been|'m|'re|'s)\s+[a-z]+ing\b/.test(normalized)
+      || /\b(have|has|had)\s+been\s+[a-z]+ing\b/.test(normalized);
+    if (!hasProgressive) issues.push('진행형은 be 동사와 -ing 동사를 함께 쓴다.');
+  } else if (patternKind === 'past-simple') {
+    const hasPast = /\b(was|were|did|didn't|couldn't|went|came|got|felt|made|took|gave|hung|forgot|misunderstood|changed|believed|tried|solved|missed|rejected|traveled|travelled|watched|opened|saw|found|heard|had|used to)\b/.test(normalized)
       || /\b[a-z]+ed\b/.test(normalized);
-    const score = Number(hasSubject) * 0.3 + Number(hasPastVerb) * 0.45 + Number(hasPastSignal) * 0.25;
-    return {
-      score,
-      message: score >= 0.7 ? '과거 시제 패턴이 보인다.' : '과거 동사나 과거 시간 신호를 더 분명히 넣는다.'
-    };
+    if (!hasPast) issues.push('과거 질문에는 과거 동사나 used to를 쓴다.');
+  } else if (patternKind === 'future') {
+    const hasFuture = /\b(will|won't|'ll|going to|gonna|am going|is going|are going)\b/.test(normalized)
+      || /\b(am|is|are|'m|'re|'s)\s+[a-z]+ing\b/.test(normalized);
+    if (!hasFuture) issues.push('미래 질문에는 will, be going to, 또는 예정된 be -ing를 쓴다.');
+  } else if (patternKind === 'infinitive-gerund') {
+    const hasInfinitive = /\b(want|hope|plan|decide|decided|need|try|trying|learn|learning|agree|agreed|offer|offered|manage|managed|like|would like)\s+(not\s+)?to\s+[a-z]+\b/.test(normalized)
+      || /\bhow to\s+[a-z]+\b/.test(normalized);
+    const hasGerund = /\b(like|enjoy|love|hate|avoid|finish|finished|mind|miss|practice|practicing|deny|denied|recommend|recommended|thinking about|thinking of|think about|think of|spend|spending)\s+[a-z]+ing\b/.test(normalized);
+    if (!hasInfinitive && !hasGerund) issues.push('to 부정사나 동명사 형태를 넣어 말한다.');
+  } else {
+    const hasPastOnly = /\b(yesterday|last week|last night|ago|was|were|went|did|didn't)\b/.test(normalized);
+    const hasFutureOnly = /\b(will|going to|tomorrow|next week)\b/.test(normalized);
+    if (hasPastOnly || hasFutureOnly) issues.push('현재 시제 질문에는 보통 현재형 습관 표현을 쓴다.');
   }
-  if (step?.patternKind === 'future') {
-    const hasFutureForm = /\b(will|won't|going to|gonna|am going|is going|are going)\b/.test(normalized)
-      || /\b(am|is|are)\s+[a-z]+ing\b/.test(normalized);
-    const hasFutureSignal = /\b(tonight|tomorrow|later|soon|next|probably|right after|this weekend)\b/.test(normalized);
-    const score = Number(hasSubject) * 0.3 + Number(hasFutureForm) * 0.45 + Number(hasFutureSignal) * 0.25;
-    return {
-      score,
-      message: score >= 0.7 ? '미래 표현 패턴이 보인다.' : 'will, be going to, be -ing 또는 미래 시간 신호를 넣는다.'
-    };
-  }
-  const hasVerb = normalized.split(' ').length >= 3;
-  const hasSignal = /\b(always|usually|often|sometimes|every|when|before|after|prefer)\b/.test(normalized);
-  const score = Number(hasSubject) * 0.35 + Number(hasVerb) * 0.35 + Number(hasSignal) * 0.3;
+
+  return issues;
+}
+
+function hasFiniteVerb(normalized) {
+  return /\b(am|is|are|was|were|be|been|being|do|does|did|have|has|had|will|would|can|could|should|must|go|goes|went|come|comes|came|get|gets|got|make|makes|made|take|takes|took|feel|feels|felt|think|thinks|thought|want|wants|like|likes|prefer|prefers|try|tries|tried|watch|watches|watched|study|studies|studied|work|works|worked|meet|meets|met|talk|talks|talked|help|helps|helped|eat|eats|ate|sleep|sleeps|slept|read|reads|clean|cleans|cleaned|buy|buys|bought|check|checks|checked|listen|listens|listened|travel|travels|traveled|plan|plans|planned|wait|waits|waiting|decide|decides|decided|believe|believes|believed|solve|solves|solved|give|gives|gave)\b/.test(normalized)
+    || /\b[a-z]+ed\b/.test(normalized)
+    || /\b(am|is|are|was|were|'m|'re|'s)\s+[a-z]+ing\b/.test(normalized);
+}
+
+function buildCorrection(raw, profile, grammarIssues, contextOk) {
+  if (!contextOk || grammarIssues.length > 0) return profile.correction;
+  return polishSentence(raw);
+}
+
+function polishSentence(value) {
+  const text = String(value || '').trim();
+  if (!text) return '';
+  const normalizedI = text.replace(/\bi\b/g, 'I');
+  const capitalized = normalizedI.charAt(0).toUpperCase() + normalizedI.slice(1);
+  return /[.!?]$/.test(capitalized) ? capitalized : `${capitalized}.`;
+}
+
+function buildAnswerFeedback({ score, issues, correction, message, isCorrect = false }) {
   return {
     score,
-    message: score >= 0.7 ? '현재 시제 반복 패턴이 보인다.' : '주어, 동사, 반복 신호를 더 분명히 넣는다.'
+    issues: [...new Set(issues)],
+    correction,
+    message,
+    isCorrect
   };
 }

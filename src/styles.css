@@ -375,13 +375,41 @@ code {
 }
 
 .pattern-card strong,
-.pattern-card span {
+.pattern-card span,
+.pattern-card code {
   overflow-wrap: anywhere;
+}
+
+.pattern-card code {
+  white-space: normal;
 }
 
 .pattern-card span {
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.pattern-current-sentence {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--teal);
+  border-radius: 8px;
+  background: var(--glossary-bg);
+}
+
+.pattern-current-sentence span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.pattern-current-sentence strong {
+  color: var(--ink-strong);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .mini-tags {
@@ -413,7 +441,7 @@ code {
 .sentence-focus p {
   margin: 0;
   color: var(--ink-strong);
-  font-size: clamp(1.35rem, 2.5vw, 2.35rem);
+  font-size: 1.75rem;
   font-weight: 760;
   line-height: 1.2;
   overflow-wrap: anywhere;
@@ -421,6 +449,23 @@ code {
 
 .sentence-focus.compact p {
   font-size: 1.15rem;
+}
+
+.intermediate-vocabulary {
+  display: grid;
+  gap: 10px;
+}
+
+.sentence-focus .translation-line,
+.sentence-focus.compact .translation-line {
+  padding: 10px 12px;
+  border-left: 4px solid var(--green);
+  border-radius: 6px;
+  color: var(--ink-strong);
+  background: var(--chunk-bg);
+  font-size: 1rem;
+  font-weight: 720;
+  line-height: 1.45;
 }
 
 .chunk-row,
@@ -704,6 +749,75 @@ code {
 .result-box.needs-work {
   border: 1px solid var(--warn-line);
   background: var(--warn-bg);
+}
+
+.answer-feedback {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.answer-feedback.good {
+  border: 1px solid var(--ok-line);
+  background: var(--ok-bg);
+}
+
+.answer-feedback.needs-work {
+  border: 1px solid var(--warn-line);
+  background: var(--warn-bg);
+}
+
+.feedback-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feedback-heading strong {
+  color: var(--ink-strong);
+}
+
+.feedback-heading span {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.answer-feedback p,
+.answer-feedback ul {
+  margin: 0;
+}
+
+.answer-feedback ul {
+  display: grid;
+  gap: 5px;
+  padding-left: 20px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.correction-box {
+  display: grid;
+  gap: 5px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--panel);
+}
+
+.correction-box span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.correction-box strong {
+  color: var(--blue);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .speak-target {
