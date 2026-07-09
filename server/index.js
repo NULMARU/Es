@@ -13,7 +13,8 @@ const publicDir = path.join(rootDir, 'public');
 const distDir = path.join(rootDir, 'dist');
 const materialsDataPath = path.join(publicDir, 'data', 'materials.json');
 loadLocalEnv(rootDir);
-const port = Number(process.env.PORT || 8787);
+// 8787/8788은 이 기기에서 다른 앱이 자주 점유하므로 기본값을 8791로 둔다.
+const port = Number(process.env.PORT || 8791);
 const host = process.env.HOST || '127.0.0.1';
 const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '';
 const liveTranslateModel = 'gemini-3.5-live-translate-preview';
@@ -144,8 +145,16 @@ if (fs.existsSync(distDir)) {
   });
 }
 
-app.listen(port, host, () => {
+const server = app.listen(port, host, () => {
   console.log(`API server listening on http://${host}:${port}`);
+});
+
+server.on('error', (error) => {
+  if (error.code === 'EADDRINUSE') {
+    console.error(`[api] 포트 ${port}가 이미 사용 중입니다. 다른 포트로 실행하세요: PORT=8792 npm run preview`);
+    process.exit(1);
+  }
+  throw error;
 });
 
 function loadLocalEnv(baseDir) {

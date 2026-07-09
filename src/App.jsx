@@ -65,13 +65,13 @@ function apiUrl(path) {
 async function fetchMaterialsManifest() {
   try {
     const response = await fetch(apiUrl('/api/materials'), { cache: 'no-store' });
-    if (response.ok) return response.json();
+    if (response.ok) return { manifest: await response.json(), viaApi: true };
   } catch {
     // Static deployments do not have the local Express API.
   }
   const fallback = await fetch(publicAsset('data/materials.json'), { cache: 'no-store' });
   if (!fallback.ok) throw new Error('materials.json not found');
-  return fallback.json();
+  return { manifest: await fallback.json(), viaApi: false };
 }
 
 function readFileAsBase64(file) {
@@ -108,6 +108,7 @@ export default function App() {
   const [progress, setProgress] = useState(loadProgress);
   const [theme, setTheme] = useState(loadTheme);
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [apiAvailable, setApiAvailable] = useState(true);
 
   useEffect(() => {
     loadMaterials();
@@ -143,7 +144,8 @@ export default function App() {
   async function loadMaterials(selectStepNumber = null) {
     setLoadError('');
     try {
-      const nextManifest = await fetchMaterialsManifest();
+      const { manifest: nextManifest, viaApi } = await fetchMaterialsManifest();
+      setApiAvailable(viaApi);
       setManifest(nextManifest);
       if (selectStepNumber) {
         const nextIndex = (nextManifest.steps || []).findIndex((step) => step.stepNumber === selectStepNumber);
@@ -286,6 +288,7 @@ export default function App() {
               step={selectedStep}
               sentenceIndex={sentenceIndex}
               progress={progress}
+              apiAvailable={apiAvailable}
               onSelectSentence={setSentenceIndex}
               onMaterialsUpdated={loadMaterials}
             />
@@ -1205,7 +1208,7 @@ function ScoreResult({ result, expected }) {
   );
 }
 
-function SourceSentenceList({ step, sentenceIndex, progress, onSelectSentence, onMaterialsUpdated }) {
+function SourceSentenceList({ step, sentenceIndex, progress, apiAvailable, onSelectSentence, onMaterialsUpdated }) {
   const sentences = step.sentences || [];
   const visibleSentences = sentences.slice(0, 50);
   return (
@@ -1239,12 +1242,14 @@ function SourceSentenceList({ step, sentenceIndex, progress, onSelectSentence, o
         })}
       </div>
       <SourceAudioPlayer step={step} />
-      <MaterialsManager onMaterialsUpdated={onMaterialsUpdated} />
+      <MaterialsManager apiAvailable={apiAvailable} onMaterialsUpdated={onMaterialsUpdated} />
     </section>
   );
 }
 
-function MaterialsManager({ onMaterialsUpdated }) {
+const staticDeployNotice = 'PDF 추가는 로컬 앱(npm run dev)에서만 가능합니다. 로컬에서 추가한 뒤 git push하면 웹에도 반영됩니다.';
+
+function MaterialsManager({ apiAvailable, onMaterialsUpdated }) {
   const fileInputRef = useRef(null);
   const [status, setStatus] = useState('');
   const [busy, setBusy] = useState(false);
@@ -1262,7 +1267,7 @@ function MaterialsManager({ onMaterialsUpdated }) {
     event.target.value = '';
     if (!files.length) return;
     setBusy(true);
-    setStatus('PDF 처리 중');
+    setStatus('PDF 처리 중 (OCR에 1~2분 걸릴 수 있습니다)');
     try {
       const payloadFiles = await Promise.all(
         files.map(async (file) => ({
@@ -1270,13 +1275,22 @@ function MaterialsManager({ onMaterialsUpdated }) {
           data: await readFileAsBase64(file)
         }))
       );
-      const response = await fetch(apiUrl('/api/materials/upload'), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ files: payloadFiles })
-      });
+      let response;
+      try {
+        response = await fetch(apiUrl('/api/materials/upload'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ files: payloadFiles })
+        });
+      } catch {
+        throw new Error(staticDeployNotice);
+      }
+      if (response.status === 404 || response.status === 405) {
+        // GitHub Pages 등 정적 배포에는 PDF 처리 서버가 없다.
+        throw new Error(staticDeployNotice);
+      }
       const payload = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(payload.error || 'PDF 추가 실패');
+      if (!response.ok) throw new Error(payload.error || `PDF 추가 실패 (HTTP ${response.status})`);
       const uploadedStep = payload.uploadedSteps?.[payload.uploadedSteps.length - 1] || null;
       await onMaterialsUpdated(uploadedStep);
       setStatus(`${payload.uploadedSteps?.length || 0}개 스텝 갱신됨`);
@@ -1290,13 +1304,20 @@ function MaterialsManager({ onMaterialsUpdated }) {
   return (
     <div className="materials-manager">
       <input ref={fileInputRef} type="file" accept="application/pdf" multiple onChange={upload} />
-      <button className="secondary-button compact" type="button" onClick={() => fileInputRef.current?.click()} disabled={busy}>
+      <button
+        className="secondary-button compact"
+        type="button"
+        onClick={() => fileInputRef.current?.click()}
+        disabled={busy || !apiAvailable}
+        title={apiAvailable ? 'PDF 추가' : staticDeployNotice}
+      >
         <FileUp size={16} />
         PDF 추가
       </button>
       <button className="icon-button" type="button" title="자료 새로고침" onClick={refresh} disabled={busy}>
         <RefreshCw size={16} />
       </button>
+      {!apiAvailable && !status && <span>{staticDeployNotice}</span>}
       {status && <span>{status}</span>}
     </div>
   );

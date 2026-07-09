@@ -11,7 +11,7 @@ npm run build
 npm run preview
 ```
 
-브라우저에서 `http://127.0.0.1:8787`을 엽니다.
+브라우저에서 `http://127.0.0.1:8791`을 엽니다. (포트가 사용 중이면 `PORT=8792 npm run preview`처럼 다른 포트를 지정합니다.)
 
 개발 모드는 다음 명령을 사용합니다.
 
@@ -83,4 +83,4 @@ npm run smoke
 
 배포 워크플로는 `.github/workflows/pages.yml`에 있으며, `main` 브랜치에 푸시되면 `npm run build:pages`로 `/Es/` 경로에 맞춘 정적 앱을 배포합니다.
 
-GitHub Pages는 Node/Express 서버를 실행하지 못합니다. 따라서 Pages 배포본에서는 학습 화면과 원본 자료 뷰어는 동작하지만, Gemini Live Translate 토큰 발급 API는 별도 백엔드가 있어야 활성화됩니다.
+GitHub Pages는 Node/Express 서버를 실행하지 못합니다. 따라서 Pages 배포본에서는 학습 화면과 원본 자료 뷰어는 동작하지만, `PDF 추가`(OCR 자료 생성)와 Gemini Live Translate 토큰 발급 API는 로컬 실행에서만 동작합니다. 새 PDF는 로컬에서 추가한 뒤 `git push`하면 Pages에 자동 반영됩니다.
