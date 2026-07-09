@@ -7,7 +7,9 @@ import {
   ChevronRight,
   FileUp,
   FileText,
+  KeyRound,
   Languages,
+  Loader2,
   Moon,
   ListChecks,
   Mic,
@@ -16,9 +18,12 @@ import {
   RefreshCw,
   RotateCcw,
   Search,
+  Settings,
+  Square,
   Sun,
   Target,
   Volume2,
+  X,
   XCircle
 } from 'lucide-react';
 import {
@@ -27,10 +32,20 @@ import {
   makeAnswerQuestions,
   normalizeAnswer,
   scoreAnswer,
-  speakText,
   workflows
 } from './lib/learning.js';
 import { createGeminiLiveTranslator } from './lib/liveTranslate.js';
+import {
+  getElevenLabsApiKey,
+  getElevenLabsVoiceId,
+  getTtsState,
+  loadVoiceOptions,
+  playText,
+  setElevenLabsApiKey,
+  setElevenLabsVoiceId,
+  stopSpeech,
+  subscribeTts
+} from './lib/tts.js';
 
 const progressKey = 'beginner-english-pattern-progress-v1';
 const themeKey = 'beginner-english-pattern-theme-v1';
@@ -92,9 +107,12 @@ export default function App() {
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [progress, setProgress] = useState(loadProgress);
   const [theme, setTheme] = useState(loadTheme);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   useEffect(() => {
     loadMaterials();
+    // 앱 시작 시 키가 있으면 목소리 목록을 미리 불러오고 저장된 voiceId를 보정한다.
+    loadVoiceOptions().catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -116,6 +134,11 @@ export default function App() {
     setSentenceIndex(0);
     setWorkflow('understand');
   }, [stepIndex]);
+
+  // 카드/문장/워크플로 이동 시 진행 중인 재생을 항상 완전 정지한다.
+  useEffect(() => {
+    stopSpeech();
+  }, [stepIndex, sentenceIndex, workflow]);
 
   async function loadMaterials(selectStepNumber = null) {
     setLoadError('');
@@ -177,17 +200,24 @@ export default function App() {
         </div>
 
         <div className="step-stack">
-          {steps.map((step, index) => (
-            <button
-              className={`step-button ${index === stepIndex ? 'active' : ''}`}
-              key={step.id}
-              onClick={() => setStepIndex(index)}
-            >
-              <span>{step.title}</span>
-              <small>{step.sentences.length}문장</small>
-              <ChevronRight size={16} />
-            </button>
-          ))}
+          {steps.map((step, index) => {
+            const done = countMasteredSentences(step, progress);
+            const total = step.sentences.length;
+            return (
+              <button
+                className={`step-button ${index === stepIndex ? 'active' : ''}`}
+                key={step.id}
+                onClick={() => setStepIndex(index)}
+              >
+                <span>{step.title}</span>
+                <small>{done}/{total}문장 완료</small>
+                <ChevronRight size={16} />
+                <i className="step-progress" aria-hidden="true">
+                  <b style={{ width: `${total ? Math.round((done / total) * 100) : 0}%` }} />
+                </i>
+              </button>
+            );
+          })}
         </div>
 
         <LiveTranslateDock sentence={sentence} />
@@ -209,6 +239,9 @@ export default function App() {
             >
               {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
               <span>{theme === 'light' ? 'Dark' : 'Light'}</span>
+            </button>
+            <button className="icon-button" title="설정" aria-label="설정 열기" onClick={() => setSettingsOpen(true)}>
+              <Settings size={18} />
             </button>
             <button className="icon-button" title="이전 문장" onClick={() => setSentenceIndex((value) => Math.max(0, value - 1))}>
               <ArrowLeft size={18} />
@@ -252,12 +285,158 @@ export default function App() {
             <SourceSentenceList
               step={selectedStep}
               sentenceIndex={sentenceIndex}
+              progress={progress}
               onSelectSentence={setSentenceIndex}
               onMaterialsUpdated={loadMaterials}
             />
           </aside>
         </section>
       </main>
+
+      {settingsOpen && <SettingsDialog onClose={() => setSettingsOpen(false)} />}
+    </div>
+  );
+}
+
+function countMasteredSentences(step, progress) {
+  return (step.sentences || []).filter((sentence) => (progress[sentence.id]?.bestScore || 0) >= 0.82).length;
+}
+
+function useTtsState() {
+  const [state, setState] = useState(getTtsState);
+  useEffect(() => subscribeTts(setState), []);
+  return state;
+}
+
+// 재생 버튼 상태 머신: idle(듣기) -> loading(취소 가능) -> playing(정지)
+function TtsButton({ text, playKey, rate = 1, className = 'icon-button', title = '듣기', label = '', onPlayed }) {
+  const ttsState = useTtsState();
+  const key = playKey ?? text;
+  const status = ttsState.key === key ? ttsState.status : 'idle';
+
+  function handleClick() {
+    if (status !== 'idle') {
+      stopSpeech();
+      return;
+    }
+    onPlayed?.();
+    playText(text, { rate, playKey: key });
+  }
+
+  const icon = status === 'loading'
+    ? <Loader2 size={label ? 18 : 16} className="spin" />
+    : status === 'playing'
+      ? <Square size={label ? 18 : 16} />
+      : <Volume2 size={label ? 18 : 16} />;
+
+  const stateTitle = status === 'loading' ? '불러오는 중 (누르면 취소)' : status === 'playing' ? '정지' : title;
+
+  return (
+    <button className={className} type="button" title={stateTitle} aria-label={stateTitle} onClick={handleClick}>
+      {icon}
+      {label && <span>{status === 'playing' ? '정지' : label}</span>}
+    </button>
+  );
+}
+
+function SettingsDialog({ onClose }) {
+  const [apiKey, setApiKey] = useState(getElevenLabsApiKey);
+  const [voices, setVoices] = useState([]);
+  const [voiceId, setVoiceId] = useState(getElevenLabsVoiceId);
+  const [voiceError, setVoiceError] = useState('');
+  const [loadingVoices, setLoadingVoices] = useState(false);
+  const reloadTimerRef = useRef(null);
+
+  useEffect(() => {
+    if (getElevenLabsApiKey()) refreshVoices();
+    return () => clearTimeout(reloadTimerRef.current);
+  }, []);
+
+  async function refreshVoices(force = false) {
+    setLoadingVoices(true);
+    try {
+      const result = await loadVoiceOptions({ force });
+      setVoices(result.voices);
+      setVoiceError(result.error);
+      setVoiceId(getElevenLabsVoiceId());
+    } finally {
+      setLoadingVoices(false);
+    }
+  }
+
+  function handleKeyChange(event) {
+    const value = event.target.value;
+    setApiKey(value);
+    setElevenLabsApiKey(value);
+    setVoices([]);
+    setVoiceError('');
+    clearTimeout(reloadTimerRef.current);
+    if (value.trim()) {
+      // 타이핑이 끝난 뒤 한 번만 목소리 목록을 요청한다.
+      reloadTimerRef.current = setTimeout(() => refreshVoices(true), 600);
+    }
+  }
+
+  function handleVoiceChange(event) {
+    const value = event.target.value;
+    setVoiceId(value);
+    setElevenLabsVoiceId(value);
+  }
+
+  return (
+    <div className="settings-overlay" role="dialog" aria-modal="true" aria-label="설정" onClick={onClose}>
+      <div className="settings-dialog" onClick={(event) => event.stopPropagation()}>
+        <header>
+          <div>
+            <Settings size={18} />
+            <h2>설정</h2>
+          </div>
+          <button className="icon-button" title="닫기" aria-label="설정 닫기" onClick={onClose}>
+            <X size={18} />
+          </button>
+        </header>
+
+        <section className="settings-section">
+          <label className="settings-label" htmlFor="elevenlabs-key">
+            <KeyRound size={15} />
+            ElevenLabs API 키
+          </label>
+          <input
+            id="elevenlabs-key"
+            type="password"
+            value={apiKey}
+            onChange={handleKeyChange}
+            placeholder="xi-..."
+            autoComplete="off"
+          />
+          <p className="settings-note">키는 이 기기 브라우저(localStorage)에만 저장됩니다. 키가 없으면 브라우저 내장 음성으로 재생합니다.</p>
+        </section>
+
+        {apiKey.trim() && (
+          <section className="settings-section">
+            <label className="settings-label" htmlFor="elevenlabs-voice">
+              <Volume2 size={15} />
+              목소리 선택
+            </label>
+            <div className="settings-voice-row">
+              <select id="elevenlabs-voice" value={voiceId} onChange={handleVoiceChange} disabled={loadingVoices || !voices.length}>
+                {!voices.length && <option value="">{loadingVoices ? '목소리 불러오는 중...' : '목소리 없음'}</option>}
+                {voices.map((voice) => (
+                  <option key={voice.voiceId} value={voice.voiceId}>
+                    {voice.name}
+                    {(voice.gender || voice.accent) ? ` (${[voice.gender, voice.accent].filter(Boolean).join(', ')})` : ''}
+                  </option>
+                ))}
+              </select>
+              <button className="icon-button" title="목록 다시 불러오기" onClick={() => refreshVoices(true)} disabled={loadingVoices}>
+                {loadingVoices ? <Loader2 size={16} className="spin" /> : <RefreshCw size={16} />}
+              </button>
+            </div>
+            {voiceError && <p className="settings-warning">{voiceError}</p>}
+            <p className="settings-note">전체 읽기(자동 재생)는 문장마다 크레딧을 소모합니다. 같은 문장을 다시 들을 때는 캐시를 사용해 크레딧을 아낍니다.</p>
+          </section>
+        )}
+      </div>
     </div>
   );
 }
@@ -382,16 +561,14 @@ function PatternPane({ sentence, sentenceIndex, sentenceCount, analysis, onSelec
           <button className="icon-button" title="다음 문장" onClick={() => onSelectSentence(Math.min(sentenceCount - 1, sentenceIndex + 1))}>
             <ArrowRight size={18} />
           </button>
-          <button
+          <TtsButton
+            text={sentence.text}
+            playKey={`drill-${sentence.id}`}
             className="primary-button"
-            onClick={() => {
-              speakText(sentence.text);
-              onProgress(sentence.id, (before) => ({ ...before, reps: (before.reps || 0) + 1 }));
-            }}
-          >
-            <Volume2 size={18} />
-            듣고 반복
-          </button>
+            label="듣고 반복"
+            title="듣고 반복"
+            onPlayed={() => onProgress(sentence.id, (before) => ({ ...before, reps: (before.reps || 0) + 1 }))}
+          />
           <button className="secondary-button" onClick={onNextSentence}>
             <Target size={18} />
             약한 문장
@@ -573,9 +750,7 @@ function AnswerPane({ step, sentence, analysis, onProgress }) {
         <div className="answer-question-card">
           <div className="sentence-nav-top">
             <span>{questionIndex + 1}/{questions.length}</span>
-            <button className="icon-button" title="질문 듣기" onClick={() => speakText(question)}>
-              <Volume2 size={18} />
-            </button>
+            <TtsButton text={question} playKey={`question-icon-${step.id}-${questionIndex}`} title="질문 듣기" />
           </div>
           <div className="question-box">{question}</div>
           <div className="sentence-nav-controls">
@@ -601,10 +776,13 @@ function AnswerPane({ step, sentence, analysis, onProgress }) {
             <CheckCircle2 size={18} />
             답변하기
           </button>
-          <button className="secondary-button" onClick={() => speakText(question)}>
-            <Volume2 size={18} />
-            질문 듣기
-          </button>
+          <TtsButton
+            text={question}
+            playKey={`question-${step.id}-${questionIndex}`}
+            className="secondary-button"
+            label="질문 듣기"
+            title="질문 듣기"
+          />
           <button className="secondary-button" onClick={() => setQuestionIndex((value) => Math.min(questions.length - 1, value + 1))} disabled={questionIndex >= questions.length - 1}>
             <ArrowRight size={18} />
             다음 질문
@@ -644,9 +822,7 @@ function SentenceNavigator({ sentence, sentenceIndex, sentenceCount, onSelectSen
     <div className="sentence-nav">
       <div className="sentence-nav-top">
         <span>{current}/{count}</span>
-        <button className="icon-button" title="현재 문장 듣기" onClick={() => speakText(sentence.text)}>
-          <Volume2 size={18} />
-        </button>
+        <TtsButton text={sentence.text} playKey={`nav-${sentence.id}`} title="현재 문장 듣기" />
       </div>
       <p>{sentence.text}</p>
       <div className="sentence-nav-controls">
@@ -1029,7 +1205,7 @@ function ScoreResult({ result, expected }) {
   );
 }
 
-function SourceSentenceList({ step, sentenceIndex, onSelectSentence, onMaterialsUpdated }) {
+function SourceSentenceList({ step, sentenceIndex, progress, onSelectSentence, onMaterialsUpdated }) {
   const sentences = step.sentences || [];
   const visibleSentences = sentences.slice(0, 50);
   return (
@@ -1041,16 +1217,26 @@ function SourceSentenceList({ step, sentenceIndex, onSelectSentence, onMaterials
         </div>
       </header>
       <div className="source-sentence-list">
-        {visibleSentences.map((sentence, index) => (
-          <button
-            key={sentence.id}
-            className={index === sentenceIndex ? 'active' : ''}
-            onClick={() => onSelectSentence(index)}
-          >
-            <span>{sentence.exerciseNumber || index + 1}</span>
-            <strong>{sentence.text}</strong>
-          </button>
-        ))}
+        {visibleSentences.map((sentence, index) => {
+          const record = progress?.[sentence.id] || {};
+          const touched = (record.reps || 0) + (record.makes || 0) + (record.speaks || 0) > 0;
+          const mastered = (record.bestScore || 0) >= 0.82;
+          return (
+            <button
+              key={sentence.id}
+              className={index === sentenceIndex ? 'active' : ''}
+              onClick={() => onSelectSentence(index)}
+            >
+              <span>{sentence.exerciseNumber || index + 1}</span>
+              <strong>{sentence.text}</strong>
+              <i
+                className={`progress-dot ${mastered ? 'done' : touched ? 'touched' : ''}`}
+                title={mastered ? '82% 이상 달성' : touched ? '연습 중' : '아직 안 함'}
+                aria-hidden="true"
+              />
+            </button>
+          );
+        })}
       </div>
       <SourceAudioPlayer step={step} />
       <MaterialsManager onMaterialsUpdated={onMaterialsUpdated} />
@@ -1121,10 +1307,10 @@ function SourceAudioPlayer({ step }) {
   const [reading, setReading] = useState(false);
   const [lineIndex, setLineIndex] = useState(0);
   const [rate, setRate] = useState(0.86);
-  const utteranceRef = useRef(null);
   const lineIndexRef = useRef(0);
   const readingRef = useRef(false);
   const rateRef = useRef(rate);
+  const runIdRef = useRef(0);
 
   useEffect(() => {
     lineIndexRef.current = lineIndex;
@@ -1137,49 +1323,40 @@ function SourceAudioPlayer({ step }) {
   useEffect(() => {
     stopReading();
     setLineIndex(0);
-    return cancelSpeech;
+    return stopReading;
   }, [step.id]);
 
-  function cancelSpeech() {
-    readingRef.current = false;
-    utteranceRef.current = null;
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-    }
-  }
-
   function stopReading() {
-    cancelSpeech();
+    runIdRef.current += 1;
+    readingRef.current = false;
+    stopSpeech();
     setReading(false);
   }
 
-  function speakAt(index) {
-    if (!('speechSynthesis' in window) || !lines.length) return;
-    const bounded = Math.max(0, Math.min(lines.length - 1, index));
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(lines[bounded]);
-    utterance.lang = 'en-US';
-    utterance.rate = rateRef.current;
-    utterance.pitch = 1;
-    utterance.onend = () => {
-      if (!readingRef.current) return;
-      const nextIndex = bounded + 1;
-      if (nextIndex >= lines.length) {
-        stopReading();
-        setLineIndex(0);
-        return;
-      }
-      lineIndexRef.current = nextIndex;
-      setLineIndex(nextIndex);
-      speakAt(nextIndex);
-    };
-    utterance.onerror = stopReading;
-    utteranceRef.current = utterance;
-    lineIndexRef.current = bounded;
-    setLineIndex(bounded);
+  async function speakAt(index) {
+    if (!lines.length) return;
+    const runId = ++runIdRef.current;
     readingRef.current = true;
     setReading(true);
-    window.speechSynthesis.speak(utterance);
+    let current = Math.max(0, Math.min(lines.length - 1, index));
+    while (current < lines.length) {
+      lineIndexRef.current = current;
+      setLineIndex(current);
+      const result = await playText(lines[current], {
+        rate: rateRef.current,
+        playKey: `source-${step.id}-${current}`
+      });
+      if (runId !== runIdRef.current || !readingRef.current) return;
+      if (!result?.completed) {
+        readingRef.current = false;
+        setReading(false);
+        return;
+      }
+      current += 1;
+    }
+    readingRef.current = false;
+    setReading(false);
+    setLineIndex(0);
   }
 
   function startReading() {
@@ -1331,7 +1508,7 @@ function LiveTranslateDock({ sentence }) {
       <div className="audio-meter"><span style={{ transform: `scaleX(${Math.min(1, level * 18)})` }} /></div>
       <div className="dock-status">
         <span>{status}</span>
-        {sentence?.text && <button className="icon-button" title="현재 문장 듣기" onClick={() => speakText(sentence.text)}><Volume2 size={16} /></button>}
+        {sentence?.text && <TtsButton text={sentence.text} playKey={`dock-${sentence.id}`} title="현재 문장 듣기" />}
       </div>
       <div className="live-stats">
         <span>마이크 {Math.round(Math.min(1, level * 12) * 100)}%</span>

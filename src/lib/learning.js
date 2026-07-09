@@ -725,16 +725,6 @@ export function chooseNextSentence(sentences, progress, currentIndex = 0) {
   return next?.index ?? (currentIndex + 1) % sentences.length;
 }
 
-export function speakText(text, lang = 'en-US') {
-  if (!('speechSynthesis' in window)) return;
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = lang;
-  utterance.rate = 0.86;
-  utterance.pitch = 1;
-  window.speechSynthesis.speak(utterance);
-}
-
 function extractSubject(text) {
   return text.match(/^[A-Za-z']+/)?.[0] || '주어';
 }
