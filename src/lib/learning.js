@@ -362,6 +362,37 @@ export function analyzeSentence(sentence, step) {
     structures.push({ label: '목적어 형태', value: toInfinitive ? 'to 부정사' : gerund ? '동명사' : 'to 부정사 / 동명사' });
     structures.push({ label: '핵심 덩어리', value: toInfinitive || gerund || extractVerb(text) });
     if (relative) structures.push({ label: '설명 연결', value: relative });
+  } else if (step?.patternKind === 'dummy-subject') {
+    const feeling = text.match(/\bit(?:'s| is| was)\s+(?:not\s+)?([A-Za-z]+)/i)?.[1];
+    const realSubject = text.match(/\bto\s+[A-Za-z]+[^,.!?]*/i)?.[0]
+      || text.match(/\bthat\s+[^,.!?]+/i)?.[0]
+      || text.match(/\b[A-Za-z]+ing\b[^,.!?]*/)?.[0];
+    structures.push({ label: '가주어', value: 'It' });
+    if (feeling) structures.push({ label: '느낌/평가', value: feeling });
+    if (realSubject) structures.push({ label: '진짜 주어', value: realSubject.trim() });
+  } else if (step?.patternKind === 'there-is') {
+    const beForm = lower.match(/\bthere\s+(is|are|was|were|isn't|aren't|wasn't|weren't)\b/)?.[1];
+    structures.push({ label: 'There + be', value: beForm ? `There ${beForm}` : 'There is / There are' });
+    const thing = text.match(/\bthere\s+(?:is|are|was|were|isn't|aren't)\s+((?:a|an|some|any|no|two|three|many|a lot of|lots of)?\s*[A-Za-z]+(?:\s[A-Za-z]+)?)/i)?.[1];
+    if (thing) structures.push({ label: '있는 것', value: thing.trim() });
+    const place = lower.match(/\b(?:in|on|at|near|next to|behind|under|around)\s+[a-z]+(?:\s[a-z]+)?\b/)?.[0];
+    if (place) structures.push({ label: '장소', value: place });
+  } else if (step?.patternKind === 'present-perfect') {
+    const aux = lower.match(/\b(have|has|haven't|hasn't|'ve|'s)\b/)?.[0] || 'have/has';
+    const participle = text.match(/\b(?:have|has|haven't|hasn't|'ve)\s+(?:never\s+|just\s+|already\s+|ever\s+|not\s+)?([A-Za-z]+)\b/i)?.[1];
+    structures.push({ label: '주어', value: extractSubject(text) });
+    structures.push({ label: 'have/has', value: aux });
+    if (participle) structures.push({ label: '과거분사', value: participle });
+    const signal = lower.match(/\b(never|ever|just|already|yet|before|recently|so far)\b/)?.[0];
+    if (signal) structures.push({ label: '완료 신호', value: signal });
+  } else if (step?.patternKind === 'present-perfect-progressive') {
+    const aux = text.match(/\b(?:have|has|haven't|hasn't)\s+(?:not\s+)?been\b/i)?.[0] || 'have been';
+    const ing = text.match(/\bbeen\s+([A-Za-z]+ing)\b/i)?.[1] || '동사-ing';
+    structures.push({ label: '주어', value: extractSubject(text) });
+    structures.push({ label: 'have/has been', value: aux });
+    structures.push({ label: '계속하는 동작', value: ing });
+    const duration = lower.match(/\b(since\s+[a-z0-9]+|for\s+[a-z0-9]+(?:\s[a-z]+)?|all\s+(?:day|morning|night|week)|lately|recently)\b/)?.[0];
+    if (duration) structures.push({ label: '기간 신호', value: duration });
   } else if (step?.patternKind === 'progressive') {
     const aux = lower.match(/\b(am|is|are|was|were|been)\b/)?.[0] || 'be';
     const ing = text.match(/\b[A-Za-z]+ing\b/)?.[0] || '동사-ing';
@@ -608,6 +639,42 @@ export function makeQuestion(sentence, step, index = 0) {
     ];
     return templates[index % templates.length];
   }
+  if (step?.patternKind === 'dummy-subject') {
+    const templates = [
+      'What is easy for you to do every day?',
+      'What is hard for you to do these days?',
+      'What is important to do before a trip?',
+      'What is fun to do on weekends?'
+    ];
+    return templates[index % templates.length];
+  }
+  if (step?.patternKind === 'there-is') {
+    const templates = [
+      'What is there on your desk right now?',
+      'What is there near your house?',
+      'How many people are there in your family?',
+      'What is there in your bag today?'
+    ];
+    return templates[index % templates.length];
+  }
+  if (step?.patternKind === 'present-perfect') {
+    const templates = [
+      'Where have you been? Have you traveled abroad?',
+      'What have you already finished today?',
+      'What food have you never tried?',
+      'What new thing have you tried this year?'
+    ];
+    return templates[index % templates.length];
+  }
+  if (step?.patternKind === 'present-perfect-progressive') {
+    const templates = [
+      'What have you been doing these days?',
+      'How long have you been living in your city?',
+      'What have you been watching lately?',
+      'What have you been trying to improve?'
+    ];
+    return templates[index % templates.length];
+  }
   const lower = text.toLowerCase();
   if (lower.includes('when')) return 'What do you usually do in that situation?';
   if (lower.includes('before')) return 'What do you usually do before that?';
@@ -679,6 +746,66 @@ export function makeAnswerQuestions(step) {
       'What old thing did you come across recently?',
       'When were you really nervous or shocked?',
       'What experience was worth it even though it was tough?'
+    ];
+  }
+
+  if (step?.patternKind === 'dummy-subject') {
+    return [
+      'What is easy for you to do every day?',
+      'What is hard for you to do these days?',
+      'What is important to do before a trip?',
+      'What is fun to do on weekends?',
+      'What takes a long time in your day?',
+      'What is difficult about learning English?',
+      'What is nice to do after work?',
+      'What is dangerous to do while driving?',
+      'What is necessary to do every morning?',
+      'What is interesting to learn these days?'
+    ];
+  }
+
+  if (step?.patternKind === 'there-is') {
+    return [
+      'What is there on your desk right now?',
+      'How many windows are there in your room?',
+      'What is there near your house?',
+      'What is there in your bag today?',
+      'Are there any cafes near your office or school?',
+      'What is there in your refrigerator now?',
+      'Is there anything you want to buy this month?',
+      'What was there in your hometown?',
+      'How many people are there in your family?',
+      'Is there a place you visit every week?'
+    ];
+  }
+
+  if (step?.patternKind === 'present-perfect') {
+    return [
+      'Where have you been? Have you traveled abroad?',
+      'What have you already finished today?',
+      "What haven't you done yet this week?",
+      'What food have you never tried?',
+      'What have you just done?',
+      'What have you lost recently?',
+      'What movie or show have you watched more than once?',
+      'What new thing have you tried this year?',
+      'Who have you known for a long time?',
+      'What have you always wanted to do?'
+    ];
+  }
+
+  if (step?.patternKind === 'present-perfect-progressive') {
+    return [
+      'What have you been doing these days?',
+      'How long have you been living in your city?',
+      'What have you been watching lately?',
+      'What have you been learning recently?',
+      'How long have you been working or studying at your current place?',
+      'What have you been thinking about all week?',
+      'What hobby have you been enjoying lately?',
+      'What have you been trying to improve?',
+      'How long have you been using your phone today?',
+      'What have you been waiting for recently?'
     ];
   }
 

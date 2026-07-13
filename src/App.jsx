@@ -1896,6 +1896,214 @@ const answerProfiles = {
       contextHint: '곧 들을 좋은 소식을 미래 표현으로 말한다.',
       grammarKind: 'future'
     }
+  ],
+  'dummy-subject': [
+    {
+      context: /\b(easy|wake|walk|cook|exercise|read|every day|morning)\b/,
+      correction: 'It is easy for me to wake up early.',
+      contextHint: '매일 하기 쉬운 일을 It is easy to로 말한다.'
+    },
+    {
+      context: /\b(hard|difficult|focus|sleep|exercise|early|save|these days)\b/,
+      correction: 'It is hard for me to focus at night.',
+      contextHint: '요즘 하기 어려운 일을 It is hard to로 말한다.'
+    },
+    {
+      context: /\b(important|check|weather|pack|book|passport|trip|plan)\b/,
+      correction: 'It is important to check the weather before a trip.',
+      contextHint: '여행 전에 중요한 일을 It is important to로 말한다.'
+    },
+    {
+      context: /\b(fun|watch|movies|play|meet|friends|weekend|weekends|game)\b/,
+      correction: 'It is fun to watch movies on weekends.',
+      contextHint: '주말에 재미있는 일을 It is fun to로 말한다.'
+    },
+    {
+      context: /\b(takes|long|time|commute|work|cook|clean|get ready|hour|minutes)\b/,
+      correction: 'It takes a long time to commute to work.',
+      contextHint: '오래 걸리는 일을 It takes로 말한다.'
+    },
+    {
+      context: /\b(difficult|hard|english|words|remember|grammar|speak|listen|pronounce)\b/,
+      correction: 'It is difficult to remember new words.',
+      contextHint: '영어 공부에서 어려운 점을 It is difficult to로 말한다.'
+    },
+    {
+      context: /\b(nice|walk|rest|relax|shower|after work|dinner|music)\b/,
+      correction: 'It is nice to take a walk after work.',
+      contextHint: '퇴근 후에 좋은 일을 It is nice to로 말한다.'
+    },
+    {
+      context: /\b(dangerous|phone|text|use|drive|driving|look)\b/,
+      correction: 'It is dangerous to use your phone while driving.',
+      contextHint: '운전 중 위험한 행동을 It is dangerous to로 말한다.'
+    },
+    {
+      context: /\b(necessary|need|drink|water|wash|eat|breakfast|stretch|every morning)\b/,
+      correction: 'It is necessary to drink water every morning.',
+      contextHint: '아침마다 필요한 일을 It is necessary to로 말한다.'
+    },
+    {
+      context: /\b(interesting|learn|learning|ai|history|language|cooking|new|these days)\b/,
+      correction: 'It is interesting to learn about AI these days.',
+      contextHint: '요즘 배우기 흥미로운 것을 It is interesting to로 말한다.'
+    }
+  ],
+  'there-is': [
+    {
+      context: /\b(desk|laptop|computer|book|books|cup|pen|monitor|keyboard|phone)\b/,
+      correction: 'There is a laptop on my desk.',
+      contextHint: '책상 위에 있는 것을 There is/are로 말한다.'
+    },
+    {
+      context: /\b(window|windows|room|one|two|three|no)\b/,
+      correction: 'There are two windows in my room.',
+      contextHint: '방에 있는 창문 개수를 There are로 말한다.'
+    },
+    {
+      context: /\b(park|store|school|station|cafe|café|market|house|near|restaurant)\b/,
+      correction: 'There is a park near my house.',
+      contextHint: '집 근처에 있는 것을 There is/are로 말한다.'
+    },
+    {
+      context: /\b(bag|book|wallet|umbrella|bottle|charger|keys|notebook)\b/,
+      correction: 'There is a book in my bag.',
+      contextHint: '가방 안에 있는 것을 There is/are로 말한다.'
+    },
+    {
+      context: /\b(cafe|cafes|café|coffee|office|school|many|some|a lot|few)\b/,
+      correction: 'There are many cafes near my office.',
+      contextHint: '근처 카페가 있는지를 There are로 말한다.'
+    },
+    {
+      context: /\b(refrigerator|fridge|milk|eggs|water|food|juice|vegetables|nothing)\b/,
+      correction: 'There is some milk in my refrigerator.',
+      contextHint: '냉장고에 있는 것을 There is/are로 말한다.'
+    },
+    {
+      context: /\b(buy|want|jacket|shoes|phone|bag|clothes|month|nothing)\b/,
+      correction: 'There is a jacket I want to buy this month.',
+      contextHint: '이번 달에 사고 싶은 것을 There is로 말한다.'
+    },
+    {
+      context: /\b(hometown|market|school|river|mountain|park|old|small|town)\b/,
+      correction: 'There was a small market in my hometown.',
+      contextHint: '고향에 있던 것을 There was/were로 말한다.'
+    },
+    {
+      context: /\b(family|people|two|three|four|five|members)\b/,
+      correction: 'There are four people in my family.',
+      contextHint: '가족 수를 There are로 말한다.'
+    },
+    {
+      context: /\b(gym|cafe|café|park|church|market|library|visit|every week|place)\b/,
+      correction: 'There is a gym I visit every week.',
+      contextHint: '매주 가는 장소를 There is로 말한다.'
+    }
+  ],
+  'present-perfect': [
+    {
+      context: /\b(been|traveled|travelled|abroad|japan|europe|trip|country|never)\b/,
+      correction: 'I have been to Japan.',
+      contextHint: '가본 곳을 have been to로 말한다.'
+    },
+    {
+      context: /\b(already|finished|done|homework|work|report|laundry|dishes)\b/,
+      correction: 'I have already finished my homework.',
+      contextHint: '오늘 이미 끝낸 일을 have already로 말한다.'
+    },
+    {
+      context: /\b(yet|haven't|laundry|cleaned|called|finished|exercised|done)\b/,
+      correction: "I haven't done the laundry yet.",
+      contextHint: '아직 안 한 일을 haven\'t ~ yet으로 말한다.'
+    },
+    {
+      context: /\b(never|tried|eaten|food|durian|sushi|oyster|spicy)\b/,
+      correction: 'I have never tried durian.',
+      contextHint: '먹어본 적 없는 음식을 have never tried로 말한다.'
+    },
+    {
+      context: /\b(just|finished|eaten|dinner|lunch|arrived|woke|cleaned)\b/,
+      correction: 'I have just finished dinner.',
+      contextHint: '방금 한 일을 have just로 말한다.'
+    },
+    {
+      context: /\b(lost|umbrella|keys|wallet|phone|earphones|recently)\b/,
+      correction: 'I have lost my umbrella recently.',
+      contextHint: '최근에 잃어버린 것을 have lost로 말한다.'
+    },
+    {
+      context: /\b(watched|seen|movie|show|drama|twice|three times|again|once)\b/,
+      correction: 'I have watched that movie three times.',
+      contextHint: '여러 번 본 작품을 have watched/seen으로 말한다.'
+    },
+    {
+      context: /\b(tried|started|yoga|new|hobby|class|exercise|this year)\b/,
+      correction: 'I have tried yoga this year.',
+      contextHint: '올해 새로 해본 일을 have tried로 말한다.'
+    },
+    {
+      context: /\b(known|friend|best|years|long|time|since|school)\b/,
+      correction: 'I have known my best friend for ten years.',
+      contextHint: '오래 알고 지낸 사람을 have known for로 말한다.'
+    },
+    {
+      context: /\b(always|wanted|learn|piano|travel|try|dream)\b/,
+      correction: 'I have always wanted to learn the piano.',
+      contextHint: '늘 하고 싶었던 일을 have always wanted to로 말한다.'
+    }
+  ],
+  'present-perfect-progressive': [
+    {
+      context: /\b(studying|working|exercising|learning|english|these days|been)\b/,
+      correction: 'I have been studying English these days.',
+      contextHint: '요즘 계속하고 있는 일을 have been -ing로 말한다.'
+    },
+    {
+      context: /\b(living|lived|seoul|city|years|months|since|for)\b/,
+      correction: 'I have been living in Seoul for five years.',
+      contextHint: '얼마나 살았는지 have been living + for/since로 말한다.'
+    },
+    {
+      context: /\b(watching|drama|show|series|youtube|netflix|lately)\b/,
+      correction: 'I have been watching a new drama lately.',
+      contextHint: '요즘 계속 보는 것을 have been watching으로 말한다.'
+    },
+    {
+      context: /\b(learning|english|cooking|guitar|coding|recently|new)\b/,
+      correction: 'I have been learning English recently.',
+      contextHint: '최근 계속 배우는 것을 have been learning으로 말한다.'
+    },
+    {
+      context: /\b(working|studying|company|school|job|years|months|for|since)\b/,
+      correction: 'I have been working at my company for two years.',
+      contextHint: '현재 직장/학교에서 얼마나 있었는지 for/since로 말한다.'
+    },
+    {
+      context: /\b(thinking|about|vacation|plan|plans|future|work|all week)\b/,
+      correction: 'I have been thinking about my vacation all week.',
+      contextHint: '일주일 내내 생각한 것을 have been thinking about으로 말한다.'
+    },
+    {
+      context: /\b(enjoying|baking|hiking|drawing|reading|hobby|lately)\b/,
+      correction: 'I have been enjoying baking lately.',
+      contextHint: '요즘 즐기는 취미를 have been enjoying으로 말한다.'
+    },
+    {
+      context: /\b(trying|improve|speaking|english|health|skills|habit)\b/,
+      correction: 'I have been trying to improve my speaking.',
+      contextHint: '계속 개선하려는 것을 have been trying to로 말한다.'
+    },
+    {
+      context: /\b(using|phone|hours|hour|minutes|all day|today)\b/,
+      correction: 'I have been using my phone for two hours today.',
+      contextHint: '오늘 폰을 쓴 시간을 have been using + for로 말한다.'
+    },
+    {
+      context: /\b(waiting|package|reply|call|news|result|delivery|recently)\b/,
+      correction: 'I have been waiting for my package recently.',
+      contextHint: '최근 계속 기다리는 것을 have been waiting for로 말한다.'
+    }
   ]
 };
 
@@ -1958,6 +2166,19 @@ function getGrammarIssues(normalized, patternKind) {
     const hasProgressive = /\b(am|is|are|was|were|been|'m|'re|'s)\s+[a-z]+ing\b/.test(normalized)
       || /\b(have|has|had)\s+been\s+[a-z]+ing\b/.test(normalized);
     if (!hasProgressive) issues.push('진행형은 be 동사와 -ing 동사를 함께 쓴다.');
+  } else if (patternKind === 'dummy-subject') {
+    const hasDummySubject = /\bit\s+(is|was|isn't|wasn't|'s)\b/.test(normalized)
+      || /\bit\s+(takes|took|seems|seemed|looks|looked)\b/.test(normalized);
+    if (!hasDummySubject) issues.push('가주어 It is/It takes로 문장을 시작해 본다.');
+  } else if (patternKind === 'there-is') {
+    const hasThereBe = /\bthere\s+(is|are|was|were|isn't|aren't|wasn't|weren't|'s)\b/.test(normalized);
+    if (!hasThereBe) issues.push('There is/There are로 있는 것을 말한다.');
+  } else if (patternKind === 'present-perfect') {
+    const hasPerfect = /\b(have|has|haven't|hasn't|'ve)\s+(never\s+|ever\s+|just\s+|already\s+|always\s+|not\s+)?[a-z]+\b/.test(normalized);
+    if (!hasPerfect) issues.push('현재완료는 have/has + 과거분사로 쓴다.');
+  } else if (patternKind === 'present-perfect-progressive') {
+    const hasPerfectProgressive = /\b(have|has|haven't|hasn't|'ve)\s+(not\s+)?been\s+[a-z]+ing\b/.test(normalized);
+    if (!hasPerfectProgressive) issues.push('have/has been + 동사-ing로 계속해 온 일을 말한다.');
   } else if (patternKind === 'past-simple') {
     const hasPast = /\b(was|were|did|didn't|couldn't|went|came|got|felt|made|took|gave|hung|forgot|misunderstood|changed|believed|tried|solved|missed|rejected|traveled|travelled|watched|opened|saw|found|heard|had|used to)\b/.test(normalized)
       || /\b[a-z]+ed\b/.test(normalized);

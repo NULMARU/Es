@@ -369,6 +369,14 @@ def extract_topic(lines: list[str]) -> str:
 
 def detect_pattern_kind(step: int, text: str) -> str:
     compact = re.sub(r"\s+", "", text)
+    if "현재완료진행" in compact or step == 10:
+        return "present-perfect-progressive"
+    if "현재완료" in compact or step == 9:
+        return "present-perfect"
+    if "가주어" in compact or step == 7:
+        return "dummy-subject"
+    if "thereis/thereare" in compact.lower() or step == 8:
+        return "there-is"
     if "부정사" in compact or "동명사" in compact or step == 6:
         return "infinitive-gerund"
     if "시제섞" in compact or step == 5:
@@ -385,6 +393,90 @@ def detect_pattern_kind(step: int, text: str) -> str:
 
 
 def build_patterns(kind: str) -> list[dict[str, Any]]:
+    if kind == "dummy-subject":
+        return [
+            {
+                "name": "It ~ to 부정사",
+                "formula": "It + be동사 + 형용사 + to + 동사원형",
+                "focus": "어떤 일이 쉬운지/어려운지/중요한지 말할 때",
+                "signals": ["it is easy to", "it is hard to", "it is important to", "it was fun to"],
+            },
+            {
+                "name": "It ~ -ing / that절",
+                "formula": "It + be동사 + 형용사 + 동명사 / that + 문장",
+                "focus": "상황이나 사실에 대한 느낌을 말할 때",
+                "signals": ["it is worth -ing", "it is true that", "it was nice that"],
+            },
+            {
+                "name": "가주어 확장",
+                "formula": "It + takes/seems/looks like + ...",
+                "focus": "시간이 걸리거나 ~해 보인다고 말할 때",
+                "signals": ["it takes", "it seems", "it looks like"],
+            },
+        ]
+    if kind == "there-is":
+        return [
+            {
+                "name": "There is",
+                "formula": "There is + 단수 명사 / 셀 수 없는 명사",
+                "focus": "하나 있거나 셀 수 없는 것을 말할 때",
+                "signals": ["there is a", "there is some", "there is milk"],
+            },
+            {
+                "name": "There are",
+                "formula": "There are + 복수 명사",
+                "focus": "여러 개 있는 것을 말할 때",
+                "signals": ["there are two", "there are many", "there are some"],
+            },
+            {
+                "name": "부정문과 의문문",
+                "formula": "There isn't/aren't + 명사 / Is there ~? / Are there ~?",
+                "focus": "없다고 말하거나 있는지 물어볼 때",
+                "signals": ["there isn't", "there aren't", "is there", "are there"],
+            },
+        ]
+    if kind == "present-perfect":
+        return [
+            {
+                "name": "경험",
+                "formula": "have/has + 과거분사 (+ ever/never/before)",
+                "focus": "지금까지 해본 일과 안 해본 일 말하기",
+                "signals": ["have been to", "have tried", "have never", "ever", "before"],
+            },
+            {
+                "name": "결과",
+                "formula": "have/has + 과거분사 (+ just/already/yet)",
+                "focus": "과거에 한 일이 지금 상태로 이어질 때",
+                "signals": ["have just", "have already", "yet", "have lost"],
+            },
+            {
+                "name": "부정문과 의문문",
+                "formula": "haven't/hasn't + 과거분사 / Have you (ever) ~?",
+                "focus": "안 했다고 말하거나 경험을 물어볼 때",
+                "signals": ["haven't", "hasn't", "have you ever"],
+            },
+        ]
+    if kind == "present-perfect-progressive":
+        return [
+            {
+                "name": "현재완료진행",
+                "formula": "have/has been + 동사-ing",
+                "focus": "과거에 시작해서 지금까지 계속하고 있는 일",
+                "signals": ["have been studying", "has been working", "lately", "recently"],
+            },
+            {
+                "name": "기간 표현",
+                "formula": "for + 기간 / since + 시작 시점",
+                "focus": "얼마나 오래 해왔는지 말하기",
+                "signals": ["for two years", "since last month", "all day", "all week"],
+            },
+            {
+                "name": "부정문과 의문문",
+                "formula": "haven't been -ing / How long have you been -ing?",
+                "focus": "얼마나 계속했는지 묻고 답하기",
+                "signals": ["how long", "haven't been", "have you been"],
+            },
+        ]
     if kind == "infinitive-gerund":
         return [
             {
@@ -522,6 +614,14 @@ def build_patterns(kind: str) -> list[dict[str, Any]]:
 
 
 def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
+    if kind == "dummy-subject":
+        return f"Step {step} - 가주어 it"
+    if kind == "there-is":
+        return f"Step {step} - There is / There are"
+    if kind == "present-perfect":
+        return f"Step {step} - 현재완료"
+    if kind == "present-perfect-progressive":
+        return f"Step {step} - 현재완료진행형"
     if kind == "infinitive-gerund":
         return f"Step {step} - to 부정사와 동명사"
     if kind == "mixed":
@@ -544,6 +644,14 @@ def topic_for_step(step: int, kind: str, first_lines: list[str]) -> str:
     topic = extract_topic(first_lines)
     if kind == "infinitive-gerund" and step == 6:
         return "내가 하고 싶은 일 / 좋아하는 일"
+    if kind == "dummy-subject":
+        return "말하기 편한 문장 만들기 (It ~ to / It ~ that)"
+    if kind == "there-is":
+        return "내 주변의 공간 / 사람 / 것을 표현하기"
+    if kind == "present-perfect":
+        return "지금까지 해본 일과 지금의 상태"
+    if kind == "present-perfect-progressive":
+        return "지금까지 계속 해오고 있는 일"
     return topic
 
 
