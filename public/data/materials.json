@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T14:03:03.319735+00:00",
+  "generatedAt": "2026-07-15T13:27:13.039483+00:00",
   "handwritingPolicy": "필기체/손글씨 OCR은 학습 데이터 후보에서 제외하고 원본 페이지 이미지로만 보존합니다.",
   "expectedFilePattern": "스텝{n}.pdf 또는 스텝{n}_1.pdf + 스텝{n}_2.pdf",
   "steps": [
@@ -7673,6 +7673,762 @@
             "not be able to focus",
             "lately",
             "so tired"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-11",
+      "stepNumber": 11,
+      "title": "Step 11 - 관계사",
+      "topic": "사람, 사물, 장소, 시간, 이유 연결해서 설명하기",
+      "patternKind": "relative-clause",
+      "patterns": [
+        {
+          "name": "관계대명사 (사람)",
+          "formula": "명사(사람) + who/that + 동사/주어+동사",
+          "focus": "사람을 뒤에서 구체적으로 설명할 때",
+          "signals": [
+            "the teacher who",
+            "the person who",
+            "someone who",
+            "the friend that"
+          ]
+        },
+        {
+          "name": "관계대명사 (사물)",
+          "formula": "명사(사물) + which/that + 주어 + 동사",
+          "focus": "사물이나 동물을 뒤에서 설명할 때",
+          "signals": [
+            "the book that",
+            "the laptop that",
+            "the movie that",
+            "which"
+          ]
+        },
+        {
+          "name": "관계부사 (장소/시간/이유)",
+          "formula": "명사 + where/when/why + 주어 + 동사",
+          "focus": "장소, 시간, 이유를 뒤에서 설명할 때",
+          "signals": [
+            "the café where",
+            "the day when",
+            "the reason why",
+            "the place where"
+          ]
+        }
+      ],
+      "sourceFiles": {
+        "oddPages": "스텝11.pdf (홀수 페이지)",
+        "evenPages": "스텝11.pdf (짝수 페이지)"
+      },
+      "spreads": [
+        {
+          "spreadNumber": 1,
+          "oddPageNumber": 1,
+          "evenPageNumber": 2,
+          "oddImage": "/materials/step-11/spread-01-odd.jpg",
+          "evenImage": "/materials/step-11/spread-01-even.jpg",
+          "oddText": "— A222 3 회 차 - 관계사 (who/that/which/where/when/why)\n주제: 사람, 사물, 장소, 시간, OFS 연 결 해 서 설 명 하기\nSTEP 1. 이 해 하기\n+ 개념 설명\ne 관 계 사 (8613006 Pronouns)= 앞에 나온 SAS 꾸 며 주 는 절 을 연 결 해 요 .\n@ 문 장 을 더 길고 구 체 적 으로 만들 때 사 용 하며, 불필요한 HSS 줄 여 줍니다.\ne 관 계 대 명사:\no Who/ that > 사 람 을 꾸밀 때\nᄋ which/ that > 사 물 이나 SSS 꾸밀 때\n@ 관 계 부사: —\no where > 장 소 를 꾸밀 때\nᄋ when>AIZ7S 꾸밀 때 2 os a 로\nᄋ why 이 유 를 꾸밀 때\n@ 문장 구조: [ 선 행 사 ] + [관계사] + [주어 + 동사]\ne that? 사 람 - 사 물 모 두 에 쓸 수 있으며, 구 어 에 서 많이 사 용 됩니다.\n+ 예문\n사람 (who/that)\ne She's the teacher who inspired me to learn English.\n(AGE 내가 SUS 배 우 도 록 영 감 을 준 선 생 님 이 에요.)\n사 물 / 동 물 (which/that)\n@ This is the laptop that | bought last month.\n(이건 내가 지 난 달 에 산 노 트 북 이에요.)\n장소 (where)\ne This is the café where we first met.\n(여기는 우 리 가 처음 만난 ApH G2.)\n시간 (when)\n@ | remember the day when we traveled to Paris.\n( 우 리 가 파 리 로 여행 갔던 SS 기 억 해 요 .)\n이유 (why)\ne That's the reason why I changed my job.\n(그게 내가 ASS 바꾼 이 유 예 요 .)\n1",
+          "evenText": "STEP 2. 패턴 익히기 - 눈 으로 보면서 소리 내어 읽 으 세요. 문장 덩 어 리 에 익 숙 해 지 세 요 .\n1. This is the bag that | like the most. |\n2. The book that | bought yesterday was really helpful.\n3. The restaurant that we booked has closed.\n4. The movie that | saw yesterday wasn't as fun as | expected.\n5. | went to the café that my friend recommended.\n6. The cake that you made was delicious. | !\n7. Here's the document that | was looking for. 을 :\n8. The watch that my parents gave me is broken. ne ee | ' \"\n9. The puppy that | saw on the street yesterday was adorable : | | mua)\n11. The trip that | remember most was the one to.Jeju Island last year. _ 0\n12. The email that you sent 에 sith my spam folder. : :\n13. Someone found the key that | ides : 이\n14. The star that | saw last night was really bright. | —_ : 도 :\n15. I'm curious about the book 바보 reading. 내 이 때\n16. The presentation that our team prepared was very successful.\n17. The moment that | was waiting for has finally come.\n18. The flowers that we bought yesterday have already wilted.\n19. This is the café that | go to most often.\n20. The news that you were waiting for has finally arrived.\n21. This is the school where | first learned English.\n22. The café where we first met is in that building. |\n23. The office where 1 work is on the fifth floor.\n24. This is the park where | often go on weekends.\n25. This is the beach where we took pictures.\n2"
+        },
+        {
+          "spreadNumber": 2,
+          "oddPageNumber": 3,
+          "evenPageNumber": 4,
+          "oddImage": "/materials/step-11/spread-02-odd.jpg",
+          "evenImage": "/materials/step-11/spread-02-even.jpg",
+          "oddText": "26. This is the neighborhood where | grew up.\n27. That's the building where my first job was.\n28. This is the place where my parents first met.\n29. This is the restaurant where | often have lunch.\n30. This is the hotel where | stayed on my wedding day.\n31. This is the day when | passed the exam.\n32. | remember the day when we took our first trip.\n33. The year when | joined the company was 2015.\n34. The time when that happened was during the winter.\n: 35. The moment when | heard the news was the happiest moment of my life. : Ya :\n36. No one knows the reason why he left.\n37. That's the reason why | chose this job.\n38. Do you know the reason why he was late?\n39. That's the reason why we canceled the meeting.\n40. There's a reason why we're reviewing the issue again.\n41. He's the person who gave me some tips on learning English.\n42. She's the friend who always makes me laugh.\n43. | don't know the person who called me yesterday.\n44. The man who we met last week is my cousin.\n45. The person who is sitting next to me is my boss.\n46. He's the one who fixed the problem.\n47. My sister is someone who's good at cooking.\n48. The one who did the presentation today is my team leader.\n49. The friend who told me the news went to high school with me.\n50. | really appreciate people who believe in me.\n3",
+          "evenText": "STEP 3. 문장 만들기 - JES 참고해 문 장 을 말 해 보세요.\n1. 이게 [제가 제일 아끼는 가 방 ] 이 에요. (630, like the most) |\n2. [어제 산 책 ] 이 정말 유 익 했어요. (64/ book, helpful)\n3. [ 우 리 가 예 약 한 식 당 ] 이 BS 닫 았 어요. (book restaurant, closed)\n4. [어제 본 영 화 ] 가 기 대 보 다 재 미 없 었 어 요 . (watch movie, not as fun as)\n5. [ 친 구 가 ARM St 카 페 ] 에 갔어요. (recommend café)\n6. [네가 만든 케 이 크 ] 가 정말 맛 있 었 어 . (make cake, delicious) : :\n7. [제가 찾던 서 류 ] 가 여기 있 었 네 요 . 100 for document) :\n8. [ 부 모 님 이 주신 시 계 ] 가 고 장 이 났어요. (watch, parents, broken)\n9.[ 어제 길 에서 본 강 아 지 ] 가 너무 귀 여 웠 어요. (see puppy street) ' 」\n11. [제일 기 억 에 남는 여 행 ] 은 작 년 에 제주도 갔던 거예요. (trip, remember most, Jeju)\n12. [ 당 신 이 보낸 이 메 일 ] 이 스 팸 함에 들 어 갔 어요. (email, go to spam) ae\n13. [내가 잃어버린 SAS 누가 찾 아 줬어. (lose bey Fd) | :\n14, [ 어 젯 밤 에 본 별 ] 이 정말 밝 았 어요. (see star, last night) Poe\n15. [네가 읽고 있는 책 ] 이 궁금해. (read book, curious) | 지실\n16. [우리 팀 이 준비한 발 표 ] 가 성 공 적 이 었어. (prepare presentation, success)\n17. [내가 기다리던 순 간 ] 이 드디어 왔어. (moment, waiting for)\n18. [ 우 리 가 어제 At 꽃 ] 이 벌써 시 들 었어. (buy flowers, wilt)\n19. [내가 가장 자주 가는 카 페 ] 야 . (café, go often)\n20. [네가 기다리던 소 식 ] 이 드디어 왔어. (news, waiting for)\n21. 이 곳 이 [제가 처 음 으로 영 어 를 배운 학 교 ] 예 요 . (school, learn English)\n22. [ 우 리 가 처음 만난 카 페 ] 가 저 건 물 에 있어요. (café, first meet)\n23. [제가 일하는 사 무 실 ] 이 5 층 에 있어요. (office, work)\n24. 여 기 가 [제가 주 말 에 자주 가는 공 원 ] 이 에요. (park, often go)\n25. [ 우 리 가 AMS 찍었던 해 변 ] 이 여 기 에 요 . (beach, take pictures)\n. 4"
+        },
+        {
+          "spreadNumber": 3,
+          "oddPageNumber": 5,
+          "evenPageNumber": 6,
+          "oddImage": "/materials/step-11/spread-03-odd.jpg",
+          "evenImage": "/materials/step-11/spread-03-even.jpg",
+          "oddText": "26. 여 기 가 [제가 어릴 때 자란 동 네 ] 예 요 . (neighborhood, grew up)\n27. 저 기 가 제 첫 직 장 이 있던 건 물 이에요. (6410109, first job)\n28. 여 기 가 [우리 부 모 님 이 처음 만난 곳 ] 이 에요. (01366, parents meet)\n29. 여 기 가 [제가 자주 점심 먹는 식 당 ] 이 에요. (restaurant, have lunch)\n30. 이 곳 이 [내가 결혼식 날 SAA 호 텔 ] 이 에요. (hotel, stay, wedding day)\n31. [내가 시 험 에 합 격 한 날 ] 이 바로 이 날 이에요. (day, pass exam)\n32. [ 우 리 가 처음 AAS 간 날 ] 을 기 억 해 요 . (03 first trip)\n33. [제가 회 사 에 입 사 한 해 ] 가 2015 년 이에요. (year, join company)\n34. [그 일 이 있었던 때 ] 가 겨 울 이었어요. (time, happened, winter)\n35. [그 소 식 을 들었던 순 간 ] 이 제 인 생 에 서 가장 행 복 했던 순 간 이었어요. (moment, hear news, happiest)\n36. [그가 떠난 이 유 ] 는 아무도 Sete. (reason, leave)\n37. 그게 바로 [제가 이 일 을 선택한 이 유 ] 예 요 . (63500, choose job)\n38. [그가 늦게 온 이 유 ] 가 뭔지 알아요? ((63500, late)\n39. 그게 바로 [ 우 리 가 그 회 의 를 취 소 한 이 유 ] 예 요 . (63500, cancel meeting)\n40. [그 BAS 다시 검 토 하 는 이 유 ] 가 있어요. (reason, review issue)\n41. 그 분 이 [ 나 에게 영어 공부 BS 알 려 주 신 분 ] 이 에요. give tips, learn English)\n42. 그 녀 가 [나를 항상 웃게 해주는 친 구 ] 예 요 . (make me laugh)\n43. [어제 전 화 를 건 사 람 ] 이 누 구 였는지 몰라요. (call yesterday)\n44. [ 우 리 가 지 난 주 에 만난 사 람 ] 이 제 사 존 이에요. (meet last week)\n45. [제 옆 에 앉아 있는 사 람 ] 이 제 상 사 예 요 . (6 next to me)\n46. [그 문 제 를 해 결 한 사 람 ] 이 바로 그 남 자 야 . (fix problem)\n47. 제 여 동 생 은 [ 요 리 를 잘하는 사 람 ] 이 에요. (good at cooking) |\n48. [오늘 HHS! 사 람 ] 이 제 팀 리 더 예 요 . (00 presentation)\n49. [그 ANS 알려준 친 구 ] 가 고등학교 동 창 이 에요. (611 news, high school)\n50. 저는 [MS 믿 어 주는 사 람 들 ] 이 정말 고마워요. (appreciate people, believe in me)\n5",
+          "evenText": "STEP 4. 소리 내어 말하기 - SS 생 각 하며 AS F 외 워 서 여러 H 말 해 보 세요.\n1. 이게 [제가 제일 아끼는 가 방 ] 이 에요. 639, like the most)\nThis is [the bag that | like the most].\n2. [어제 산 책 ] 이 정말 유 익 했어요. (buy book, helpful)\n[The book that | bought yesterday] was really helpful.\n3. [ 우 리 가 예 약 한 식 당 ] 이 BS 닫 았 어요. (book restaurant, closed)\n[The restaurant that we booked] has closed.\n4. [어제 본 영 화 ] 가 기 대 보 다 재 미 없 었 어 요 . (watch movie, not as fun as) - 자 =\n[The movie that | saw yesterday] wasn't as fun 85 | expected.\n5. [ 친 구 가 주 전 한 카 페 ] 에 갔어요. (recommend café) 「\n| went to [the café that my friend recommended], ᅵ So\n6. [네가 만든 케 이 크 ] 가 정말 맛 있 었 어 . (make cake, delicious)\n[The cake that you made] was delicious.\n7. [제가 찾던 서 류 ] 가 여기 있 었 네 요 . (look for document)\nHere's [the document that | was looking for].\n8. [ 부 모 님 이 주신 시 계 ] 가 고 장 이 났어요. (watch, parents, broken)\n[The watch that my parents gave me] is broken.\n9.[ 어제 길 에서 본 강 아 지 ] 가 너무 귀 여 웠 어 요 . (666 puppy, street)\n[The puppy that | saw on the street yesterday] was adorable.\n10. [ 당 신 이 찍은 사 진 ] 이 너무 멋져요. (take photo, amazing)\n[The photo that you took] looks amazing.\n6"
+        },
+        {
+          "spreadNumber": 4,
+          "oddPageNumber": 7,
+          "evenPageNumber": 8,
+          "oddImage": "/materials/step-11/spread-04-odd.jpg",
+          "evenImage": "/materials/step-11/spread-04-even.jpg",
+          "oddText": "11. [제일 기 억 에 남는 여 행 ] 은 작 년 에 제주도 갔던 거예요. (trip, remember most, Jeju)\n[The trip that | remember most] was the one to Jeju Island last year.\n12. [ 당 신 이 보낸 이 메 일 ] 이 스 팸 함에 들 어 갔 어요. (email, go to spam)\n[The email that you sent] went into my spam folder.\n13. [내가 잃어버린 SAS 누가 찾 아 줬 어 . 1056 key, find)\nSomeone found [the key that | lost).\n14, [ 어 젯 밤 에 본 별 ] 이 정말 밝 았 어요. (626 star, last night)\n[The star that | saw last night] was really bright.\n15. [네가 읽고 있는 책 ] 이 궁금해. (read book, curious)\nI'm curious about [the book that you're reading].\n16. [우리 팀 이 준비한 발 표 ] 가 성 공 적 이 었어. (prepare presentation, success)\n[The presentation that our team prepared] was very successful.\n17. [내가 기다리던 순 간 ] 이 드디어 왔어. (moment, waiting for)\n[The moment that | was waiting for] has finally come.\n18. [ 우 리 가 어제 산 꽃 ] 이 벌써 시 들 었어. (buy flowers, wilt)\n[The flowers that we bought yesterday] have already wilted.\n19. [내가 가장 자주 가는 카 페 ] 야 . (café, go often)\nThis is [the café that | go to most often].\n20. [네가 기다리던 소 식 ] 이 드디어 왔어. (news, waiting for)\n[The news that you were waiting for] has finally arrived.\n7",
+          "evenText": "21. 이 곳 이 [제가 HS LB 영 어 를 배운 Si1]O2. (school, learn English) |\nThis is [the school where | first learned English]. |\n22. [ 우 리 가 처음 만난 카 페 ] 가 저 건 물 에 있어요. (636, first meet)\n[The café where we first met] is in that building.\n23. [제가 일하는 사 무 실 ] 이 5 증 에 있어요. (0166, work)\n[The office where | work] is on the fifth floor. 1\n24. 여 기 가 [제가 주 말 에 자주 가는 공 원 ] 이 에요. (park, often go) 1\nThis is [the park where | often go on weekends]. ers\n25. [ 우 리 가 사 진 을 찍었던 해 변 ] 이 여 기 에 요 . (beach, take pictures)\nThis is [the beach where we took pictures].\n26. 여 기 가 [제가 어릴 때 자란 동 네 ] 예 요 . (neighborhood, grew up) 으\nThis is [the neighborhood where | grew up].\n27. 저 기 가 제 첫 직 장 이 있던 건 물 이에요. (building, first job)\nThat's [the building where my first job was].\n28. 여 기 가 [우리 부 모 님 이 AS 만난 곳 ] 이 에요. (place, parents meet)\nThis is [the place where my parents first met].\n29. 여 기 가 [제가 자주 점심 먹는 ASyOlO@. (restaurant, have lunch)\nThis is [the restaurant where | often have lunch].\n30. 이 곳 이 [내가 결혼식 S SAA 호 텔 ] 이 에요. (001, stay, wedding day)\nThis is [the hotel where | stayed on my wedding day].\n8"
+        },
+        {
+          "spreadNumber": 5,
+          "oddPageNumber": 9,
+          "evenPageNumber": 10,
+          "oddImage": "/materials/step-11/spread-05-odd.jpg",
+          "evenImage": "/materials/step-11/spread-05-even.jpg",
+          "oddText": "31. [내가 시 험 에 합 격 한 날 ] 이 바로 이 날 이에요. (03, pass exam)\nThis is [the day when | passed the exam].\n32. [ 우 리 가 처음 여 행 을 간 BS 7|AoHR. ay, first trip)\n| remember [the day when we took our first trip].\n33. [제가 회 사 에 입 사 한 해 ] 가 2015 년 이에요. (year, join company)\n[The year when | joined the company] was 2015.\n34. [그 일 이 있었던 때 ] 가 겨 울 이었어요. (time, happened, winter)\n[The time when that happened] was during the winter.\n35. [그 AAS 들었던 순 간 ] 이 제 인 생 에서 가장 ASMA 순 간 이었어요. (moment, hear news, happiest)\n[The moment when | heard the news] was the happiest moment of my life.\n36. [그가 떠난 이 유 ] 는 아무도 몰라요. ((63500, leave)\nNo one knows [the reason why he left].\n37. 그게 바로 [제가 이 SS 선택한 이 유 ] 예 요 . (reason, choose job)\nThat's [the reason why | chose this job].\n38. [그가 늦게 2 이 유 ] 가 뭔지 SOL? (reason, late)\nDo you know [the reason why he was late]?\n39. 그게 바로 [ 우 리 가 그 회 의 를 FAAS 이 유 ] 예 요 . ((63500, cancel meeting)\nThat's [the reason why we canceled the meeting].\n40. [그 BAS 다시 검 토 하 는 이 유 ] 가 2012. (reason, review issue)\nThere's [a reason why we're reviewing the issue again].\n9",
+          "evenText": "41. 그 분 이 [ 나 에 게 영어 공부 AS SAYA! 분 ] 이 에요. Give tips, learn English)\nHe's [the person who gave me some tips on learning English].\n42. 그 녀 가 [나를 항상 웃게 해주는 친 구 ] 예 요 . (make me laugh)\nShe's [the friend who always makes me laugh].\n43. [어제 전 화 를 건 사 람 ] 이 누 구 였는지 몰라요. (6311 yesterday)\n| don't know [the person who called me yesterday].\n44. [ 우 리 가 지 난 주 에 만난 사 람 ] 이 제 사 촌 이에요. (meet last week) |\n[The man who we met last week] is my cousin. ee ee ile ee 00\n45. [제 옆 에 앉아 있는 사 람 ] 이 제 상 사 예요. Git next to me) ae a\n[The person who is sitting next to me] is my boss.\n46. [그 BAS 해 결 한 사 람 ] 이 바로 그 남 자 야 . 6 problem) :\nHe's [the one who fixed the problem].\n47. 제 여 동 생 은 [ 요 리 를 잘하는 사 람 ] 이 에요. (good at cooking)\nMy sister is [someone who's good at cooking].\n48. [오늘 발 표 한 사 람 ] 이 제 팀 리 더 예요. (do presentation)\n[The one who did the presentation today] is my team leader.\n49. [그 소 식 을 알려준 친 구 ] 가 고등학교 동 창 이에요. (tell news, high school)\n[The friend who told me the news] went to high school with me.\n50. 저는 [ 저 를 믿 어 주 는 사 람 들 ] 이 정말 고마워요. (appreciate people, believe in me)\n| really appreciate [people who believe in me].\n10"
+        },
+        {
+          "spreadNumber": 6,
+          "oddPageNumber": 11,
+          "evenPageNumber": null,
+          "oddImage": "/materials/step-11/spread-06-odd.jpg",
+          "evenImage": "/materials/step-11/spread-06-even.jpg",
+          "oddText": "STEP 5. 내 말 하 기 - 배운 BAS 활 용 해 자 신 의 대 답 을 써보고 말 해 보세요.\n1. 최 근 에 가장 많이 연 락 한 사 람 은 누 구 예 요 ?\nWho is the person you've contacted most recently?\n2. 최 근 에 본 영 화 나 드라마 중 주 천 하고 싶은 건 뭐예요?\nWhat's a movie or show you'd recommend?\n3. 기 억 에 남는 여 행 지 는 어 디 예 요 ?\nWhat's a place that you made great memories in?\n4. 죄 근 에 먹은 음식 중에 맛 있 었 던 건 뭐예요?\nWhat's a food that you really enjoyed recently?\n5. 최 근 에 도 와 준 사 람 이 누 구 예 요 ?\nWho is someone who has helped you lately?\n6. 자주 가는 단골 가 게 가 LOB?\nIs there a shop or café that you go to often?\n7. 인 생 에서 가장 행 복 했던 순 간 은 언 제 예 요 ?\nCan you remember a moment when you felt happiest in your life?\n8. 지금 하는 SS 선택한 이 유 가 뭐예요?\nWhat's the reason you chose your current job?\n9. 죄 근 에 새로운 A 배운 적이 있어요?\nWhat's something that you've learned recently?\n10. 올해 이루고 싶은 SHE 뭐예요?\nWhat's a goal that you want to achieve this year?\n11",
+          "evenText": ""
+        }
+      ],
+      "sentences": [
+        {
+          "id": "step-11-s001",
+          "exerciseNumber": 1,
+          "text": "This is [the bag that I like the most].",
+          "promptKo": "이게 [제가 제일 아끼는 가 방 ] 이 에요. 639, like the most)",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-11-s002",
+          "exerciseNumber": 2,
+          "text": "[The book that I bought yesterday] was really helpful.",
+          "promptKo": "[어제 산 책 ] 이 정말 유 익 했어요.",
+          "hints": [
+            "buy book",
+            "helpful"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-11-s003",
+          "exerciseNumber": 3,
+          "text": "What's a place that you made great memories in?",
+          "promptKo": "기 억 에 남는 여 행 지 는 어 디 예 요 ?",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-11-s004",
+          "exerciseNumber": 4,
+          "text": "What's a food that you really enjoyed recently?",
+          "promptKo": "죄 근 에 먹은 음식 중에 맛 있 었 던 건 뭐예요?",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-11-s005",
+          "exerciseNumber": 5,
+          "text": "Who is someone who has helped you lately?",
+          "promptKo": "최 근 에 도 와 준 사 람 이 누 구 예 요 ?",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-11-s006",
+          "exerciseNumber": 6,
+          "text": "Is there a shop or café that you go to often?",
+          "promptKo": "자주 가는 단골 가 게 가 LOB?",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-11-s007",
+          "exerciseNumber": 7,
+          "text": "Can you remember a moment when you felt happiest in your life?",
+          "promptKo": "인 생 에서 가장 행 복 했던 순 간 은 언 제 예 요 ?",
+          "hints": [],
+          "sourcePages": [
+            "even 3",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-11-s008",
+          "exerciseNumber": 8,
+          "text": "[The watch that my parents gave me] is broken.",
+          "promptKo": "[ 부 모 님 이 주신 시 계 ] 가 고 장 이 났어요.",
+          "hints": [
+            "watch",
+            "parents",
+            "broken"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-11-s009",
+          "exerciseNumber": 9,
+          "text": "[The puppy that I saw on the street yesterday] was adorable.",
+          "promptKo": "[ 어제 길 에서 본 강 아 지 ] 가 너무 귀 여 웠 어 요 .",
+          "hints": [
+            "666 puppy",
+            "street"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-11-s010",
+          "exerciseNumber": 10,
+          "text": "What's a goal that you want to achieve this year?",
+          "promptKo": "올해 이루고 싶은 SHE 뭐예요?",
+          "hints": [],
+          "sourcePages": [
+            "even 3",
+            "odd 6"
+          ]
+        },
+        {
+          "id": "step-11-s011",
+          "exerciseNumber": 11,
+          "text": "[The trip that I remember most] was the one to Jeju Island last year.",
+          "promptKo": "[제일 기 억 에 남는 여 행 ] 은 작 년 에 제주도 갔던 거예요.",
+          "hints": [
+            "trip",
+            "remember most",
+            "Jeju"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-11-s012",
+          "exerciseNumber": 12,
+          "text": "[The email that you sent] went into my spam folder.",
+          "promptKo": "[ 당 신 이 보낸 이 메 일 ] 이 스 팸 함에 들 어 갔 어요.",
+          "hints": [
+            "email",
+            "go to spam"
+          ],
+          "sourcePages": [
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-11-s013",
+          "exerciseNumber": 13,
+          "text": "Someone found [the key that I lost].",
+          "promptKo": "[내가 잃어버린 SAS 누가 찾 아 줬 어 . 1056 key, find)",
+          "hints": [],
+          "sourcePages": [
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-11-s014",
+          "exerciseNumber": 14,
+          "text": "[The star that I saw last night] was really bright.",
+          "promptKo": "[ 어 젯 밤 에 본 별 ] 이 정말 밝 았 어요.",
+          "hints": [
+            "626 star",
+            "last night"
+          ],
+          "sourcePages": [
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-11-s015",
+          "exerciseNumber": 15,
+          "text": "I'm curious about [the book that you're reading].",
+          "promptKo": "[네가 읽고 있는 책 ] 이 궁금해.",
+          "hints": [
+            "read book",
+            "curious"
+          ],
+          "sourcePages": [
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-11-s016",
+          "exerciseNumber": 16,
+          "text": "[The presentation that our team prepared] was very successful.",
+          "promptKo": "[우리 팀 이 준비한 발 표 ] 가 성 공 적 이 었어.",
+          "hints": [
+            "prepare presentation",
+            "success"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-11-s017",
+          "exerciseNumber": 17,
+          "text": "[The moment that I was waiting for] has finally come.",
+          "promptKo": "[내가 기다리던 순 간 ] 이 드디어 왔어.",
+          "hints": [
+            "moment",
+            "waiting for"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-11-s018",
+          "exerciseNumber": 18,
+          "text": "[The flowers that we bought yesterday] have already wilted.",
+          "promptKo": "[ 우 리 가 어제 산 꽃 ] 이 벌써 시 들 었어.",
+          "hints": [
+            "buy flowers",
+            "wilt"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-11-s019",
+          "exerciseNumber": 19,
+          "text": "This is [the café that I go to most often].",
+          "promptKo": "[내가 가장 자주 가는 카 페 ] 야 .",
+          "hints": [
+            "café",
+            "go often"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-11-s020",
+          "exerciseNumber": 20,
+          "text": "[The news that you were waiting for] has finally arrived.",
+          "promptKo": "[네가 기다리던 소 식 ] 이 드디어 왔어.",
+          "hints": [
+            "news",
+            "waiting for"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-11-s021",
+          "exerciseNumber": 21,
+          "text": "This is [the school where I first learned English].",
+          "promptKo": "이 곳 이 [제가 HS LB 영 어 를 배운 Si1]O2. (school, learn English) |",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-11-s022",
+          "exerciseNumber": 22,
+          "text": "[The café where we first met] is in that building.",
+          "promptKo": "[ 우 리 가 처음 만난 카 페 ] 가 저 건 물 에 있어요.",
+          "hints": [
+            "636",
+            "first meet"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-11-s023",
+          "exerciseNumber": 23,
+          "text": "[The office where I work] is on the fifth floor.",
+          "promptKo": "[제가 일하는 사 무 실 ] 이 5 증 에 있어요.",
+          "hints": [
+            "0166",
+            "work"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-11-s024",
+          "exerciseNumber": 24,
+          "text": "This is [the park where I often go on weekends]. ers",
+          "promptKo": "여 기 가 [제가 주 말 에 자주 가는 공 원 ] 이 에요. (park, often go) 1",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-11-s025",
+          "exerciseNumber": 25,
+          "text": "This is [the beach where we took pictures].",
+          "promptKo": "[ 우 리 가 사 진 을 찍었던 해 변 ] 이 여 기 에 요 .",
+          "hints": [
+            "beach",
+            "take pictures"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-11-s026",
+          "exerciseNumber": 26,
+          "text": "This is [the neighborhood where I grew up].",
+          "promptKo": "여 기 가 [제가 어릴 때 자란 동 네 ] 예 요 . (neighborhood, grew up) 으",
+          "hints": [],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s027",
+          "exerciseNumber": 27,
+          "text": "That's [the building where my first job was].",
+          "promptKo": "저 기 가 제 첫 직 장 이 있던 건 물 이에요.",
+          "hints": [
+            "building",
+            "first job"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s028",
+          "exerciseNumber": 28,
+          "text": "This is [the place where my parents first met].",
+          "promptKo": "여 기 가 [우리 부 모 님 이 AS 만난 곳 ] 이 에요.",
+          "hints": [
+            "place",
+            "parents meet"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s029",
+          "exerciseNumber": 29,
+          "text": "This is [the restaurant where I often have lunch].",
+          "promptKo": "여 기 가 [제가 자주 점심 먹는 ASyOlO@.",
+          "hints": [
+            "restaurant",
+            "have lunch"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s030",
+          "exerciseNumber": 30,
+          "text": "This is [the hotel where I stayed on my wedding day].",
+          "promptKo": "이 곳 이 [내가 결혼식 S SAA 호 텔 ] 이 에요.",
+          "hints": [
+            "001",
+            "stay",
+            "wedding day"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s031",
+          "exerciseNumber": 31,
+          "text": "This is [the day when I passed the exam].",
+          "promptKo": "[내가 시 험 에 합 격 한 날 ] 이 바로 이 날 이에요.",
+          "hints": [
+            "03",
+            "pass exam"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-11-s032",
+          "exerciseNumber": 32,
+          "text": "I remember [the day when we took our first trip].",
+          "promptKo": "[ 우 리 가 처음 여 행 을 간 BS 7|AoHR. ay, first trip)",
+          "hints": [],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-11-s033",
+          "exerciseNumber": 33,
+          "text": "[The year when I joined the company] was 2015.",
+          "promptKo": "[제가 회사에 입사한 해]가 2015년이에요.",
+          "hints": [
+            "year",
+            "join company"
+          ],
+          "sourcePages": []
+        },
+        {
+          "id": "step-11-s034",
+          "exerciseNumber": 34,
+          "text": "[The time when that happened] was during the winter.",
+          "promptKo": "[그 일 이 있었던 때 ] 가 겨 울 이었어요.",
+          "hints": [
+            "time",
+            "happened",
+            "winter"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-11-s035",
+          "exerciseNumber": 35,
+          "text": "[The moment when I heard the news] was the happiest moment of my life.",
+          "promptKo": "[그 AAS 들었던 순 간 ] 이 제 인 생 에서 가장 ASMA 순 간 이었어요.",
+          "hints": [
+            "moment",
+            "hear news",
+            "happiest"
+          ],
+          "sourcePages": [
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-11-s036",
+          "exerciseNumber": 36,
+          "text": "No one knows [the reason why he left].",
+          "promptKo": "[그가 떠난 이 유 ] 는 아무도 몰라요. (",
+          "hints": [
+            "63500",
+            "leave"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-11-s037",
+          "exerciseNumber": 37,
+          "text": "That's [the reason why I chose this job].",
+          "promptKo": "그게 바로 [제가 이 SS 선택한 이 유 ] 예 요 .",
+          "hints": [
+            "reason",
+            "choose job"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-11-s038",
+          "exerciseNumber": 38,
+          "text": "Do you know [the reason why he was late]?",
+          "promptKo": "[그가 늦게 2 이 유 ] 가 뭔지 SOL?",
+          "hints": [
+            "reason",
+            "late"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-11-s039",
+          "exerciseNumber": 39,
+          "text": "That's [the reason why we canceled the meeting].",
+          "promptKo": "그게 바로 [ 우 리 가 그 회 의 를 FAAS 이 유 ] 예 요 . (",
+          "hints": [
+            "63500",
+            "cancel meeting"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-11-s040",
+          "exerciseNumber": 40,
+          "text": "There's [a reason why we're reviewing the issue again].",
+          "promptKo": "[그 BAS 다시 검 토 하 는 이 유 ] 가 2012.",
+          "hints": [
+            "reason",
+            "review issue"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-11-s041",
+          "exerciseNumber": 41,
+          "text": "He's [the person who gave me some tips on learning English].",
+          "promptKo": "그 분 이 [ 나 에 게 영어 공부 AS SAYA! 분 ] 이 에요. Give tips, learn English)",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s042",
+          "exerciseNumber": 42,
+          "text": "She's [the friend who always makes me laugh].",
+          "promptKo": "그 녀 가 [나를 항상 웃게 해주는 친 구 ] 예 요 .",
+          "hints": [
+            "make me laugh"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s043",
+          "exerciseNumber": 43,
+          "text": "I don't know [the person who called me yesterday].",
+          "promptKo": "[어제 전 화 를 건 사 람 ] 이 누 구 였는지 몰라요.",
+          "hints": [
+            "6311 yesterday"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s044",
+          "exerciseNumber": 44,
+          "text": "[The man who we met last week] is my cousin.",
+          "promptKo": "[ 우 리 가 지 난 주 에 만난 사 람 ] 이 제 사 촌 이에요. (meet last week) |",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s045",
+          "exerciseNumber": 45,
+          "text": "[The person who is sitting next to me] is my boss.",
+          "promptKo": "[제 옆 에 앉아 있는 사 람 ] 이 제 상 사 예요. Git next to me) ae a",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s046",
+          "exerciseNumber": 46,
+          "text": "He's [the one who fixed the problem].",
+          "promptKo": "[그 BAS 해 결 한 사 람 ] 이 바로 그 남 자 야 . 6 problem) :",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s047",
+          "exerciseNumber": 47,
+          "text": "My sister is [someone who's good at cooking].",
+          "promptKo": "제 여 동 생 은 [ 요 리 를 잘하는 사 람 ] 이 에요.",
+          "hints": [
+            "good at cooking"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s048",
+          "exerciseNumber": 48,
+          "text": "[The one who did the presentation today] is my team leader.",
+          "promptKo": "[오늘 발 표 한 사 람 ] 이 제 팀 리 더 예요.",
+          "hints": [
+            "do presentation"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s049",
+          "exerciseNumber": 49,
+          "text": "[The friend who told me the news] went to high school with me.",
+          "promptKo": "[그 소 식 을 알려준 친 구 ] 가 고등학교 동 창 이에요.",
+          "hints": [
+            "tell news",
+            "high school"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-11-s050",
+          "exerciseNumber": 50,
+          "text": "I really appreciate [people who believe in me].",
+          "promptKo": "저는 [ 저 를 믿 어 주 는 사 람 들 ] 이 정말 고마워요.",
+          "hints": [
+            "appreciate people",
+            "believe in me"
           ],
           "sourcePages": [
             "even 5",

@@ -184,7 +184,19 @@ CANONICAL_SENTENCES: dict[int, dict[int, str]] = {
         48: "I finally finished doing the work I'd been putting off.",
         49: "I finally managed to find the information I'd been looking for.",
         50: "He denied saying the comment that made everyone uncomfortable.",
-    }
+    },
+    11: {
+        13: "Someone found [the key that I lost].",
+        23: "[The office where I work] is on the fifth floor.",
+        33: "[The year when I joined the company] was 2015.",
+        44: "[The man who we met last week] is my cousin.",
+    },
+}
+
+CANONICAL_PROMPTS: dict[int, dict[int, tuple[str, list[str]]]] = {
+    11: {
+        33: ("[제가 회사에 입사한 해]가 2015년이에요.", ["year", "join company"]),
+    },
 }
 
 
@@ -369,6 +381,8 @@ def extract_topic(lines: list[str]) -> str:
 
 def detect_pattern_kind(step: int, text: str) -> str:
     compact = re.sub(r"\s+", "", text)
+    if "관계사" in compact or "관계대명사" in compact or step == 11:
+        return "relative-clause"
     if "현재완료진행" in compact or step == 10:
         return "present-perfect-progressive"
     if "현재완료" in compact or step == 9:
@@ -393,6 +407,27 @@ def detect_pattern_kind(step: int, text: str) -> str:
 
 
 def build_patterns(kind: str) -> list[dict[str, Any]]:
+    if kind == "relative-clause":
+        return [
+            {
+                "name": "관계대명사 (사람)",
+                "formula": "명사(사람) + who/that + 동사/주어+동사",
+                "focus": "사람을 뒤에서 구체적으로 설명할 때",
+                "signals": ["the teacher who", "the person who", "someone who", "the friend that"],
+            },
+            {
+                "name": "관계대명사 (사물)",
+                "formula": "명사(사물) + which/that + 주어 + 동사",
+                "focus": "사물이나 동물을 뒤에서 설명할 때",
+                "signals": ["the book that", "the laptop that", "the movie that", "which"],
+            },
+            {
+                "name": "관계부사 (장소/시간/이유)",
+                "formula": "명사 + where/when/why + 주어 + 동사",
+                "focus": "장소, 시간, 이유를 뒤에서 설명할 때",
+                "signals": ["the café where", "the day when", "the reason why", "the place where"],
+            },
+        ]
     if kind == "dummy-subject":
         return [
             {
@@ -614,6 +649,8 @@ def build_patterns(kind: str) -> list[dict[str, Any]]:
 
 
 def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
+    if kind == "relative-clause":
+        return f"Step {step} - 관계사"
     if kind == "dummy-subject":
         return f"Step {step} - 가주어 it"
     if kind == "there-is":
@@ -642,6 +679,8 @@ def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
 
 def topic_for_step(step: int, kind: str, first_lines: list[str]) -> str:
     topic = extract_topic(first_lines)
+    if kind == "relative-clause":
+        return "사람, 사물, 장소, 시간, 이유 연결해서 설명하기"
     if kind == "infinitive-gerund" and step == 6:
         return "내가 하고 싶은 일 / 좋아하는 일"
     if kind == "dummy-subject":
@@ -805,6 +844,20 @@ def extract_target_sentences(
         canonical = CANONICAL_SENTENCES.get(step, {}).get(item.get("exerciseNumber"))
         if canonical:
             item["text"] = canonical
+    for number, canonical in CANONICAL_SENTENCES.get(step, {}).items():
+        if number not in by_number:
+            prompt_ko, hints = CANONICAL_PROMPTS.get(step, {}).get(number, ("", []))
+            targets.append(
+                {
+                    "id": f"step-{step}-s{number:03d}",
+                    "exerciseNumber": number,
+                    "text": canonical,
+                    "promptKo": prompt_ko,
+                    "hints": hints,
+                    "sourcePages": [],
+                }
+            )
+    targets.sort(key=lambda item: item["exerciseNumber"])
     if len(targets) >= 45:
         return targets
 
