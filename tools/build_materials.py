@@ -185,7 +185,28 @@ CANONICAL_SENTENCES: dict[int, dict[int, str]] = {
         49: "I finally managed to find the information I'd been looking for.",
         50: "He denied saying the comment that made everyone uncomfortable.",
     },
+    2: {
+        1: "I'm grabbing a bite.",
+    },
+    3: {
+        45: "What you said changed my mind.",
+    },
+    8: {
+        5: "There was a bag I wanted to buy.",
+        6: "Will there be many people if I go there now?",
+        24: "There are many topics to cover in the meeting today.",
+    },
+    9: {
+        44: "I've come a long way since last year.",
+    },
+    10: {
+        10: "I've been packing for camping since morning, making sure I have everything.",
+        45: "I've been comparing prices all day to save some money.",
+        46: "I've been making an effort lately to be a better person.",
+        47: "You've been getting ready for over an hour and we're going to be late.",
+    },
     11: {
+        4: "[The movie that I saw yesterday] wasn't as fun as I expected.",
         13: "Someone found [the key that I lost].",
         23: "[The office where I work] is on the fifth floor.",
         33: "[The year when I joined the company] was 2015.",
@@ -194,9 +215,65 @@ CANONICAL_SENTENCES: dict[int, dict[int, str]] = {
 }
 
 CANONICAL_PROMPTS: dict[int, dict[int, tuple[str, list[str]]]] = {
+    8: {
+        6: ("지금 거기 가면 / 사람이 많으려나?", ["many people", "go there"]),
+    },
     11: {
         33: ("[제가 회사에 입사한 해]가 2015년이에요.", ["year", "join company"]),
     },
+}
+
+CANONICAL_SENTENCES[12] = {
+    1: "I'm not sure where the convenience store is.",
+    2: "Could you tell me where the nearest bus stop is?",
+    3: "Could you tell me how far the station is from here?",
+    4: "Do you know when the next subway arrives?",
+    5: "Do you know which bus goes to the airport?",
+    6: "Do you know if there's a good bookstore nearby?",
+    7: "Let's check how much the tickets cost.",
+    8: "Do you know when the new season starts?",
+    9: "I have no idea what's happening in the next room.",
+    10: "I can't remember when we last met.",
+    11: "I'd like to know what your weekend plans are.",
+    12: "I'm curious what hobbies you enjoy.",
+    13: "I wonder if we can get a table without a reservation.",
+    14: "I wonder who's coming to dinner.",
+    15: "I'm curious who you're working with recently.",
+    16: "I'm curious how you learned to cook so well.",
+    17: "I can't remember who introduced us.",
+    18: "I'm not sure why the shop is closed today.",
+    19: "I wonder why he suddenly left the company.",
+    20: "Can you explain why this café is so popular?",
+    21: "He explained why he decided to delay the presentation.",
+    22: "She explained why she changed the direction of the project.",
+    23: "I have no idea how they solved that problem.",
+    24: "He told me [he had been busy with work lately].",
+    25: "She mentioned [she was moving to a new apartment].",
+    26: "He said [he had already finished his part].",
+    27: "He told me [the seminar had been canceled].",
+    28: "Getting positive feedback made my day.",
+    29: "I'm so happy we're finally taking a trip together.",
+    30: "[Whether we can travel abroad this year] depends on the budget.",
+    31: "Do you know how many people are coming to the event?",
+    32: "Do you know who lives in that apartment?",
+    33: "I wonder when they'll announce the results.",
+    34: "[Whether the plan will work] is still uncertain.",
+    35: "[That she speaks three languages fluently] impressed the interviewer.",
+    36: "[That we finished the project on time] surprised everyone.",
+    37: "She asked me [where I had bought my sneakers].",
+    38: "Do you know where they usually hang out after work?",
+    39: "He mentioned [he was starting a new hobby].",
+    40: "I have no idea where my phone is.",
+    41: "[Whether I pass this test] will decide my next step.",
+    42: "I wonder how you guys met.",
+    43: "She told me [she was trying a new restaurant tonight].",
+    44: "I wonder why you lied to me.",
+    45: "I wonder why my friends didn't invite me.",
+    46: "Do you know what time the meeting starts tomorrow?",
+    47: "I have no idea where he moved to.",
+    48: "I can't remember where I lost my wallet.",
+    49: "I have no idea why she's upset with me.",
+    50: "I wonder how long you've been waiting.",
 }
 
 
@@ -218,7 +295,7 @@ def clean_line(text: str) -> str:
 
 def clean_english(text: str) -> str:
     value = clean_line(text)
-    value = re.sub(r"^\s*[ᆞㆍ•·\-–—*+«»]+\s*", "", value)
+    value = re.sub(r"^\s*[ᆞㆍ•·\-–—*+«»~_]+\s*", "", value)
     value = re.sub(r"^\s*111\b", "I'll", value)
     value = re.sub(r"^\s*110\b(?=\s+going\b)", "I'm", value, flags=re.I)
     value = re.sub(r"\b111\b(?=\s+(get|grab|go|hear|help|note|take|check)\b)", "I'll", value, flags=re.I)
@@ -228,6 +305,8 @@ def clean_english(text: str) -> str:
     value = re.sub(r"\s*/\s*", " ", value)
     value = value.replace("I'mm", "I'm").replace("|'m", "I'm")
     value = value.replace("|'ve", "I've").replace("|'ll", "I'll")
+    value = re.sub(r"^lt\b", "It", value)
+    value = re.sub(r"^l(?='|\s)", "I", value)
     value = value.replace(" Iogking ", " looking ")
     value = value.replace("iogking", "looking")
     value = value.replace("I.travel", "I travel")
@@ -238,6 +317,15 @@ def clean_english(text: str) -> str:
     value = re.sub(r"\s+[\"'“”‘’]*[-–—]+\s*$", "", value)
     value = re.sub(r"\s+(ee|인|다|>)\s*[-~.]*\s*$", "", value, flags=re.I)
     value = re.sub(r"\s*;\s*[-–—]*\s*$", "", value)
+    # 문장부호 뒤에 짧은 소문자/기호 토막만 남으면 OCR 찌꺼기로 보고 잘라낸다.
+    tail = re.search(r"[.?!]\s+(?![A-Z\[])(?P<tail>.+)$", value)
+    if tail:
+        words = re.findall(r"[A-Za-z']+", tail.group("tail"))
+        if len(words) <= 3 and all(len(word) <= 4 for word in words):
+            value = value[: tail.start("tail")].rstrip()
+    value = re.sub(r"([.?!])\s+(?:I|\|)(?:\s+\d+)?[.,]?\s*$", r"\1", value)
+    value = re.sub(r"^(?:I|\|)\s+(?=I['\s])", "", value)
+    value = re.sub(r"\.{2,}$", ".", value)
     value = re.sub(r",$", ".", value)
     value = re.sub(r"\s+([?.!,])", r"\1", value)
     value = re.sub(r"\s+", " ", value).strip()
@@ -383,6 +471,8 @@ def detect_pattern_kind(step: int, text: str) -> str:
     compact = re.sub(r"\s+", "", text)
     if "관계사" in compact or "관계대명사" in compact or step == 11:
         return "relative-clause"
+    if "간접의문문" in compact or "명사절" in compact or step == 12:
+        return "indirect-question"
     if "현재완료진행" in compact or step == 10:
         return "present-perfect-progressive"
     if "현재완료" in compact or step == 9:
@@ -407,6 +497,27 @@ def detect_pattern_kind(step: int, text: str) -> str:
 
 
 def build_patterns(kind: str) -> list[dict[str, Any]]:
+    if kind == "indirect-question":
+        return [
+            {
+                "name": "간접 의문문 (의문사)",
+                "formula": "I wonder / Do you know / Could you tell me + 의문사 + 주어 + 동사",
+                "focus": "질문을 부드럽고 정중하게 표현할 때 (평서문 어순)",
+                "signals": ["i wonder", "do you know", "could you tell me", "i'm curious", "i have no idea"],
+            },
+            {
+                "name": "간접 의문문 (if/whether)",
+                "formula": "I wonder / Do you know + if/whether + 주어 + 동사",
+                "focus": "~인지 아닌지 물어볼 때",
+                "signals": ["wonder if", "know if", "whether"],
+            },
+            {
+                "name": "명사절 (that절)",
+                "formula": "I think/heard/said (that) + 문장 / That절·Whether절 주어",
+                "focus": "사실이나 생각을 전달할 때",
+                "signals": ["i think", "i heard", "he said", "she mentioned", "that she", "that we"],
+            },
+        ]
     if kind == "relative-clause":
         return [
             {
@@ -649,6 +760,8 @@ def build_patterns(kind: str) -> list[dict[str, Any]]:
 
 
 def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
+    if kind == "indirect-question":
+        return f"Step {step} - 간접 의문문과 명사절"
     if kind == "relative-clause":
         return f"Step {step} - 관계사"
     if kind == "dummy-subject":
@@ -679,6 +792,8 @@ def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
 
 def topic_for_step(step: int, kind: str, first_lines: list[str]) -> str:
     topic = extract_topic(first_lines)
+    if kind == "indirect-question":
+        return "부드럽게 질문하기 + 사실·생각 전달하기"
     if kind == "relative-clause":
         return "사람, 사물, 장소, 시간, 이유 연결해서 설명하기"
     if kind == "infinitive-gerund" and step == 6:
@@ -707,6 +822,13 @@ def parse_prompt(line: str) -> tuple[str, list[str]]:
     return value, hints
 
 
+def is_self_talk_page(record: dict[str, Any]) -> bool:
+    # "STEP 5. 내 말하기" 페이지는 본문과 무관한 자기 대답용 문장이
+    # 1~10번으로 매겨져 있어 본문 문장을 덮어쓰므로 추출에서 제외한다.
+    head = re.sub(r"\s+", "", " ".join(record["lines"][:3]))
+    return "내말하기" in head
+
+
 def extract_sentences(
     ocr_records: list[dict[str, Any]],
     step: int,
@@ -715,6 +837,8 @@ def extract_sentences(
     pending_prompt: dict[str, Any] | None = None
 
     for record in ocr_records:
+        if is_self_talk_page(record):
+            continue
         page_label = f"{record['partLabel']} {record['pageIndex']}"
         for raw_line in record["lines"]:
             line = clean_line(raw_line)
@@ -809,6 +933,8 @@ def extract_target_sentences(
                 existing["hints"] = prompt.get("hints", [])
 
     for record in ocr_records:
+        if is_self_talk_page(record):
+            continue
         page_label = f"{record['partLabel']} {record['pageIndex']}"
         pending = None
         for raw_line in record["lines"]:

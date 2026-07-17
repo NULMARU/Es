@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T13:27:13.039483+00:00",
+  "generatedAt": "2026-07-17T01:23:02.624668+00:00",
   "handwritingPolicy": "필기체/손글씨 OCR은 학습 데이터 후보에서 제외하고 원본 페이지 이미지로만 보존합니다.",
   "expectedFilePattern": "스텝{n}.pdf 또는 스텝{n}_1.pdf + 스텝{n}_2.pdf",
   "steps": [
@@ -118,7 +118,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -133,7 +132,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -148,7 +146,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -162,7 +159,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -177,7 +173,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -192,7 +187,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -207,7 +201,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -223,7 +216,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -239,7 +231,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -255,7 +246,6 @@
           "sourcePages": [
             "even 4",
             "even 5",
-            "odd 6",
             "even 6"
           ]
         },
@@ -910,12 +900,13 @@
         {
           "id": "step-2-s001",
           "exerciseNumber": 1,
-          "text": "Are you eating anything these days for your health?",
-          "promptKo": "요즘 건 강 을 위해 먹고 있는 거 있어?",
+          "text": "I'm grabbing a bite.",
+          "promptKo": "현 재 진 행 형 - 지 금 / 요 즘 하는 중",
           "hints": [],
           "sourcePages": [
+            "odd 1",
             "even 4",
-            "odd 6"
+            "even 6"
           ]
         },
         {
@@ -930,19 +921,19 @@
           "sourcePages": [
             "even 4",
             "odd 1",
-            "odd 6",
             "even 6"
           ]
         },
         {
           "id": "step-2-s003",
           "exerciseNumber": 3,
-          "text": "Are you meeting anyone often these days?",
-          "promptKo": "요즘 자주 만나고 있는 사 람 이 있어?",
-          "hints": [],
+          "text": "I'm crashing on the couch.",
+          "promptKo": "소 파 에 늘 어 져 있 어 .",
+          "hints": [
+            "crashing on the couch"
+          ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -955,8 +946,7 @@
             "heading"
           ],
           "sourcePages": [
-            "even 4",
-            "odd 6"
+            "even 4"
           ]
         },
         {
@@ -969,7 +959,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -984,7 +973,6 @@
           ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -1004,12 +992,13 @@
         {
           "id": "step-2-s008",
           "exerciseNumber": 8,
-          "text": "Are you waiting for something now?",
-          "promptKo": "지금 기다리고 있는 거 있어?",
-          "hints": [],
+          "text": "It's pouring outside right now.",
+          "promptKo": "지금 / 밖에 비 쏟아지는 중 이 야 .",
+          "hints": [
+            "pouring"
+          ],
           "sourcePages": [
             "even 4",
-            "odd 6",
             "even 6"
           ]
         },
@@ -1092,7 +1081,8 @@
             "what you said"
           ],
           "sourcePages": [
-            "odd 4"
+            "odd 4",
+            "even 6"
           ]
         },
         {
@@ -1117,7 +1107,8 @@
             "gathering my thoughts"
           ],
           "sourcePages": [
-            "odd 4"
+            "odd 4",
+            "even 6"
           ]
         },
         {
@@ -1163,7 +1154,7 @@
         {
           "id": "step-2-s020",
           "exerciseNumber": 20,
-          "text": "lt was hard to drive because it was snowing really hard.",
+          "text": "It was hard to drive because it was snowing really hard.",
           "promptKo": "눈 이 너무 많이 오고 있어서 / 운 전 하 기 힘 들 었 어 .",
           "hints": [
             "snowing hard"
@@ -1680,13 +1671,12 @@
         {
           "id": "step-3-s001",
           "exerciseNumber": 1,
-          "text": "What did you do first after you got up?",
-          "promptKo": "일어나서 제일 먼저 뭐 했어요?",
+          "text": "I just believed what you said.",
+          "promptKo": "네가 말한 걸 / 그냥 믿 었 어 . (believe, what you said) |",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -1700,8 +1690,7 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -1712,8 +1701,7 @@
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -1724,31 +1712,32 @@
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-3-s005",
           "exerciseNumber": 5,
-          "text": "What movie did you watch recently?",
-          "promptKo": "죄 근 에 무슨 영 화 를 봤 나 요 ?",
-          "hints": [],
+          "text": "I solved the problem that nobody else could.",
+          "promptKo": "아무도 해결 못한 / 문 제 를 내가 해 결 했어.",
+          "hints": [
+            "solve the problem",
+            "nobody else could"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-3-s006",
           "exerciseNumber": 6,
-          "text": "What time did you get up today?",
-          "promptKo": "오늘 몇 시 에 일 어 났 어요?",
+          "text": "I used to go there often.",
+          "promptKo": "예 전 에는 거기 자주 갔어. (used to) a",
           "hints": [],
           "sourcePages": [
-            "even 3",
-            "odd 6"
+            "even 1",
+            "even 3"
           ]
         },
         {
@@ -1761,8 +1750,8 @@
             "be in the mood"
           ],
           "sourcePages": [
-            "even 3",
-            "odd 6"
+            "even 1",
+            "even 3"
           ]
         },
         {
@@ -1776,8 +1765,7 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -1790,8 +1778,7 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -1805,8 +1792,7 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -1860,6 +1846,7 @@
             "my favorite singer's concert"
           ],
           "sourcePages": [
+            "even 1",
             "odd 4"
           ]
         },
@@ -2277,9 +2264,10 @@
           "id": "step-3-s045",
           "exerciseNumber": 45,
           "text": "What you said changed my mind.",
-          "promptKo": "",
+          "promptKo": "[네가 한 말 ] 이 내 생 각 을 EB!O. (change my mind). = 8 &",
           "hints": [],
           "sourcePages": [
+            "even 5",
             "odd 2"
           ]
         },
@@ -2302,9 +2290,10 @@
           "id": "step-3-s047",
           "exerciseNumber": 47,
           "text": "I was embarrassed because everyone looked at me.",
-          "promptKo": "",
+          "promptKo": "모두 쳐 다 봐 서 / 민 망 했어. (be embarrassed, everyone looked at me) '",
           "hints": [],
           "sourcePages": [
+            "even 5",
             "odd 2"
           ]
         },
@@ -2461,8 +2450,7 @@
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -2477,31 +2465,33 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-4-s003",
           "exerciseNumber": 3,
           "text": "You'll be surprised when you hear the news.",
-          "promptKo": "곧 어디에 갈 계 획 이 있어요?",
+          "promptKo": "너 그 소식 들으면 / 깜짝 놀랄 4. (be surprised, hear the news) ae",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-4-s004",
           "exerciseNumber": 4,
           "text": "I'm going to sign up for the gym to start working out.",
-          "promptKo": "내 년 에 무 언 가 를 바꿀 수 있다면, 뭘 바꿀 거예요?",
-          "hints": [],
+          "promptKo": "운동 시 작 하 려고 / 헬스장 등 록 하려고 해.",
+          "hints": [
+            "sign up",
+            "gym",
+            "start working out"
+          ],
           "sourcePages": [
             "even 1",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -2515,8 +2505,7 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -2529,8 +2518,8 @@
             "breaking down"
           ],
           "sourcePages": [
-            "even 3",
-            "odd 6"
+            "even 1",
+            "even 3"
           ]
         },
         {
@@ -2544,8 +2533,7 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -2559,20 +2547,21 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-4-s009",
           "exerciseNumber": 9,
           "text": "I'll hear you out no matter how long it is.",
-          "promptKo": "언젠가 꼭 목표 하 나 를 이룰 수 있다면, 어떤 SHE 이룰 거예요?",
-          "hints": [],
+          "promptKo": "네 얘기 다 들 어 줄게, / 아무리 길 어 도 상관 없어.",
+          "hints": [
+            "hear you out",
+            "no matter how long"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -2585,8 +2574,7 @@
             "long vacation"
           ],
           "sourcePages": [
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -2642,6 +2630,7 @@
             "used to go to"
           ],
           "sourcePages": [
+            "even 1",
             "even 4"
           ]
         },
@@ -3228,7 +3217,8 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3"
+            "even 3",
+            "odd 1"
           ]
         },
         {
@@ -3241,7 +3231,8 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3"
+            "even 3",
+            "odd 1"
           ]
         },
         {
@@ -3252,7 +3243,8 @@
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3"
+            "even 3",
+            "odd 1"
           ]
         },
         {
@@ -3270,9 +3262,14 @@
           "id": "step-5-s005",
           "exerciseNumber": 5,
           "text": "You'll be surprised by the news tomorrow.",
-          "promptKo": "내일은 네가 놀랄 ANS 들을 거야. (be surprised) 1 \" —",
-          "hints": [],
+          "promptKo": "진행형",
+          "hints": [
+            "지금 하고 있는 일",
+            "과거 특정 시점",
+            "미래 특정 시점"
+          ],
           "sourcePages": [
+            "odd 1",
             "even 1",
             "even 3"
           ]
@@ -3386,6 +3383,7 @@
             "redecorate"
           ],
           "sourcePages": [
+            "even 1",
             "odd 4"
           ]
         },
@@ -3758,9 +3756,10 @@
           "id": "step-5-s044",
           "exerciseNumber": 44,
           "text": "I usually take a walk at lunchtime.",
-          "promptKo": "",
+          "promptKo": "나는 보통 점 심 시 간에 산 책 을 해. (take a walk) -",
           "hints": [],
           "sourcePages": [
+            "even 5",
             "odd 2"
           ]
         },
@@ -3943,71 +3942,76 @@
           "id": "step-6-s001",
           "exerciseNumber": 1,
           "text": "I want to check out the café you talked about.",
-          "promptKo": "이번 주 말 에 뭐 하고 싶어요?",
-          "hints": [],
+          "promptKo": "너가 말했던 / 카 페 에 한번 가보고 싶어.",
+          "hints": [
+            "check out",
+            "talk about"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-6-s002",
           "exerciseNumber": 2,
           "text": "I'm learning how to answer without getting nervous.",
-          "promptKo": "월급 타면 뭐 하고 싶어요?",
-          "hints": [],
+          "promptKo": "긴 장 하지 많고 / 대 답 하 는 HS / 배우는 중 이 야 .",
+          "hints": [
+            "learn",
+            "how to answer",
+            "get nervous"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-6-s003",
           "exerciseNumber": 3,
           "text": "I agreed to follow the plan he suggested.",
-          "promptKo": "쉬는 날 집 에서 뭐 하는 걸 좋아해요?",
-          "hints": [],
+          "promptKo": "그가 제안한 / 계 획 을 따 르 기 로 했어.",
+          "hints": [
+            "agree",
+            "follow the plan",
+            "suggest"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-6-s004",
           "exerciseNumber": 4,
           "text": "I want to find an environment I can focus in.",
-          "promptKo": "좋 아 하 는 SYS 뭐예요?",
+          "promptKo": "",
           "hints": [],
           "sourcePages": [
-            "even 1",
-            "odd 6"
+            "even 1"
           ]
         },
         {
           "id": "step-6-s005",
           "exerciseNumber": 5,
           "text": "I like going to places where photos come out nice.",
-          "promptKo": "1\\ 나 유 튜 브 에 서 자주 보는 건 뭐예요?",
+          "promptKo": "사 진 이 예쁘게 나오는 / 장 소 에 가는 거 좋아해. (go to places, come out nice). _",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-6-s006",
           "exerciseNumber": 6,
           "text": "I need to return that item that doesn't fit me.",
-          "promptKo": "친 구 랑 만나면 뭐 하는 거 좋아해요?",
+          "promptKo": "나 한 테 안 맞는 / 그 옷 반 품 해야 SH. (need, return, item that doesn't fit me) ;",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -4021,32 +4025,37 @@
             "drain me"
           ],
           "sourcePages": [
-            "even 3",
-            "odd 6"
+            "even 1",
+            "even 3"
           ]
         },
         {
           "id": "step-6-s008",
           "exerciseNumber": 8,
           "text": "I really like reading stories that change my perspective.",
-          "promptKo": "휴가 때 가고 HE 곳 이 있어요?",
-          "hints": [],
+          "promptKo": "내 생 각 을 바 꿔 주는 / 이야기 읽는 A 정말 좋아해.",
+          "hints": [
+            "read stories",
+            "change my perspective"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-6-s009",
           "exerciseNumber": 9,
           "text": "I'm trying to find out what she wants.",
-          "promptKo": "요즘 즐겨 듣는 노 래 나 가 수 가 있어요?",
-          "hints": [],
+          "promptKo": "개가 원하는 Al 뭔지 / 알 아 내려고 노력 중 이 야 .",
+          "hints": [
+            "try",
+            "find out",
+            "what she wants"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -4060,8 +4069,7 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -4118,6 +4126,7 @@
             "ask"
           ],
           "sourcePages": [
+            "even 1",
             "odd 4"
           ]
         },
@@ -4271,10 +4280,11 @@
           "id": "step-6-s025",
           "exerciseNumber": 25,
           "text": "I hope to hear from the company I applied to.",
-          "promptKo": "",
+          "promptKo": "내가 지 원 한 / 회 사 에서 연 락 이 왔으면 좋겠다. 0160, company | applied to)",
           "hints": [],
           "sourcePages": [
-            "even 1"
+            "even 1",
+            "even 4"
           ]
         },
         {
@@ -4719,11 +4729,10 @@
         {
           "id": "step-7-s001",
           "exerciseNumber": 1,
-          "text": "What is the hardest thing for you?",
-          "promptKo": "너 한 테 제일 어려운 건 뭐야? :",
+          "text": "It's easy to make excuses.",
+          "promptKo": "10 부 정사 (to + 동 사 원 형 ) - 평 가 의 느낌",
           "hints": [],
           "sourcePages": [
-            "even 6",
             "odd 1",
             "odd 2",
             "odd 4"
@@ -4738,8 +4747,7 @@
           "sourcePages": [
             "odd 1",
             "odd 2",
-            "odd 4",
-            "even 6"
+            "odd 4"
           ]
         },
         {
@@ -4753,18 +4761,19 @@
           ],
           "sourcePages": [
             "odd 2",
-            "odd 4",
-            "even 6"
+            "odd 4"
           ]
         },
         {
           "id": "step-7-s004",
           "exerciseNumber": 4,
-          "text": "What is annoying for you?. ee I c.g.",
-          "promptKo": "너 한텐 귀찮은 일 이 뭐야? ᄏ ~: : a 7",
-          "hints": [],
+          "text": "It's wise to save money.",
+          "promptKo": "=S 아끼는 건 / 현 명 해.",
+          "hints": [
+            "wise",
+            "save money"
+          ],
           "sourcePages": [
-            "even 6",
             "odd 2",
             "odd 4"
           ]
@@ -4780,8 +4789,7 @@
           ],
           "sourcePages": [
             "odd 2",
-            "odd 4",
-            "even 6"
+            "odd 4"
           ]
         },
         {
@@ -4809,18 +4817,19 @@
           ],
           "sourcePages": [
             "odd 2",
-            "odd 4",
-            "even 6"
+            "odd 4"
           ]
         },
         {
           "id": "step-7-s008",
           "exerciseNumber": 8,
-          "text": "What is easy for you these days?",
-          "promptKo": "요즘 너 한 테 쉬운 일은 뭐야?",
-          "hints": [],
+          "text": "It's hard for me to focus in the morning.",
+          "promptKo": "아 침 에 집 중 하 는 Al / 4 힘들어.",
+          "hints": [
+            "hard for me",
+            "focus in the morning"
+          ],
           "sourcePages": [
-            "even 6",
             "odd 2",
             "odd 4"
           ]
@@ -4828,11 +4837,12 @@
         {
           "id": "step-7-s009",
           "exerciseNumber": 9,
-          "text": "What is something surprising for you recently?",
-          "promptKo": "최 근 에 네가 SRA 사 실 은 뭐야?",
-          "hints": [],
+          "text": "It's obvious that he likes you.",
+          "promptKo": "개가 너 좋 아 하 는 7 / trol] 보여.",
+          "hints": [
+            "obvious"
+          ],
           "sourcePages": [
-            "even 6",
             "odd 2",
             "odd 4"
           ]
@@ -4848,8 +4858,7 @@
           ],
           "sourcePages": [
             "odd 2",
-            "odd 4",
-            "even 6"
+            "odd 4"
           ]
         },
         {
@@ -4896,7 +4905,7 @@
         {
           "id": "step-7-s014",
           "exerciseNumber": 14,
-          "text": "It's interesting to learn something new. \"a cae oo.",
+          "text": "It's interesting to learn something new.",
           "promptKo": "새로운 걸 배우는 건 / SO|Z9I (interesting, learn something new) ,",
           "hints": [],
           "sourcePages": [
@@ -4907,7 +4916,7 @@
         {
           "id": "step-7-s015",
           "exerciseNumber": 15,
-          "text": "It's tough taking the subway every morning. _.",
+          "text": "It's tough taking the subway every morning.",
           "promptKo": "아 침 마다 지하철 타는 건 / 힘들어.",
           "hints": [
             "tough",
@@ -5125,10 +5134,11 @@
           "id": "step-7-s031",
           "exerciseNumber": 31,
           "text": "It's annoying waiting for the bus.",
-          "promptKo": "",
+          "promptKo": "버 스 를 기다리는 건 / 짜증 나. (annoying, wait for the bus) .",
           "hints": [],
           "sourcePages": [
-            "even 2"
+            "even 2",
+            "even 5"
           ]
         },
         {
@@ -5148,7 +5158,7 @@
         {
           "id": "step-7-s033",
           "exerciseNumber": 33,
-          "text": "It's embarrassing for me to dance in public. a).",
+          "text": "It's embarrassing for me to dance in public.",
           "promptKo": "사람들 앞에서 SAE 게 / 난 부끄러워.",
           "hints": [
             "embarrassing for me",
@@ -5162,7 +5172,7 @@
         {
           "id": "step-7-s034",
           "exerciseNumber": 34,
-          "text": "It's useful to write a diary in English. : : 3 oe.",
+          "text": "It's useful to write a diary in English.",
           "promptKo": "영 어 로 일기 ME 건 / 유 용 해. (useful, write a diary in English) fF |",
           "hints": [],
           "sourcePages": [
@@ -5172,7 +5182,7 @@
         {
           "id": "step-7-s035",
           "exerciseNumber": 35,
-          "text": "It's rewarding studying regularly... \"8 — ~.",
+          "text": "It's rewarding studying regularly.",
           "promptKo": "꾸준히 공 부 하는 건 / 보람 있어. (rewarding, study regularly) 4 : ‘",
           "hints": [],
           "sourcePages": [
@@ -5228,6 +5238,7 @@
             "do housework"
           ],
           "sourcePages": [
+            "even 2",
             "even 5"
           ]
         },
@@ -5489,71 +5500,72 @@
         {
           "id": "step-8-s001",
           "exerciseNumber": 1,
-          "text": "Is there anything you need to do this year?",
-          "promptKo": "올해 해야 하는 일 있어?",
+          "text": "There is no cash in my wallet.",
+          "promptKo": "내 지 갑 에 / 현 금 이 전혀 없어. (cash, wallet) |",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-8-s002",
           "exerciseNumber": 2,
-          "text": "Is there anything you want to buy?",
-          "promptKo": "사고 싶은 거 있어?",
-          "hints": [],
+          "text": "There are no seats available.",
+          "promptKo": "앉을 자 리 가 없네.",
+          "hints": [
+            "seat available"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-8-s003",
           "exerciseNumber": 3,
-          "text": "Is there anything good to watch these days?",
-          "promptKo": "요즘 볼 만한 A 있어?",
-          "hints": [],
+          "text": "There are no outlets for customers in this café.",
+          "promptKo": "이 카 페 에는 / 손 님 이 S 수 있는 / 콘 센 트 가 없어.",
+          "hints": [
+            "outlets",
+            "customers",
+            "café"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-8-s004",
           "exerciseNumber": 4,
-          "text": "Are there any travel plans this year?",
-          "promptKo": "올해 여행 계획 있어?",
+          "text": "There's something to eat in the fridge.",
+          "promptKo": "냉 장 고 에 / 먹을 만한 게 조금 있어. (something to eat, fridge) co , :",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-8-s005",
           "exerciseNumber": 5,
-          "text": "Is there anything you want to eat?",
-          "promptKo": "먹고 싶은 거 있어?",
+          "text": "There was a bag I wanted to buy.",
+          "promptKo": "사고 싶은 / 가 방 이 있었어. (639, want to buy)... i :",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-8-s006",
           "exerciseNumber": 6,
-          "text": "Are there any plans this weekend?",
-          "promptKo": "이번 주 말 에 계획 있어?",
+          "text": "Will there be many people if I go there now?",
+          "promptKo": "",
           "hints": [],
           "sourcePages": [
-            "odd 6"
+            "even 1"
           ]
         },
         {
@@ -5564,8 +5576,7 @@
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -5577,8 +5588,8 @@
             "bagels left"
           ],
           "sourcePages": [
-            "even 3",
-            "odd 6"
+            "even 1",
+            "even 3"
           ]
         },
         {
@@ -5591,20 +5602,21 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-8-s010",
           "exerciseNumber": 10,
-          "text": "Is there anything you want to learn?",
-          "promptKo": "배우고 싶은 거 있어?",
-          "hints": [],
+          "text": "There's a new drink on the café menu.",
+          "promptKo": "카페 메 뉴 에 / 새로운 음 료 가 있어.",
+          "hints": [
+            "new drink",
+            "café menu"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -5769,7 +5781,7 @@
         {
           "id": "step-8-s023",
           "exerciseNumber": 23,
-          "text": "There was a big mistake in the report.. oe oo.",
+          "text": "There was a big mistake in the report.",
           "promptKo": "보 고 서 에 / 큰 실 수 가 있었어.",
           "hints": [
             "big mistake",
@@ -5783,7 +5795,7 @@
         {
           "id": "step-8-s024",
           "exerciseNumber": 24,
-          "text": "There are many topics to cover inthe meeting today. : : os.",
+          "text": "There are many topics to cover in the meeting today.",
           "promptKo": "오늘 회 의 에서 / 다룰 주제가 많아. (topics, meeting) iz.",
           "hints": [],
           "sourcePages": [
@@ -5910,7 +5922,7 @@
         {
           "id": "step-8-s034",
           "exerciseNumber": 34,
-          "text": "_ There are several good places to go on a date in this city.",
+          "text": "There are several good places to go on a date in this city.",
           "promptKo": "이 도 시 에는 / 데이트 가기 / FS 곳 이 몇 군데 있어.",
           "hints": [
             "0000 places",
@@ -6009,7 +6021,7 @@
         {
           "id": "step-8-s041",
           "exerciseNumber": 41,
-          "text": "There was a big event in my neighborhood last week. :.",
+          "text": "There was a big event in my neighborhood last week.",
           "promptKo": "지 난 주 에 우리 동 네 에 / 큰 행 사 가 있었어. (big event, neighborhood) :",
           "hints": [],
           "sourcePages": [
@@ -6049,16 +6061,17 @@
           "id": "step-8-s044",
           "exerciseNumber": 44,
           "text": "There are few students in the classroom today.",
-          "promptKo": "",
+          "promptKo": "오늘 교 실 에 / 학 생 이 거의 없어. (few students, classroom) i 3 ae",
           "hints": [],
           "sourcePages": [
+            "even 5",
             "odd 2"
           ]
         },
         {
           "id": "step-8-s045",
           "exerciseNumber": 45,
-          "text": "There's a good vibe in the office today. oni.",
+          "text": "There's a good vibe in the office today.",
           "promptKo": "오늘 사무실 / 분 위 기 가 좋아. (vibe, office) fe .",
           "hints": [],
           "sourcePages": [
@@ -6247,20 +6260,21 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-9-s002",
           "exerciseNumber": 2,
-          "text": "Have you ever been to a concert or a show?",
-          "promptKo": "2A EL SAO] 가본 A 있어요?",
-          "hints": [],
+          "text": "I've finally finished my to-do list.",
+          "promptKo": "할 일 S88 / 드디어 다 끝 냈 어 .",
+          "hints": [
+            "finish",
+            "to-do list"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -6274,42 +6288,39 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-9-s004",
           "exerciseNumber": 4,
-          "text": "Have you ever started a new hobby?",
-          "promptKo": "새로운 취 미 를 시 작 해 본 적 있어요?",
+          "text": "I've already booked the tickets, so it's hard to cancel.",
+          "promptKo": "HS 이미 OOOH EAL / 취 소 하기 어려워. (book tickets, hard to cancel) co ae eld",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-9-s005",
           "exerciseNumber": 5,
-          "text": "Have you ever gone camping?",
-          "promptKo": "ASS 가본 적 있어요?",
+          "text": "I've just found out the good news.",
+          "promptKo": "",
           "hints": [],
           "sourcePages": [
-            "even 1",
-            "odd 6"
+            "even 1"
           ]
         },
         {
           "id": "step-9-s006",
           "exerciseNumber": 6,
-          "text": "Have you ever stayed up all night?",
-          "promptKo": "밤 을 MAE A 있어요?",
+          "text": "I've changed my mind about going.",
+          "promptKo": "가 기 로 한 / 마 음 을 YAO}. (change mind). 、 0 ... 01",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -6320,31 +6331,32 @@
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-9-s008",
           "exerciseNumber": 8,
-          "text": "Have you ever helped a stranger on the street?",
-          "promptKo": "길 에서 모르는 사 람 을 LOE A 있어요?",
-          "hints": [],
+          "text": "I've left my phone in the car.",
+          "promptKo": "핸 드 폰 을 차 에 두고 왔어.",
+          "hints": [
+            "leave phone in car"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-9-s009",
           "exerciseNumber": 9,
-          "text": "Have you ever traveled with a friend?",
-          "promptKo": "친 구 랑 AAS 가본 A 있어요?",
-          "hints": [],
+          "text": "I've called so many times.",
+          "promptKo": "엄정 여러 번 전 화 했어.",
+          "hints": [
+            "call"
+          ],
           "sourcePages": [
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -6357,8 +6369,7 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -6536,10 +6547,15 @@
           "id": "step-9-s024",
           "exerciseNumber": 24,
           "text": "I've received great feedback from clients.",
-          "promptKo": "",
-          "hints": [],
+          "promptKo": "고 객 한테 / 좋은 피 드 백 을 받았어.",
+          "hints": [
+            "receive",
+            "great feedback",
+            "from clients"
+          ],
           "sourcePages": [
-            "even 1"
+            "even 1",
+            "even 4"
           ]
         },
         {
@@ -6774,7 +6790,7 @@
         {
           "id": "step-9-s043",
           "exerciseNumber": 43,
-          "text": "I've had second thoughts about the plan. ae. :.",
+          "text": "I've had second thoughts about the plan.",
           "promptKo": "계 획 에 대해 / 다시 생 각 하 게 됐어.",
           "hints": [
             "have second thoughts",
@@ -6788,7 +6804,7 @@
         {
           "id": "step-9-s044",
           "exerciseNumber": 44,
-          "text": "I've come a long way since last year, 7 i oo 「 =e.",
+          "text": "I've come a long way since last year.",
           "promptKo": "작년 이 후 로 / 많이 성 장 했어. (come a long way, since last year) 7 2",
           "hints": [],
           "sourcePages": [
@@ -6799,7 +6815,7 @@
         {
           "id": "step-9-s045",
           "exerciseNumber": 45,
-          "text": "I've gone through worse situations. :.",
+          "text": "I've gone through worse situations.",
           "promptKo": "더 나쁜 상 황 도 / 겪 어 봤어. (go through, worse situations) o 7 :",
           "hints": [],
           "sourcePages": [
@@ -6810,7 +6826,7 @@
         {
           "id": "step-9-s046",
           "exerciseNumber": 46,
-          "text": "l've seen better days.",
+          "text": "I've seen better days.",
           "promptKo": "더 좋은 시 절 도 있었지. (666 better days) : _ 3 — a >",
           "hints": [],
           "sourcePages": [
@@ -6978,13 +6994,12 @@
         {
           "id": "step-10-s001",
           "exerciseNumber": 1,
-          "text": "I've been working late all week because of a deadline..",
+          "text": "I've been working late all week because of a deadline.",
           "promptKo": "마감 때문에 / 이번 주 내내 야 근 하 고 있어. (work late, all week, deadline) |",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -6999,14 +7014,13 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-10-s003",
           "exerciseNumber": 3,
-          "text": "I've been packing all day preparing for my move. I 2.",
+          "text": "I've been packing all day preparing for my move.",
           "promptKo": "이사 준 비 하 면서 / 하루 SA 짐을 싸고 QW}.",
           "hints": [
             "pack",
@@ -7015,31 +7029,29 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-10-s004",
           "exerciseNumber": 4,
-          "text": "I haven't been watching TV much because I've been too busy. I.",
+          "text": "I haven't been watching TV much because I've been too busy.",
           "promptKo": "너무 바빠서 / TVS 거의 안 보고 있어. (not watch TV much, too busy) \"ᆞ a |",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-10-s005",
           "exerciseNumber": 5,
-          "text": "What hobbies or activities have you been getting into lately?",
-          "promptKo": "요즘 어떤 취 미 나 활 동 에 빠져 있어요?",
+          "text": "I haven't been drinking coffee to sleep better.",
+          "promptKo": "잠 을 잘 자려고 / ALS 안 마시고 있어. (drink coffee, sleep better) : |",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -7054,8 +7066,7 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -7066,20 +7077,22 @@
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-10-s008",
           "exerciseNumber": 8,
-          "text": "Have you been changing your eating or exercise habits lately?",
-          "promptKo": "요즘 식 습 관 이나 운동 습 관 에 변 화 가 있었어요?",
-          "hints": [],
+          "text": "I've been jogging every morning to stay in shape.",
+          "promptKo": "몸매 PALS 위해서 / 매일 아침 / AAS 하고 있어.",
+          "hints": [
+            "jog",
+            "every morning",
+            "stay in shape"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -7094,19 +7107,17 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-10-s010",
           "exerciseNumber": 10,
-          "text": "What have you been learning lately?",
-          "promptKo": "최 근 에 새로운 걸 배우고 있어요?",
+          "text": "I've been packing for camping since morning, making sure I have everything.",
+          "promptKo": "",
           "hints": [],
           "sourcePages": [
-            "even 1",
-            "odd 6"
+            "even 1"
           ]
         },
         {
@@ -7289,7 +7300,7 @@
         {
           "id": "step-10-s023",
           "exerciseNumber": 23,
-          "text": "I've been waiting for your call all day long. : 0.",
+          "text": "I've been waiting for your call all day long.",
           "promptKo": "하루 종일 / 네 전 화 를 / 기 다 렸 어 .",
           "hints": [
             "wait for your call",
@@ -7303,7 +7314,7 @@
         {
           "id": "step-10-s024",
           "exerciseNumber": 24,
-          "text": "I I've been standing in line at the entrance for two hours. ne.",
+          "text": "I've been standing in line at the entrance for two hours.",
           "promptKo": "두 시간 동안 / 입 구 에 서 / SA 있는 중 이 야 . (stand in line, for two hours) ...",
           "hints": [],
           "sourcePages": [
@@ -7324,7 +7335,7 @@
         {
           "id": "step-10-s026",
           "exerciseNumber": 26,
-          "text": "I've been having the same nightmare every night. a a —.",
+          "text": "I've been having the same nightmare every night.",
           "promptKo": "매일 밤 / 같은 SSS 꾸고 있어. (have nightmare, every night) \"a",
           "hints": [],
           "sourcePages": [
@@ -7593,7 +7604,7 @@
         {
           "id": "step-10-s045",
           "exerciseNumber": 45,
-          "text": "I've been comparing prices.all day to save some money. gost.",
+          "text": "I've been comparing prices all day to save some money.",
           "promptKo": "돈 을 & 아 껴 보 려고 / 하루 종일 / 가 격 을 비 교 하고 있어.",
           "hints": [
             "compare prices",
@@ -7608,7 +7619,7 @@
         {
           "id": "step-10-s046",
           "exerciseNumber": 46,
-          "text": "I've been making an effort lately to bea better person. a. : :.",
+          "text": "I've been making an effort lately to be a better person.",
           "promptKo": "더 나은 사 람 이 되려고 / 요즘 / 정말 노 력 하고 있어.",
           "hints": [
             "make an effort",
@@ -7623,7 +7634,7 @@
         {
           "id": "step-10-s047",
           "exerciseNumber": 47,
-          "text": "You've been getting ready for over an. hour and we're going to be late.",
+          "text": "You've been getting ready for over an hour and we're going to be late.",
           "promptKo": "너 한 시간 넘게 / 준비 SOLO / and 우리 정말 늦 겠어.",
           "hints": [
             "get ready",
@@ -7791,8 +7802,7 @@
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -7806,66 +7816,69 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-11-s003",
           "exerciseNumber": 3,
-          "text": "What's a place that you made great memories in?",
-          "promptKo": "기 억 에 남는 여 행 지 는 어 디 예 요 ?",
-          "hints": [],
+          "text": "[The restaurant that we booked] has closed.",
+          "promptKo": "[ 우 리 가 예 약 한 식 당 ] 이 BS 닫 았 어요.",
+          "hints": [
+            "book restaurant",
+            "closed"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-11-s004",
           "exerciseNumber": 4,
-          "text": "What's a food that you really enjoyed recently?",
-          "promptKo": "죄 근 에 먹은 음식 중에 맛 있 었 던 건 뭐예요?",
+          "text": "[The movie that I saw yesterday] wasn't as fun as I expected.",
+          "promptKo": "[어제 본 영 화 ] 가 기 대 보 다 재 미 없 었 어 요 . (watch movie, not as fun as) - 자 =",
           "hints": [],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-11-s005",
           "exerciseNumber": 5,
-          "text": "Who is someone who has helped you lately?",
-          "promptKo": "최 근 에 도 와 준 사 람 이 누 구 예 요 ?",
+          "text": "I went to the café that my friend recommended.",
+          "promptKo": "",
           "hints": [],
           "sourcePages": [
-            "even 1",
-            "odd 6"
+            "even 1"
           ]
         },
         {
           "id": "step-11-s006",
           "exerciseNumber": 6,
-          "text": "Is there a shop or café that you go to often?",
-          "promptKo": "자주 가는 단골 가 게 가 LOB?",
-          "hints": [],
+          "text": "[The cake that you made] was delicious.",
+          "promptKo": "[네가 만든 케 이 크 ] 가 정말 맛 있 었 어 .",
+          "hints": [
+            "make cake",
+            "delicious"
+          ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-11-s007",
           "exerciseNumber": 7,
-          "text": "Can you remember a moment when you felt happiest in your life?",
-          "promptKo": "인 생 에서 가장 행 복 했던 순 간 은 언 제 예 요 ?",
-          "hints": [],
+          "text": "Here's [the document that I was looking for].",
+          "promptKo": "[제가 찾던 서 류 ] 가 여기 있 었 네 요 .",
+          "hints": [
+            "look for document"
+          ],
           "sourcePages": [
-            "even 3",
-            "odd 6"
+            "even 1",
+            "even 3"
           ]
         },
         {
@@ -7880,8 +7893,7 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -7895,19 +7907,20 @@
           ],
           "sourcePages": [
             "even 1",
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
           "id": "step-11-s010",
           "exerciseNumber": 10,
-          "text": "What's a goal that you want to achieve this year?",
-          "promptKo": "올해 이루고 싶은 SHE 뭐예요?",
-          "hints": [],
+          "text": "[The photo that you took] looks amazing.",
+          "promptKo": "[ 당 신 이 찍은 사 진 ] 이 너무 멋져요.",
+          "hints": [
+            "take photo",
+            "amazing"
+          ],
           "sourcePages": [
-            "even 3",
-            "odd 6"
+            "even 3"
           ]
         },
         {
@@ -8086,7 +8099,7 @@
         {
           "id": "step-11-s024",
           "exerciseNumber": 24,
-          "text": "This is [the park where I often go on weekends]. ers",
+          "text": "This is [the park where I often go on weekends].",
           "promptKo": "여 기 가 [제가 주 말 에 자주 가는 공 원 ] 이 에요. (park, often go) 1",
           "hints": [],
           "sourcePages": [
@@ -8429,6 +8442,738 @@
           "hints": [
             "appreciate people",
             "believe in me"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-12",
+      "stepNumber": 12,
+      "title": "Step 12 - 간접 의문문과 명사절",
+      "topic": "부드럽게 질문하기 + 사실·생각 전달하기",
+      "patternKind": "indirect-question",
+      "patterns": [
+        {
+          "name": "간접 의문문 (의문사)",
+          "formula": "I wonder / Do you know / Could you tell me + 의문사 + 주어 + 동사",
+          "focus": "질문을 부드럽고 정중하게 표현할 때 (평서문 어순)",
+          "signals": [
+            "i wonder",
+            "do you know",
+            "could you tell me",
+            "i'm curious",
+            "i have no idea"
+          ]
+        },
+        {
+          "name": "간접 의문문 (if/whether)",
+          "formula": "I wonder / Do you know + if/whether + 주어 + 동사",
+          "focus": "~인지 아닌지 물어볼 때",
+          "signals": [
+            "wonder if",
+            "know if",
+            "whether"
+          ]
+        },
+        {
+          "name": "명사절 (that절)",
+          "formula": "I think/heard/said (that) + 문장 / That절·Whether절 주어",
+          "focus": "사실이나 생각을 전달할 때",
+          "signals": [
+            "i think",
+            "i heard",
+            "he said",
+            "she mentioned",
+            "that she",
+            "that we"
+          ]
+        }
+      ],
+      "sourceFiles": {
+        "oddPages": "스텝12.pdf (홀수 페이지)",
+        "evenPages": "스텝12.pdf (짝수 페이지)"
+      },
+      "spreads": [
+        {
+          "spreadNumber": 1,
+          "oddPageNumber": 1,
+          "evenPageNumber": 2,
+          "oddImage": "/materials/step-12/spread-01-odd.jpg",
+          "evenImage": "/materials/step-12/spread-01-even.jpg",
+          "oddText": "ABA2 4 회 차 - 간접 의문문 & SAS\n주제: 부드럽게 질 문 하기 + 사 실 - 생 각 전 달 하기 |\nSTEP 1. 이 해 하기\n1) 간접 의문문 (Indirect Questions)\n@ 질 문 을 더 부드럽고 정 중 하 게 표현할 때 사용\n의문사 + 주어 + 동사 ( 평 서 문 어순)\n@ 자주 쓰는 시작:\no | wonder ~\no I'm curious ~\nCR a | eee\n2) SAtS (Noun Clauses)\n* 문 장 에서 주 어 : 목 적 어 : 보 어 역할\n@ 주로 thatl= 시작 ( 구 어 체 에서는 종종 생략)\n@ 자주 쓰는 시작:\no | think (that) ~\no | heard (that) ~\no He said (that) ~\n+ Oz\n간접 의문문\n1. I'm curious what you usually do after work.\n2. Could you tell me where | can get good coffee around here?\n3. | wonder who's coming to the party tonight.\n명 사 절\n4. | heard that you're starting a new hobby.\n5. She said she's traveling abroad next month.\n6. | think this restaurant is worth trying.\n1",
+          "evenText": "STEP 2. 패턴 익히기 - 눈 으로 보면서 소리 내어 읽 으 세요. 문장 덩 어 리 에 익 숙 해 지 세 요 .\n1. I'm not sure where the convenience store is. :\n2. Could you tell me where the nearest bus stop is?\n3. Could you tell me how far the station is from here?\n4. Do you know when the next subway arrives?\n5. Do you know which bus goes to the airport?\n6. Do you know if there's a good bookstore nearby? : oe\n7. Let's check how much the tickets cost. | 일\n8. Do you know when the new season starts? | . ee\n9. | have no idea what's happening in the next . = ee ee\n10. | can't remember when we last met.\n11. I'd like to know what your weekend plans are. ;\n12. I'm curious what hobbies Av enjoy. | foe\n13. | wonder if we can get a tablé without a reservation : 8\n14. | wonder who's coming to dinner aS : ~ ᆞ a : :\n15. I'm curious who you're working with recently. | |\n16. I'm curious how you learned to cook so well.\n17. | can't remember who introduced us.\n18. I'm not sure why the shop is closed today.\n19. | wonder why he suddenly left the company.\n20. Can you explain why this café is so popular?\n21. He explained why he decided to delay the presentation.\n22. She explained why she changed the direction of the project.\n23. | have no idea how they solved that problem.\n24. He told me he had been busy with work lately.\n25. She mentioned she was moving to a new apartment.\n2"
+        },
+        {
+          "spreadNumber": 2,
+          "oddPageNumber": 3,
+          "evenPageNumber": 4,
+          "oddImage": "/materials/step-12/spread-02-odd.jpg",
+          "evenImage": "/materials/step-12/spread-02-even.jpg",
+          "oddText": "26. He said he had already finished his part.\n27. He told me the seminar had been canceled.\n28. Getting positive feedback made my day.\n29. I'm so happy we're finally taking a trip together.\n30. Whether we can travel abroad this year depends on the budget.\n31. Do you know how many people are coming to the event?\n32. Do you know who lives in that apartment?\n33. | wonder when they'll announce the results.\n34, Whether the plan will work is still uncertain.\n35. That she speaks three languages fluently impressed the interviewer. ee ee Oe ey ee\n36. That we finished the project on time surprised everyone.\n37. She asked me where | had bought my sneakers.\n38. Do you know where they usually hang out after work?\n39. He mentioned he was starting a new hobby.\n40. | have no idea where my phone is.\n41. Whether | pass this test will decide my next step.\n42. | wonder how you guys met.\n43. She told me she was trying a new restaurant tonight.\n44. | wonder why you lied to me.\n45. | wonder why my friends didn't invite me.\n46. Do you know what time the meeting starts tomorrow?\n47. | have no idea where he moved to.\n48. | can't remember where | lost my wallet.\n49. | have no idea why she's upset with me.\n50. | wonder how long you've been waiting.\n3",
+          "evenText": "STEP 3. 문장 만들기 - 힌 트 를 참고해 문 장 을 말 해 보 세요. !\n1. 편 의 점 이 어디 있는지 / 확 실 히 는 모르겠어. (convenience store) |\n2. 가장 가까운 버스 정 류 장 이 어 디 인 지 / 알 려 주 실 수 있나요? (nearest bus stop)\n3. 여기서 역 까지 얼마나 먼지 / 알 려 주 실 수 있나요? 10 far, station)\n4. 다음 지 하 철 이 언제 도 착 하 는지 / 알아? (next subway arrives)\n5. 어느 버 스 가 공항 가는지 / 알아? (bus goes to the airport)\n6. 근 처 에 / 좋은 서 점 이 있는지 / 아세요? (good bookstore nearby) ee\n7. 표 값 이 얼 마 인 지 / 확인해 보자. (how much, tickets)\n8. 새 시 즌 이 언제 시 작 하 는 지 / 말아? (new season starts) ae\n. 9 BRIM / 무슨 일 이 일어나고 있는지 / 전혀 모르겠어. (what's happening, next room)\n10. 언제 우 리 가 마 지 막 으로 만 났 는지 / 기 억 이 안나 하에 we last met) 0.\n11. 주말 계 획 이 어떻게 되는지 /. 알 고 싶어요. (weekend plans) | oe\n12, 어떤 취 미 를 즐 기 는 지 / 궁금해. Wwhat kind of hobbies) ᆞ. *\n13. 예약 없이 / 테 이 블 에 앉을 수 있는지 / 궁 금 해 요 . (get a table, without reservation) |\n14. 저 녁 식 사 에 누가 올지 / 궁금해. (who's | ing) _ 15 | |\n15. 최 근 에 / 누 구 랑 같이 일하고 있는지 / 궁 금 해 요 . (who you've ne working with)\n16. 요 리 를 어떻게 그렇게 잘 배 웠 는지 / 궁금해. (how you learned to cook)\n17. 누가 SAIS 소개해 BEA / 기 억 이 Ot 나. (who introduced us)\n18. 왜 그 가 게 가 오늘 닫 았 는지 / 잘 모르겠네. (why the shop is closed)\n19. 왜 그가 갑자기 회 사 를 그 만 뒷 는 지 / 궁금해. (why he left the company)\n20. 왜 이 카 페 가 이렇게 인기 있는지 / 설명해 줄 수 있어? (why café is popular)\n21. 그는 왜 발 표 를 미 루 기 로 했는지 / 설 명 했어요. (why he delayed the presentation)\n22. 그 녀 는 왜 프로젝트 방 향 을 HEA / 설 명 했어요. (why she changed the direction)\n23. 어떻게 그들이 그 문 제 를 해 결 했는지 / 전혀 모르겠어요. [10 they solved problem)\n24. 그는 [ 최 근 에 일 이 HetCha] 말 했 어 . (been busy with work)\n25. 그 녀 는 [ 새 아 파 트 로 이사 간다고] 말 했 어 . (moving to a new apartment)\n4"
+        },
+        {
+          "spreadNumber": 3,
+          "oddPageNumber": 5,
+          "evenPageNumber": 6,
+          "oddImage": "/materials/step-12/spread-03-odd.jpg",
+          "evenImage": "/materials/step-12/spread-03-even.jpg",
+          "oddText": "26. 그는 [이미 자기 부 분 을 끝 냈 다 고] SRO. (already finished part)\n27. 그는 [ 세 미 나 가 취 소 됐다고] 말 했 어 . (seminar was canceled)\n28. 긍 정 적 인 피 드 백 을 받아서 하루 종일 기 분 이 BRO. (positive feedback, made my day)\n29. 우 리 가 드디어 함께 ABS 가게 돼서 / 너무 행 복 해 요 . (31109 a trip together)\n30. [올해 해 외 여 행 을 갈 수 있을지 없 을 지 ] 는 AAO] 달려 있어. (travel abroad depends on budget)\n31. 행 사 에 / 몇 명이 오는지 / 아세요? (how many people coming)\n32. 저 아 파 트 에 / 누가 사는지 / 알아? (who lives in that apartment)\n33. 결 과 를 언제 발 표 할지 / 궁 금 해 요 . (when they'll announce results)\n34. [그 계 획 이 성 공 할 지 ] 는 아직 불 확 실 해요. (whether plan will work)\nPee Eek Rae ee 기 ees ase 000065569 10680069 타 00000\n36. [ 우 리 가 제 시 간 에 프 로 젝 트 를 끝 냈 다 는 건] SSS 놀라게 MOQ. (finished project on time)\n37. 그 녀 는 [내가 운 동 화 를 어디서 Al] 물 어 봤어. (where | bought sneakers)\n38. 그들이 보통 퇴근 후에 어디서 노 는 지 / 알아? (where they usually hang out after work)\n39. 그는 [ 새 취 미 를 시 작 한 다고] 말 했 어요. (30019 a new hobby)\n40. 내 핸 드 폰 이 어디 있는지 / 전혀 모르겠어. (where my phone is)\n41. [내가 이 시 험 에 합 격 할지 말 지 ] 가 다음 단 계 를 결정할 거예요. (whether | pass test) |\n42. 둘이 어떻게 만 났 는지 / 궁금해. (wonder, how you guys met)\n43. 그 녀 는 [오늘 밤 새 레 스 토 랑 에 가 본 다 고] 말 했 어 . (trying a new restaurant)\n44. 네가 왜 나 한 테 거 짓 말 을 했는지 / 궁금해. (why you lied to me)\n45, 진 구 들이 왜 나를 조 대 하 지 않 았 는 지 / 궁금해. (why friends didn't invite me)\n46. 내일 회 의 가 몇 시 에 시 작 하 는지 / 알아? (what time meeting starts)\n47. 그가 어디로 이사 갔는지 / 전혀 모르겠어. (where he moved to)\n48. 내가 어디서 지 갑 을 잃 어 버 렸 는지 / 기 억 이 안 나. (where lost wallet)\n49. 그 녀 가 나 에게 왜 화가 났는지 / 전혀 모르겠어. (why she's upset with me)\n50. 네가 얼마나 오래 기 다 렸 는지 / 공 금 해. (how long you've waited)\n5",
+          "evenText": "STEP 4. 소리 내어 말하기 - SS 생 각 하 며 AS 뒤 외 워 서 여러 번 말 해 보세요.\n1. 편 의 점 이 어디 있는지 / 확 실 히 는 모르겠어. (convenience store) :\nI'm not sure / where the convenience store is.\n2. 가장 가까운 버스 정 류 장 이 어 디 인지 / 알 려 주 실 수 QILt+@? (nearest bus stop)\nCould you tell me / where the nearest bus stop is?\n3. 여기서 역 까지 얼마나 먼지 / 알 려 주 실 수 있나요? [10 far, station)\nCould you tell me / how far the station is from here?\n4. 다음 지 하 철 이 언제 도 착 하는지 / 알아? (next subway arrives) ae\nDo you know / when the next subway artives? ᆞ :\n5. 어느 버 스 가 공항 가는지 / 알아? (bus goes to the airport) . 「\nDo you know / which bus goes to the airport?\n6. 근 처 에 / 좋은 서 점 이 있는지 / 아세요? (good bookstore nearby)\nDo you know / if there's a good bookstore / nearby?\n7. 표 값 이 얼 마 인 지 / 확인해 보자. (how much, tickets) = ' :\nLet's check / how much the tickets cost.\n8. Af 시 즌 이 언제 시 작 하 는 지 / 알아? (new season starts)\nDo you know / when the new season starts?\n9. 옆 방 에서 / 무슨 일 이 일어나고 있는지 / 전혀 모르겠어. what's happening, next room)\n| have no idea / what's happening / in the next room.\n10. 언제 우 리 가 마 지 막 으로 만 났 는지 / 기 억 이 Ot 나. (when we last met)\n| can't remember / when we last met.\n6"
+        },
+        {
+          "spreadNumber": 4,
+          "oddPageNumber": 7,
+          "evenPageNumber": 8,
+          "oddImage": "/materials/step-12/spread-04-odd.jpg",
+          "evenImage": "/materials/step-12/spread-04-even.jpg",
+          "oddText": "11. 주말 계 획 이 어떻게 되는지 / 알고 싶어요. (weekend plans)\nI'd like to know / what your weekend plans are.\n12. 어떤 취 미 를 즐 기 는 지 / 궁금해. (what kind of hobbies)\nI'm curious / what hobbies you enjoy.\n13. 예약 없이 / 테 이 블 에 앉을 수 있는지 / 궁 금 해 요 . (06 a table, without a reservation)\n| wonder / if we can get a table / without a reservation.\n14. 저 녁 식 사 에 누가 올지 / 궁금해. (who's coming)\n| wonder / who's coming to dinner.\n15. 최 근 에 / 누 구 랑 같이 일하고 있는지 / 궁 금 해 요 . (who you're working with)\nI'm curious / who you're working with / recently.\n16. 요 리 를 어떻게 그렇게 잘 배 웠 는지 / 궁금해. (how you learned to cook)\nI'm curious / how you learned to cook so well.\n17. 누가 우 리 를 소개해 WEA / 기 억 이 안 나. (who introduced us)\n| can't remember / who introduced us.\n18. 왜 그 가 게 가 오늘 닫 았 는지 / 잘 모르겠네. (why the shop is closed)\nI'm not sure / why the shop is closed today.\n19, 왜 그가 갑자기 회 사 를 그 만 뒷 는 지 / 궁금해. (why he left the company)\n| wonder / why he suddenly left the company.\n20. 2H 이 카 페 가 이렇게 인기 있는지 / 설명해 줄 수 있어? (why café is popular)\nCan you explain / why this café is so popular?\n7",
+          "evenText": "21. 그는 왜 PHS 미 루 기 로 했는지 / 설 명 했어요. (why he delayed the presentation)\nHe explained / why he decided to delay the presentation. '\n22. 그 녀 는 왜 프로젝트 방 향 을 HAEA / 설 명 했어요. why she changed the direction)\nShe explained / why she changed the direction of the project.\n23. 어떻게 그들이 그 문 제 를 해 결 했는지 / 전혀 모르겠어요. (how they solved problem)\n| have no idea / how they solved that problem.\n24, 그는 [ 최 근 에 일 이 HPCE] 말 했 어 . (had been busy with work) a ge\nHe told me [he had been busy with work lately]. a | - :\n25. 그 녀 는 [ 새 아 파 트 로 이사 간다고] 말 했 어 . (moving to a new apartment) 0.\nShe mentioned [she was moving 10 8 new apartment].\n26. 그는 [이미 자기 부 분 을 끝 냈 다 고] 말 했 어 . (had finished, his part) :\nHe said [he had already finished his part].\n27. 그는 [ 세 미 나 가 취 소 됐다고] 말 했 어 . (seminar had been canceled) . !\nHe told me [the seminar had been canceled].\n28. 긍 정 적 인 DEMS 받아서 하루 종일 기 분 이 SRO. (positive feedback, made my day)\nGetting positive feedback made my day.\n29. 우 리 가 드디어 함께 HBS 가게 돼서 / 너무 ASH. (taking a trip together)\nI'm so happy / we're finally taking a trip together.\n30. [올해 해 외 여 행 을 갈 수 있을지 없 을 지 ] 는 예 산 에 달려 있어. (travel abroad depends on budget)\n[Whether we can travel abroad this year] depends on the budget.\n8"
+        },
+        {
+          "spreadNumber": 5,
+          "oddPageNumber": 9,
+          "evenPageNumber": 10,
+          "oddImage": "/materials/step-12/spread-05-odd.jpg",
+          "evenImage": "/materials/step-12/spread-05-even.jpg",
+          "oddText": "31. BAO / 몇 명이 오는지 / 아세요? (how many people coming)\nDo you know / how many people are coming / to the event?\n32. 저 아 파 트 에 / 누가 사는지 / 알아? (who lives in that apartment)\nDo you know / who lives / in that apartment?\n33, ADS 언제 발 표 할지 / 궁 금 해 요 . (when they'll announce results)\n| wonder / when they'll announce the results.\n34, [그 계 획 이 SSSA ES 아직 불 확 실 해요. (whether plan will work)\n[Whether the plan will work] is still uncertain.\n35. [ 그 녀 가 374 SUS 유 창 하 게 한다는 사 실 ] 은 면 접 관 을 놀라게 WHOlk. (speaks, impressed interviewer)\n[That she speaks three languages fluently] impressed the interviewer.\n36. [ 우 리 가 제 시 간에 프 로 젝 트 를 끝 냈 다 는 건] 25S 놀라게 HOR. (finished project on time)\n[That we finished the project on time] surprised everyone.\n37. 그 녀 는 [내가 운 동 화 를 어디서 ALEAl] 물 어 봤 어 . (where | bought sneakers)\nShe asked me [where | had bought my sneakers].\n38. 그들이 보통 퇴근 후에 어디서 EA / 알아? (where they usually hang out after work)\nDo you know / where they usually hang out after work?\n39, 그는 [ 새 취 미 를 시 작 한 다 고] BRO] k. (starting a new hobby)\nHe mentioned [he was starting a new hobby].\n40. 내 핸 드 폰 이 어디 있는지 / 전혀 모르겠어. (where my phone is)\n| have no idea / where my phone is.\n9",
+          "evenText": "41. [내가 이 시 험 에 합 격 할지 말 지 ] 가 다음 단 계 를 결정할 거예요. (whether | pass test) |\n[Whether | pass this test] will decide my next step. 이\n42. 둘이 어떻게 만 났 는지 / 궁금해. (wonder, how you guys met)\n| wonder / how you guys met.\n43. 그 녀 는 [오늘 밤 새 레 스 토 랑 에 가 본 다고] 말 했 어 . (1049 a new restaurant)\nShe told me [she was trying a new restaurant tonight).\n44. 네가 OH 나 한 테 거 짓 말 을 했는지 / 궁금해. (why youliedtome)\n| wonder / why you lied to me. 』 . . oe\n45. 친 구 들 이 왜 나를 초 대 하 지 않 았 는 지 / 궁금해. (why friends didn't invite me) ᆞ\n| wonder / why my friends: didn't invite me. ns .\n46. 내일 회 의 가 몇 시 에 시 작 하 는지 7 알아? (what time meeting starts) : 을 :\nDo you know / what time the meeting starts tomorrow?\n47. 그가 어디로 이사 갔는지 / 전혀 모르겠어. (where he moved to) '\n| have no idea / where he moved to.\n48. 내가 어디서 지 갑 을 잃 어 버 렸 는지 / 기 억 이 Ot 나. (where lost wallet)\n| can't remember / where | lost my wallet. |\n49. 그 녀 가 나 에게 왜 화가 났는지 / 전혀 모르겠어. (why she's upset with me)\n| have no idea / why she's upset with me.\n50. 네가 얼마나 오래 기 다 렸 는지 / 궁금해. (how long you've waited)\n| wonder / how long you've been waiting.\n10"
+        },
+        {
+          "spreadNumber": 6,
+          "oddPageNumber": 11,
+          "evenPageNumber": null,
+          "oddImage": "/materials/step-12/spread-06-odd.jpg",
+          "evenImage": "/materials/step-12/spread-06-even.jpg",
+          "oddText": "STEP 5. 내 말 하 기 - 배운 BAS 활 용 해 자 신 의 WSS 써보고 말 해 보세요.\n1. 죄 근 에 가장 많이 연 락 한 사 람 이 누 구 인지 궁 금 해 요 .\n| wonder who you've contacted the most recently.\n2. 주 말 에 주로 뭐 하면서 SU EA] 궁 금 해 요 .\nI'm curious what you like to do on weekends.\n3. 휴 일 은 보통 어떻게 보 내 는 지 SASS 수 있나요?\nCould you tell me how you usually spend your holidays?\n4. 다 음 에 여행 간다면 어디로 가고 싶은지 궁 금 해 요 .\n| wonder where you'd like to travel next.\n5. 인 생 에서 가장 큰 SSS 준 사 람 이 누 구 인지 아세요?\nDo you know who has influenced you the most in your life?\n6. 무엇이 당 신 을 진 정 으로 편 안 하 게 POEA 말해 주실 수 있나요?\nCan you tell me what makes you feel truly relaxed?\n7. 요즘 가장 기 대 되는 일 이 무 엇 인 지 알고 싶어요.\nI'd like to know what you're most looking forward to these days.\n8. 올해 새로 배우고 싶은 기 술 이나 취 미 가 SAMA) 궁 금 해 요 .\nI'm curious what new skill you'd like to learn this year.\n9. 죄 근 에 처 음 으로 시도해 본 Al 언 제 였 는지 SAA 수 있나요?\nCould you tell me when you last tried something for the first time?\n10. 지 금 까지 받은 선물 중 가장 기 억 에 남는 Al 무 엇 인 지 궁 금 해 요 .\n| wonder what the most memorable gift you've ever received is.\n11",
+          "evenText": ""
+        }
+      ],
+      "sentences": [
+        {
+          "id": "step-12-s001",
+          "exerciseNumber": 1,
+          "text": "I'm not sure where the convenience store is.",
+          "promptKo": "편 의 점 이 어디 있는지 / 확 실 히 는 모르겠어. (convenience store) :",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 1"
+          ]
+        },
+        {
+          "id": "step-12-s002",
+          "exerciseNumber": 2,
+          "text": "Could you tell me where the nearest bus stop is?",
+          "promptKo": "가장 가까운 버스 정 류 장 이 어 디 인지 / 알 려 주 실 수 QILt+@?",
+          "hints": [
+            "nearest bus stop"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 1"
+          ]
+        },
+        {
+          "id": "step-12-s003",
+          "exerciseNumber": 3,
+          "text": "Could you tell me how far the station is from here?",
+          "promptKo": "여기서 역 까지 얼마나 먼지 / 알 려 주 실 수 있나요? [10 far, station)",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 1"
+          ]
+        },
+        {
+          "id": "step-12-s004",
+          "exerciseNumber": 4,
+          "text": "Do you know when the next subway arrives?",
+          "promptKo": "다음 지 하 철 이 언제 도 착 하는지 / 알아? (next subway arrives) ae",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 1"
+          ]
+        },
+        {
+          "id": "step-12-s005",
+          "exerciseNumber": 5,
+          "text": "Do you know which bus goes to the airport?",
+          "promptKo": "어느 버 스 가 공항 가는지 / 알아? (bus goes to the airport) . 「",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 1"
+          ]
+        },
+        {
+          "id": "step-12-s006",
+          "exerciseNumber": 6,
+          "text": "Do you know if there's a good bookstore nearby?",
+          "promptKo": "근 처 에 / 좋은 서 점 이 있는지 / 아세요?",
+          "hints": [
+            "good bookstore nearby"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3",
+            "odd 1"
+          ]
+        },
+        {
+          "id": "step-12-s007",
+          "exerciseNumber": 7,
+          "text": "Let's check how much the tickets cost.",
+          "promptKo": "표 값 이 얼 마 인 지 / 확인해 보자. (how much, tickets) = ' :",
+          "hints": [],
+          "sourcePages": [
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-12-s008",
+          "exerciseNumber": 8,
+          "text": "Do you know when the new season starts?",
+          "promptKo": "Af 시 즌 이 언제 시 작 하 는 지 / 알아?",
+          "hints": [
+            "new season starts"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-12-s009",
+          "exerciseNumber": 9,
+          "text": "I have no idea what's happening in the next room.",
+          "promptKo": "옆 방 에서 / 무슨 일 이 일어나고 있는지 / 전혀 모르겠어. what's happening, next room)",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-12-s010",
+          "exerciseNumber": 10,
+          "text": "I can't remember when we last met.",
+          "promptKo": "언제 우 리 가 마 지 막 으로 만 났 는지 / 기 억 이 Ot 나.",
+          "hints": [
+            "when we last met"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-12-s011",
+          "exerciseNumber": 11,
+          "text": "I'd like to know what your weekend plans are.",
+          "promptKo": "주말 계 획 이 어떻게 되는지 / 알고 싶어요.",
+          "hints": [
+            "weekend plans"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-12-s012",
+          "exerciseNumber": 12,
+          "text": "I'm curious what hobbies you enjoy.",
+          "promptKo": "어떤 취 미 를 즐 기 는 지 / 궁금해.",
+          "hints": [
+            "what kind of hobbies"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-12-s013",
+          "exerciseNumber": 13,
+          "text": "I wonder if we can get a table without a reservation.",
+          "promptKo": "예약 없이 / 테 이 블 에 앉을 수 있는지 / 궁 금 해 요 .",
+          "hints": [
+            "06 a table",
+            "without a reservation"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-12-s014",
+          "exerciseNumber": 14,
+          "text": "I wonder who's coming to dinner.",
+          "promptKo": "저 녁 식 사 에 누가 올지 / 궁금해.",
+          "hints": [
+            "who's coming"
+          ],
+          "sourcePages": [
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-12-s015",
+          "exerciseNumber": 15,
+          "text": "I'm curious who you're working with recently.",
+          "promptKo": "최 근 에 / 누 구 랑 같이 일하고 있는지 / 궁 금 해 요 .",
+          "hints": [
+            "who you're working with"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-12-s016",
+          "exerciseNumber": 16,
+          "text": "I'm curious how you learned to cook so well.",
+          "promptKo": "요 리 를 어떻게 그렇게 잘 배 웠 는지 / 궁금해.",
+          "hints": [
+            "how you learned to cook"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-12-s017",
+          "exerciseNumber": 17,
+          "text": "I can't remember who introduced us.",
+          "promptKo": "누가 우 리 를 소개해 WEA / 기 억 이 안 나.",
+          "hints": [
+            "who introduced us"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-12-s018",
+          "exerciseNumber": 18,
+          "text": "I'm not sure why the shop is closed today.",
+          "promptKo": "왜 그 가 게 가 오늘 닫 았 는지 / 잘 모르겠네.",
+          "hints": [
+            "why the shop is closed"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-12-s019",
+          "exerciseNumber": 19,
+          "text": "I wonder why he suddenly left the company.",
+          "promptKo": "왜 그가 갑자기 회 사 를 그 만 뒷 는 지 / 궁금해.",
+          "hints": [
+            "why he left the company"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-12-s020",
+          "exerciseNumber": 20,
+          "text": "Can you explain why this café is so popular?",
+          "promptKo": "2H 이 카 페 가 이렇게 인기 있는지 / 설명해 줄 수 있어?",
+          "hints": [
+            "why café is popular"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-12-s021",
+          "exerciseNumber": 21,
+          "text": "He explained why he decided to delay the presentation.",
+          "promptKo": "그는 왜 PHS 미 루 기 로 했는지 / 설 명 했어요.",
+          "hints": [
+            "why he delayed the presentation"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-12-s022",
+          "exerciseNumber": 22,
+          "text": "She explained why she changed the direction of the project.",
+          "promptKo": "그 녀 는 왜 프로젝트 방 향 을 HAEA / 설 명 했어요. why she changed the direction)",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-12-s023",
+          "exerciseNumber": 23,
+          "text": "I have no idea how they solved that problem.",
+          "promptKo": "어떻게 그들이 그 문 제 를 해 결 했는지 / 전혀 모르겠어요.",
+          "hints": [
+            "how they solved problem"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-12-s024",
+          "exerciseNumber": 24,
+          "text": "He told me [he had been busy with work lately].",
+          "promptKo": "그는 [ 최 근 에 일 이 HPCE] 말 했 어 . (had been busy with work) a ge",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-12-s025",
+          "exerciseNumber": 25,
+          "text": "She mentioned [she was moving to a new apartment].",
+          "promptKo": "",
+          "hints": [],
+          "sourcePages": [
+            "even 1"
+          ]
+        },
+        {
+          "id": "step-12-s026",
+          "exerciseNumber": 26,
+          "text": "He said [he had already finished his part].",
+          "promptKo": "그는 [이미 자기 부 분 을 끝 냈 다 고] 말 했 어 . (had finished, his part) :",
+          "hints": [],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s027",
+          "exerciseNumber": 27,
+          "text": "He told me [the seminar had been canceled].",
+          "promptKo": "그는 [ 세 미 나 가 취 소 됐다고] 말 했 어 . (seminar had been canceled) . !",
+          "hints": [],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s028",
+          "exerciseNumber": 28,
+          "text": "Getting positive feedback made my day.",
+          "promptKo": "긍 정 적 인 DEMS 받아서 하루 종일 기 분 이 SRO.",
+          "hints": [
+            "positive feedback",
+            "made my day"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s029",
+          "exerciseNumber": 29,
+          "text": "I'm so happy we're finally taking a trip together.",
+          "promptKo": "우 리 가 드디어 함께 HBS 가게 돼서 / 너무 ASH.",
+          "hints": [
+            "taking a trip together"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s030",
+          "exerciseNumber": 30,
+          "text": "[Whether we can travel abroad this year] depends on the budget.",
+          "promptKo": "[올해 해 외 여 행 을 갈 수 있을지 없 을 지 ] 는 예 산 에 달려 있어.",
+          "hints": [
+            "travel abroad depends on budget"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s031",
+          "exerciseNumber": 31,
+          "text": "Do you know how many people are coming to the event?",
+          "promptKo": "BAO / 몇 명이 오는지 / 아세요?",
+          "hints": [
+            "how many people coming"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-12-s032",
+          "exerciseNumber": 32,
+          "text": "Do you know who lives in that apartment?",
+          "promptKo": "저 아 파 트 에 / 누가 사는지 / 알아?",
+          "hints": [
+            "who lives in that apartment"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-12-s033",
+          "exerciseNumber": 33,
+          "text": "I wonder when they'll announce the results.",
+          "promptKo": "ADS 언제 발 표 할지 / 궁 금 해 요 .",
+          "hints": [
+            "when they'll announce results"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-12-s034",
+          "exerciseNumber": 34,
+          "text": "[Whether the plan will work] is still uncertain.",
+          "promptKo": "[그 계 획 이 SSSA ES 아직 불 확 실 해요.",
+          "hints": [
+            "whether plan will work"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-12-s035",
+          "exerciseNumber": 35,
+          "text": "[That she speaks three languages fluently] impressed the interviewer.",
+          "promptKo": "[ 그 녀 가 374 SUS 유 창 하 게 한다는 사 실 ] 은 면 접 관 을 놀라게 WHOlk.",
+          "hints": [
+            "speaks",
+            "impressed interviewer"
+          ],
+          "sourcePages": [
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-12-s036",
+          "exerciseNumber": 36,
+          "text": "[That we finished the project on time] surprised everyone.",
+          "promptKo": "[ 우 리 가 제 시 간에 프 로 젝 트 를 끝 냈 다 는 건] 25S 놀라게 HOR.",
+          "hints": [
+            "finished project on time"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-12-s037",
+          "exerciseNumber": 37,
+          "text": "She asked me [where I had bought my sneakers].",
+          "promptKo": "그 녀 는 [내가 운 동 화 를 어디서 ALEAl] 물 어 봤 어 .",
+          "hints": [
+            "where | bought sneakers"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-12-s038",
+          "exerciseNumber": 38,
+          "text": "Do you know where they usually hang out after work?",
+          "promptKo": "그들이 보통 퇴근 후에 어디서 EA / 알아?",
+          "hints": [
+            "where they usually hang out after work"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-12-s039",
+          "exerciseNumber": 39,
+          "text": "He mentioned [he was starting a new hobby].",
+          "promptKo": "그는 [ 새 취 미 를 시 작 한 다 고] BRO] k.",
+          "hints": [
+            "starting a new hobby"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-12-s040",
+          "exerciseNumber": 40,
+          "text": "I have no idea where my phone is.",
+          "promptKo": "내 핸 드 폰 이 어디 있는지 / 전혀 모르겠어.",
+          "hints": [
+            "where my phone is"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-12-s041",
+          "exerciseNumber": 41,
+          "text": "[Whether I pass this test] will decide my next step.",
+          "promptKo": "[내가 이 시 험 에 합 격 할지 말 지 ] 가 다음 단 계 를 결정할 거예요. (whether | pass test) |",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s042",
+          "exerciseNumber": 42,
+          "text": "I wonder how you guys met.",
+          "promptKo": "둘이 어떻게 만 났 는지 / 궁금해.",
+          "hints": [
+            "wonder",
+            "how you guys met"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s043",
+          "exerciseNumber": 43,
+          "text": "She told me [she was trying a new restaurant tonight].",
+          "promptKo": "그 녀 는 [오늘 밤 새 레 스 토 랑 에 가 본 다고] 말 했 어 .",
+          "hints": [
+            "1049 a new restaurant"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s044",
+          "exerciseNumber": 44,
+          "text": "I wonder why you lied to me.",
+          "promptKo": "네가 OH 나 한 테 거 짓 말 을 했는지 / 궁금해.",
+          "hints": [
+            "why youliedtome"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s045",
+          "exerciseNumber": 45,
+          "text": "I wonder why my friends didn't invite me.",
+          "promptKo": "친 구 들 이 왜 나를 초 대 하 지 않 았 는 지 / 궁금해. (why friends didn't invite me) ᆞ",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s046",
+          "exerciseNumber": 46,
+          "text": "Do you know what time the meeting starts tomorrow?",
+          "promptKo": "내일 회 의 가 몇 시 에 시 작 하 는지 7 알아? (what time meeting starts) : 을 :",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s047",
+          "exerciseNumber": 47,
+          "text": "I have no idea where he moved to.",
+          "promptKo": "그가 어디로 이사 갔는지 / 전혀 모르겠어. (where he moved to) '",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s048",
+          "exerciseNumber": 48,
+          "text": "I can't remember where I lost my wallet.",
+          "promptKo": "내가 어디서 지 갑 을 잃 어 버 렸 는지 / 기 억 이 Ot 나.",
+          "hints": [
+            "where lost wallet"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s049",
+          "exerciseNumber": 49,
+          "text": "I have no idea why she's upset with me.",
+          "promptKo": "그 녀 가 나 에게 왜 화가 났는지 / 전혀 모르겠어.",
+          "hints": [
+            "why she's upset with me"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-12-s050",
+          "exerciseNumber": 50,
+          "text": "I wonder how long you've been waiting.",
+          "promptKo": "네가 얼마나 오래 기 다 렸 는지 / 궁금해.",
+          "hints": [
+            "how long you've waited"
           ],
           "sourcePages": [
             "even 5",

@@ -18,7 +18,7 @@ async function main() {
   await ensureTesseract();
   const result = await execFileAsync(pythonBin, ['tools/build_materials.py'], {
     cwd: rootDir,
-    timeout: 180000,
+    timeout: 600000,
     maxBuffer: 1024 * 1024 * 12
   }).catch((error) => {
     throw formatError(error);
