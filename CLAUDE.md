@@ -41,12 +41,12 @@ React+Vite 영어 패턴 학습 웹앱. PDF 교재를 OCR로 추출해 스텝별
 
 이 분기가 없으면 앱은 일반 폴백(present-simple 프로필 등)으로 동작은 한다.
 
-**현재 kind 목록** — 파이프라인: present-simple, progressive, past-simple, future, mixed(5), infinitive-gerund(6), dummy-subject(7), there-is(8), present-perfect(9), present-perfect-progressive(10), relative-clause(11), indirect-question(12).
+**현재 kind 목록** — 파이프라인: present-simple, progressive, past-simple, future, mixed(5), infinitive-gerund(6), dummy-subject(7), there-is(8), present-perfect(9), present-perfect-progressive(10), relative-clause(11), indirect-question(12), modal(13).
 ⚠️ `relative-clause`와 `indirect-question`은 learning.js/App.jsx 분기가 아직 없어 일반 폴백으로 동작 중.
 
 ## Canonical sentences (OCR 교정 오버라이드)
 
-OCR이 뽑은 문장이 틀리면 `build_materials.py`의 `CANONICAL_SENTENCES[step][exerciseNumber]`에 정답 문장을 넣어 덮어쓴다. OCR이 아예 놓친 번호는 `CANONICAL_PROMPTS`의 한국어 프롬프트·힌트와 함께 새로 추가된다. 스텝 4·5·6·12에 적용돼 있음.
+OCR이 뽑은 문장이 틀리면 `build_materials.py`의 `CANONICAL_SENTENCES[step][exerciseNumber]`에 정답 문장을 넣어 덮어쓴다. OCR이 아예 놓친 번호는 `CANONICAL_PROMPTS`의 한국어 프롬프트·힌트와 함께 새로 추가된다. 스텝 4·5·6·12·13에 적용돼 있음.
 
 ## 기타 주의사항
 

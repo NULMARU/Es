@@ -276,6 +276,11 @@ CANONICAL_SENTENCES[12] = {
     50: "I wonder how long you've been waiting.",
 }
 
+CANONICAL_SENTENCES[13] = {
+    10: "I feel like you made a mistake, so you should call him right now.",
+    45: "Shall we take a break since we've studied for two hours?",
+}
+
 
 @dataclass
 class SourcePdf:
@@ -469,6 +474,8 @@ def extract_topic(lines: list[str]) -> str:
 
 def detect_pattern_kind(step: int, text: str) -> str:
     compact = re.sub(r"\s+", "", text)
+    if "조동사" in compact or step == 13:
+        return "modal"
     if "관계사" in compact or "관계대명사" in compact or step == 11:
         return "relative-clause"
     if "간접의문문" in compact or "명사절" in compact or step == 12:
@@ -497,6 +504,27 @@ def detect_pattern_kind(step: int, text: str) -> str:
 
 
 def build_patterns(kind: str) -> list[dict[str, Any]]:
+    if kind == "modal":
+        return [
+            {
+                "name": "의무 (must / have to)",
+                "formula": "must / have to + 동사원형, must not / don't have to + 동사원형",
+                "focus": "꼭 해야 하는 일, 하면 안 되는 일, 안 해도 되는 일",
+                "signals": ["must", "must not", "have to", "has to", "don't have to"],
+            },
+            {
+                "name": "조언 (should)",
+                "formula": "should / shouldn't + 동사원형",
+                "focus": "하는 게 좋다고 조언하거나 권할 때",
+                "signals": ["should", "shouldn't", "you should", "should see"],
+            },
+            {
+                "name": "능력·추측 (can / might)",
+                "formula": "can / can't + 동사원형, might / might not + 동사원형",
+                "focus": "할 수 있는 일과 그럴지도 모르는 일",
+                "signals": ["can", "can't", "might", "might not", "must be", "can't be"],
+            },
+        ]
     if kind == "indirect-question":
         return [
             {
@@ -760,6 +788,8 @@ def build_patterns(kind: str) -> list[dict[str, Any]]:
 
 
 def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
+    if kind == "modal":
+        return f"Step {step} - 조동사 현재형"
     if kind == "indirect-question":
         return f"Step {step} - 간접 의문문과 명사절"
     if kind == "relative-clause":
@@ -792,6 +822,8 @@ def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
 
 def topic_for_step(step: int, kind: str, first_lines: list[str]) -> str:
     topic = extract_topic(first_lines)
+    if kind == "modal":
+        return "할 수 있어, 해야 해, 아마도 그래"
     if kind == "indirect-question":
         return "부드럽게 질문하기 + 사실·생각 전달하기"
     if kind == "relative-clause":

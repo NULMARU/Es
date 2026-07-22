@@ -2104,6 +2104,58 @@ const answerProfiles = {
       correction: 'I have been waiting for my package recently.',
       contextHint: '최근 계속 기다리는 것을 have been waiting for로 말한다.'
     }
+  ],
+  modal: [
+    {
+      context: /\b(have to|has to|must|finish|homework|work|clean|study|today|do)\b/,
+      correction: 'I have to finish my work today.',
+      contextHint: '오늘 꼭 해야 하는 일을 have to로 말한다.'
+    },
+    {
+      context: /\b(must not|late|phone|sleep|rude|work|school|meeting)\b/,
+      correction: 'I must not be late for work.',
+      contextHint: '하면 안 되는 일을 must not으로 말한다.'
+    },
+    {
+      context: /\b(should|exercise|drink|water|sleep|walk|vegetables|health|more)\b/,
+      correction: 'I should exercise more often for my health.',
+      contextHint: '건강을 위해 하는 게 좋은 일을 should로 말한다.'
+    },
+    {
+      context: /\b(shouldn't|should not|eat|drink|coffee|games|phone|late|night|stay up)\b/,
+      correction: "I shouldn't eat snacks late at night.",
+      contextHint: "밤늦게 하지 말아야 할 일을 shouldn't로 말한다."
+    },
+    {
+      context: /\b(can|cook|swim|speak|drive|play|sing|draw|well|good)\b/,
+      correction: 'I can cook Korean food well.',
+      contextHint: '잘할 수 있는 일을 can으로 말한다.'
+    },
+    {
+      context: /\b(can't|cannot|yet|drive|swim|speak|play|learn|want)\b/,
+      correction: "I can't drive yet, but I want to learn.",
+      contextHint: "아직 못 하는 일을 can't로, 배우고 싶다고 덧붙인다."
+    },
+    {
+      context: /\b(might|maybe|go|watch|meet|travel|hiking|movie|weekend)\b/,
+      correction: 'I might go hiking this weekend.',
+      contextHint: '주말에 할지도 모르는 일을 might로 말한다.'
+    },
+    {
+      context: /\b(don't have to|worry|money|work|hurry|cook|weekend|this month)\b/,
+      correction: "I don't have to worry about money this month.",
+      contextHint: "걱정 안 해도 되는 일을 don't have to로 말한다."
+    },
+    {
+      context: /\b(have to|go|bank|hospital|office|school|visit|this week)\b/,
+      correction: 'I have to go to the bank this week.',
+      contextHint: '이번 주에 가야 하는 곳을 have to go to로 말한다.'
+    },
+    {
+      context: /\b(must|friend|busy|kind|tired|honest|nice|be)\b/,
+      correction: 'My best friend must be busy these days.',
+      contextHint: '친구에 대한 확신을 must be로 말한다.'
+    }
   ]
 };
 
@@ -2179,6 +2231,9 @@ function getGrammarIssues(normalized, patternKind) {
   } else if (patternKind === 'present-perfect-progressive') {
     const hasPerfectProgressive = /\b(have|has|haven't|hasn't|'ve)\s+(not\s+)?been\s+[a-z]+ing\b/.test(normalized);
     if (!hasPerfectProgressive) issues.push('have/has been + 동사-ing로 계속해 온 일을 말한다.');
+  } else if (patternKind === 'modal') {
+    const hasModal = /\b(must|have to|has to|had to|should|shouldn't|can|can't|cannot|could|might|may|shall|able to)\b/.test(normalized);
+    if (!hasModal) issues.push('must, have to, should, can, might 같은 조동사를 넣어 말한다.');
   } else if (patternKind === 'past-simple') {
     const hasPast = /\b(was|were|did|didn't|couldn't|went|came|got|felt|made|took|gave|hung|forgot|misunderstood|changed|believed|tried|solved|missed|rejected|traveled|travelled|watched|opened|saw|found|heard|had|used to)\b/.test(normalized)
       || /\b[a-z]+ed\b/.test(normalized);

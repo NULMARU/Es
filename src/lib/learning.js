@@ -393,6 +393,16 @@ export function analyzeSentence(sentence, step) {
     structures.push({ label: '계속하는 동작', value: ing });
     const duration = lower.match(/\b(since\s+[a-z0-9]+|for\s+[a-z0-9]+(?:\s[a-z]+)?|all\s+(?:day|morning|night|week)|lately|recently)\b/)?.[0];
     if (duration) structures.push({ label: '기간 신호', value: duration });
+  } else if (step?.patternKind === 'modal') {
+    const modal = lower.match(/\b(must not|must|don't have to|doesn't have to|have to|has to|shouldn't|should|can't|cannot|can|might not|might|shall|(?:am|is|are|'m|'re)\s+(?:not\s+)?able to|will be able to)\b/)?.[0];
+    structures.push({ label: '주어', value: extractSubject(text) });
+    structures.push({ label: '조동사', value: modal || 'must / have to / should / can / might' });
+    const mainVerb = modal
+      ? text.slice(lower.indexOf(modal) + modal.length).trim().match(/^(?:be\s+)?[A-Za-z]+(?:\s[A-Za-z]+)?/)?.[0]
+      : extractVerb(text);
+    if (mainVerb) structures.push({ label: '동사원형', value: mainVerb });
+    const reason = lower.match(/\b(because|since|as|so)\b/)?.[0];
+    if (reason) structures.push({ label: '이유 연결', value: reason });
   } else if (step?.patternKind === 'progressive') {
     const aux = lower.match(/\b(am|is|are|was|were|been)\b/)?.[0] || 'be';
     const ing = text.match(/\b[A-Za-z]+ing\b/)?.[0] || '동사-ing';
@@ -675,6 +685,15 @@ export function makeQuestion(sentence, step, index = 0) {
     ];
     return templates[index % templates.length];
   }
+  if (step?.patternKind === 'modal') {
+    const templates = [
+      'What do you have to do today?',
+      'What should you do more often?',
+      'What can you do well?',
+      'What might you do this weekend?'
+    ];
+    return templates[index % templates.length];
+  }
   const lower = text.toLowerCase();
   if (lower.includes('when')) return 'What do you usually do in that situation?';
   if (lower.includes('before')) return 'What do you usually do before that?';
@@ -806,6 +825,21 @@ export function makeAnswerQuestions(step) {
       'What have you been trying to improve?',
       'How long have you been using your phone today?',
       'What have you been waiting for recently?'
+    ];
+  }
+
+  if (step?.patternKind === 'modal') {
+    return [
+      'What do you have to do today?',
+      'What must you not do at work or school?',
+      'What should you do more often for your health?',
+      "What shouldn't you do late at night?",
+      'What can you do well?',
+      "What can't you do yet but want to learn?",
+      'What might you do this weekend?',
+      "What do you think you don't have to worry about?",
+      'Where do you have to go this week?',
+      'What must be true about your best friend?'
     ];
   }
 

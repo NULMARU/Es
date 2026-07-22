@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T01:23:02.624668+00:00",
+  "generatedAt": "2026-07-22T14:44:08.745402+00:00",
   "handwritingPolicy": "필기체/손글씨 OCR은 학습 데이터 후보에서 제외하고 원본 페이지 이미지로만 보존합니다.",
   "expectedFilePattern": "스텝{n}.pdf 또는 스텝{n}_1.pdf + 스텝{n}_2.pdf",
   "steps": [
@@ -9174,6 +9174,787 @@
           "promptKo": "네가 얼마나 오래 기 다 렸 는지 / 궁금해.",
           "hints": [
             "how long you've waited"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-13",
+      "stepNumber": 13,
+      "title": "Step 13 - 조동사 현재형",
+      "topic": "할 수 있어, 해야 해, 아마도 그래",
+      "patternKind": "modal",
+      "patterns": [
+        {
+          "name": "의무 (must / have to)",
+          "formula": "must / have to + 동사원형, must not / don't have to + 동사원형",
+          "focus": "꼭 해야 하는 일, 하면 안 되는 일, 안 해도 되는 일",
+          "signals": [
+            "must",
+            "must not",
+            "have to",
+            "has to",
+            "don't have to"
+          ]
+        },
+        {
+          "name": "조언 (should)",
+          "formula": "should / shouldn't + 동사원형",
+          "focus": "하는 게 좋다고 조언하거나 권할 때",
+          "signals": [
+            "should",
+            "shouldn't",
+            "you should",
+            "should see"
+          ]
+        },
+        {
+          "name": "능력·추측 (can / might)",
+          "formula": "can / can't + 동사원형, might / might not + 동사원형",
+          "focus": "할 수 있는 일과 그럴지도 모르는 일",
+          "signals": [
+            "can",
+            "can't",
+            "might",
+            "might not",
+            "must be",
+            "can't be"
+          ]
+        }
+      ],
+      "sourceFiles": {
+        "oddPages": "스텝13.pdf (홀수 페이지)",
+        "evenPages": "스텝13.pdf (짝수 페이지)"
+      },
+      "spreads": [
+        {
+          "spreadNumber": 1,
+          "oddPageNumber": 1,
+          "evenPageNumber": 2,
+          "oddImage": "/materials/step-13/spread-01-odd.jpg",
+          "evenImage": "/materials/step-13/spread-01-even.jpg",
+          "oddText": ". AHS2 5 회 차 - 조동사 현 재 형\n주제: 할 수 있어, 해야 해, 아마도 그래\nSTEP 1. 이 해 하기\n+ must / must not — ( 내 생 각 에 , 규 정 상 ) 꼭 해 / 하지마\nᆞ You must wear a seatbelt. (= 반드시 안 전 벨 트 를 매 야 해)\n* You must not smoke here. (여기서 담배 피면 안 SH)\n———-+-have to / don't have to ᅮ ( 상 황상) 해야 돼 & 할 필요 없어. _\nᆞ | have to finish my homework. (나 숙제 끝 내 야 해)\nᆞ You don't have to come today. ( 오 늘 은 안 와도 FH)\n+ should / shouldn't + 해야겠다 / 하지 말아야 겠다\nᆞ You should see a doctor. ( 너 병원 가는 게 좋아.)\n* You shouldn't stay up late. ( 늦 게 까 지 깨어 있지 않는 게 좋아.)\n+ can / can't 할 수 있어 / 할 수 없어\n* | can swim. (나는 수 영 할 수 있어.)\n>| can't drive. (나는 운전할 줄 몰라.)\n* must / can't > 분명히 그럴 거 야 / 분명히 안 그럴 거야\nᆞ He must be tired. (= 분명 피 곤 할 거야.)\nᆞ That can't be 046. (그건 분명 사 실 이 아닐 거야)\n+ might / might not > 그 럴 지도 몰라 / 안 그 럴 지도 몰라\n* She might be at the 006. ( 그 녀 는 아마 카 페 에 있을지도 몰라.)\nᆞ It might not rain tomorrow. (내일 비가 안 올 지 도 몰라.)\n1",
+          "evenText": "STEP 2. 패턴 익히기 - 눈 으로 보면서 소리 내어 읽 으 세요. 문장 덩 어 리 에 익 숙 해 지 세 요 .\n1. | can't eat spicy food because it upsets my stomach. :\n2. He must be tired since he worked all day.\n3. This is not enough. You should practice more.\n4, There is no time tomorrow. You must do your homework today!\n5. If we work together, we can solve this problem now.\n6. The sky is clear so it might not rain. Pa\n7. You don't have to wear a mask here since there are not many people.\n8. | feel like you might not understand this problem. - 를 0\n9. It must be raining since peopleare using umbrellas, 0 0 00000 00000\n10. | feel like you made a mistake, so you should call him right now. 2\n11. You have to study for your test since you have a test tomorrow. :\n12. You must submit your homewotk by fomuitew because you shouldn't be late.\n13. You must not press this button because it could be dangerous. : :\n14. Everyone is waiting for you. Can you make it to the gathering? . . a a\n15. We don't have much time. Can voll finish this task now? 때\n16. It looks difficult. Will you be able to do it alone?\n17. You should go to bed early today since you have to wake up early.\n18. He might not be in the office since | haven't seen him all day.\n19. He might come late as the traffic is so bad.\n20. You must send the email by tomorrow since the deadline is tomorrow.\n21. You must not be late today because this is a very important meeting.\n22. As it's getting late, we have to leave now.\n23. You must not smoke here since this is a non-smoking area.\n24. You have to show your passport for identification.\n25. You have to be quiet because the baby is sleeping.\n2"
+        },
+        {
+          "spreadNumber": 2,
+          "oddPageNumber": 3,
+          "evenPageNumber": 4,
+          "oddImage": "/materials/step-13/spread-02-odd.jpg",
+          "evenImage": "/materials/step-13/spread-02-even.jpg",
+          "oddText": "26. Can you write an email in English as | have to contact a foreign client?\n27. You have to take off your shoes since it's a Korean home.\n28. He must be a teacher since he knows so much.\n29. As the road is confusing, you might be better off driving.\n30. Since your name is on it, this bag must be yours.\n31. This must be the correct answer since we have the same answer.\n32. There must be a key in there since we were last in the meeting room.\n33. | have to check if he understands as | don't want any problems later.\n34. She can help us because she is good at English.\n35. They have to come today since today is the last day.\n36, I'm able to finish this report now as | have all the data.\n37. The flight might depart soon since the rain has stopped.\n38. We have to solve this together since it's a team project.\n39. That must be mine since | left it here earlier.\n40. He must be busy since he's not answering.\n41. You shouldn't play games late at night since you have to wake up early.\n42. We should leave now as it's almost rush hour.\n43. Shall we watch a movie tonight? It's Friday night.\n44. You shouldn't watch that movie because the reviews are really bad.\n45. Shall we take a break since we've studied for two hours?\n46. You should take a jacket because it's quite chilly outside.\n47. Your passport must be inside your bag since you put it there earlier.\n48. He never lies, so it might be true.\n49. You should drink water since it's so hot today.\n50. We are able to finish it by next week since everyone is helping out.\n3",
+          "evenText": "STEP 3. 문장 만들기 - 힌 트 를 참고해 문 장 을 말 해 보세요. |\n1. 매운 SAS 잘 못 먹어. 왜냐하면 먹으면 배가 OFLA E. (eat, upset my stomach) |\n2. 개 하루 종일 일 했 잖아 / 분명 피 곤 할 거야. (be tired)\n3. 이대로는 만 될 것 같은데 / 너 더 연 습 해야겠다. (not enough, practice more)\n4. 내일 할 시간 없어 / 너 오늘 숙제 꼭 해! (no time, do your homework)\n5. 우 리 가 JS 합치면 / 이 문제 지금 해결할 수 있어. (work together, solve this problem)\n6. 하 늘 이 맑 네 / 50 비 안 올 지 도 모르겠다. (clear, rain) 세 :\n7. 사람 많이 없잖아. / 여기선 마스크 Ot 써도 돼 . (wear a mask, not many people)\n8. 너 이 문제 이해 못 한 거 / 같은데. (feel like, understand)\n9. 사람들 우 산 을 쓰고 있잖아 / 비 오고 있나 보네. (rain, use einbrellas) ,\n10. 너 실 수 한 거 같은데. / 56 지금 당장 전 화 해야겠다. ( feel ike, make a mistake, call him)\n11. 너 내일 시 험 이잖아 / 시험 공 부 해 야지. (study, have a test). 2\n12. 늦으면 안 좋 으 니까 / 숙제 내 일 까지 꼭 제출해! (submit, be late)\n13. WHS 수도 있으니까 / 이 버튼 누르면 안 돼 . (press, be dangerous) :\n14. 다 너 기다리고 있어. / 모임 올 수 있어? wait for, make it to) : :\n15. 우리 시 간 이 별로 없어. / 이 일 지금 끝낼 수 있어? (have much time, finish this task)\n16. 어려워 보이는데 / 너 혼자 할 수 있을 거 같아? (look difficult, do it alone)\n17. 일찍 일어나야 하잖아. / 오 늘 은 일찍 자는 Al SAC. (go to bed, wake up early)\n18. 지 금 까지 못 본 걸 보니 / 개 아마 사 무 실 에 없 을 지도 몰라. (66 in the office, see him)\n19. 길이 너무 막 히 거든 / 개 늦게 올 지 도 몰라. (come late, traffic is so bad)\n20. 내 일 이 마 감 이잖아 / 내 일 까지 이메일 꼭 보내야 해! (send the email, deadline is tomorrow)\n21. 이거 진짜 중요한 회 의 라 서 / 오늘 절대 늦으면 안 돼 . (important meeting, be late)\n22. 점점 늦 어 지고 있거든 / 우리 이제 출 발 해야 SY. (it's getting late, leave now)\n23. 여기 금연 구 역 이잖아 / 여기서 담배 피우면 안 돼 . (smoke, non-smoking area)\n24. 본인 확 인 을 위해서 / 여권 좀 보 여 주 셔야 해요. (show your passport, identification)\n25. 아 기 가 자고 있어서 / 조용히 해야 SH. (be quiet, baby is sleeping)\n4"
+        },
+        {
+          "spreadNumber": 3,
+          "oddPageNumber": 5,
+          "evenPageNumber": 6,
+          "oddImage": "/materials/step-13/spread-03-odd.jpg",
+          "evenImage": "/materials/step-13/spread-03-even.jpg",
+          "oddText": "26. 나 외국 거 래 처 에 연 락 해 야 되는데 / 너 영 어 로 이메일 S 수 있어? (write an email, contact a foreign client)\n27. 한국 집 이니까 / 신발 벗 어 야 해. (take off, Korean home)\n28. 저 사람 아는 Al 진짜 많 잖 아 / 분명 선 생 님 일 거야. (knows so much)\n29. 길이 좀 복 잡 하 거든 / 네가 운 전 하 는 Al 더 나 을 지 도 Seth. (road is confusing, better off driving)\n30. 여기 네 이 름 이 써 있잖아, / 이 가방 분명 네 거야. (your name is on it, be yours)\n31. 우리 GO| 같 잖아 / 이거 분명 정 답 일 거야. (the correct answer, the same answer)\n32. 우리 마 지 막 에 회 의 실 에 있 었 잖아 / 거기 분명 열 쇠 가 있을 거야. (in there, last in the meeting room)\n33. 나중에 문제 생기면 안 SAE / 개가 이 해 했는지 확 인 해 야 돼 . (check, any problems)\n34. 개가 우리 SOS 수 있어 / 왜냐면 영 어 를 잘 하 거든. 11610, be good at)\n35. 오 늘 이 마지막 날 이라서 / 개 네 오늘 와야 돼 . (come, the last day)\n36. 이제 자료 다 모아서 / 나는 지금 이 보고서 마 무 리 할 수 있어. (finish this report, have all the data)\n37. 비가 그 졌 으 니 까 / 비행기 곧 줄 발 할 지도 몰라. (depart, the rain has stopped)\n38. 이건 팀 프 로 젝 트 니 까 / 우 리 가 같이 해 결 해 야 해. (solve this together, a team project)\n39. 내가 아까 여기 뒷 잖아 / 이거 내 거 맞을 거야. (mine, left it)\n40. 전화 안 받 는 거 보니 / 개 HEEL (busy, answer)\n41. 너 일찍 일어나야 하잖아 / 밤 늦 게 까지 게임 안하는 Al 좋 겠 는데. (late at night, wake up early)\n42. 곧 차 막힐 시 간 이거든 / 우리 지금 출 발 하는 Al 좋겠어. 16306, rush hour)\n43. 불 금 인데 / 우리 오늘 밤 에 영화 볼래요? (watch a movie, Friday night)\n44. 그 영화 안 보는 게 좋아 / 평 점 이 진짜 별 로 거 든 . (30 that movie, the reviews)\n45. 우리 잠깐 ach? / 벌써 두 시간 공 부 했 잖아. (take a break, we've studied)\n46. 겉옷 챙 겨 가 는 Al 좋아 / 밖 이 꽤 쌀 쌀 하 거든. (take a jacket, chilly)\n47. 네가 아까 거기 SAMO / HAL 분명히 가방 안에 있을 거야. (05146 your bag, put it there) |\n48. 개가 거 짓 말 할 리가 없어 / 그러니까 그거 사 실 일지도 몰라. (never lies, might be true)\n49. 오늘 날 씨 가 너무 더워 / 너 물 좀 마셔야 ACH. (drink water, hot)\n50. 다들 열심히 도 와 주고 있으니 / 우리 다음 주 까지 끝낼 수 있어. (by next week, helping out)\n5",
+          "evenText": "STEP 4. 소리 내어 말하기 - 뜻 을 생 각 하 며 AS 뒤 외 워 서 여러 H 말 해 보 세요.\n1. 매운 음 식 을 잘 못 먹어. 왜냐하면 먹으면 배가 아 프 거 든 . (3, upset my stomach) |\n| can't eat spicy food / because it upsets my stomach.\n2. 개 하루 종일 일 했 잖아 / 분명 피 곤 할 거야. (be tired)\nHe must be tired / since he worked all day.\n3. 이대로는 안 될 것 같은데 / 4 더 연 습 해야겠다. (not enough, practice more) ᆞ\nThis is not enough. / You should practice more.\n4. 내일 할 시간 없어 / 너 오늘 숙제 꼭 해! (no time, do your homework)\nThere is no time tomorrow. You must do your homework today! he |\n5. 우 리 가 BS 합치면 / 이 문제 지금 해결할 수 있어. (work together, solve this problem)\nIf we work together, / we can solve this problem now. ae\n6. 하 늘 이 맑 네 / 50 비 안 올 지 도 모르겠다. (clear, rain) 호\nThe sky is clear so it might not rain.\n7. 사람 많이 없잖아. / 여기선 마스크 Of 써도 SH. (wear.a mask, not many people) -\nYou don't have to wear a mask here / since there are not many people.\n8. 너 이 문제 이해 못 St 7 / 같은데. (feel like, understand)\n| feel like / you might not understand this problem.\n9. 사람들 우 산 을 쓰고 있잖아 / 비 오고 있나 보네. (rain, use umbrellas)\nIt must be raining / since people are using umbrellas.\n10. 너 실 수 한 7 같은데. / 50 지금 당장 전 화 해야겠다. (| feel like, make a mistake, call him)\n| feel like you made a mistake. / so you should call him right now.\n6"
+        },
+        {
+          "spreadNumber": 4,
+          "oddPageNumber": 7,
+          "evenPageNumber": 8,
+          "oddImage": "/materials/step-13/spread-04-odd.jpg",
+          "evenImage": "/materials/step-13/spread-04-even.jpg",
+          "oddText": "11. 너 내일 시 험 이 잖아 / 시험 공 부 해 야지. (study, have a test)\nYou have to study for your test / since you have a test tomorrow.\n12. 늦으면 안 BOL / 숙제 내 일 까지 꼭 제 줄 해! (submit, be late)\nYou must submit your homework by tomorrow / because you shouldn't be late.\n13. 위 험 할 수도 있으니까 / 이 HE 누르면 et 돼 . (press, be dangerous)\nYou must not press this button / because it could be dangerous.\n14. 다 너 기다리고 있어. / 모임 = 수 있어? (wait for, make it to)\nEveryone is waiting for you. / Can you make it to the gathering?\n15. 우리 시 간 이 별로 없어. / 이 일 지금 끝낼 수 있어? (have much time, finish this task)\nWe don't have much time. / Can you finish this task now?\n16. 어려워 보이는데 / 너 혼자 할 수 있을 거 같아? 100 difficult, do it alone)\nIt looks difficult. / Will you be able to do it alone?\n17. 일찍 일어나야 하잖아. / QSL 일찍 자는 게 좋겠다. (go to bed, wake up early)\nYou should go to bed early today / since you have to wake up early.\n18. 지 금 까지 못 본 걸 보니 / 개 아마 사 무 실 에 없 을 지도 Se}. (be in the office, see him)\nHe might not be in the office / since | haven't seen him all day.\n19. 길이 너무 막 히 거 든 / 개 늦게 올 지 도 몰라. (come late, traffic is so bad)\nHe might come late / as the traffic is so bad.\n20. 내 일 이 마 감 이잖아 / 내 일 까지 이메일 A 보내야 해! (send the email, deadline is tomorrow)\nYou must send the email by tomorrow / since the deadline is tomorrow.\n7",
+          "evenText": "21. 이거 진짜 중요한 회 의 라 서 / QS 절대 늦으면 안 SH. (important meeting, / be late)\nYou must not be late today because this is a very important meeting. :\n22. 점점 늦 어 지고 있거든 / 우리 이제 출 발 해 야 해. (it's getting late, / leave now)\nAs it's getting late, / we have to leave now.\n23. 여기 SA 구 역 이잖아 / 여기서 담배 피우면 안 돼 . (smoke, non-smoking area)\nYou must not smoke here / since this is a non-smoking area.\n24. 본인 확 인 을 위해서 / 여권 좀 보 여 주 셔야 해요. (show your passport, identification)\nYou have to show your passport / for identification.\n25. 아 기 가 자고 있어서 / 조용히 해야 돼 . (be quiet, baby is sleeping) ee\nYou have to be quiet because the baby is sleeping.\n26. 나 외국 거 래 처 에 연 락 해 야 되는데 / 너 영 어 로 이메일 쓸 수 있어? (write an email, contact a foreign client)\nCan you write an email in English / as | have to contact a foreign client?\n27. 한국 집 이니까 / 신발 벗 어 야 해. (take off-Korean home) _ 00 그\nYou have to take off your shoes / since it's a Korean home.\n28. 저 사람 아는 Al 진짜 많 잖 아 / 분명 선 생 님 일 거야. (knows so much)\nHe must be a teacher / since he knows so much.\n29. 길이 좀 복 잡 하거든 / 네가 운 전 하는 Al 더 나 을 지 도 Bet. (road is confusing, better off driving)\nAs the road is confusing, / you might be better off driving.\n30. 여기 네 이 름 이 써 있잖아, / 이 가방 분명 네 거야. (your name is on it, be yours)\nSince your name is on it, / this bag must be yours.\n8"
+        },
+        {
+          "spreadNumber": 5,
+          "oddPageNumber": 9,
+          "evenPageNumber": 10,
+          "oddImage": "/materials/step-13/spread-05-odd.jpg",
+          "evenImage": "/materials/step-13/spread-05-even.jpg",
+          "oddText": "31. 우리 답 이 같 잖아 / 이거 BS AEA 거야. (the correct answer, the same answer)\nThis must be the correct answer / since we have the same answer.\n32. 우리 마 지 막 에 회 의 실 에 있 었 잖아 / 거기 분명 열 쇠 가 있을 거야. (in there / last in the meeting room.)\nThere must be a key in there / since we were last in the meeting room.\n33. 나중에 문제 생기면 안 SAS / 개가 이 해 했 는지 확 인 해 야 SH. (check, any problems)\n| have to check if he understands / as | don't want any problems later.\n34. 개가 우리 SOS 수 있어 / 왜냐면 SOS Bor. (help, be good at)\nShe can help us / because she is good at English.\n35. 오 늘 이 마지막 날 이라서 / 개 네 VS 와야 돼 . (come,the last day)\nThey have to come today / since today is the last day.\n36. 이제 자료 다 모아서 / 나는 지금 이 보고서 마 무 리 할 수 있어. (finish this report, have all the data)\nI'm able to finish this report now / as | have all the data.\n37. 비가 그 졌 으니까 / 비행기 곧 출 발 할지도 몰라. (depart, the rain has stopped)\nThe flight might depart soon / since the rain has stopped.\n38. 이건 팀 프 로 젝 트 니 까 / 우 리 가 같이 해 결 해 야 해. (solve this together, a team project)\nWe have to solve this together / since it's a team project.\n39. 내가 아까 여기 BPO / 이거 내 거 맞을 거야. (mine, left it)\nThat must be mine / since | left it here earlier.\n40. 전화 안 받 는 거 보니 / 개 바 쁜 가 봐 . (busy, answer)\nHe must be busy / since he's not answering.\n9",
+          "evenText": "41. 너 일찍 일어나야 하잖아 / 밤 늦 게 까 지 게임 안하는 게 좋 겠 는데. (late at night, wake up early)\nYou shouldn't play games late at night / since you have to wake up early.\n42. 곧 차 막힐 시 간 이 거든 / 우리 지금 출 발 하는 게 좋겠어. (leave, rush hour)\nWe should leave now / as it's almost rush hour.\n43. 불 금 인데 / 우리 오늘 밤 에 영화 볼래요? (watch a movie, Friday night)\nShall we watch a movie tonight ? / It's Friday night. os\n44. 그 영화 안 보는 게 좋아 7 평 점 이 진짜 별 로 거든. (watch that movie, the reviews)\nYou shouldn't watch that movie / because the reviews are really bad.\n45. 우리 잠깐 seh? / 벌써 두 시간 공 부 했잖아. (take a break, we've studied) _ ᆞ\nShall we take a break / since we've studied for two hours? : cubes\n46. 겉옷 챙 겨 가 는 Al 좋아 / 밖 이 MY 쌀 쌀 하거든. (take a jacket, chilly)\nYou should take a jacket / because it's quite chilly outside.\n47. 네가 아까 거기 넣 었 잖아 / HAS 분명히 가방 안에 있을 거야. (inside your bag, put it there)\nYour passport must be inside your bag / since you put it there earlier.\n48. 개가 거 짓 말 할 리가 없어 / 그러니까 AA 사 실 일지도 몰라. (never lies, so, might be true)\nHe never lies, / so it might be true.\n49. 오늘 날 씨 가 너무 더워 / 너 & & 마셔야 겠다. (drink water, hot)\nYou should drink water / since it's so hot today.\n50. 다들 열심히 도 와 주고 있으니 / 우리 다음 주 까지 끝낼 수 있어. (by next week, helping out)\nWe are able to finish it by next week / since everyone is helping out.\n10"
+        },
+        {
+          "spreadNumber": 6,
+          "oddPageNumber": 11,
+          "evenPageNumber": null,
+          "oddImage": "/materials/step-13/spread-06-odd.jpg",
+          "evenImage": "/materials/step-13/spread-06-even.jpg",
+          "oddText": "STEP 5. 내 말 하 기 - 배운 BAS 활 용 해 자 신 의 대 답 을 써보고 말 해 보세요.\n1. 올해 꼭 해야 하는 일 이 뭐야?\nWhat is something you must do this year?\n2. 너가 절대 하면 안 된다고 생 각 하는 건 뭐야?\nWhat is something you must not do?\n3. 요즘 꼭 해야 하는 YO] 뭐야? (일, 공부 등)\nWhat do you have to do these days?\n4. 너 요즘 안 해도 되는 일 하나 있어?\nWhat is something you don't have to do these days?\n5. 스트레스 받을 때 뭐 하는 게 좋다고 생각해?\nWhat should you do when you feel stressed?\n6. 사 람 들 이 HS 하면 OF 된다고 생 각 하는 건 뭐야?\nWhat is something people shouldn't do?\n7. 너 할 수 있는 A 중에 하나 말해줘.\nWhat can you do?\n8. 너 아직 못 하는 거 하나 있어?\nWhat is something you can't do?\n9. 이번 주 말 에 뭐 할 A 같아?\nWhat might you do this weekend?\n11",
+          "evenText": ""
+        }
+      ],
+      "sentences": [
+        {
+          "id": "step-13-s001",
+          "exerciseNumber": 1,
+          "text": "I can't eat spicy food because it upsets my stomach.",
+          "promptKo": "매운 음 식 을 잘 못 먹어. 왜냐하면 먹으면 배가 아 프 거 든 . (3, upset my stomach) |",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-13-s002",
+          "exerciseNumber": 2,
+          "text": "He must be tired since he worked all day.",
+          "promptKo": "개 하루 종일 일 했 잖아 / 분명 피 곤 할 거야.",
+          "hints": [
+            "be tired"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-13-s003",
+          "exerciseNumber": 3,
+          "text": "This is not enough. You should practice more.",
+          "promptKo": "이대로는 안 될 것 같은데 / 4 더 연 습 해야겠다. (not enough, practice more) ᆞ",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-13-s004",
+          "exerciseNumber": 4,
+          "text": "There is no time tomorrow. You must do your homework today!",
+          "promptKo": "내일 할 시간 없어 / 너 오늘 숙제 꼭 해!",
+          "hints": [
+            "no time",
+            "do your homework"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-13-s005",
+          "exerciseNumber": 5,
+          "text": "If we work together, we can solve this problem now.",
+          "promptKo": "우 리 가 BS 합치면 / 이 문제 지금 해결할 수 있어.",
+          "hints": [
+            "work together",
+            "solve this problem"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-13-s006",
+          "exerciseNumber": 6,
+          "text": "The sky is clear so it might not rain.",
+          "promptKo": "하 늘 이 맑 네 / 50 비 안 올 지 도 모르겠다. (clear, rain) 호",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-13-s007",
+          "exerciseNumber": 7,
+          "text": "You don't have to wear a mask here since there are not many people.",
+          "promptKo": "사람 많이 없잖아. / 여기선 마스크 Of 써도 SH. (wear.a mask, not many people) -",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-13-s008",
+          "exerciseNumber": 8,
+          "text": "I feel like you might not understand this problem.",
+          "promptKo": "너 이 문제 이해 못 St 7 / 같은데.",
+          "hints": [
+            "feel like",
+            "understand"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-13-s009",
+          "exerciseNumber": 9,
+          "text": "It must be raining since people are using umbrellas.",
+          "promptKo": "사람들 우 산 을 쓰고 있잖아 / 비 오고 있나 보네.",
+          "hints": [
+            "rain",
+            "use umbrellas"
+          ],
+          "sourcePages": [
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-13-s010",
+          "exerciseNumber": 10,
+          "text": "I feel like you made a mistake, so you should call him right now.",
+          "promptKo": "너 실 수 한 7 같은데. / 50 지금 당장 전 화 해야겠다.",
+          "hints": [
+            "| feel like",
+            "make a mistake",
+            "call him"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-13-s011",
+          "exerciseNumber": 11,
+          "text": "You have to study for your test since you have a test tomorrow.",
+          "promptKo": "너 내일 시 험 이 잖아 / 시험 공 부 해 야지.",
+          "hints": [
+            "study",
+            "have a test"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-13-s012",
+          "exerciseNumber": 12,
+          "text": "You must submit your homework by tomorrow because you shouldn't be late.",
+          "promptKo": "늦으면 안 BOL / 숙제 내 일 까지 꼭 제 줄 해!",
+          "hints": [
+            "submit",
+            "be late"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-13-s013",
+          "exerciseNumber": 13,
+          "text": "You must not press this button because it could be dangerous.",
+          "promptKo": "위 험 할 수도 있으니까 / 이 HE 누르면 et 돼 .",
+          "hints": [
+            "press",
+            "be dangerous"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-13-s014",
+          "exerciseNumber": 14,
+          "text": "Everyone is waiting for you. Can you make it to the gathering?",
+          "promptKo": "다 너 기다리고 있어. / 모임 = 수 있어?",
+          "hints": [
+            "wait for",
+            "make it to"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-13-s015",
+          "exerciseNumber": 15,
+          "text": "We don't have much time. Can you finish this task now?",
+          "promptKo": "우리 시 간 이 별로 없어. / 이 일 지금 끝낼 수 있어?",
+          "hints": [
+            "have much time",
+            "finish this task"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-13-s016",
+          "exerciseNumber": 16,
+          "text": "It looks difficult. Will you be able to do it alone?",
+          "promptKo": "어려워 보이는데 / 너 혼자 할 수 있을 거 같아? 100 difficult, do it alone)",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-13-s017",
+          "exerciseNumber": 17,
+          "text": "You should go to bed early today since you have to wake up early.",
+          "promptKo": "일찍 일어나야 하잖아. / QSL 일찍 자는 게 좋겠다.",
+          "hints": [
+            "go to bed",
+            "wake up early"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-13-s018",
+          "exerciseNumber": 18,
+          "text": "He might not be in the office since I haven't seen him all day.",
+          "promptKo": "지 금 까지 못 본 걸 보니 / 개 아마 사 무 실 에 없 을 지도 Se}.",
+          "hints": [
+            "be in the office",
+            "see him"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-13-s019",
+          "exerciseNumber": 19,
+          "text": "He might come late as the traffic is so bad.",
+          "promptKo": "길이 너무 막 히 거 든 / 개 늦게 올 지 도 몰라.",
+          "hints": [
+            "come late",
+            "traffic is so bad"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-13-s020",
+          "exerciseNumber": 20,
+          "text": "You must send the email by tomorrow since the deadline is tomorrow.",
+          "promptKo": "내 일 이 마 감 이잖아 / 내 일 까지 이메일 A 보내야 해!",
+          "hints": [
+            "send the email",
+            "deadline is tomorrow"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-13-s021",
+          "exerciseNumber": 21,
+          "text": "You must not be late today because this is a very important meeting.",
+          "promptKo": "이거 진짜 중요한 회 의 라 서 / QS 절대 늦으면 안 SH.",
+          "hints": [
+            "important meeting",
+            "/ be late"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-13-s022",
+          "exerciseNumber": 22,
+          "text": "As it's getting late, we have to leave now.",
+          "promptKo": "점점 늦 어 지고 있거든 / 우리 이제 출 발 해 야 해.",
+          "hints": [
+            "it's getting late",
+            "/ leave now"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-13-s023",
+          "exerciseNumber": 23,
+          "text": "You must not smoke here since this is a non-smoking area.",
+          "promptKo": "여기 SA 구 역 이잖아 / 여기서 담배 피우면 안 돼 .",
+          "hints": [
+            "smoke",
+            "non-smoking area"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-13-s024",
+          "exerciseNumber": 24,
+          "text": "You have to show your passport for identification.",
+          "promptKo": "본인 확 인 을 위해서 / 여권 좀 보 여 주 셔야 해요.",
+          "hints": [
+            "show your passport",
+            "identification"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-13-s025",
+          "exerciseNumber": 25,
+          "text": "You have to be quiet because the baby is sleeping.",
+          "promptKo": "아 기 가 자고 있어서 / 조용히 해야 돼 . (be quiet, baby is sleeping) ee",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-13-s026",
+          "exerciseNumber": 26,
+          "text": "Can you write an email in English as I have to contact a foreign client?",
+          "promptKo": "나 외국 거 래 처 에 연 락 해 야 되는데 / 너 영 어 로 이메일 쓸 수 있어?",
+          "hints": [
+            "write an email",
+            "contact a foreign client"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s027",
+          "exerciseNumber": 27,
+          "text": "You have to take off your shoes since it's a Korean home.",
+          "promptKo": "한국 집 이니까 / 신발 벗 어 야 해. (take off-Korean home) _ 00 그",
+          "hints": [],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s028",
+          "exerciseNumber": 28,
+          "text": "He must be a teacher since he knows so much.",
+          "promptKo": "저 사람 아는 Al 진짜 많 잖 아 / 분명 선 생 님 일 거야.",
+          "hints": [
+            "knows so much"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s029",
+          "exerciseNumber": 29,
+          "text": "As the road is confusing, you might be better off driving.",
+          "promptKo": "길이 좀 복 잡 하거든 / 네가 운 전 하는 Al 더 나 을 지 도 Bet.",
+          "hints": [
+            "road is confusing",
+            "better off driving"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s030",
+          "exerciseNumber": 30,
+          "text": "Since your name is on it, this bag must be yours.",
+          "promptKo": "여기 네 이 름 이 써 있잖아, / 이 가방 분명 네 거야.",
+          "hints": [
+            "your name is on it",
+            "be yours"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s031",
+          "exerciseNumber": 31,
+          "text": "This must be the correct answer since we have the same answer.",
+          "promptKo": "우리 답 이 같 잖아 / 이거 BS AEA 거야.",
+          "hints": [
+            "the correct answer",
+            "the same answer"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-13-s032",
+          "exerciseNumber": 32,
+          "text": "There must be a key in there since we were last in the meeting room.",
+          "promptKo": "우리 마 지 막 에 회 의 실 에 있 었 잖아 / 거기 분명 열 쇠 가 있을 거야.",
+          "hints": [
+            "in there / last in the meeting room."
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-13-s033",
+          "exerciseNumber": 33,
+          "text": "I have to check if he understands as I don't want any problems later.",
+          "promptKo": "나중에 문제 생기면 안 SAS / 개가 이 해 했 는지 확 인 해 야 SH.",
+          "hints": [
+            "check",
+            "any problems"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-13-s034",
+          "exerciseNumber": 34,
+          "text": "She can help us because she is good at English.",
+          "promptKo": "개가 우리 SOS 수 있어 / 왜냐면 SOS Bor.",
+          "hints": [
+            "help",
+            "be good at"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-13-s035",
+          "exerciseNumber": 35,
+          "text": "They have to come today since today is the last day.",
+          "promptKo": "오 늘 이 마지막 날 이라서 / 개 네 VS 와야 돼 .",
+          "hints": [
+            "come",
+            "the last day"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-13-s036",
+          "exerciseNumber": 36,
+          "text": "I'm able to finish this report now as I have all the data.",
+          "promptKo": "이제 자료 다 모아서 / 나는 지금 이 보고서 마 무 리 할 수 있어.",
+          "hints": [
+            "finish this report",
+            "have all the data"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-13-s037",
+          "exerciseNumber": 37,
+          "text": "The flight might depart soon since the rain has stopped.",
+          "promptKo": "비가 그 졌 으니까 / 비행기 곧 출 발 할지도 몰라.",
+          "hints": [
+            "depart",
+            "the rain has stopped"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-13-s038",
+          "exerciseNumber": 38,
+          "text": "We have to solve this together since it's a team project.",
+          "promptKo": "이건 팀 프 로 젝 트 니 까 / 우 리 가 같이 해 결 해 야 해.",
+          "hints": [
+            "solve this together",
+            "a team project"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-13-s039",
+          "exerciseNumber": 39,
+          "text": "That must be mine since I left it here earlier.",
+          "promptKo": "내가 아까 여기 BPO / 이거 내 거 맞을 거야.",
+          "hints": [
+            "mine",
+            "left it"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-13-s040",
+          "exerciseNumber": 40,
+          "text": "He must be busy since he's not answering.",
+          "promptKo": "전화 안 받 는 거 보니 / 개 바 쁜 가 봐 .",
+          "hints": [
+            "busy",
+            "answer"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-13-s041",
+          "exerciseNumber": 41,
+          "text": "You shouldn't play games late at night since you have to wake up early.",
+          "promptKo": "너 일찍 일어나야 하잖아 / 밤 늦 게 까 지 게임 안하는 게 좋 겠 는데.",
+          "hints": [
+            "late at night",
+            "wake up early"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s042",
+          "exerciseNumber": 42,
+          "text": "We should leave now as it's almost rush hour.",
+          "promptKo": "곧 차 막힐 시 간 이 거든 / 우리 지금 출 발 하는 게 좋겠어.",
+          "hints": [
+            "leave",
+            "rush hour"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s043",
+          "exerciseNumber": 43,
+          "text": "Shall we watch a movie tonight? It's Friday night.",
+          "promptKo": "불 금 인데 / 우리 오늘 밤 에 영화 볼래요?",
+          "hints": [
+            "watch a movie",
+            "Friday night"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s044",
+          "exerciseNumber": 44,
+          "text": "You shouldn't watch that movie because the reviews are really bad.",
+          "promptKo": "그 영화 안 보는 게 좋아 7 평 점 이 진짜 별 로 거든.",
+          "hints": [
+            "watch that movie",
+            "the reviews"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s045",
+          "exerciseNumber": 45,
+          "text": "Shall we take a break since we've studied for two hours?",
+          "promptKo": "우리 잠깐 seh? / 벌써 두 시간 공 부 했잖아. (take a break, we've studied) _ ᆞ",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s046",
+          "exerciseNumber": 46,
+          "text": "You should take a jacket because it's quite chilly outside.",
+          "promptKo": "겉옷 챙 겨 가 는 Al 좋아 / 밖 이 MY 쌀 쌀 하거든.",
+          "hints": [
+            "take a jacket",
+            "chilly"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s047",
+          "exerciseNumber": 47,
+          "text": "Your passport must be inside your bag since you put it there earlier.",
+          "promptKo": "네가 아까 거기 넣 었 잖아 / HAS 분명히 가방 안에 있을 거야.",
+          "hints": [
+            "inside your bag",
+            "put it there"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s048",
+          "exerciseNumber": 48,
+          "text": "He never lies, so it might be true.",
+          "promptKo": "개가 거 짓 말 할 리가 없어 / 그러니까 AA 사 실 일지도 몰라.",
+          "hints": [
+            "never lies",
+            "so",
+            "might be true"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s049",
+          "exerciseNumber": 49,
+          "text": "You should drink water since it's so hot today.",
+          "promptKo": "오늘 날 씨 가 너무 더워 / 너 & & 마셔야 겠다.",
+          "hints": [
+            "drink water",
+            "hot"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-13-s050",
+          "exerciseNumber": 50,
+          "text": "We are able to finish it by next week since everyone is helping out.",
+          "promptKo": "다들 열심히 도 와 주고 있으니 / 우리 다음 주 까지 끝낼 수 있어.",
+          "hints": [
+            "by next week",
+            "helping out"
           ],
           "sourcePages": [
             "even 5",
