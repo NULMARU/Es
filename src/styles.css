@@ -160,16 +160,16 @@ code {
 
 .step-stack {
   display: grid;
-  gap: 10px;
+  gap: 5px;
 }
 
 .step-button {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 18px;
-  gap: 4px 8px;
+  grid-template-columns: minmax(0, 1fr) 14px;
+  gap: 1px 6px;
   width: 100%;
-  padding: 14px 12px;
+  padding: 7px 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
   color: var(--ink);
@@ -183,8 +183,14 @@ code {
   overflow-wrap: anywhere;
 }
 
+.step-button span {
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
 .step-button small {
   color: var(--muted);
+  font-size: 0.68rem;
 }
 
 .step-button svg {
@@ -1383,8 +1389,8 @@ code {
 .step-progress {
   grid-column: 1 / span 2;
   display: block;
-  height: 4px;
-  margin-top: 4px;
+  height: 3px;
+  margin-top: 3px;
   border-radius: 999px;
   background: var(--wash);
   overflow: hidden;

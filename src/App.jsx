@@ -2156,6 +2156,58 @@ const answerProfiles = {
       correction: 'My best friend must be busy these days.',
       contextHint: '친구에 대한 확신을 must be로 말한다.'
     }
+  ],
+  'modal-past': [
+    {
+      context: /\b(should('?ve| have)?|studied|called|slept|started|saved|last week)\b/,
+      correction: "I should have started earlier last week.",
+      contextHint: '지난주에 했어야 했던 일을 should have + 과거분사로 말한다.'
+    },
+    {
+      context: /\b(shouldn't have|should not have|stayed|eaten|bought|said|spent|yesterday)\b/,
+      correction: "I shouldn't have stayed up late yesterday.",
+      contextHint: "어제 하지 말았어야 했던 일을 shouldn't have + 과거분사로 말한다."
+    },
+    {
+      context: /\b(could|swim|run|climb|sing|draw|child|young|when i was)\b/,
+      correction: 'I could swim well when I was a child.',
+      contextHint: '어릴 때 할 수 있었던 일을 could + 동사원형으로 말한다.'
+    },
+    {
+      context: /\b(couldn't|could not|drive|cook|speak|last year|now|but)\b/,
+      correction: "I couldn't drive last year, but I can now.",
+      contextHint: "작년에 못 했지만 지금은 하는 일을 couldn't ~ but can now로 말한다."
+    },
+    {
+      context: /\b(was able to|were able to|finish|finished|manage|complete|recently|task)\b/,
+      correction: 'I was able to finish the project recently.',
+      contextHint: '최근에 해낼 수 있었던 일을 was/were able to로 말한다.'
+    },
+    {
+      context: /\b(could('?ve| have)?|gone|been|better|won|worked|today)\b/,
+      correction: 'It could have gone better today.',
+      contextHint: '더 잘 될 수도 있었던 일을 could have + 과거분사로 말한다.'
+    },
+    {
+      context: /\b(might('?ve| have)?|forgot|forgotten|left|missed|lost|this morning)\b/,
+      correction: 'I might have forgotten my keys this morning.',
+      contextHint: '아침에 깜빡했을지도 모르는 일을 might have + 과거분사로 말한다.'
+    },
+    {
+      context: /\b(must('?ve| have)?|been|tired|busy|hard|tiring|lately)\b/,
+      correction: 'It must have been tiring for you lately.',
+      contextHint: '분명 그랬을 거라는 확신을 must have been으로 말한다.'
+    },
+    {
+      context: /\b(can't have|cannot have|couldn't have|true|real|heard|rumor|been)\b/,
+      correction: "That can't have been true about what you heard.",
+      contextHint: "그럴 리 없다는 부정을 can't have been으로 말한다."
+    },
+    {
+      context: /\b(could('?ve| have)?|done|relax|rest|slept|walked|breathe|more)\b/,
+      correction: 'I could have taken a walk to relax more.',
+      contextHint: '더 하려면 할 수도 있었던 일을 could have + 과거분사로 말한다.'
+    }
   ]
 };
 
@@ -2234,6 +2286,9 @@ function getGrammarIssues(normalized, patternKind) {
   } else if (patternKind === 'modal') {
     const hasModal = /\b(must|have to|has to|had to|should|shouldn't|can|can't|cannot|could|might|may|shall|able to)\b/.test(normalized);
     if (!hasModal) issues.push('must, have to, should, can, might 같은 조동사를 넣어 말한다.');
+  } else if (patternKind === 'modal-past') {
+    const hasModalPast = /\b(should('?ve| have| not have)?|shouldn't have|could('?ve| have| not have)?|couldn't have|couldn't|could|might('?ve| have| not have)?|must('?ve| have)?|can't have|(?:was|were|wasn't|weren't)\s+able to)\b/.test(normalized);
+    if (!hasModalPast) issues.push("should've, could've, must've, might've, was able to 같은 조동사 과거형을 넣어 말한다.");
   } else if (patternKind === 'past-simple') {
     const hasPast = /\b(was|were|did|didn't|couldn't|went|came|got|felt|made|took|gave|hung|forgot|misunderstood|changed|believed|tried|solved|missed|rejected|traveled|travelled|watched|opened|saw|found|heard|had|used to)\b/.test(normalized)
       || /\b[a-z]+ed\b/.test(normalized);

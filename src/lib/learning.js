@@ -403,6 +403,12 @@ export function analyzeSentence(sentence, step) {
     if (mainVerb) structures.push({ label: '동사원형', value: mainVerb });
     const reason = lower.match(/\b(because|since|as|so)\b/)?.[0];
     if (reason) structures.push({ label: '이유 연결', value: reason });
+  } else if (step?.patternKind === 'modal-past') {
+    structures.push({ label: '주어', value: extractSubject(text) });
+    const modal = lower.match(/\b(shouldn't have|should(?:'ve| have)?|couldn't have|could(?:'ve| have)?|might not have|might(?:'ve| have)?|must(?:'ve| have)?|can't have|(?:wasn't|weren't|was|were)\s+able to|couldn't|could)\b/)?.[0];
+    structures.push({ label: '조동사 과거형', value: modal || "should've / could've / must've / might've" });
+    const pp = text.match(/\b[A-Za-z]+ed\b/)?.[0] || lower.match(/\b(been|gone|won|seen|done|known|missed|called|finished|left|forgot|forgotten)\b/)?.[0];
+    if (pp) structures.push({ label: '과거분사·동사', value: pp });
   } else if (step?.patternKind === 'progressive') {
     const aux = lower.match(/\b(am|is|are|was|were|been)\b/)?.[0] || 'be';
     const ing = text.match(/\b[A-Za-z]+ing\b/)?.[0] || '동사-ing';
@@ -694,6 +700,15 @@ export function makeQuestion(sentence, step, index = 0) {
     ];
     return templates[index % templates.length];
   }
+  if (step?.patternKind === 'modal-past') {
+    const templates = [
+      'What should you have done differently?',
+      'What could you do when you were younger?',
+      'What might have happened yesterday?',
+      'What must have been hard for you?'
+    ];
+    return templates[index % templates.length];
+  }
   const lower = text.toLowerCase();
   if (lower.includes('when')) return 'What do you usually do in that situation?';
   if (lower.includes('before')) return 'What do you usually do before that?';
@@ -840,6 +855,21 @@ export function makeAnswerQuestions(step) {
       "What do you think you don't have to worry about?",
       'Where do you have to go this week?',
       'What must be true about your best friend?'
+    ];
+  }
+
+  if (step?.patternKind === 'modal-past') {
+    return [
+      'What should you have done differently last week?',
+      "What shouldn't you have done yesterday?",
+      'What could you do well when you were a child?',
+      "What couldn't you do last year but can do now?",
+      'What were you able to finish recently?',
+      'What could have gone better today?',
+      'What might you have forgotten this morning?',
+      'What must have been tiring for you lately?',
+      "What can't have been true about something you heard?",
+      'What could you have done to relax more?'
     ];
   }
 

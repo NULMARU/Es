@@ -281,6 +281,17 @@ CANONICAL_SENTENCES[13] = {
     45: "Shall we take a break since we've studied for two hours?",
 }
 
+CANONICAL_SENTENCES[14] = {
+    15: "You shouldn't have quit your job without another offer.",
+    29: "He could swim 100m when he was younger.",
+    34: "The package could've been delivered to the wrong address.",
+    45: "The fridge is empty. She can't have gone grocery shopping yet.",
+}
+
+CANONICAL_PROMPTS[14] = {
+    29: ("그는 어렸을 때 100m를 수영할 수 있었어.", ["could", "swim"]),
+}
+
 
 @dataclass
 class SourcePdf:
@@ -474,6 +485,8 @@ def extract_topic(lines: list[str]) -> str:
 
 def detect_pattern_kind(step: int, text: str) -> str:
     compact = re.sub(r"\s+", "", text)
+    if "조동사과거" in compact or step == 14:
+        return "modal-past"
     if "조동사" in compact or step == 13:
         return "modal"
     if "관계사" in compact or "관계대명사" in compact or step == 11:
@@ -504,6 +517,27 @@ def detect_pattern_kind(step: int, text: str) -> str:
 
 
 def build_patterns(kind: str) -> list[dict[str, Any]]:
+    if kind == "modal-past":
+        return [
+            {
+                "name": "후회·과거 능력 (should've / could)",
+                "formula": "should've / shouldn't have + 과거분사, could / was(were) able to + 동사원형",
+                "focus": "했어야 했던 일에 대한 후회와 과거에 할 수 있었던 일",
+                "signals": ["should've", "shouldn't have", "could", "couldn't", "was able to", "wasn't able to"],
+            },
+            {
+                "name": "과거 가능성 (could've / might've)",
+                "formula": "could've / couldn't have + 과거분사, might've / might not have + 과거분사",
+                "focus": "그랬을 수도 있었던 일, 그랬을지도 모르는 일",
+                "signals": ["could've", "couldn't have", "might've", "might not have"],
+            },
+            {
+                "name": "과거 확신 (must've / can't have)",
+                "formula": "must've + 과거분사, can't have + 과거분사",
+                "focus": "분명 그랬을 거라는 확신과 그럴 리 없다는 부정",
+                "signals": ["must've", "must have", "can't have", "couldn't have been"],
+            },
+        ]
     if kind == "modal":
         return [
             {
@@ -788,6 +822,8 @@ def build_patterns(kind: str) -> list[dict[str, Any]]:
 
 
 def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
+    if kind == "modal-past":
+        return f"Step {step} - 조동사 과거형"
     if kind == "modal":
         return f"Step {step} - 조동사 현재형"
     if kind == "indirect-question":
@@ -822,6 +858,8 @@ def title_for_step(step: int, kind: str, first_lines: list[str]) -> str:
 
 def topic_for_step(step: int, kind: str, first_lines: list[str]) -> str:
     topic = extract_topic(first_lines)
+    if kind == "modal-past":
+        return "할 수 있었어, 했어야 해, 분명 그랬을 거야, 했을지도 몰라"
     if kind == "modal":
         return "할 수 있어, 해야 해, 아마도 그래"
     if kind == "indirect-question":

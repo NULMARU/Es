@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T14:44:08.745402+00:00",
+  "generatedAt": "2026-07-24T12:46:50.107388+00:00",
   "handwritingPolicy": "필기체/손글씨 OCR은 학습 데이터 후보에서 제외하고 원본 페이지 이미지로만 보존합니다.",
   "expectedFilePattern": "스텝{n}.pdf 또는 스텝{n}_1.pdf + 스텝{n}_2.pdf",
   "steps": [
@@ -9955,6 +9955,770 @@
           "hints": [
             "by next week",
             "helping out"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "step-14",
+      "stepNumber": 14,
+      "title": "Step 14 - 조동사 과거형",
+      "topic": "할 수 있었어, 했어야 해, 분명 그랬을 거야, 했을지도 몰라",
+      "patternKind": "modal-past",
+      "patterns": [
+        {
+          "name": "후회·과거 능력 (should've / could)",
+          "formula": "should've / shouldn't have + 과거분사, could / was(were) able to + 동사원형",
+          "focus": "했어야 했던 일에 대한 후회와 과거에 할 수 있었던 일",
+          "signals": [
+            "should've",
+            "shouldn't have",
+            "could",
+            "couldn't",
+            "was able to",
+            "wasn't able to"
+          ]
+        },
+        {
+          "name": "과거 가능성 (could've / might've)",
+          "formula": "could've / couldn't have + 과거분사, might've / might not have + 과거분사",
+          "focus": "그랬을 수도 있었던 일, 그랬을지도 모르는 일",
+          "signals": [
+            "could've",
+            "couldn't have",
+            "might've",
+            "might not have"
+          ]
+        },
+        {
+          "name": "과거 확신 (must've / can't have)",
+          "formula": "must've + 과거분사, can't have + 과거분사",
+          "focus": "분명 그랬을 거라는 확신과 그럴 리 없다는 부정",
+          "signals": [
+            "must've",
+            "must have",
+            "can't have",
+            "couldn't have been"
+          ]
+        }
+      ],
+      "sourceFiles": {
+        "oddPages": "스텝14.pdf (홀수 페이지)",
+        "evenPages": "스텝14.pdf (짝수 페이지)"
+      },
+      "spreads": [
+        {
+          "spreadNumber": 1,
+          "oddPageNumber": 1,
+          "evenPageNumber": 2,
+          "oddImage": "/materials/step-14/spread-01-odd.jpg",
+          "evenImage": "/materials/step-14/spread-01-even.jpg",
+          "oddText": "... AWA2 6 회 차 - 조동사 과거형\n주제: 할 수 있었어, 했어야 해, 분명 그랬을 거야, 했 을 지 도 몰라\nSTEP 1. 이 해 하 기\n+ should've / shouldn't have ᅳ 후회, 안타까움\nᆞ You should've called him. ( 그 에 게 전 화 했 어 야 지 .) :\n* You shouldn't have stayed up late. ( 늦 게 까지 자지 말 았 어야지.)\n+ could / was able to / couldn't / wasn't able to ᅮ 과거 능력\n* | could swim when 1 was young. (어릴 때 수 영 할 수 있었어)\n* | couldn't drive last year. ( 작 년 에는 운전할 수 없었어)\nᆞ | was able to finish the task yesterday. (O/A] 그 YS 끝낼 수 있었어.)\n* | wasn't able to attend the meeting. ( 회 의 에 참석할 + 없었어.)\n+ could've / couldn't have > 과거 7}S4.27}5\nᆞ | could've won the game. (그 경 기 를 이길 수도 있었는데, 하지만 못 했 어 )\nᆞ | couldn't have finished it without your help. ( 네 도움 없이는 끝낼 수 없었을 거야.)\nᆞ He could've gone to the party. (IE 파 티 에 갔을 수도 있어)\nᆞ He couldn't have known that. (그가 그걸 알았을 리가 없어.)\n+ must've / can't have > 과거 확신\nᆞ He must've been tired. (JE 분명 피 곤 했을 거야)\n* That can't have been true. (그건 분명 사 실 이 아 니 었 을 거야.)\n+ might've / might not have > 과거 가능성\n* She might've missed the bus. (THE WAS 놓 졌 을 지 도 몰라.)\n* She might not have seen the message. ( 그 녀 는 메 시 지 를 못 봤 을 지도 몰라.)\n1",
+          "evenText": "STEP 2. 패턴 익히기 - 눈 으로 보면서 소리 내어 읽 으 세요. 문장 덩 어 리 에 익 숙 해 지 세 요 .\n1. | couldn't call you back because my phone died. |\n2. You should've called me before you left.\n3. His car isn't here. He must've left for work.\n4. | couldn't find my keys.\n5. He shouldn't have eaten all that junk food.\n6. She couldn't remember the name of the movie.\n7. You should've listened to my advice.\n8. They must've misunderstood the directions. |\n9. We weren't able to book the tickets. They were sold out. 1. : '\n| 11. | could've helped you, but you didn't ask. - a\n12. He might've forgotten his wallet at home. ' j =\n13. She can't have been here long sete\n14. We were able to find a parking spot right away. .\n15. You shouldn't have quit your job without another offer. |\n16. | should've bought the shoes when they were on sale,\n17. He looks tired. He can't have slept well last night.\n18. | was able to finish my work early yesterday.\n19. The bus might've left a fed minutes early. ,\n20. He might not have remembered our dinner plans.\n21. | couldn't have finished this project without your help.\n22. You should've told me the truth from the beginning.\n23. He could've gotten a better grade if he'd tried harder.\n24. That couldn't have been him. He's on vacation.\n25. They might've already left the office.\n2"
+        },
+        {
+          "spreadNumber": 2,
+          "oddPageNumber": 3,
+          "evenPageNumber": 4,
+          "oddImage": "/materials/step-14/spread-02-odd.jpg",
+          "evenImage": "/materials/step-14/spread-02-even.jpg",
+          "oddText": "26. The food is gone. Someone must've eaten it.\n27. | shouldn't have sent that angry email.\n28. We could've saved a lot of money on this trip.\n29. He could swim 100m when he was younger.\n30. They can't have received my message.\n31. We shouldn't have invited so many people.\n32. He couldn't have won without training hard.\n33. You might've seen her at the supermarket earlier.\n34. The package could've been delivered to the wrong address.\n35. The plant is wilting. She can't have watered it.\n36. She might not have heard the news yet.\n37. He couldn't have seen me because | was hiding.\n38. They couldn't have finished the project so quickly.\n39. He couldn't have gone to the party because | saw him at work.\n40. | couldn't have passed the test without your help.\n41. She couldn't have written this story. She can't type.\n42. He might've gone home early because he wasn't feeling well.\n43. | couldn't have gone on vacation if | hadn't saved money.\n44. They couldn't have won the championship without teamwork.\n45. The fridge is empty. She can't have gone grocery shopping yet.\n46. We couldn't have afforded this car if we hadn't gotten a loan.\n47. The TV is on. They must've fallen asleep on the couch.\n48. The restaurant couldn't have closed so early.\n49. He couldn't have found the answer without using the internet.\n50. He might not have slept much, but he still looks energetic.\n3",
+          "evenText": "STEP 3. 문장 만들기 - PES 참고해 StS 말 해 보세요.\n1. 전화 배 터 리 가 나가서 / 다시 전화 못 했 어 . (couldn't, call back, die) :\n2. 떠나기 전에 / 나 한 테 전 화 했 어야지. (should've, call, leave)\n3. 차 없는 걸 보니, / 개 분명히 출 근 했나 Bt (must've, leave)\n4. 내 열 쇠 를 못 찾 았 어 . (couldn't, find)\n5. 그는 그 정 크 푸 드 를 다 먹지 말 았 어야 했어. (shouldn't have, eat)\n6. LEE 그 영화 이 름 을 기억 못 했어. (couldn't, remember) .\n7. 내 SDB 들 었 어 야 지 . (should've, listen) | .\n8. 그들이 분명 길 을 잘못 이 해 했나 봐 . (must've, misunderstand) 그\n9. 우 리 는 BE 예 약 할 수 없었어. / 매 진 이었어. (weren't able to, book) : . .\n11. 도 와 줄 수도 있었는데, / 네가 부 탁 하지 않 았 잖아. (could've, help)\n12. 그는 지 갑 을 집 에 두고 왔 을 지도 몰라. (might've, forget)\n13. 그 녀 는 은 지 얼마 et 됐나 봐 . (can't have, be) ᆞ a he.\n14. 우 리 는 주차 자 리 를 바로 찾을 수 있었어. (were abil to, find) -_ .\n15. 너 다른 제안 없이 / 직 장 을 그 만 두 지 말 았 어야 했어. (shouldn't have, quit)\n16. 세 일 할 때 / 그 신 발 을 ALO] OF 했어. (should've, buy) ᆞ ~ | ¢\n17. 그는 지쳐 보여. / 어 젯 밤 에 잘 못 ALE Bt (can't have, sleep)\n18. 나 어제 SS 일찍 끝낼 수 있었어. (was able to, finish)\n19. 버 스 가 몇 분 일찍 출 발 했 을 지 도 몰라. (might've, leave)\n20. 그가 우리 저녁 약 속 을 기억 못 했 을 지 도 몰라. (might not have, remember)\n21. 네 도 움 이 없었다면 / 이 프 로 젝 트 를 끝내지 못했을 거야. (couldn't have, finish)\n22. 너 ASHE / 나 한 테 진 실 을 말 했 어야 했어. (should've, tell)\n23. 그가 더 열심히 노 력 했 더 라면 / 더 좋은 점 수 를 받았을 수도 있어. (could've, get)\n24. 그게 개 였 을 리가 없어. / 그는 휴가 S0|AE. (couldn't have, be)\n25. 그들은 이미 퇴 근 했 을 지 도 몰라. (might've, leave)\n4"
+        },
+        {
+          "spreadNumber": 3,
+          "oddPageNumber": 5,
+          "evenPageNumber": 6,
+          "oddImage": "/materials/step-14/spread-03-odd.jpg",
+          "evenImage": "/materials/step-14/spread-03-even.jpg",
+          "oddText": "26. 음 식 이 없네. / 누군가 먹 었 나 봐 . (must've, eat)\n27. 화난 이 메 일 을 보내지 말 았 어야 했는데. (shouldn't have, send)\n28. 우 리 는 이 여 행 에서 BS 훨씬 더 아낄 수도 있었어. (could've, save)\n29. 그는 어렸을 때 100 ᅲ 를 수 영 할 수 있었어. (could, swim)\n30. 그들이 내 메 시 지 를 못 받았나 봐 . (630' have, receive)\n31. 사 람 을 너무 많이 초 대 하 지 말 았 어야 했어. (shouldn't have, invite)\n32. 열심히 훈 련 하 지 않았다면 / 그가 우 승 하지 못했을 거야. (couldn't have, win)\n33. 너 아까 슈 퍼 에 서 그 녀 를 봤 을 지도 몰라. (might've, see)\n34. 소 포 가 잘못된 주 소 로 배 달 되었을 수도 있어. (could've, deliver)\n35. 식 물 이 시 들 고 있어. / SS Ct 줬 나 봐 . (630'『 have, water)\n36. 그 녀 는 아직 그 ANS 못 들 었 을 지도 몰라. (might not have, hear)\n37. 그가 나를 봤을 리가 없어. / 나는 숨어 있 었 거든. (couldn't have, see)\n38. 그들이 프 로 젝 트 를 그렇게 빨리 끝 냈 을 리가 없어. (couldn't have, finish)\n39. 내가 그를 직 장 에서 봤기 때문에 / 파 티 에 갔을 리가 없어. (couldn't have, go)\n40. 네 도 움 이 없었다면 / 그 시 험 을 통 과 하 지 못했을 거야. (couldn't have, pass)\n41. 그 녀 가 이 이 야 기 를 썼을 리가 없어. / DYE EAS 못 A. (couldn't have, write)\n42. 그는 몸 이 안 좋아서 / 일찍 집 에 갔 을 지도 몰라. (might've, go)\n43. 돈 을 저 축 하 지 않 았 더라면 / 휴 가 에 가지 못했을 거야. (couldn't have, go)\n44. 팀 워 크 가 없었다면 / 챔 피 언 십 에 서 이기지 못했을 거야. (couldn't have, win)\n45. 냉 장 고 가 비 었 네 . / 그 녀 는 아직 SS Ot 봤나 봐 . (630 have, go)\n46. 우 리 가 HES 받지 않았다면 / 이 APS At 수 없었을 거야. (couldn't have, afford)\n47. 1\\ 가 켜져 있네. / 그들은 소 파 에서 잠 들 었나 봐 . (must've, fall asleep)\n48. 식 당 이 그렇게 일찍 문 닫 았 을 리가 없어. (couldn't have, close)\n49. 그가 인 터 넷 을 사 용 하지 않았다면 / 그 HS 찾지 못했을 거야. (couldn't have, find)\n50. 그는 HS 많이 못 MSALE 몰라. / 하지만 여전히 활 기 차 보여. (might not have, sleep)\n5",
+          "evenText": "STEP 4. 소리 내어 말하기 - 뜻 을 생 각 하며 AS F 외 워 서 여러 H 말 해 보세요.\n1. 전화 배 터 리 가 나가서 / 다시 전화 못 했 어 . (couldn't, call back, die) |\n| couldn't call you back / because my phone died.\n2. 떠나기 전에 / 나 한 테 전 화 했 어야지. (should've, call, leave)\nYou should've called me / before you left.\n3. 차 없는 걸 보니, / 개 분명히 출 근 했나 Ht (must've, leave)\nHis car isn't here. / He must've left for work. \"로\n4. 내 열 쇠 를 못 찾 았 어 . (couldn't, find) 시 nd\n| couldn't find my keys.\n5. 그는 그 정 크 푸 드 를 다 먹지 말 았 어야 했어. (shouldn't have, eat) ~ ,\nHe shouldn't have eaten all that junk food. = Pde\n6. 그 녀 는 그 영화 ES 기억 못 했어. (couldn't, remember) :\nShe couldn't remember the name of the movie.\n7. 내 SDS 들 었 어 야지. (should've, listen)\nYou should've listened to my advice.\n8. 그들이 분명 길 을 잘못 이 해 했나 봐 . (must've, misunderstand)\nThey must've misunderstood the directions.\n9. 우 리 는 BS 예 약 할 수 없었어. / 매 진 이었어. (weren't able to, book)\nWe weren't able to book the tickets. / They were sold out.\n10. 불 이 꺼 졌네. / 개 분명히 자러 갔나 봐 . (must've, go to bed)\nThe lights are off. / He must've gone to bed.\n: 6"
+        },
+        {
+          "spreadNumber": 4,
+          "oddPageNumber": 7,
+          "evenPageNumber": 8,
+          "oddImage": "/materials/step-14/spread-04-odd.jpg",
+          "evenImage": "/materials/step-14/spread-04-even.jpg",
+          "oddText": "11. 도 와 줄 수도 있었는데, / but 네가 부 탁 하 지 않 았 잖아. (could've, help)\n| could've helped you, / but you didn't ask.\n12. 그는 NGS 집 에 두고 왔 을 지도 몰라. (might've, forget)\nHe might've forgotten his wallet at home.\n13. JHE 온 지 얼마 ot 됐나 St (can't have, be)\nShe can't have been here long.\n14. Pele 주차 자 리 를 바로 AS 수 있었어. (were able to, find)\nWe were able to find a parking spot right away.\n15. 너 다른 제안 없이 / ASS ABSA] 말 았 어야 했어. (shouldn't have, quit)\nYou shouldn't have quit your job:/ without another offer.\n16. 세 일 할 때 / 그 신 발 을 460] 0F 했어. (should've, buy)\n| should've bought the shoes / when they were on sale.\n17. 그는 지쳐 보여. / 어 젯 밤 에 잘 못 ALLt 봐 . (can't have, sleep)\nHe looks tired. / He can't have slept well last night.\n18. 나 어제 SS 일찍 끝낼 수 있었어. (was able to, finish)\n| was able to finish my work early yesterday.\n19. 버 스 가 몇 분 일찍 줄 발 했 을 지 도 몰라. (might've, leave)\nThe bus might've left a few minutes early.\n20. 그가 우리 저녁 약 속 을 기억 못 했 을 지 도 몰라. (might not have, remember)\nHe might not have remembered our dinner plans.\n7",
+          "evenText": "21. 네 도 움 이 없었다면 / 이 프 로 젝 트 를 끝내지 못했을 거야. (couldn't have, finish)\n| couldn't have finished this project / without your help. :\n22. 너 처 음 부터 / 나 한 테 MALS 말 했 어야 했어. (should've, tell)\nYou should've told me the truth / from the beginning.\n.23. 그가 더 열심히 노 력 했 더 라 면 / 더 좋은 점 수 를 받았을 수도 있어. (could've, get)\nHe could've gotten a better grade / if he'd tried harder. : 2\n24. 그게 개 였 을 리가 없어. / 그는 휴가 중 이 거든. (couldn't have, be) ! :\nThat couldn't have been him. / He's on vacation.\n25. 그들은 이미 퇴 근 했 을 지 도 몰라. (might've, leave) ᅵ\nThey might've already left the office.\n26. 음 식 이 없네. / 누군가 먹 었 나 봐 . (must've, eat) Ee 시\nThe food is gone. / Someone must've eaten it.\n27. 화난 이 메 일 을 보내지 말 았 어야 했는데. (shouldn't have, send)\n| shouldn't have sent that angry email.\n28. 우 리 는 이 여 행 에서 ES 훨씬 더 아낄 수도 있었어. (could've, save)\nWe could've saved a lot of money on this trip.\n29. 그는 어렸을 때 100mS SSS 수 있었어. (could, swim)\nHe could swim 100m when he was younger.\n30. 그들이 내 메 시 지 를 못 받았나 봐 . (can't have, receive)\nThey can't have received my message.\n8"
+        },
+        {
+          "spreadNumber": 5,
+          "oddPageNumber": 9,
+          "evenPageNumber": 10,
+          "oddImage": "/materials/step-14/spread-05-odd.jpg",
+          "evenImage": "/materials/step-14/spread-05-even.jpg",
+          "oddText": "31. 사 람 을 너무 많이 초 대 하 지 말 았 어 야 했어. (shouldn't have, invite)\nWe shouldn't have invited so many people.\n32. 열심히 훈 련 하 지 않았다면 / 그가 우 승 하 지 못했을 거야. (couldn't have, win)\nHe couldn't have won / without training hard.\n33. 너 아까 슈 퍼 에서 그 녀 를 봤 을 지도 몰라. (might've, see)\nYou might've seen her at the supermarket earlier.\n34. 소 포 가 [잘못된 FAL] 배 달 되었을 수도 201. (could've, deliver)\nThe package could've been delivered [to the wrong address].\n35. 식 물 이 AJ SD 있어. / SS Ot 줬 나 BL (can't have, water)\nThe plant is wilting. / She can't have watered it.\n36. THe 아직 그 AAS 못 들 었 을 지도 몰라. (might not have, hear)\nShe might not have heard the news yet.\n37. 그가 나를 봤을 리가 없어. / 나는 숨어 있 었 거든. (couldn't have, see)\nHe couldn't have seen me / because | was hiding.\n38. 그들이 프 로 젝 트 를 그렇게 빨리 GAS 리가 없어. (couldn't have, finish)\nThey couldn't have finished the project so quickly.\n39. 내가 그를 직 장 에서 봤기 때문에 / 파 티 에 갔을 리가 없어. (couldn't have, go)\nHe couldn't have gone to the party / because | saw him at work.\n40.4] ESO] 없었다면 / 그 AAS 통 과 하지 못했을 거야. (couldn't have, pass)\n| couldn't have passed the test / without your help.\n9",
+          "evenText": "41. 그 녀 가 이 이 야 기 를 WS 리가 없어. / AYE 타 자 를 못 X. (couldn't have, write) |\nShe couldn't have written this story. / She can't type. 개\n42. 그는 몸 이 안 좋아서 / 일찍 집 에 갔 을 지도 몰라. (might've, go)\nHe might've gone home early / because he wasn't feeling well.\n43. ES 저 축 하지 않 았 더라면 / 휴 가 에 가지 못했을 거야. (couldn't have, go)\n| couldn't have gone on vacation / if | hadn't saved money.\n44. 팀 워 크 가 없었다면 / 챔 피 언 십 에서 이기지 못했을 거야. (couldn't have, win)\n45. 냉 장 고 가 비 었 네 . / 그 녀 는 아직 장 을 안 봤나 Bt (can't have, 99)\nThe fridge is empty. / She can't-have. gone grocery shopping yet. nage\n46. 우 리 가 HBS 받지 않았다면 / 이 차 를 AL 수 없었을 거야: (couldn't have, afford) |\nWe couldn't have afforded this car / if we hadn't gotten a loan.\n47. 1\\ 가 AM 있네. / 그들은 소 파 에 서 잠 들 었나 봐 . (must've, fall asleep) :\nThe TV is on. / They must've fallen asleep on the couch.\n48. 식 당 이 그렇게 일찍 B SMS 리가 없어. (couldn't have, close)\nThe restaurant couldn't have closed so early.\n49. 그가 인 터 넷 을 사 용 하 지 않았다면 / 그 답 을 찾지 못했을 거야. (couldn't have, find)\nHe couldn't have found the answer / without using the internet.\n50. 그는 HS 많이 못 USAL 몰라. / 하지만 여전히 활 기 자 보여. (might not have, sleep)\nHe might not have slept much, / but he still looks energetic.\n10"
+        },
+        {
+          "spreadNumber": 6,
+          "oddPageNumber": 11,
+          "evenPageNumber": null,
+          "oddImage": "/materials/step-14/spread-06-odd.jpg",
+          "evenImage": "/materials/step-14/spread-06-even.jpg",
+          "oddText": "STEP 5. 내 말 하 기 - 배운 BAS 활 용 해 자 신 의 HSS 써보고 말 해 보세요.\n1. 최 근 에 \"했어야 했는데\" 하고 후 회 한 일 이 있어?\nWhat is something you should've done recently?\n2. 죄 근 에 \"하지 말 았 어 야 했는데\" 싶은 일 이 있어?\nWhat is something you shouldn't have done recently?\n3. 어릴 때 할 수 있었던 일 이 뭐야?\nWhat could you do when you were young?\n4. 예 전 에 는 못 했지만 ASS 할 수 있는 Al 있어?\nWhat couldn't you do before?\n5. 최 근 에 어렵지만 결국 해낸 일 이 있어?\nWhat were you able to do recently?\n6. 최 근 에 하고 싶었지만 못 한 일 이 있어?\nWhat weren't you able to do recently?\n7. 420] \"할 수도 있었는데\" 하고 아 쉬 웠 던 일 이 있어?\nWhat is something you could've done?\n8. 최 근 에 누 군 가 를 보고 \"분명 힘 들 었 겠 다 \" 라 고 생각한 적 있어?\nWhen did you think someone must've been tired?\n11",
+          "evenText": ""
+        }
+      ],
+      "sentences": [
+        {
+          "id": "step-14-s001",
+          "exerciseNumber": 1,
+          "text": "I couldn't call you back because my phone died.",
+          "promptKo": "전화 배 터 리 가 나가서 / 다시 전화 못 했 어 . (couldn't, call back, die) |",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-14-s002",
+          "exerciseNumber": 2,
+          "text": "You should've called me before you left.",
+          "promptKo": "떠나기 전에 / 나 한 테 전 화 했 어야지.",
+          "hints": [
+            "should've",
+            "call",
+            "leave"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-14-s003",
+          "exerciseNumber": 3,
+          "text": "His car isn't here. He must've left for work.",
+          "promptKo": "차 없는 걸 보니, / 개 분명히 출 근 했나 Ht",
+          "hints": [
+            "must've",
+            "leave"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-14-s004",
+          "exerciseNumber": 4,
+          "text": "I couldn't find my keys.",
+          "promptKo": "내 열 쇠 를 못 찾 았 어 . (couldn't, find) 시 nd",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-14-s005",
+          "exerciseNumber": 5,
+          "text": "He shouldn't have eaten all that junk food.",
+          "promptKo": "그는 그 정 크 푸 드 를 다 먹지 말 았 어야 했어. (shouldn't have, eat) ~ ,",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-14-s006",
+          "exerciseNumber": 6,
+          "text": "She couldn't remember the name of the movie.",
+          "promptKo": "그 녀 는 그 영화 ES 기억 못 했어. (couldn't, remember) :",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-14-s007",
+          "exerciseNumber": 7,
+          "text": "You should've listened to my advice.",
+          "promptKo": "내 SDS 들 었 어 야지.",
+          "hints": [
+            "should've",
+            "listen"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-14-s008",
+          "exerciseNumber": 8,
+          "text": "They must've misunderstood the directions.",
+          "promptKo": "그들이 분명 길 을 잘못 이 해 했나 봐 .",
+          "hints": [
+            "must've",
+            "misunderstand"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-14-s009",
+          "exerciseNumber": 9,
+          "text": "We weren't able to book the tickets. They were sold out.",
+          "promptKo": "우 리 는 BS 예 약 할 수 없었어. / 매 진 이었어.",
+          "hints": [
+            "weren't able to",
+            "book"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-14-s010",
+          "exerciseNumber": 10,
+          "text": "The lights are off. He must've gone to bed.",
+          "promptKo": "불 이 꺼 졌네. / 개 분명히 자러 갔나 봐 .",
+          "hints": [
+            "must've",
+            "go to bed"
+          ],
+          "sourcePages": [
+            "even 3"
+          ]
+        },
+        {
+          "id": "step-14-s011",
+          "exerciseNumber": 11,
+          "text": "I could've helped you, but you didn't ask.",
+          "promptKo": "도 와 줄 수도 있었는데, / but 네가 부 탁 하 지 않 았 잖아.",
+          "hints": [
+            "could've",
+            "help"
+          ],
+          "sourcePages": [
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-14-s012",
+          "exerciseNumber": 12,
+          "text": "He might've forgotten his wallet at home.",
+          "promptKo": "그는 NGS 집 에 두고 왔 을 지도 몰라.",
+          "hints": [
+            "might've",
+            "forget"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-14-s013",
+          "exerciseNumber": 13,
+          "text": "She can't have been here long.",
+          "promptKo": "JHE 온 지 얼마 ot 됐나 St",
+          "hints": [
+            "can't have",
+            "be"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-14-s014",
+          "exerciseNumber": 14,
+          "text": "We were able to find a parking spot right away.",
+          "promptKo": "Pele 주차 자 리 를 바로 AS 수 있었어.",
+          "hints": [
+            "were able to",
+            "find"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-14-s015",
+          "exerciseNumber": 15,
+          "text": "You shouldn't have quit your job without another offer.",
+          "promptKo": "너 다른 제안 없이 / ASS ABSA] 말 았 어야 했어.",
+          "hints": [
+            "shouldn't have",
+            "quit"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-14-s016",
+          "exerciseNumber": 16,
+          "text": "I should've bought the shoes when they were on sale.",
+          "promptKo": "세 일 할 때 / 그 신 발 을 460] 0F 했어.",
+          "hints": [
+            "should've",
+            "buy"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-14-s017",
+          "exerciseNumber": 17,
+          "text": "He looks tired. He can't have slept well last night.",
+          "promptKo": "그는 지쳐 보여. / 어 젯 밤 에 잘 못 ALLt 봐 .",
+          "hints": [
+            "can't have",
+            "sleep"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-14-s018",
+          "exerciseNumber": 18,
+          "text": "I was able to finish my work early yesterday.",
+          "promptKo": "나 어제 SS 일찍 끝낼 수 있었어.",
+          "hints": [
+            "was able to",
+            "finish"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-14-s019",
+          "exerciseNumber": 19,
+          "text": "The bus might've left a few minutes early.",
+          "promptKo": "버 스 가 몇 분 일찍 줄 발 했 을 지 도 몰라.",
+          "hints": [
+            "might've",
+            "leave"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-14-s020",
+          "exerciseNumber": 20,
+          "text": "He might not have remembered our dinner plans.",
+          "promptKo": "그가 우리 저녁 약 속 을 기억 못 했 을 지 도 몰라.",
+          "hints": [
+            "might not have",
+            "remember"
+          ],
+          "sourcePages": [
+            "even 1",
+            "odd 4"
+          ]
+        },
+        {
+          "id": "step-14-s021",
+          "exerciseNumber": 21,
+          "text": "I couldn't have finished this project without your help.",
+          "promptKo": "네 도 움 이 없었다면 / 이 프 로 젝 트 를 끝내지 못했을 거야.",
+          "hints": [
+            "couldn't have",
+            "finish"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-14-s022",
+          "exerciseNumber": 22,
+          "text": "You should've told me the truth from the beginning.",
+          "promptKo": "너 처 음 부터 / 나 한 테 MALS 말 했 어야 했어.",
+          "hints": [
+            "should've",
+            "tell"
+          ],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-14-s023",
+          "exerciseNumber": 23,
+          "text": "He could've gotten a better grade if he'd tried harder.",
+          "promptKo": "",
+          "hints": [],
+          "sourcePages": [
+            "even 1"
+          ]
+        },
+        {
+          "id": "step-14-s024",
+          "exerciseNumber": 24,
+          "text": "That couldn't have been him. He's on vacation.",
+          "promptKo": "그게 개 였 을 리가 없어. / 그는 휴가 중 이 거든. (couldn't have, be) ! :",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-14-s025",
+          "exerciseNumber": 25,
+          "text": "They might've already left the office.",
+          "promptKo": "그들은 이미 퇴 근 했 을 지 도 몰라. (might've, leave) ᅵ",
+          "hints": [],
+          "sourcePages": [
+            "even 1",
+            "even 4"
+          ]
+        },
+        {
+          "id": "step-14-s026",
+          "exerciseNumber": 26,
+          "text": "The food is gone. Someone must've eaten it.",
+          "promptKo": "음 식 이 없네. / 누군가 먹 었 나 봐 . (must've, eat) Ee 시",
+          "hints": [],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s027",
+          "exerciseNumber": 27,
+          "text": "I shouldn't have sent that angry email.",
+          "promptKo": "화난 이 메 일 을 보내지 말 았 어야 했는데.",
+          "hints": [
+            "shouldn't have",
+            "send"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s028",
+          "exerciseNumber": 28,
+          "text": "We could've saved a lot of money on this trip.",
+          "promptKo": "우 리 는 이 여 행 에서 ES 훨씬 더 아낄 수도 있었어.",
+          "hints": [
+            "could've",
+            "save"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s029",
+          "exerciseNumber": 29,
+          "text": "He could swim 100m when he was younger.",
+          "promptKo": "그는 어렸을 때 100m를 수영할 수 있었어.",
+          "hints": [
+            "could",
+            "swim"
+          ],
+          "sourcePages": []
+        },
+        {
+          "id": "step-14-s030",
+          "exerciseNumber": 30,
+          "text": "They can't have received my message.",
+          "promptKo": "그들이 내 메 시 지 를 못 받았나 봐 .",
+          "hints": [
+            "can't have",
+            "receive"
+          ],
+          "sourcePages": [
+            "even 4",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s031",
+          "exerciseNumber": 31,
+          "text": "We shouldn't have invited so many people.",
+          "promptKo": "사 람 을 너무 많이 초 대 하 지 말 았 어 야 했어.",
+          "hints": [
+            "shouldn't have",
+            "invite"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-14-s032",
+          "exerciseNumber": 32,
+          "text": "He couldn't have won without training hard.",
+          "promptKo": "열심히 훈 련 하 지 않았다면 / 그가 우 승 하 지 못했을 거야.",
+          "hints": [
+            "couldn't have",
+            "win"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-14-s033",
+          "exerciseNumber": 33,
+          "text": "You might've seen her at the supermarket earlier.",
+          "promptKo": "너 아까 슈 퍼 에서 그 녀 를 봤 을 지도 몰라.",
+          "hints": [
+            "might've",
+            "see"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-14-s034",
+          "exerciseNumber": 34,
+          "text": "The package could've been delivered to the wrong address.",
+          "promptKo": "소 포 가 [잘못된 FAL] 배 달 되었을 수도 201.",
+          "hints": [
+            "could've",
+            "deliver"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-14-s035",
+          "exerciseNumber": 35,
+          "text": "The plant is wilting. She can't have watered it.",
+          "promptKo": "식 물 이 AJ SD 있어. / SS Ot 줬 나 BL",
+          "hints": [
+            "can't have",
+            "water"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-14-s036",
+          "exerciseNumber": 36,
+          "text": "She might not have heard the news yet.",
+          "promptKo": "THe 아직 그 AAS 못 들 었 을 지도 몰라.",
+          "hints": [
+            "might not have",
+            "hear"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-14-s037",
+          "exerciseNumber": 37,
+          "text": "He couldn't have seen me because I was hiding.",
+          "promptKo": "그가 나를 봤을 리가 없어. / 나는 숨어 있 었 거든.",
+          "hints": [
+            "couldn't have",
+            "see"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-14-s038",
+          "exerciseNumber": 38,
+          "text": "They couldn't have finished the project so quickly.",
+          "promptKo": "그들이 프 로 젝 트 를 그렇게 빨리 GAS 리가 없어.",
+          "hints": [
+            "couldn't have",
+            "finish"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-14-s039",
+          "exerciseNumber": 39,
+          "text": "He couldn't have gone to the party because I saw him at work.",
+          "promptKo": "내가 그를 직 장 에서 봤기 때문에 / 파 티 에 갔을 리가 없어.",
+          "hints": [
+            "couldn't have",
+            "go"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-14-s040",
+          "exerciseNumber": 40,
+          "text": "I couldn't have passed the test without your help.",
+          "promptKo": "4] ESO] 없었다면 / 그 AAS 통 과 하지 못했을 거야.",
+          "hints": [
+            "couldn't have",
+            "pass"
+          ],
+          "sourcePages": [
+            "odd 2",
+            "odd 5"
+          ]
+        },
+        {
+          "id": "step-14-s041",
+          "exerciseNumber": 41,
+          "text": "She couldn't have written this story. She can't type.",
+          "promptKo": "그 녀 가 이 이 야 기 를 WS 리가 없어. / AYE 타 자 를 못 X. (couldn't have, write) |",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s042",
+          "exerciseNumber": 42,
+          "text": "He might've gone home early because he wasn't feeling well.",
+          "promptKo": "그는 몸 이 안 좋아서 / 일찍 집 에 갔 을 지도 몰라.",
+          "hints": [
+            "might've",
+            "go"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s043",
+          "exerciseNumber": 43,
+          "text": "I couldn't have gone on vacation if I hadn't saved money.",
+          "promptKo": "ES 저 축 하지 않 았 더라면 / 휴 가 에 가지 못했을 거야.",
+          "hints": [
+            "couldn't have",
+            "go"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s044",
+          "exerciseNumber": 44,
+          "text": "They couldn't have won the championship without teamwork.",
+          "promptKo": "",
+          "hints": [],
+          "sourcePages": [
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s045",
+          "exerciseNumber": 45,
+          "text": "The fridge is empty. She can't have gone grocery shopping yet.",
+          "promptKo": "냉 장 고 가 비 었 네 . / 그 녀 는 아직 장 을 안 봤나 Bt",
+          "hints": [
+            "can't have",
+            "99"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s046",
+          "exerciseNumber": 46,
+          "text": "We couldn't have afforded this car if we hadn't gotten a loan.",
+          "promptKo": "우 리 가 HBS 받지 않았다면 / 이 차 를 AL 수 없었을 거야: (couldn't have, afford) |",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s047",
+          "exerciseNumber": 47,
+          "text": "The TV is on. They must've fallen asleep on the couch.",
+          "promptKo": "1\\ 가 AM 있네. / 그들은 소 파 에 서 잠 들 었나 봐 . (must've, fall asleep) :",
+          "hints": [],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s048",
+          "exerciseNumber": 48,
+          "text": "The restaurant couldn't have closed so early.",
+          "promptKo": "식 당 이 그렇게 일찍 B SMS 리가 없어.",
+          "hints": [
+            "couldn't have",
+            "close"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s049",
+          "exerciseNumber": 49,
+          "text": "He couldn't have found the answer without using the internet.",
+          "promptKo": "그가 인 터 넷 을 사 용 하 지 않았다면 / 그 답 을 찾지 못했을 거야.",
+          "hints": [
+            "couldn't have",
+            "find"
+          ],
+          "sourcePages": [
+            "even 5",
+            "odd 2"
+          ]
+        },
+        {
+          "id": "step-14-s050",
+          "exerciseNumber": 50,
+          "text": "He might not have slept much, but he still looks energetic.",
+          "promptKo": "그는 HS 많이 못 USAL 몰라. / 하지만 여전히 활 기 자 보여.",
+          "hints": [
+            "might not have",
+            "sleep"
           ],
           "sourcePages": [
             "even 5",

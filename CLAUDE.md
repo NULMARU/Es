@@ -41,7 +41,7 @@ React+Vite 영어 패턴 학습 웹앱. PDF 교재를 OCR로 추출해 스텝별
 
 이 분기가 없으면 앱은 일반 폴백(present-simple 프로필 등)으로 동작은 한다.
 
-**현재 kind 목록** — 파이프라인: present-simple, progressive, past-simple, future, mixed(5), infinitive-gerund(6), dummy-subject(7), there-is(8), present-perfect(9), present-perfect-progressive(10), relative-clause(11), indirect-question(12), modal(13).
+**현재 kind 목록** — 파이프라인: present-simple, progressive, past-simple, future, mixed(5), infinitive-gerund(6), dummy-subject(7), there-is(8), present-perfect(9), present-perfect-progressive(10), relative-clause(11), indirect-question(12), modal(13), modal-past(14).
 ⚠️ `relative-clause`와 `indirect-question`은 learning.js/App.jsx 분기가 아직 없어 일반 폴백으로 동작 중.
 
 ## Canonical sentences (OCR 교정 오버라이드)
